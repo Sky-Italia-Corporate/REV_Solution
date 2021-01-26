@@ -13,8 +13,8 @@
   DTS:ObjectName="SKY_REV_1_20_FACT_DECODER_RENTAL"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{FED13C68-B1DA-47B6-A0FC-F160B2BB3305}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{C1D23D7F-8784-48E6-A6FB-5ADC856B2CD0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1030,37 +1030,37 @@ GROUP BY z.[WEEK_ID]
         <NodeLayout
           Size="211,44"
           Id="Package\Delete Records"
-          TopLeft="5.5,5.5" />
+          TopLeft="17.5,5.5" />
         <NodeLayout
           Size="211,44"
           Id="Package\Popola SF_REV_DECODER_RENTAL"
-          TopLeft="36.5,133.764150943396" />
+          TopLeft="0.5,129.764150943396" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="111,49.5">
+          TopLeft="123,49.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="31,84.264150943396"
+              EndConnector="-17,80.264150943396"
               Start="0,0"
-              End="31,76.764150943396">
+              End="-17,72.764150943396">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,38.132075471698" />
+                    End="0,36.132075471698" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,38.132075471698"
-                    Point2="0,42.132075471698"
-                    Point3="4,42.132075471698" />
+                    Point1="0,36.132075471698"
+                    Point2="0,40.132075471698"
+                    Point3="-4,40.132075471698" />
                   <mssgle:LineSegment
-                    End="27,42.132075471698" />
+                    End="-13,40.132075471698" />
                   <mssgle:CubicBezierSegment
-                    Point1="27,42.132075471698"
-                    Point2="31,42.132075471698"
-                    Point3="31,46.132075471698" />
+                    Point1="-13,40.132075471698"
+                    Point2="-17,40.132075471698"
+                    Point3="-17,44.132075471698" />
                   <mssgle:LineSegment
-                    End="31,76.764150943396" />
+                    End="-17,72.764150943396" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
