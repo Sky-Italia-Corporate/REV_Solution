@@ -1,0 +1,1141 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{92130497-D291-4B44-A1A7-FCD65E6B104E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M11_LEV2_1_SA"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{FD7A2796-61CB-4EEB-80AC-86A228614AE4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M11_LEV2_1_SA-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M11_LEV2_1_SA-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL01.ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1530B8BD-1F34-492A-99B9-C249344D792F}"
+      DTS:ObjectName="SQL01.ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL01;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M11_LEV2_1_SA-{1530B8BD-1F34-492A-99B9-C249344D792F}SQL01.ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{79cc6083-b2a7-4dc4-a107-1a7c6916fd87}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110101'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 2"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c8f17150-e2e0-46b4-8a75-40e26c12c93c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110102'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 3"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8d714b41-2ea7-4a0a-ac2e-31bf14394133}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 3"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110103'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 4"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{a55c7b75-9b9a-4548-b409-c59a584276c1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 4"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110104'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 5"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{dc87b8a7-6cc7-4fb4-ab03-ed64607bb5d5}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 5"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110105'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 6"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{371e98b3-1056-445d-82da-d1929759f81e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 6"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110106'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 7"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c438d1b9-9527-4582-8dc7-d495d3c62a59}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 7"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110107'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 8"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7512e72f-c491-4aa8-853b-3cc06482124d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 8"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110108'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\LOGGING - Step 9"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4c1be9b2-917d-487e-8269-788137b9bac3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="LOGGING - Step 9"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into M_REV_LOG_LOGGING&#xA;select &#xA; convert(float, GETDATE()) as TIMESTAMP,&#xA; a.ID,&#xA; b.SCE_ID,&#xA; b.WEEK_ID,&#xA; c.CARICAMENTO as TIPO_CARICAMENTO,&#xA; a.APPLICATIVO,&#xA; a.MODULO,&#xA; a.FASE,&#xA; a.STEP,&#xA; GETDATE() as INIZIO,&#xA; a.NOTE,&#xA; a.EXTRA1,&#xA; a.EXTRA2,&#xA; a.EXTRA3&#xA;from M_REV_LOG_ANAGRAFICA_LOG a&#xA; cross join M_REV_CALC_WEEK b &#xA; cross join M_REV_LOG_CARICAMENTO_CORRENTE c&#xA;where a.ID = 'REV110109'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S1_ANAG_CANALE"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{DC7B2835-78DD-459D-861E-C7C699BDB456}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S1_ANAG_CANALE"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S1_ANAG_CANALE</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S2_ANAG_PROMO"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{09255EE4-CBDB-45CC-80CD-25FE8C3D001D}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S2_ANAG_PROMO"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S2_ANAG_PROMO</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{033AB006-5475-4DF7-B265-BB5E3A1A5F7F}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S4_TABELLA_EXPORT"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{AE445F01-B9EF-4475-A509-C4C05752ED61}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S4_TABELLA_EXPORT"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S4_TABELLA_EXPORT</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S5_RC_COD_X_RUC"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{136448DD-31B1-4CF0-B8D9-DC4FB471E4FB}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S5_RC_COD_X_RUC"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S5_RC_COD_X_RUC</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S6_CREAZIONE_SF"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{BF49E399-A2F0-4B20-9E05-316EE7A812DE}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S6_CREAZIONE_SF"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S6_CREAZIONE_SF</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S7_IMPORT_ADJ"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{565a06f3-4ed0-4630-a70c-6b7ac0d122e5}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S7_IMPORT_ADJ"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S7_IMPORT_ADJ</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F1_S9_IMPORT_NDC"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{4DE428D3-AE17-40CB-920F-1F92E2CAFF73}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F1_S9_IMPORT_NDC"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S9_IMPORT_NDC</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SKY_REV_M11_F8_S8_INSERT_ADJ_SF"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{c273ef7b-b755-4601-808a-16f905c6fddf}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SKY_REV_M11_F8_S8_INSERT_ADJ_SF"
+      DTS:TaskContact="Executes DTS packages;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <PackageName>\SKY_REV\REV_M11_1_ACT_FEE_STD_SA\SKY_REV_M11_F1_S8_INSERT_ADJ_SF</PackageName>
+          <Connection>{1530B8BD-1F34-492A-99B9-C249344D792F}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BA68DAF3-D3F4-404F-82A6-0DA4E5280AAC}"
+      DTS:From="Package\SKY_REV_M11_F1_S1_ANAG_CANALE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\LOGGING - Step 2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F347EF84-68B1-48CB-9569-6A34421FE43F}"
+      DTS:From="Package\SKY_REV_M11_F1_S2_ANAG_PROMO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\LOGGING - Step 3" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{FC39ECCF-ECE7-4590-A34D-8F01EB17D3AF}"
+      DTS:From="Package\LOGGING - Step 6"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\SKY_REV_M11_F1_S6_CREAZIONE_SF" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{566542fe-d68c-4e6c-aa2d-b88ca461f462}"
+      DTS:From="Package\LOGGING - Step 7"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10 1"
+      DTS:To="Package\SKY_REV_M11_F1_S7_IMPORT_ADJ" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10 1 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{1c33e905-4bd3-464d-bfe9-10417592f7e6}"
+      DTS:From="Package\LOGGING - Step 8"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10 1 1"
+      DTS:To="Package\SKY_REV_M11_F8_S8_INSERT_ADJ_SF" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{2F874F0E-2422-458B-A8A4-42B8B62E5987}"
+      DTS:From="Package\SKY_REV_M11_F1_S6_CREAZIONE_SF"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\LOGGING - Step 7" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{E95A5C7C-1D12-4E2D-808B-97080936A062}"
+      DTS:From="Package\SKY_REV_M11_F1_S7_IMPORT_ADJ"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\LOGGING - Step 8" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{47EE7FDD-1724-4A74-85F1-E72B44F3EBA3}"
+      DTS:From="Package\SKY_REV_M11_F8_S8_INSERT_ADJ_SF"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\LOGGING - Step 9" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 14]"
+      DTS:CreationName=""
+      DTS:DTSID="{D84B82B2-EE26-44C9-9A7F-925EE3A5EC47}"
+      DTS:From="Package\LOGGING - Step 9"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 14"
+      DTS:To="Package\SKY_REV_M11_F1_S9_IMPORT_NDC" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{7A57842D-E298-47F4-9623-19D526815750}"
+      DTS:From="Package\SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\LOGGING - Step 4" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A13CE02F-E52A-41B2-9925-30E7E15692C4}"
+      DTS:From="Package\SKY_REV_M11_F1_S4_TABELLA_EXPORT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\LOGGING - Step 5" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{921AB8B1-A33D-42DD-8646-75B2775F983D}"
+      DTS:From="Package\SKY_REV_M11_F1_S5_RC_COD_X_RUC"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\LOGGING - Step 6" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{7CEC5289-DA61-4DB7-8758-D9025361501E}"
+      DTS:From="Package\LOGGING - Step 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\SKY_REV_M11_F1_S1_ANAG_CANALE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{29145754-6D63-400B-8FA2-C6BE9D6650DF}"
+      DTS:From="Package\LOGGING - Step 2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\SKY_REV_M11_F1_S2_ANAG_PROMO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{6FC73E11-CD6C-4D16-9979-DFFC71810B7B}"
+      DTS:From="Package\LOGGING - Step 3"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{2EAB548B-8913-4EC7-A4FE-71B107AE4166}"
+      DTS:From="Package\LOGGING - Step 4"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\SKY_REV_M11_F1_S4_TABELLA_EXPORT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{7D323E09-49C5-42A4-863A-F87D4488C853}"
+      DTS:From="Package\LOGGING - Step 5"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\SKY_REV_M11_F1_S5_RC_COD_X_RUC" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 1"
+          TopLeft="6.48113207547169,5.5" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 2"
+          TopLeft="6.48113207547169,83.3867924528302" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 3"
+          TopLeft="5.5,159.990566037736" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 4"
+          TopLeft="5.5,237.877358490566" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 5"
+          TopLeft="5.5,315.764150943396" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 6"
+          TopLeft="5.5,393.650943396226" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 7"
+          TopLeft="6.48113207547169,468.443396226415" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 8"
+          TopLeft="6.48113207547169,531.235849056604" />
+        <NodeLayout
+          Size="192,44"
+          Id="Package\LOGGING - Step 9"
+          TopLeft="6.48113207547169,597.801886792453" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S1_ANAG_CANALE"
+          TopLeft="232.141509433962,5.5" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S2_ANAG_PROMO"
+          TopLeft="232.141509433962,83.3867924528302" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK"
+          TopLeft="231.160377358491,159.990566037736" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S4_TABELLA_EXPORT"
+          TopLeft="231.160377358491,237.877358490566" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S5_RC_COD_X_RUC"
+          TopLeft="231.160377358491,315.764150943396" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S6_CREAZIONE_SF"
+          TopLeft="231.160377358491,393.650943396226" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S7_IMPORT_ADJ"
+          TopLeft="232.141509433962,468.443396226415" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F1_S9_IMPORT_NDC"
+          TopLeft="232.141509433962,597.801886792453" />
+        <NodeLayout
+          Size="209,44"
+          Id="Package\SKY_REV_M11_F8_S8_INSERT_ADJ_SF"
+          TopLeft="232.141509433962,531.235849056604" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="336.481132075472,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-234.150943396226,33.9622641509434"
+              Start="0,0"
+              End="-234.150943396226,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9811320754717" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,16.9811320754717" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="336.481132075472,127.311320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-235.132075471698,32.6792452830189"
+              Start="0,0"
+              End="-235.132075471698,25.1792452830189">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3396226415094" />
+                  <mssgle:LineSegment
+                    End="-235.132075471698,16.3396226415094" />
+                  <mssgle:LineSegment
+                    End="-235.132075471698,25.1792452830189" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="197.198113207547,415.61320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10 1]"
+          TopLeft="198.179245283019,490.405660377358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 10 1 1]"
+          TopLeft="198.179245283019,553.198113207547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="335.5,437.575471698113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-233.169811320755,30.8679245283019"
+              Start="0,0"
+              End="-233.169811320755,23.3679245283019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4339622641509" />
+                  <mssgle:LineSegment
+                    End="-233.169811320755,15.4339622641509" />
+                  <mssgle:LineSegment
+                    End="-233.169811320755,23.3679245283019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="336.481132075472,512.367924528302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-234.150943396226,18.8679245283019"
+              Start="0,0"
+              End="-234.150943396226,11.3679245283019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.43396226415098" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,9.43396226415098" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,11.3679245283019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="336.481132075472,575.160377358491">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-234.150943396226,22.6415094339623"
+              Start="0,0"
+              End="-234.150943396226,15.1415094339623">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.3207547169811" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,11.3207547169811" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,15.1415094339623" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 14]"
+          TopLeft="198.179245283019,619.764150943396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="335.5,203.915094339623">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-234.150943396226,33.9622641509434"
+              Start="0,0"
+              End="-234.150943396226,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9811320754717" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,16.9811320754717" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="335.5,281.801886792453">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-234.150943396226,33.9622641509434"
+              Start="0,0"
+              End="-234.150943396226,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.9811320754717" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,16.9811320754717" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="335.5,359.688679245283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-234.150943396226,33.9622641509434"
+              Start="0,0"
+              End="-234.150943396226,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1132075471699" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,18.1132075471699" />
+                  <mssgle:LineSegment
+                    End="-234.150943396226,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="198.179245283019,27.4622641509434">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="198.179245283019,105.349056603774">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="197.198113207547,181.952830188679">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="197.198113207547,259.839622641509">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="197.198113207547,337.72641509434">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="33.9622641509434,0"
+              Start="0,0"
+              End="26.4622641509434,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.4622641509434,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

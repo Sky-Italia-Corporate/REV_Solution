@@ -1,0 +1,1791 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{471DDB96-497E-414A-9B97-7B2377DC7872}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M12bis_F1_S1_IMPORT"
+  DTS:PackageType="5"
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{3C80C237-03F9-4A21-A4AE-01DE30DB6896}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E9865AA2-FA1D-42DE-AF38-14B2664CF64B}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M13_F1_S2_CALCOLO_ACCOUNT-{E9865AA2-FA1D-42DE-AF38-14B2664CF64B}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6A3608BF-850A-48EF-B0D8-C50A7E9FD6DD}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M13_F1_S2_CALCOLO_ACCOUNT-{6A3608BF-850A-48EF-B0D8-C50A7E9FD6DD}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{53A26DEE-1FE5-4E4B-AF65-1799484BCCDD}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{53A26DEE-1FE5-4E4B-AF65-1799484BCCDD}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import From T_REV_DTRS"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{58A8991E-8A0E-4907-AB52-3E3AA3AED0EE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import From T_REV_DTRS"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import From T_REV_DTRS\T_REV_DTRS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="T_REV_DTRS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select  distinct COD_PROMO_TEC,a.ACCOUNT, a.CATEGORIA_RC, a.TIPO_ABB, a.RC_COD, a.RC_DESCR, a.DATA_ATT, a.DATA_ATT_RC, a.TIPOLOGIA_RC,
+	a.PRT_DES, a.COD_PROMO_SKY,a.NOME_PROMO,a.valore, a.VALORE_PACCHETTO,
+    FLAG_MOTORE_SCONTI, PROMO_TYPE, PROMO_WEEKLY_RGR, PROMO_CLUSTER, ACC_ID, 
+	'ACT_FEE_PRS' as TIPO_INSTALLAZIONE , a.TECNOLOGIA, a.RC_PACCHETTO_REALE, a.RC_PACCHETTO, a.CLUSTER_IPTV,a.COD_LISTINO, a.DATA_ATT_RC as GIO_ID,
+	/* Integrazione TV-BB con aggiunta 4 dimensioni da BB */		
+	isnull(LTRIM(RTRIM(BB.BB_CONTRACT_STATUS_DES)), 'ZZZ_NO_BB_CONTRACT_STATUS') as BB_CONTRACT_STATUS,
+	isnull(LTRIM(RTRIM(BB.PRODUCT_CODE)), 'ZZZ_NO_BB_PRODUCT') as BB_PRD_ID,
+	isnull(LTRIM(RTRIM(BB.ORIGIN_CLUSTER)), 'ZZZ_NO_ORIGIN_CLUSTER') as BB_ORIGIN_CLUSTER,
+	isnull(LTRIM(RTRIM(BB.VOICE_FLAG)), 'N') as BB_VOICE_FLG,
+	ISNULL(LTRIM(RTRIM(Case when (BB.FLG_BUNDLE) = '0' then 'No Bundle'
+                            when (BB.FLG_BUNDLE) = '1' then 'Bundle' end)), 'No Bundle') AS BB_FLG_BUNDLE
+	from (
+    select distinct COD_PROMO_TEC, a.PRT_DES, a.COD_PROMO_SKY,a.NOME_PROMO,sf.GIO_ID, sf.ACC_ID,
+    a.TECNOLOGIA,a.DATA_ATT_RC,a.RC_PACCHETTO_REALE,a.account, a.tipo_abb, a.rc_cod,a.RC_DESCR,a.RC_PACCHETTO,a.VALORE,a.VALORE_PACCHETTO,
+    a.CATEGORIA_RC,FLAG_MOTORE_SCONTI, PROMO_TYPE, PROMO_WEEKLY_RGR, PROMO_CLUSTER,a.DATA_ATT, a.TIPOLOGIA_RC,a.CLUSTER_IPTV, a.COD_LISTINO
+     from
+        (
+        SELECT
+            rs.ACCOUNT, rs.COD_PROMO_TEC, prt.PRT_DES, rs.COD_PROMO_SKY, prs.NOME_PROMO, rs.CATEGORIA_RC, rs.RC_COD, rs.RC_DESCR,  rs.VALORE
+            --,rs.COD_LISTINO, rs.DATA_ATT,
+             ,rs.DATA_ATT_RC, rs.TIPO_ABB,rs.DATA_ATT,rs.TIPOLOGIA_RC, rs.RC_PACCHETTO, rs.VALORE_PACCHETTO, rs.CLUSTER_IPTV, rs.COD_LISTINO
+            --,atps.ACCOUNT    as "CHECK__ATPS"
+            ,rs.TECNOLOGIA
+			, rs.RC_PACCHETTO_REALE
+            ,CASE 
+                WHEN promo.COD_PROMO_TEC is null THEN 0 
+                ELSE 1 
+            END as FLAG_MOTORE_SCONTI 
+            ,promo.PROMO_TYPE
+            ,promo.PROMO_WEEKLY_RGR
+            ,promo.PROMO_CLUSTER
+            
+        FROM 
+            T_REV_DTRS                    rs
+        LEFT JOIN 
+            (
+                Select 
+                    distinct ACCOUNT,COD_PROMO_TEC 
+                from T_REV_DT_B10_ATPS
+            union
+                Select 
+                    distinct ACCOUNT,COD_PROMO_TEC 
+                from T_REV_DT_B10_ATPSQ
+            )                            atps    on atps.ACCOUNT = rs.ACCOUNT and atps.COD_PROMO_TEC = rs.COD_PROMO_TEC
+        LEFT JOIN
+            (
+            select
+                wtt.COD_PROMO_TEC
+                ,promo.PROMO_TYPE, promo.PROMO_WEEKLY_RGR, promo.PROMO_CLUSTER
+            from 
+                WTT_REV_RC_ATTIVATI_STEP4 wtt
+            left join
+                S_PROMO                    promo    on promo.PROMO_ID = wtt.COD_PROMO_TEC
+            where
+                1=1
+                and (wtt.COD_PROMO_TEC not like '%0000' or wtt.COD_PROMO_TEC not like '%6666')
+            )                            promo    on promo.COD_PROMO_TEC = rs.COD_PROMO_TEC
+        LEFT JOIN 
+            T_REV_PRT_PROMO_TECNICA        prt        on rs.COD_PROMO_TEC = prt.PRT_ID
+        LEFT JOIN 
+            (
+            select
+                distinct * 
+            from 
+                T_REV_PRS_PROMO_SKY
+            )                            prs        on rs.COD_PROMO_SKY = prs.COD_PROMO_SKY
+        WHERE 
+            1=1
+            and CATEGORIA_RC in ('Contributo Att. standard','Sconto Contr. di att.standard','Contributo Att. Premium Serv.','Sconto Contributo Att. Premium')
+            and atps.ACCOUNT is null
+            ------------------------------
+            --Verifica FLAG_MOTORE_SCONTI (ossia tutti qui ratecode che non matchano con la tabella "WTT_REV_RC_ATTIVATI_STEP4")
+            --and promo.COD_PROMO_TEC is null
+            ------------------------------
+            --Caso
+            --and rs.ACCOUNT = 13681168
+            ------------------------------
+        ) a
+    left join 
+        SKY_SA.dbo.SF_SBF_FIRSTACT sf    
+        on sf.ACC_ID = a.ACCOUNT and sf.GIO_ID=a.DATA_ATT_RC 
+        --where ACCOUNT = 23637044
+)
+ a
+
+ left join [SKY_SA_BB].[dbo].[SF_SUB_BBC_SUB_SCBB] bb on  a.DATA_att_rc = BB.GIO_ID and ACCOUNT = BB.ACCOUNT_TV
+ where a.ACC_ID is null</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[CATEGORIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[CATEGORIA_RC]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[CATEGORIA_RC]"
+                      name="CATEGORIA_RC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_SKY]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]"
+                      name="COD_PROMO_SKY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PRT_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PRT_DES]"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PRT_DES]"
+                      name="PRT_DES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[NOME_PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[NOME_PROMO]"
+                      length="500"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[NOME_PROMO]"
+                      name="NOME_PROMO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[FLAG_MOTORE_SCONTI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[FLAG_MOTORE_SCONTI]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[FLAG_MOTORE_SCONTI]"
+                      name="FLAG_MOTORE_SCONTI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TYPE]"
+                      length="2"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_TYPE]"
+                      name="PROMO_TYPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPO_INSTALLAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TIPO_INSTALLAZIONE]"
+                      length="11"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPO_INSTALLAZIONE]"
+                      name="TIPO_INSTALLAZIONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[ACCOUNT]"
+                      name="ACCOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPO_ABB]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TIPO_ABB]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPO_ABB]"
+                      name="TIPO_ABB"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_COD]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_COD]"
+                      name="RC_COD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_DESCR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_DESCR]"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_DESCR]"
+                      name="RC_DESCR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      name="DATA_ATT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT_RC]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[DATA_ATT_RC]"
+                      name="DATA_ATT_RC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPOLOGIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TIPOLOGIA_RC]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPOLOGIA_RC]"
+                      name="TIPOLOGIA_RC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[VALORE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[valore]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[VALORE]"
+                      name="VALORE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[VALORE_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PACCHETTO]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[VALORE_PACCHETTO]"
+                      name="VALORE_PACCHETTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[ACC_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[ACC_ID]"
+                      length="10"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[ACC_ID]"
+                      name="ACC_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_PACCHETTO_REALE]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO_REALE]"
+                      name="RC_PACCHETTO_REALE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_PACCHETTO]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO]"
+                      name="RC_PACCHETTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER_IPTV]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]"
+                      name="CLUSTER_IPTV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_FLG_BUNDLE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_FLG_BUNDLE]"
+                      length="9"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_FLG_BUNDLE]"
+                      name="BB_FLG_BUNDLE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[CATEGORIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PRT_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRT_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[NOME_PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="NOME_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[FLAG_MOTORE_SCONTI]"
+                      dataType="i4"
+                      name="FLAG_MOTORE_SCONTI" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PROMO_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TIPO_INSTALLAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="TIPO_INSTALLAZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TIPO_ABB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_ABB" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_DESCR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RC_DESCR" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATT_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TIPOLOGIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPOLOGIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[valore]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="valore" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE_PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[ACC_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ACC_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[RC_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].ExternalColumns[BB_FLG_BUNDLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="BB_FLG_BUNDLE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[CATEGORIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[CATEGORIA_RC]"
+                      name="CATEGORIA_RC" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ACCOUNT]"
+                      name="ACCOUNT" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PRT_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PRT_DES]"
+                      name="PRT_DES" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TIPO_ABB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TIPO_ABB]"
+                      name="TIPO_ABB" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_COD]"
+                      name="RC_COD" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_DESCR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_DESCR]"
+                      name="RC_DESCR" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      name="DATA_ATT" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[DATA_ATT_RC]"
+                      name="DATA_ATT_RC" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TIPOLOGIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TIPOLOGIA_RC]"
+                      name="TIPOLOGIA_RC" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[NOME_PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[NOME_PROMO]"
+                      name="NOME_PROMO" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_SKY]"
+                      name="COD_PROMO_SKY" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[valore]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[valore]"
+                      name="valore" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[VALORE_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[VALORE_PACCHETTO]"
+                      name="VALORE_PACCHETTO" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[FLAG_MOTORE_SCONTI]"
+                      dataType="i4"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[FLAG_MOTORE_SCONTI]"
+                      name="FLAG_MOTORE_SCONTI" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PROMO_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PROMO_TYPE]"
+                      name="PROMO_TYPE" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ACC_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ACC_ID]"
+                      name="ACC_ID" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TIPO_INSTALLAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TIPO_INSTALLAZIONE]"
+                      name="TIPO_INSTALLAZIONE" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_PACCHETTO_REALE]"
+                      name="RC_PACCHETTO_REALE" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[RC_PACCHETTO]"
+                      name="RC_PACCHETTO" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[CLUSTER_IPTV]"
+                      name="CLUSTER_IPTV" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_FLG_BUNDLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[BB_FLG_BUNDLE]"
+                      name="BB_FLG_BUNDLE" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="WT_REV_ACT_ACTFEE_PRS_PARCO"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[WT_REV_ACT_ACTFEE_PRS_PARCO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[CATEGORIA_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_RC"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_RC]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[CATEGORIA_RC]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[COD_PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_PROMO_TEC"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[COD_PROMO_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_PROMO_SKY"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_SKY]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[PRT_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PRT_DES"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PRT_DES]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PRT_DES]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[NOME_PROMO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="NOME_PROMO"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[NOME_PROMO]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[NOME_PROMO]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[FLAG_MOTORE_SCONTI]"
+                      cachedDataType="i4"
+                      cachedName="FLAG_MOTORE_SCONTI"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_MOTORE_SCONTI]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[FLAG_MOTORE_SCONTI]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[PROMO_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="PROMO_TYPE"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_TYPE]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_TYPE]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_CLUSTER]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[TIPO_INSTALLAZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="TIPO_INSTALLAZIONE"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_INSTALLAZIONE]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPO_INSTALLAZIONE]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[ACCOUNT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACCOUNT"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[ACCOUNT]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[TIPO_ABB]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_ABB"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ABB]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPO_ABB]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[RC_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RC_COD"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_COD]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_COD]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[RC_DESCR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RC_DESCR"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_DESCR]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_DESCR]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[DATA_ATT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ATT"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[DATA_ATT]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[DATA_ATT_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ATT_RC"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT_RC]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[DATA_ATT_RC]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[TIPOLOGIA_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPOLOGIA_RC"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TIPOLOGIA_RC]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TIPOLOGIA_RC]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[VALORE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VALORE"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[VALORE]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[VALORE]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[VALORE_PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VALORE_PACCHETTO"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PACCHETTO]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[VALORE_PACCHETTO]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[ACC_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ACC_ID"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[ACC_ID]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[ACC_ID]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[RC_PACCHETTO_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RC_PACCHETTO_REALE"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO_REALE]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO_REALE]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[RC_PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RC_PACCHETTO"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[CLUSTER_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER_IPTV"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[COD_LISTINO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_LISTINO"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[COD_LISTINO]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].Columns[BB_FLG_BUNDLE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="BB_FLG_BUNDLE"
+                      externalMetadataColumnId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_BUNDLE_FLG]"
+                      lineageId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output].Columns[BB_FLG_BUNDLE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PRT_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRT_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[NOME_PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="NOME_PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_MOTORE_SCONTI]"
+                      dataType="i4"
+                      name="FLAG_MOTORE_SCONTI" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="PROMO_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_INSTALLAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="TIPO_INSTALLAZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ABB]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_ABB" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_DESCR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RC_DESCR" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATT_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TIPOLOGIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPOLOGIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[VALORE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE_PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[ACC_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ACC_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input].ExternalColumns[BB_BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import From T_REV_DTRS.Paths[OLE DB Source Output]"
+              endId="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import From T_REV_DTRS\T_REV_DTRS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table WT_REV_ACT_ACTFEE_PRS_PARCO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B807FCB5-6771-475A-BEE1-5E6E77696213}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table WT_REV_ACT_ACTFEE_PRS_PARCO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{6A3608BF-850A-48EF-B0D8-C50A7E9FD6DD}"
+          SQLTask:SqlStatementSource="truncate table WT_REV_ACT_ACTFEE_PRS_PARCO&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{73B8DAB0-1B36-494F-8A3A-2E7F22036D68}"
+      DTS:From="Package\truncate table WT_REV_ACT_ACTFEE_PRS_PARCO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import From T_REV_DTRS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="330,44"
+          Id="Package\Import From T_REV_DTRS"
+          TopLeft="4.5,170.38679245283" />
+        <NodeLayout
+          Size="319,42"
+          Id="Package\truncate table WT_REV_ACT_ACTFEE_PRS_PARCO"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="167.25,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,122.88679245283"
+              Start="0,0"
+              End="0,115.38679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,115.38679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import From T_REV_DTRS">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="250,42"
+          Id="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO"
+          TopLeft="37,257" />
+        <NodeLayout
+          Size="249,44"
+          Id="Package\Import From T_REV_DTRS\T_REV_DTRS"
+          TopLeft="5.5,4.5" />
+        <EdgeLayout
+          Id="Package\Import From T_REV_DTRS.Paths[OLE DB Source Output]"
+          TopLeft="130,48.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="32,208.5"
+              Start="0,0"
+              End="32,201">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,100.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,100.25"
+                    Point2="0,104.25"
+                    Point3="4,104.25" />
+                  <mssgle:LineSegment
+                    End="28,104.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28,104.25"
+                    Point2="32,104.25"
+                    Point3="32,108.25" />
+                  <mssgle:LineSegment
+                    End="32,201" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import From T_REV_DTRS\T_REV_DTRS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import From T_REV_DTRS\WT_REV_ACT_ACTFEE_PRS_PARCO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

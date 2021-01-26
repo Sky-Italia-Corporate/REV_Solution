@@ -1,0 +1,2060 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/2/2012 9:30:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{226ADC92-5B97-4E9B-A0FA-BB544E97862C}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M00_X_B11_CONF_AFC"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{F10B1FE9-489C-4F25-807E-9B6CA81A9542}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AN_B11_CFGCDW]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{0C5F53BF-4C1D-4D68-882A-61231F6E02AB}"
+      DTS:ObjectName="AN_B11_CFGCDW">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RESREV\RV_AN1317_B11_CFGCDW.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CATEGORIA_RC"
+              DTS:DTSID="{41F0265E-0FD9-4909-9417-B5BAD79EA141}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RC_COD"
+              DTS:DTSID="{11E7AB6B-892A-426D-854A-A307DE37C816}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RC_DESC"
+              DTS:DTSID="{58C5983C-C5F2-4111-A365-D091F92CD3AE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPOLOGIA_RC"
+              DTS:DTSID="{CD652CB2-8E16-4730-B1B3-FA01F1F6E9A6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COD_LISTINO"
+              DTS:DTSID="{0DC7B663-6F12-4359-A839-9413B6C63189}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DES_LISTINO"
+              DTS:DTSID="{5B4EB37F-D406-43E1-AE47-C95C77CBA7C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DURATA"
+              DTS:DTSID="{98BDF6D9-DB71-4202-8B73-96A736DF749C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SCADENZA"
+              DTS:DTSID="{1A08B3E6-C095-48C8-819C-2B0C2140F0EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRORATA"
+              DTS:DTSID="{F99A58ED-C117-4608-AE53-2323FD15619E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VALORE_SCONTO"
+              DTS:DTSID="{D816550F-A552-433B-BD8B-0B9DDAC3905D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VALORE_SCONTO_PERCENTUALE"
+              DTS:DTSID="{36D5ECD5-9118-4AF3-8B1F-3503DAABCF5E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PREZZO"
+              DTS:DTSID="{F0857F9A-4E69-426A-9B86-73278A035C8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IN_KENAN_ID"
+              DTS:DTSID="{EC32690D-D63B-4C95-AB74-F26DF8A9C4AF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F1A12B53-753E-4E72-896D-8254E45C5BA9}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_X_B11_CONF_AFC-{F1A12B53-753E-4E72-896D-8254E45C5BA9}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_X_B11_CONF_AFC-{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9587C083-4778-4C94-85A0-F200831397DA}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_X_B11_CONF_AFC-{9587C083-4778-4C94-85A0-F200831397DA}SQL02.SSIS_CONFIGURATIONS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;File_AN_B11_CFGCDW&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{F59CA179-8BEF-4697-87E9-29ED5F25095E}"
+      DTS:ObjectName="File_AN_B11_CFGCDW" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;VAR_FileDir&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{3CFB93D7-7648-4524-82F3-0721A5FEB384}"
+      DTS:ObjectName="VAR_FileDir" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{3D235BAE-95FE-4B5B-8BE6-6C4DE4B1A168}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8FACAE60-401E-4933-82D1-9FCA293581D1}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileDir">
+      <DTS:VariableValue
+        DTS:DataType="8">\\DEVRMWDBHYP01\StagingArea\RESREV\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9324DCE1-16C7-4297-A074-E600F8746584}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">RV_ANyyww_B11_CFGCDW.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FA5B30FC-638F-42D2-A72A-02B282A1068E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FYWK">
+      <DTS:VariableValue
+        DTS:DataType="8">1317</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{3D235BAE-95FE-4B5B-8BE6-6C4DE4B1A168}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiorna File Connection"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{ae33f4a6-23f1-4dbb-8a57-d55b3078b784}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiorna File Connection"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ScriptTask_dd70212c169f4913a69842d1736fc069"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="FileName, FileDir, FYWK">
+          <ProjectItem
+            Name="scripttask_dd70212c169f4913a69842d1736fc069.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ScriptTask_dd70212c169f4913a69842d1736fc069.vbproj</RootNamespace>
+    <AssemblyName>ScriptTask_dd70212c169f4913a69842d1736fc069.vbproj</AssemblyName>
+    <StartupObject></StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{FCA9D2AE-4131-4EC3-B5F1-88CA4B6F26C4}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[' Microsoft SQL Server Integration Services Script Task
+' Write scripts using Microsoft Visual Basic
+' The ScriptMain class is the entry point of the Script Task.
+
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+	Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+	Enum ScriptResults
+		Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+		Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+	End Enum
+
+    Public Sub Main()
+
+        Dim FileToOpen As String
+
+        FileToOpen = Dts.Variables.Item("FileName").Value.ToString.Replace("yyww", Dts.Variables.Item("FYWK").Value.ToString)
+        'FileToOpen = Dts.Variables.Item("FileName").Value.ToString.Replace("yyww", "1317")
+        FileToOpen = Dts.Variables.Item("FileDir").Value.ToString & FileToOpen
+
+        If Dir(FileToOpen) <> "" Then
+            Dts.Connections.Item("AN_B11_CFGCDW").ConnectionString = FileToOpen
+            Dts.TaskResult = ScriptResults.Success
+        Else
+            Dts.TaskResult = ScriptResults.Failure
+        End If
+
+    End Sub
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ScriptTask_dd70212c169f4913a69842d1736fc069.vbproj")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("Microsoft")> 
+<Assembly: AssemblyProduct("ScriptTask_dd70212c169f4913a69842d1736fc069.vbproj")> 
+<Assembly: AssemblyCopyright("Copyright @ Microsoft 2013")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("0f682f75-7afb-486d-9121-103ec857a1e0")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>scripttask_dd70212c169f4913a69842d1736fc069</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>scripttask_dd70212c169f4913a69842d1736fc069</msb:DisplayName>
+    <msb:ProjectId>{E05D363F-4D9F-4CD9-9A87-35DD57F45B00}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="scripttask_dd70212c169f4913a69842d1736fc069.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+          <BinaryItem
+            Name="ScriptTask_dd70212c169f4913a69842d1736fc069.vbproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAG5UYl4AAAAAAAAAAOAAIiALAVAAABwAAAAIAAAAAAAAOjoA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAOg5AABPAAAAAEAAAOwEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAQBoAAAAgAAAAHAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAOwEAAAAQAAAAAYAAAAeAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAc
+OgAAAAAAAEgAAAACAAUA4CIAAFAWAAABAAAAAAAAADA5AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqQnMiAAAKKCYAAAqACAAABCoeAignAAAKKgAAGzABAD8A
+AAAAAAAAfgcAAAQtMn4IAAAEKCYAAAooKAAACn4HAAAELRxzDQAABoAHAAAE3hB+CAAABCgmAAAK
+KCkAAArcfgcAAAQqAAEQAAACAB0ADCkAEAAAAAAeAigqAAAKKhMwBAC4AAAAAQAAEQIoKwAACm8s
+AAAKcjMAAHBvLQAACm8uAAAKby8AAApyRQAAcAIoKwAACm8sAAAKck8AAHBvLQAACm8uAAAKby8A
+AApvMAAACgoCKCsAAApvLAAACnJZAABwby0AAApvLgAACm8vAAAKBigxAAAKCgYWKDIAAApyaQAA
+cBYoMwAACiwoAigrAAAKbzQAAApyawAAcG81AAAKBm82AAAKAigrAAAKFm83AAAKKgIoKwAAChdv
+NwAACio2AgMoJgAACig4AAAKKh4CKDkAAAoqLtAIAAACKCMAAAoqHgIoLwAACioAABMwAQAUAAAA
+AgAAEQKMBQAAGy0IKAEAACsKKwICCgYqIgP+FQUAABsqAAAAEzACACgAAAADAAARAns7AAAKbzwA
+AAoKBowIAAAbLRIoAgAAKwoCezsAAAoGbz0AAAoGKkoCKCIAAAoCcz4AAAp9OwAACioAQlNKQgEA
+AQAAAAAADAAAAHY0LjAuMzAzMTkAAAAABQBsAAAA+AcAACN+AABkCAAApAkAACNTdHJpbmdzAAAA
+AAgSAACIAAAAI1VTAJASAAAQAAAAI0dVSUQAAACgEgAAsAMAACNCbG9iAAAAAAAAAAIAAAFXHaIJ
+CQ8AAAD6ATMAFgAAAQAAADMAAAAKAAAADAAAABkAAAAEAAAAPgAAAAIAAAA3AAAAAwAAAAQAAAAI
+AAAACQAAAAgAAAABAAAABQAAAAEAAAADAAAAAwAAAAIAAAAAAF4FAQAAAAAABgBHA+sHBgDsA+sH
+BgAQAiwHDwCvCAAABgBfAh4GBgAqAx4GBgDTAx4GBgBnAx4GBgCAAx4GBgCmAh4GBgCbA6IFBgA9
+AqUHBgC5AaUHBgDyAh4GBgDBAkYECgDcAcIGCgCkAUgFCgAkAkgFDgB8AXsHDgD4Bj8HBgDaAiwH
+DgB2AsQHDgCOAo0ABgAyCaIFDgDeBnsHDgAPA40ABgAvAaIFDgABAAwFCgDHAa4FBgCgBgsIBgAw
+BgkGCgCMAfQFBgDzASwHEgCxA+MEEgBgAeMEBgCMBKIFBgCpBaIFBgDoAKIFBgCbCR4GBgDuCOsH
+BgAkBzUEEgA2BeMEFgDCCAwBFgDfAAwBBgCFBKIFDgCeBY0ADgBRAo0ADgD9CMQHFgDiCAwBFgCw
+BgwBBgANB6IFAAAAACsAAAAAAAEAAQAAAAAA5gVhCU0AAQABAAAAAAD2BmEJUQABAAIAAAEQADkJ
+YQlhAAEAAwAAAAAAXAgcCGEABQAIAAABEADMCJEEgQAHAAwAAQAAAMsFkQSNAAkADwAFAQAAbQcA
+AGEACQARAAUBAAAQAAAAYQAJABgAAgEAABcJAACVAAoAGgAxAGUGIAExADwGKAExAFAGMAExAH4G
+OAERAAEHQAERAFQBRAERAAoESAERACwJTAEhAFcJ3gAGBnwATwFWgAcJUgFWgDQBUgFQIAAAAAAG
+GBcHBgABAFggAAAAAAYYFwcGAAEAYCAAAAAAERgdB1YBAQCKIAAAAAATCOkGWgEBAJYgAAAAABMI
+1gVfAQEAoiAAAAAAEwjaBmQBAQCuIAAAAAATCF0HaQEBALogAAAAAAMYFwcGAAEAwiAAAAAAFgic
+Bm4BAQDuIAAAAAAWCDwBcwEBAPUgAAAAABYISAF4AQEA/SAAAAAAERgdB1YBAgAOIQAAAAAGGBcH
+BgACABghAAAAABYIEgR+AQIAdCEAAAAABhgXBwYAAgB8IQAASAAGANEFBgACAEAiAAAAAMYC1wi2
+AAIATiIAAAAAxgLTALsAAwBWIgAAAACDACwBgwEDAGIiAAAAAMYCgwSKAAMAbCIAAAAAEQBpAIgB
+AwCMIgAAAAABAFUAkAEEALogAAAAAAYYFwcGAAUAmCIAAAAAAwi6AEoABQDMIgAAAAAGGBcHBgAF
+AAAAAQAvBAAAAQA6BgAAAQDKAAAAAQDKAAkAFwcBABEAFwcGABkAFwcKACkAFwcQADEAFwcQADkA
+FwcQAEEAFwcQAEkAFwcQAFEAFwcQAFkAFwcVAGEAFwcVAGkAFwcQAHEAFwcQAHkAFwcQAIEAFwca
+AJEAFwcgAKkAFwcGALEAFwcGALkAFwcGANEAFwcmAOkAFwcQAAkBFwcGABEBFwcGAJkAFwcGAKEA
+FwcGAAwAFwcGABQAFwcGABwAFwcGACQAFwcGAAwAugBKABQAugBKABwAugBKACQAugBKAMEAFwcG
+ANkA+gBPANkAlwlXAPEAFwddAEEBJgRlAAEBFwcGAEkB4wZqAEkBQwlqABkBFwcGABkBDwlzAFEB
+vgh5AFkBlQV/AGEBEgSGAMEAgwSKAGkBowCOAGkBJQmUAHEBCQeaAIEBYASiAFEB3gipAIkBlQWv
+AJEBbgQQAFEBSAkBAMEA1wi2AMEA0wC7AJkBqwDHADQAVwneADwAEgRKADwAHAT1ADwAFwcGAAgA
+LAAWAQgAMAAbASkAqwBpAy4ACwDAAS4AEwDJAS4AGwDoAS4AIwDxAS4AKwApAi4AMwAvAi4AOwDx
+AS4AQwA+Ai4ASwApAi4AUwBeAi4AWwApAi4AYwBkAi4AawCOAi4AcwCbAkAAiwAbAUAAgwDlAkMA
+ewDuAkMAgwDlAkkAqwB6A2MAewDuAmMAgwDlAmkAqwCOA4AAiwAbAYMAkwAbAYMAmwAbAYMAewDu
+AokAqwCbA6AAiwAbAakAgwDoAcAAiwAbAckAgwDoAeAAiwAbAeMAuwAbAeMAUwApAukAswAbAQMB
+gwDlAgMBowAHAyMBgwDlAiMBWwApAiACgwDlAiACiwAbAUACgwDlAkACiwAbAWACgwDlAmACiwAb
+AYACgwDlAoACiwAbAaACiwAbAcACiwAbAeACiwAbAeACgwDlAgADiwAbASADiwAbASADgwDlAm8A
+vwDSAAQAAQAFAAUABgAHAAkACAAAAPgGmAEAAOgFnQEAAN4GogEAAG8HpwEAAKAGrAEAAFgBsQEA
+AC8EtgEAAL4AuwECAAQAAwACAAUABQACAAYABwACAAcACQACAAkACwACAAoADQABAAsADQACAA4A
+DwACABgAEQAuADUAPABDAMQA1wDmAO0ABIAAAAEAAAAAAAAAAAAAAAAAkQQAAAQAAAAAAAAAAAAA
+APsAhAAAAAAABAAAAAAAAAAAAAAA+wCiBQAAAAAKAAAAAAAAAAAAAAAEAY0AAAAAAA4AAAAAAAAA
+AAAAAA0BxAQAAAAADgAAAAAAAAAAAAAADQE0AAAAAAAAAAAAAQAAAGgIAAAIAAQACQAEAAoABwAA
+ABAAEgBTAAAAEAArAFMAAAAAAC0AUwB1AM0AdQDwAAAAAENvbnRleHRWYWx1ZWAxAFRocmVhZFNh
+ZmVPYmplY3RQcm92aWRlcmAxADxNb2R1bGU+AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuTWFuYWdlZERU
+UwBUAERpc3Bvc2VfX0luc3RhbmNlX18AQ3JlYXRlX19JbnN0YW5jZV9fAHZhbHVlX18AbXNjb3Js
+aWIATWljcm9zb2Z0LlZpc3VhbEJhc2ljAFJlcGxhY2UAQ3JlYXRlSW5zdGFuY2UAZ2V0X0dldElu
+c3RhbmNlAGluc3RhbmNlAEdldEhhc2hDb2RlAFZhcmlhYmxlAFJ1bnRpbWVUeXBlSGFuZGxlAEdl
+dFR5cGVGcm9tSGFuZGxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAR2V0VHlwZQBG
+YWlsdXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAF9yZXNDdWx0dXJlAFZTVEFSVFNjcmlwdE9i
+amVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvbkJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UARWRp
+dG9yQnJvd3NhYmxlU3RhdGUAR3VpZEF0dHJpYnV0ZQBIZWxwS2V5d29yZEF0dHJpYnV0ZQBHZW5l
+cmF0ZWRDb2RlQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJs
+ZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBG
+aWxlQXR0cmlidXRlAEFzc2VtYmx5VGl0bGVBdHRyaWJ1dGUAU3RhbmRhcmRNb2R1bGVBdHRyaWJ1
+dGUASGlkZU1vZHVsZU5hbWVBdHRyaWJ1dGUAQXNzZW1ibHlUcmFkZW1hcmtBdHRyaWJ1dGUAVGFy
+Z2V0RnJhbWV3b3JrQXR0cmlidXRlAERlYnVnZ2VySGlkZGVuQXR0cmlidXRlAEFzc2VtYmx5Rmls
+ZVZlcnNpb25BdHRyaWJ1dGUATXlHcm91cENvbGxlY3Rpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNj
+cmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5
+UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBDTFNDb21wbGlhbnRB
+dHRyaWJ1dGUAU1NJU1NjcmlwdFRhc2tFbnRyeVBvaW50QXR0cmlidXRlAEFzc2VtYmx5Q29tcGFu
+eUF0dHJpYnV0ZQBSdW50aW1lQ29tcGF0aWJpbGl0eUF0dHJpYnV0ZQBtX1ZhbHVlAGdldF9WYWx1
+ZQBzZXRfVmFsdWUAR2V0T2JqZWN0VmFsdWUAU3lzdGVtLlRocmVhZGluZwBTeXN0ZW0uUnVudGlt
+ZS5WZXJzaW9uaW5nAENvbXBhcmVTdHJpbmcAc2V0X0Nvbm5lY3Rpb25TdHJpbmcAVG9TdHJpbmcA
+TWF0aABTY3JpcHRUYXNrX2RkNzAyMTJjMTY5ZjQ5MTNhNjk4NDJkMTczNmZjMDY5LnZicHJvagBN
+aWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFz
+a3MuU2NyaXB0VGFzawBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABT
+Y3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU2NyaXB0VGFza19kZDcwMjEy
+YzE2OWY0OTEzYTY5ODQyZDE3MzZmYzA2OS52YnByb2ouZGxsAGdldF9JdGVtAEZpbGVTeXN0ZW0A
+RW51bQBTeXN0ZW0uQ29tcG9uZW50TW9kZWwuRGVzaWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0
+aW9uAE15QXBwbGljYXRpb24AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRp
+b24AU3lzdGVtLlJlZmxlY3Rpb24AQ3VsdHVyZUluZm8AbV9BcHBPYmplY3RQcm92aWRlcgBtX1Vz
+ZXJPYmplY3RQcm92aWRlcgBtX0NvbXB1dGVyT2JqZWN0UHJvdmlkZXIAbV9NeVdlYlNlcnZpY2Vz
+T2JqZWN0UHJvdmlkZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBDb25uZWN0aW9uTWFuYWdlcgBTeXN0
+ZW0uQ29kZURvbS5Db21waWxlcgBnZXRfVXNlcgBFbnRlcgBnZXRfQ29tcHV0ZXIATXlDb21wdXRl
+cgBfcmVzTWdyAERpcgBBY3RpdmF0b3IALmN0b3IALmNjdG9yAE1vbml0b3IAU3lzdGVtLkRpYWdu
+b3N0aWNzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5EZXZpY2VzAGdldF9XZWJTZXJ2aWNlcwBNeVdl
+YlNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZpY2VzAFN5c3Rl
+bS5SdW50aW1lLkludGVyb3BTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQ29tcGlsZXJT
+ZXJ2aWNlcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMA
+U2NyaXB0VGFza19kZDcwMjEyYzE2OWY0OTEzYTY5ODQyZDE3MzZmYzA2OS52YnByb2ouTXkuUmVz
+b3VyY2VzAE15UmVzb3VyY2VzAFNjcmlwdFRhc2tfZGQ3MDIxMmMxNjlmNDkxM2E2OTg0MmQxNzM2
+ZmMwNjkudmJwcm9qLlJlc291cmNlcy5yZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAZ2V0X1Zhcmlh
+YmxlcwBNeVNldHRpbmdzAEVxdWFscwBnZXRfQ29ubmVjdGlvbnMAUnVudGltZUhlbHBlcnMAT3Bl
+cmF0b3JzAFN1Y2Nlc3MAZ2V0X0R0cwBTY3JpcHRSZXN1bHRzAENvbmNhdABtX1N5bmNPYmplY3QA
+TXlQcm9qZWN0AEV4aXQAc2V0X1Rhc2tSZXN1bHQAbV9Db250ZXh0AFNjcmlwdFRhc2tfZGQ3MDIx
+MmMxNjlmNDkxM2E2OTg0MmQxNzM2ZmMwNjkudmJwcm9qLk15AGdldF9Bc3NlbWJseQAAMU0AeQAu
+AFIAZQBzAG8AdQByAGMAZQBzAC4ATQB5AFIAZQBzAG8AdQByAGMAZQBzAAARRgBpAGwAZQBOAGEA
+bQBlAAAJeQB5AHcAdwAACUYAWQBXAEsAAA9GAGkAbABlAEQAaQByAAABABtBAE4AXwBCADEAMQBf
+AEMARgBHAEMARABXAAAAqeJk3nw3Uk2hLoYUIhWAKAAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQEC
+BSACAQ4OBSABARFFByAEAQ4ODg4GFRIkARIMBhUSJAESCAYVEiQBEmUGFRIkARIgBCAAEwAHAAES
+bRGAmQUgABKAnQcgAgEOEoCdBAABHBwEAAEBHAMHAQ4FIAASgKkFIAASgK0GIAESgLEcAyAAHAMg
+AA4FIAIODg4FAAIODg4HAAIODhGAvQYAAwgODgIFIAASgMUGIAESgMkcBCABAhwDIAAIBAcBHgAC
+HgAFEAEAHgAECgEeAAQHARMABhUSJAETAAcGFRJxARMABhUScQETAAITAAQKARMABSABARMACLd6
+XFYZNOCJCLA/X38R1Qo6CImEXc2AgMyRBAAAAAAEAQAAAAcGFRIkARIMBwYVEiQBEggHBhUSJAES
+ZQcGFRIkARIgAwYSeQMGEn0DBhIYAgYcAgYIAwYRKAMAAAEEAAASDAQAABIIBAAAEmUEAAASIAQA
+ABJ5BAAAEn0FAAEBEn0EAAASGAQgABJtBxABAR4AHgAHMAEBARAeAAQIABIMBAgAEggECAASZQQI
+ABIgBAgAEnkECAASfQQIABIYBCgAEwAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25U
+aHJvd3MBCAEAAgAAAAAANwEAMlNjcmlwdFRhc2tfZGQ3MDIxMmMxNjlmNDkxM2E2OTg0MmQxNzM2
+ZmMwNjkudmJwcm9qAAAFAQAAAAAOAQAJTWljcm9zb2Z0AAAfAQAaQ29weXJpZ2h0IEAgTWljcm9z
+b2Z0IDIwMTMAAAUBAAEAACkBACQwZjY4MmY3NS03YWZiLTQ4NmQtOTEyMS0xMDNlYzg1N2ExZTAA
+AAwBAAcxLjAuMC4wAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQOFEZyYW1ld29y
+a0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQgBAAEAAAAAABgBAApNeVRlbXBsYXRlCDEx
+LjAuMC4wAABhAQA0U3lzdGVtLldlYi5TZXJ2aWNlcy5Qcm90b2NvbHMuU29hcEh0dHBDbGllbnRQ
+cm90b2NvbBJDcmVhdGVfX0luc3RhbmNlX18TRGlzcG9zZV9fSW5zdGFuY2VfXwAAABABAAtNeS5D
+b21wdXRlcgAAEwEADk15LkFwcGxpY2F0aW9uAAAMAQAHTXkuVXNlcgAAEwEADk15LldlYlNlcnZp
+Y2VzAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBt
+c2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2Vu
+PWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAA
+AAAAAAAAAABQQURQQURQtAAAABA6AAAAAAAAAAAAACo6AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAcOgAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
+ABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAA
+WEAAAJAEAAAAAAAAAAAAAJAENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9
+BO/+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEA
+VgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAA
+AAAAsATwAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAADMAwAAAQAwADAAMAAwADAA
+NABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAANAAKAAEAQwBvAG0AcABhAG4AeQBO
+AGEAbQBlAAAAAABNAGkAYwByAG8AcwBvAGYAdAAAAI4AMwABAEYAaQBsAGUARABlAHMAYwByAGkA
+cAB0AGkAbwBuAAAAAABTAGMAcgBpAHAAdABUAGEAcwBrAF8AZABkADcAMAAyADEAMgBjADEANgA5
+AGYANAA5ADEAMwBhADYAOQA4ADQAMgBkADEANwAzADYAZgBjADAANgA5AC4AdgBiAHAAcgBvAGoA
+AAAAADAACAABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgAwAC4AMAAAAI4ANwAB
+AEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBjAHIAaQBwAHQAVABhAHMAawBfAGQAZAA3ADAA
+MgAxADIAYwAxADYAOQBmADQAOQAxADMAYQA2ADkAOAA0ADIAZAAxADcAMwA2AGYAYwAwADYAOQAu
+AHYAYgBwAHIAbwBqAC4AZABsAGwAAAAAAFoAGwABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgA
+dAAAAEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgAE0AaQBjAHIAbwBzAG8AZgB0ACAAMgAwADEAMwAA
+AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBtAGEAcgBrAHMAAAAAAAAAAACWADcAAQBPAHIA
+aQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAAUwBjAHIAaQBwAHQAVABhAHMAawBfAGQAZAA3
+ADAAMgAxADIAYwAxADYAOQBmADQAOQAxADMAYQA2ADkAOAA0ADIAZAAxADcAMwA2AGYAYwAwADYA
+OQAuAHYAYgBwAHIAbwBqAC4AZABsAGwAAAAAAIYAMwABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAA
+AAAAUwBjAHIAaQBwAHQAVABhAHMAawBfAGQAZAA3ADAAMgAxADIAYwAxADYAOQBmADQAOQAxADMA
+YQA2ADkAOAA0ADIAZAAxADcAMwA2AGYAYwAwADYAOQAuAHYAYgBwAHIAbwBqAAAAAAA0AAgAAQBQ
+AHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAIAAEAQQBzAHMA
+ZQBtAGIAbAB5ACAAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAA8OgAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop and Create"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{091fb00b-18c6-4138-996f-a4fa1a51a2d9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop and Create"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}"
+          SQLTask:SqlStatementSource="IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_REV_AN_B11_CFGCDW]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[T_REV_AN_B11_CFGCDW]&#xA;&#xA;CREATE TABLE [T_REV_AN_B11_CFGCDW] (&#xA;&#x9;[CATEGORIA_RC]&#x9;VARCHAR(50),&#xA;&#x9;[RC_COD]&#x9;&#x9;VARCHAR(50),&#xA;&#x9;[RC_DESC]&#x9;&#x9;VARCHAR(255),&#xA;&#x9;[TIPOLOGIA_RC]&#x9;VARCHAR(50),&#xA;&#x9;[COD_LISTINO]&#x9;VARCHAR(50),&#xA;&#x9;[DES_LISTINO]&#x9;VARCHAR(255),&#xA;&#x9;[DURATA]&#x9;&#x9;VARCHAR(50),&#xA;&#x9;[SCADENZA]&#x9;&#x9;VARCHAR(50),&#xA;&#x9;[PRORATA]&#x9;&#x9;VARCHAR(50),&#xA;&#x9;[VALORE_SCONTO] VARCHAR(50),&#xA;&#x9;[VALORE_SCONTO_PERCENTUALE] VARCHAR(50),&#xA;&#x9;[PREZZO]&#x9;&#x9;VARCHAR(50),&#xA;&#x9;[IN_KENAN_ID]&#x9;VARCHAR(255)&#xA;&#x9;--[PRORATA]&#x9;&#x9;CHAR,&#xA;&#x9;--[VALORE_SCONTO] VARCHAR(50),&#xA;&#x9;--[VALORE_SCONTO_PERCENTUALE] DECIMAL(18,10),&#xA;&#x9;--[PREZZO]&#x9;&#x9;DECIMAL(18,10),&#xA;&#x9;--[IN_KENAN_ID]&#x9;VARCHAR(255)&#xA;)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import flusso B11_CFGCDW"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{23f6d5b0-b3e1-4fa4-b320-ccd749840e8e}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import flusso B11_CFGCDW"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="B11_CFGCDW"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AN_B11_CFGCDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[AN_B11_CFGCDW]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[CATEGORIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[CATEGORIA_RC]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[CATEGORIA_RC]"
+                      name="CATEGORIA_RC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[RC_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[RC_COD]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[RC_COD]"
+                      name="RC_COD"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[RC_DESC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[RC_DESC]"
+                      length="255"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[RC_DESC]"
+                      name="RC_DESC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[TIPOLOGIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[TIPOLOGIA_RC]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[TIPOLOGIA_RC]"
+                      name="TIPOLOGIA_RC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[COD_LISTINO]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[DES_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[DES_LISTINO]"
+                      length="255"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[DES_LISTINO]"
+                      name="DES_LISTINO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[DURATA]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[DURATA]"
+                      name="DURATA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[SCADENZA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[SCADENZA]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[SCADENZA]"
+                      name="SCADENZA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[PRORATA]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[PRORATA]"
+                      name="PRORATA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[VALORE_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[VALORE_SCONTO]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[VALORE_SCONTO]"
+                      name="VALORE_SCONTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[VALORE_SCONTO_PERCENTUALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[VALORE_SCONTO_PERCENTUALE]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[VALORE_SCONTO_PERCENTUALE]"
+                      name="VALORE_SCONTO_PERCENTUALE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[PREZZO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[PREZZO]"
+                      length="50"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[PREZZO]"
+                      name="PREZZO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[IN_KENAN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[IN_KENAN_ID]"
+                      length="255"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[IN_KENAN_ID]"
+                      name="IN_KENAN_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[CATEGORIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[RC_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[RC_DESC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RC_DESC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[TIPOLOGIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPOLOGIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[DES_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DES_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DURATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[SCADENZA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SCADENZA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRORATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[VALORE_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE_SCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[VALORE_SCONTO_PERCENTUALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE_SCONTO_PERCENTUALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[PREZZO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PREZZO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].ExternalColumns[IN_KENAN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="IN_KENAN_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_REV_AN_B11_CFGCDW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_REV_AN_B11_CFGCDW]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[CATEGORIA_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_RC"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_RC]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[CATEGORIA_RC]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[RC_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RC_COD"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[RC_COD]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[RC_COD]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[RC_DESC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="RC_DESC"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[RC_DESC]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[RC_DESC]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[TIPOLOGIA_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPOLOGIA_RC"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[TIPOLOGIA_RC]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[TIPOLOGIA_RC]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[COD_LISTINO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_LISTINO"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[COD_LISTINO]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[DES_LISTINO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DES_LISTINO"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[DES_LISTINO]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[DES_LISTINO]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[DURATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DURATA"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[DURATA]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[DURATA]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[SCADENZA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="SCADENZA"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[SCADENZA]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[SCADENZA]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[PRORATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRORATA"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[PRORATA]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[PRORATA]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[VALORE_SCONTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VALORE_SCONTO"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_SCONTO]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[VALORE_SCONTO]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[VALORE_SCONTO_PERCENTUALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VALORE_SCONTO_PERCENTUALE"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_SCONTO_PERCENTUALE]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[VALORE_SCONTO_PERCENTUALE]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[PREZZO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PREZZO"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[PREZZO]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[PREZZO]" />
+                    <inputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].Columns[IN_KENAN_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="IN_KENAN_ID"
+                      externalMetadataColumnId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[IN_KENAN_ID]"
+                      lineageId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output].Columns[IN_KENAN_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[RC_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[RC_DESC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="RC_DESC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[TIPOLOGIA_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPOLOGIA_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[DES_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DES_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DURATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[SCADENZA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="SCADENZA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRORATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE_SCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_SCONTO_PERCENTUALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE_SCONTO_PERCENTUALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[PREZZO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PREZZO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input].ExternalColumns[IN_KENAN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="IN_KENAN_ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import flusso B11_CFGCDW.Paths[Flat File Source Output]"
+              endId="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import flusso B11_CFGCDW\B11_CFGCDW.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Seleziona ANNO e WEEK di caricamento"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{119c6c0f-2dac-443a-8337-faa20570d36e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Seleziona ANNO e WEEK di caricamento"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}"
+          SQLTask:SqlStatementSource="select right(SCE_ID,2)+right(WEEK_ID,2) as FYWK&#xA;from M_REV_CALC_WEEK"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="FYWK"
+            SQLTask:DtsVariableName="User::FYWK" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update ultima colonna"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8f09fef8-23f2-4814-b92d-1ef97cb1e0ad}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update ultima colonna"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}"
+          SQLTask:SqlStatementSource="/**&#xA; * 30/07/2010: Questa update serve per ignorare eventuali ';' nell'ultima colonna della tabella T&#xA; * per far sì che l'aggiunta di una colonna nel file importato possa essere ignorata&#xA; * (di default SSIS concatena tutti i nuovi campi nell'ultima colonna)&#xA; *&#xA;**/&#xA;update T_REV_AN_B11_CFGCDW&#xA;set IN_KENAN_ID =&#xA;case&#xA; when charindex(';', IN_KENAN_ID )&gt;0 and left(IN_KENAN_ID , charindex(';', IN_KENAN_ID )-1) = ''&#xA;  then NULL&#xA; when charindex(';',IN_KENAN_ID )&gt;0&#xA;  then left(IN_KENAN_ID , charindex(';', IN_KENAN_ID )-1)&#xA; else IN_KENAN_ID &#xA;end" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{73ece98c-6346-4925-b405-26c81f1befea}"
+      DTS:From="Package\Seleziona ANNO e WEEK di caricamento"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Aggiorna File Connection" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{a0bad568-cbf8-4cb4-b944-d0dca4594bcd}"
+      DTS:From="Package\Aggiorna File Connection"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Drop and Create" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{3259BDCF-3103-42EF-8C71-783CB5AA6166}"
+      DTS:From="Package\Import flusso B11_CFGCDW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update ultima colonna" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{3578324f-6462-4ade-af51-cc69cb175808}"
+      DTS:From="Package\Drop and Create"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Import flusso B11_CFGCDW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="272,44"
+          Id="Package\Aggiorna File Connection"
+          TopLeft="5.5,83.5754716981132" />
+        <NodeLayout
+          Size="272,44"
+          Id="Package\Drop and Create"
+          TopLeft="5.5,152.443396226415" />
+        <NodeLayout
+          Size="272,44"
+          Id="Package\Import flusso B11_CFGCDW"
+          TopLeft="5.5,239.311320754717" />
+        <NodeLayout
+          Size="272,44"
+          Id="Package\Seleziona ANNO e WEEK di caricamento"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="272,44"
+          Id="Package\Update ultima colonna"
+          TopLeft="5.5,331.311320754717" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="141.27358490566,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,34.1509433962264"
+              Start="0,0"
+              End="0,26.6509433962264">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6509433962264" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="141.27358490566,127.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,24.9433962264151"
+              Start="0,0"
+              End="0,17.4433962264151">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.4433962264151" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="141.27358490566,283.235849056604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,48.0754716981132"
+              Start="0,0"
+              End="0,40.5754716981132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5754716981132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="141.27358490566,196.367924528302">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,42.9433962264151"
+              Start="0,0"
+              End="0,35.4433962264151">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.4433962264151" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Il pacchetto effettua l'import del file&#xA;D:\StagingArea\RESREV\RV_ANyyww_B11_CFGCDW.txt&#xA;La directory D:\StagingArea\RESREV\ è contenuta nella variabile FileDir&#xA;Il nome del file RV_ANyyww_B11_CFGCDW.txt è contenuto nella variabile FileName&#xA;&#xA;&quot;yyww&quot; viene aggiornato usando la variable FYWK (fiscal year - week)&#xA;&#xA;La connessione al file AN_B11_CFGCDW ha una colonna in più fittizia, questo per &#xA;evitare che ulteriori aggiunte di colonne vengano accorpate da SISS nell'ultima "
+          ParentId="Package"
+          Size="445,146"
+          Id="16016e53-6475-4490-80f8-136af8312861"
+          TopLeft="356.160377358491,54.6320754716981">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import flusso B11_CFGCDW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Import flusso B11_CFGCDW\B11_CFGCDW"
+          TopLeft="NaN,NaN" />
+        <NodeLayout
+          Size="NaN,NaN"
+          Id="Package\Import flusso B11_CFGCDW\T_REV_AN_B11_CFGCDW"
+          TopLeft="NaN,NaN" />
+        <EdgeLayout
+          Id="Package\Import flusso B11_CFGCDW.Paths[Flat File Source Output]"
+          TopLeft="NaN,NaN">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="{x:Null}"
+              Start="0,0"
+              End="0,0">
+              <mssgle:Curve.Segments>
+                <x:Null />
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,2819 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/26/2013 12:49:03 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{2B7D28CE-EF7C-4983-8603-DDAA7D5C0325}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{73F800A8-0352-4A2D-BD10-06A3B7C05597}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{041480C6-7AD1-4F31-AA6B-676A9EDC67D0}"
+      DTS:ObjectName="(local).ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK-{041480C6-7AD1-4F31-AA6B-676A9EDC67D0}(local).ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[(local).SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9534DC8E-66B4-42C8-A712-5F4F0441FCB0}"
+      DTS:ObjectName="(local).SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M11_F1_S3_DELTA_ACTFEE_MASK-{9534DC8E-66B4-42C8-A712-5F4F0441FCB0}(local).SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="(local).ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{5E73A351-11D2-4B96-9613-A80A4BBB4D90}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">7,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed,9,OnWarning</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{5E73A351-11D2-4B96-9613-A80A4BBB4D90}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cancella dati dalla tabella storicizzata"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C483C1DB-E848-49F7-8629-1B6883768E7B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cancella dati dalla tabella storicizzata"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9534DC8E-66B4-42C8-A712-5F4F0441FCB0}"
+          SQLTask:SqlStatementSource="DELETE FROM M_REV_STO_ACTFEE_DELTA&#xA;WHERE sce_id = (SELECT sce_id FROM M_REV_CALC_WEEK)&#xA;AND week_id = (SELECT week_id FROM M_REV_CALC_WEEK)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cancella dati della settimana per QUOTA_MV"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BBF53CA9-4699-4A68-B622-9F887442AD54}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cancella dati della settimana per QUOTA_MV"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9534DC8E-66B4-42C8-A712-5F4F0441FCB0}"
+          SQLTask:SqlStatementSource="delete from M_REV_STO_ACTFEE_QUOTA_MV&#xA;where SCE_ID = (select SCE_ID from M_REV_CALC_WEEK)&#xA;&#x9;and WEEK_ID = (select WEEK_ID from M_REV_CALC_WEEK)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop and Create della M"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F4404DF7-0AD8-4C8D-9790-621DB7DBD808}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop and Create della M"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9534DC8E-66B4-42C8-A712-5F4F0441FCB0}"
+          SQLTask:SqlStatementSource="/*** M_REV_ACTFEE_DELTA ****/&#xA;&#xA;IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[M_REV_ACTFEE_DELTA]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[M_REV_ACTFEE_DELTA]&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[M_REV_ACTFEE_DELTA](&#xA;&#x9;[SCE_ID] [varchar](5) NULL,&#xA;&#x9;[WEEK_ID] [varchar](36) NULL,&#xA;&#x9;[PRT_ID] [int] NULL,&#xA;&#x9;[PROMO_TEC] [varchar](255) NULL,&#xA;&#x9;[VOUCHER] [varchar](50) NULL,&#xA;&#x9;[VOLUMI] [int] NULL,&#xA;&#x9;[DELTA_ACT_FEE] [decimal](28, 10) NOT NULL&#xA;) ON [PRIMARY]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Popola la tabella M"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{A8E48E08-F5BF-4CB1-B7A4-21F4246CE546}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popola la tabella M"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Imposta a 0 per quelli per cui non è stato trovato il valore"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Output].Columns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Output].Columns[DELTA_ACT_FEE]"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola la tabella M\Imposta promo fittizia se non trovata"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Imposta promo fittizia se non trovata"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Output].Columns[PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="500"
+                      lineageId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Output].Columns[PROMO_TEC]"
+                      name="PROMO_TEC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"PROMO_FITTIZIA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"PROMO_FITTIZIA"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="M_REV_ACTFEE_DELTA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[M_REV_ACTFEE_DELTA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      externalMetadataColumnId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[SCE_ID]" />
+                    <inputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      externalMetadataColumnId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[WEEK_ID]" />
+                    <inputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      externalMetadataColumnId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[PRT_ID]"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PRT_ID]" />
+                    <inputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      externalMetadataColumnId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOUCHER]" />
+                    <inputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      externalMetadataColumnId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOLUMI]" />
+                    <inputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[DELTA_ACT_FEE]"
+                      cachedDataType="numeric"
+                      cachedName="DELTA_ACT_FEE"
+                      cachedPrecision="28"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DELTA_ACT_FEE]"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]" />
+                    <inputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_TEC"
+                      externalMetadataColumnId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_TEC]"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PROMO_TEC]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[PRT_ID]"
+                      dataType="i4"
+                      name="PRT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      dataType="i4"
+                      name="VOLUMI" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola la tabella M\Recupera descrizioni della promo"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Recupera descrizioni della promo"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT  distinct cast(PRT_ID as integer) as PRT_ID, PRT_DES
+FROM    (
+	select
+		cast(case	when PRT_ID like '%_UHDQ' then REPLACE(PRT_ID,'_UHDQ','')	
+				when PRT_ID like '%_HDQ' then REPLACE(PRT_ID,'_HDQ','')
+				when PRT_ID like '%_MSQ' then REPLACE(PRT_ID,'_MSQ','')
+				when PRT_ID like '%_SQP' then REPLACE(PRT_ID,'_SQP','')
+		else PRT_ID
+		end as varchar(50)) as PRT_ID,
+		cast(case	when PRT_DES like '%_UHDQ' then REPLACE(PRT_DES,'_UHDQ','')	
+				when PRT_DES like '%_HDQ' then REPLACE(PRT_DES,'_HDQ','')
+				when PRT_DES like '%_MSQ' then REPLACE(PRT_DES,'_MSQ','')
+				when PRT_DES like '%_SQP' then REPLACE(PRT_DES,'_SQP','')
+		else PRT_DES
+		end as varchar(50)) as PRT_DES
+	from T_SUB_PRT_PROMO_TECNICA
+	union
+	select
+		cast(case	when PROMO_ID like '%_UHDQ' then REPLACE(PROMO_ID,'_UHDQ','')	
+				when PROMO_ID like '%_HDQ' then REPLACE(PROMO_ID,'_HDQ','')
+				when PROMO_ID like '%_MSQ' then REPLACE(PROMO_ID,'_MSQ','')
+				when PROMO_ID like '%_SQP' then REPLACE(PROMO_ID,'_SQP','')
+		else PROMO_ID
+		end as varchar(50)) as PRT_ID,
+		cast(case	when PROMO_DES like '%_UHDQ' then REPLACE(PROMO_DES,'_UHDQ','')	
+				when PROMO_DES like '%_HDQ' then REPLACE(PROMO_DES,'_HDQ','')
+				when PROMO_DES like '%_MSQ' then REPLACE(PROMO_DES,'_MSQ','')
+				when PROMO_DES like '%_SQP' then REPLACE(PROMO_DES,'_SQP','')
+		else PROMO_DES
+		end as varchar(50)) as PRT_DES
+	from S_PROMO
+)a
+WHERE PRT_ID is not null</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT  distinct cast(PRT_ID as integer) as PRT_ID, PRT_DES
+FROM    (
+	select
+		cast(case	when PRT_ID like '%_UHDQ' then REPLACE(PRT_ID,'_UHDQ','')	
+				when PRT_ID like '%_HDQ' then REPLACE(PRT_ID,'_HDQ','')
+				when PRT_ID like '%_MSQ' then REPLACE(PRT_ID,'_MSQ','')
+				when PRT_ID like '%_SQP' then REPLACE(PRT_ID,'_SQP','')
+		else PRT_ID
+		end as varchar(50)) as PRT_ID,
+		cast(case	when PRT_DES like '%_UHDQ' then REPLACE(PRT_DES,'_UHDQ','')	
+				when PRT_DES like '%_HDQ' then REPLACE(PRT_DES,'_HDQ','')
+				when PRT_DES like '%_MSQ' then REPLACE(PRT_DES,'_MSQ','')
+				when PRT_DES like '%_SQP' then REPLACE(PRT_DES,'_SQP','')
+		else PRT_DES
+		end as varchar(50)) as PRT_DES
+	from T_SUB_PRT_PROMO_TECNICA
+	union
+	select
+		cast(case	when PROMO_ID like '%_UHDQ' then REPLACE(PROMO_ID,'_UHDQ','')	
+				when PROMO_ID like '%_HDQ' then REPLACE(PROMO_ID,'_HDQ','')
+				when PROMO_ID like '%_MSQ' then REPLACE(PROMO_ID,'_MSQ','')
+				when PROMO_ID like '%_SQP' then REPLACE(PROMO_ID,'_SQP','')
+		else PROMO_ID
+		end as varchar(50)) as PRT_ID,
+		cast(case	when PROMO_DES like '%_UHDQ' then REPLACE(PROMO_DES,'_UHDQ','')	
+				when PROMO_DES like '%_HDQ' then REPLACE(PROMO_DES,'_HDQ','')
+				when PROMO_DES like '%_MSQ' then REPLACE(PROMO_DES,'_MSQ','')
+				when PROMO_DES like '%_SQP' then REPLACE(PROMO_DES,'_SQP','')
+		else PROMO_DES
+		end as varchar(50)) as PRT_DES
+	from S_PROMO
+)a
+WHERE PRT_ID is not null) [refTable]
+where [refTable].[PRT_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRT_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PRT_DES" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola la tabella M\Recupera descrizioni della promo.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola la tabella M\Recupera descrizioni della promo.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Recupera descrizioni della promo.Inputs[Lookup Input].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PRT_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Popola la tabella M\Recupera descrizioni della promo.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Match Output].Columns[PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="50"
+                      lineageId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Match Output].Columns[PROMO_TEC]"
+                      name="PROMO_TEC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PRT_DES</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Popola la tabella M\Recupera descrizioni della promo.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Popola la tabella M\Recupera descrizioni della promo.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	a.PRT_ID, a.VOUCHER, a.DELTA_ACT_FEE
+from M_REV_STO_ACTFEE_DELTA a
+join ( select
+		PRT_ID, VOUCHER, 
+		max(right(SCE_ID,2)+right(WEEK_ID,2)) as MAX_WEEK
+	   from M_REV_STO_ACTFEE_DELTA
+	   group by PRT_ID, VOUCHER ) b
+on right(a.SCE_ID,2)+right(a.WEEK_ID,2) = MAX_WEEK
+	and a.PRT_ID = b.PRT_ID
+	and a.VOUCHER = b.VOUCHER
+where DELTA_ACT_FEE != 0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PRT_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="VOUCHER" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="DELTA_ACT_FEE" dataType="DT_NUMERIC" length="0" precision="28" scale="10" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[PRT_ID]};#{Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOUCHER]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Inputs[Lookup Input].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[PRT_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PRT_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Inputs[Lookup Input].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOUCHER]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">VOUCHER</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Match Output].Columns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Match Output].Columns[DELTA_ACT_FEE]"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">DELTA_ACT_FEE</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="T_SBF_FIRSTACT_COMPLETA"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	b.SCE_ID, b.WEEK_ID,
+	a.PRT_ID, a.GCV_ID as VOUCHER, 
+	count(distinct ACC_ID) as VOLUMI
+from T_SBF_FIRSTACT_COMPLETA a
+	,M_REV_CALC_WEEK b
+where TAB_ID in --Cliente RESIDENZIALE
+		( select elemento
+		  from dbo.M_REV_MAPPING_DIM_FACT_TABLE
+		  where FACT_TABLE = 'SF_REV_ACTFEE'
+			and DIMENSIONE = 'TIPO_ABBONATO' )
+	and SUBENTRO like '%N%' --NON SUBENTRO
+	and STA_ID in --Stato FIRST ACTIVATION
+		( select elemento
+		  from dbo.M_REV_MAPPING_DIM_FACT_TABLE
+		  where FACT_TABLE = 'SF_REV_ACTFEE'
+			and DIMENSIONE = 'STATO' )
+	and GCV_ID not in --Attivazione effettuata con Voucher
+		( select GCV_ID
+		  from M_REV_FILTRO_GCV )
+	and PRT_ID != 17000 -- filtro PROMO_TEST_SCR -- LERO 28/02/2013 come richiesta da parte di Saverio
+group by b.SCE_ID, b.WEEK_ID, a.PRT_ID, a.GCV_ID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      length="5"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      length="36"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      name="WEEK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[PRT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[PRT_ID]"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[PRT_ID]"
+                      name="PRT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      length="50"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      name="VOUCHER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      name="VOLUMI"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[PRT_ID]"
+                      dataType="i4"
+                      name="PRT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      dataType="i4"
+                      name="VOLUMI" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      name="WEEK_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[PRT_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[PRT_ID]"
+                      name="PRT_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      name="VOUCHER" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      name="VOLUMI" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola la tabella M\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Merges multiple datasets."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[SCE_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[SCE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[WEEK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[WEEK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[PRT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOUCHER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOUCHER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOLUMI]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOLUMI]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1].Columns[DELTA_ACT_FEE]"
+                      cachedDataType="numeric"
+                      cachedName="DELTA_ACT_FEE"
+                      cachedPrecision="28"
+                      cachedScale="10"
+                      lineageId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Match Output].Columns[DELTA_ACT_FEE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[SCE_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[SCE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[WEEK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[WEEK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[PRT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOUCHER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOUCHER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      lineageId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output].Columns[VOLUMI]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOLUMI]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2].Columns[DELTA_ACT_FEE]"
+                      cachedDataType="numeric"
+                      cachedName="DELTA_ACT_FEE"
+                      cachedPrecision="28"
+                      cachedScale="10"
+                      lineageId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Output].Columns[DELTA_ACT_FEE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola la tabella M\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[WEEK_ID]"
+                      name="WEEK_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]"
+                      name="PRT_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOUCHER]"
+                      name="VOUCHER" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOLUMI]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOLUMI]"
+                      name="VOLUMI" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola la tabella M\Union All 1"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Merges multiple datasets."
+              name="Union All 1"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[SCE_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[SCE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[WEEK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[WEEK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PRT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOUCHER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOUCHER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOLUMI]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOLUMI]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1].Columns[DELTA_ACT_FEE]"
+                      cachedDataType="numeric"
+                      cachedName="DELTA_ACT_FEE"
+                      cachedPrecision="28"
+                      cachedScale="10"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1].Columns[PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PROMO_TEC"
+                      lineageId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Match Output].Columns[PROMO_TEC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PROMO_TEC]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[SCE_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[SCE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[WEEK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[WEEK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[PRT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PRT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOUCHER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOUCHER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[VOLUMI]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOLUMI]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2].Columns[DELTA_ACT_FEE]"
+                      cachedDataType="numeric"
+                      cachedName="DELTA_ACT_FEE"
+                      cachedPrecision="28"
+                      cachedScale="10"
+                      lineageId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2].Columns[PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_TEC"
+                      lineageId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Output].Columns[PROMO_TEC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PROMO_TEC]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[WEEK_ID]"
+                      name="WEEK_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PRT_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PRT_ID]"
+                      name="PRT_ID" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOUCHER]"
+                      name="VOUCHER" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOLUMI]"
+                      dataType="i4"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[VOLUMI]"
+                      name="VOLUMI" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[DELTA_ACT_FEE]"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1].Columns[PROMO_TEC]"
+                      name="PROMO_TEC" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popola la tabella M.Paths[Derived Column Output]"
+              endId="Package\Popola la tabella M\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[Derived Column Output1]"
+              endId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[Lookup Error Output]"
+              endId="Package\Popola la tabella M\Imposta a 0 per quelli per cui non è stato trovato il valore.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[Lookup Error Output1]"
+              endId="Package\Popola la tabella M\Imposta promo fittizia se non trovata.Inputs[Derived Column Input]"
+              name="Lookup Error Output"
+              startId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[Lookup Output]"
+              endId="Package\Popola la tabella M\Union All.Inputs[Union All Input 1]"
+              name="Lookup Output"
+              startId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[Lookup Output1]"
+              endId="Package\Popola la tabella M\Union All 1.Inputs[Union All Input 1]"
+              name="Lookup Output"
+              startId="Package\Popola la tabella M\Recupera descrizioni della promo.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[OLE DB Source Output]"
+              endId="Package\Popola la tabella M\Recupera valori di DELTA_ACTFEE_VOUCHER se precedentemente inseriti.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Popola la tabella M\T_SBF_FIRSTACT_COMPLETA.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[Union All Output 1]"
+              endId="Package\Popola la tabella M\Recupera descrizioni della promo.Inputs[Lookup Input]"
+              name="Union All Output 1"
+              startId="Package\Popola la tabella M\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Popola la tabella M.Paths[Union All Output 11]"
+              endId="Package\Popola la tabella M\M_REV_ACTFEE_DELTA.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Popola la tabella M\Union All 1.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{6A4055AF-AEAE-488E-BF99-A88EBCFF86DB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Riporta i dati dalla tabella attuale alla tabella storicizzata"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK)"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK)"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[M_REV_ACT_ACTFEE_DELTA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+	b.SCE_ID, b.WEEK_ID, a.PRT_ID, a.PROMO_TEC, a.VOUCHER, a.VOLUMI, a.DELTA_ACT_FEE
+from M_REV_ACTFEE_DELTA a
+,M_REV_CALC_WEEK b</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      length="5"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      length="36"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      name="WEEK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[PRT_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[PRT_ID]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[PRT_ID]"
+                      name="PRT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[PROMO_TEC]"
+                      length="255"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[PROMO_TEC]"
+                      name="PROMO_TEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      length="50"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      name="VOUCHER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      name="VOLUMI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[DELTA_ACT_FEE]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[DELTA_ACT_FEE]"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[PRT_ID]"
+                      dataType="i4"
+                      name="PRT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      dataType="i4"
+                      name="VOLUMI" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].ExternalColumns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      name="WEEK_ID" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[PRT_ID]"
+                      dataType="i4"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[PRT_ID]"
+                      name="PRT_ID" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[PROMO_TEC]"
+                      name="PROMO_TEC" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      name="VOUCHER" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      name="VOLUMI" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[DELTA_ACT_FEE]"
+                      dataType="numeric"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[DELTA_ACT_FEE]"
+                      name="DELTA_ACT_FEE"
+                      precision="28"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="M_REV_STO_ACTFEE_DELTA"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[M_REV_STO_ACTFEE_DELTA]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[sce_id]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[SCE_ID]" />
+                    <inputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[week_id]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[WEEK_ID]" />
+                    <inputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[PRT_ID]"
+                      cachedDataType="i4"
+                      cachedName="PRT_ID"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[prt_id]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[PRT_ID]" />
+                    <inputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_TEC"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[promo_tec]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[PROMO_TEC]" />
+                    <inputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[voucher]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[VOUCHER]" />
+                    <inputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[volumi]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[VOLUMI]" />
+                    <inputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].Columns[DELTA_ACT_FEE]"
+                      cachedDataType="numeric"
+                      cachedName="DELTA_ACT_FEE"
+                      cachedPrecision="28"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[delta_act_fee]"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output].Columns[DELTA_ACT_FEE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[sce_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="sce_id" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[week_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="week_id" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[prt_id]"
+                      dataType="i4"
+                      name="prt_id" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[promo_tec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="promo_tec" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[voucher]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="voucher" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[volumi]"
+                      dataType="i4"
+                      name="volumi" />
+                    <externalMetadataColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input].ExternalColumns[delta_act_fee]"
+                      dataType="numeric"
+                      name="delta_act_fee"
+                      precision="28"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata.Paths[OLE DB Source Output]"
+              endId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_STO_ACTFEE_DELTA.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata\M_REV_ACTFEE_DELTA (prende dati settimana di calcolo da M_REV_CALC_WEEK).Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Storicizza valore QUOTA_MV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2DCB65C3-DF5F-4248-8A65-6F691FA1864E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Storicizza valore QUOTA_MV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="M_REV_ACTFEE_QUOTA_MV"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	b.SCE_ID, b.WEEK_ID, a.QUOTA_MV
+from M_REV_ACTFEE_QUOTA_MV a
+,M_REV_CALC_WEEK b</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      length="5"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      length="36"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      name="WEEK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[QUOTA_MV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].ExternalColumns[QUOTA_MV]"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[QUOTA_MV]"
+                      name="QUOTA_MV"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].ExternalColumns[QUOTA_MV]"
+                      dataType="numeric"
+                      name="QUOTA_MV"
+                      precision="18"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      name="WEEK_ID" />
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[QUOTA_MV]"
+                      dataType="numeric"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[QUOTA_MV]"
+                      name="QUOTA_MV"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="M_REV_STO_ACTFEE_QUOTA_MV"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[M_REV_STO_ACTFEE_QUOTA_MV]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[(local).SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[(local).SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      externalMetadataColumnId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[SCE_ID]" />
+                    <inputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      externalMetadataColumnId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[WEEK_ID]" />
+                    <inputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].Columns[QUOTA_MV]"
+                      cachedDataType="numeric"
+                      cachedName="QUOTA_MV"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].ExternalColumns[QUOTA_MV]"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output].Columns[QUOTA_MV]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input].ExternalColumns[QUOTA_MV]"
+                      dataType="numeric"
+                      name="QUOTA_MV"
+                      precision="18"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Storicizza valore QUOTA_MV.Paths[OLE DB Source Output]"
+              endId="Package\Storicizza valore QUOTA_MV\M_REV_STO_ACTFEE_QUOTA_MV.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Storicizza valore QUOTA_MV\M_REV_ACTFEE_QUOTA_MV.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E6D2989E-68DE-4417-8DB0-0C85AF1EB474}"
+      DTS:From="Package\Cancella dati dalla tabella storicizzata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{512A0A15-6DDF-4472-9BB1-2A42C5ADACC5}"
+      DTS:From="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Drop and Create della M" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{17871284-BEFF-4C12-B914-5F807F68D3C5}"
+      DTS:From="Package\Drop and Create della M"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Popola la tabella M" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{9E6288BA-3008-4894-BD7B-3E0F1F2C6EEB}"
+      DTS:From="Package\Popola la tabella M"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Cancella dati della settimana per QUOTA_MV" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{BCB913C7-F1F7-403E-8B3F-36BC1E513437}"
+      DTS:From="Package\Cancella dati della settimana per QUOTA_MV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Storicizza valore QUOTA_MV" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="242,44"
+          Id="Package\Cancella dati dalla tabella storicizzata"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="242,44"
+          Id="Package\Cancella dati della settimana per QUOTA_MV"
+          TopLeft="5.5,317.047169811321" />
+        <NodeLayout
+          Size="242,44"
+          Id="Package\Drop and Create della M"
+          TopLeft="5.5,161.27358490566" />
+        <NodeLayout
+          Size="242,44"
+          Id="Package\Popola la tabella M"
+          TopLeft="5.5,239.160377358491" />
+        <NodeLayout
+          Size="242,44"
+          Id="Package\Riporta i dati dalla tabella attuale alla tabella storicizzata"
+          TopLeft="5.5,83.3867924528302" />
+        <NodeLayout
+          Size="242,44"
+          Id="Package\Storicizza valore QUOTA_MV"
+          TopLeft="5.5,394.933962264151" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="126.292452830189,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="126.292452830189,127.311320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="126.292452830189,205.198113207547">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="126.292452830189,283.084905660377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="126.292452830189,360.971698113208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

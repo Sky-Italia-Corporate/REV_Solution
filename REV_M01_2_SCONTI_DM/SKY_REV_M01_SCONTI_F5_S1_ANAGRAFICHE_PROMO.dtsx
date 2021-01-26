@@ -1,0 +1,3175 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/12/2012 5:34:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{6F01CD37-C224-4EAE-A59A-B4D4C837B91B}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M01_SCONTI_F5_S1_ANAGRAFICHE_PROMO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{5FEFB6D6-658D-4301-9E93-70B490BF7000}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C69C5EC7-7992-4752-A866-88CE7330935A}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F5_S1_ANAGRAFICHE_PROMO-{C69C5EC7-7992-4752-A866-88CE7330935A}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{915DEE37-4983-4B0D-82F9-F4B607415E80}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F5_S1_ANAGRAFICHE_PROMO-{915DEE37-4983-4B0D-82F9-F4B607415E80}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{F28799F4-0084-4D4B-82A2-65F316CF9A45}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{F28799F4-0084-4D4B-82A2-65F316CF9A45}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Crea Anagrafiche PROMO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5ab4acd6-e104-4c4f-8e31-18e223232667}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Crea Anagrafiche PROMO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="L_REV_PRS_PROMO_SKY"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[L_REV_PRS_PROMO_SKY]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_WEEKLY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_TECNICA_DES"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_TECNICA_COD"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PRS_L00" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L01" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L02" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L03" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_A00" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              localeId="1033"
+              name="L_REV_PRS_PROMO_SKY_AC"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[L_REV_PRS_PROMO_SKY_AC]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_WEEKLY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_TECNICA_COD"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_TECNICA_DES"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L02" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L01" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L00" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L03" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_A00" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="L_REV_PRS_PROMO_SKY_MANUALI"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[L_REV_PRS_PROMO_SKY_MANUALI]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].Columns[DIS_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DIS_DES"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L04]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[DIS_DES]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_WEEKLY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].Columns[PROMO_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_SKY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_SKY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L04]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L04" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L03" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L02" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L01" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L00" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="L_REV_PRS_PROMO_SKY_PS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[L_REV_PRS_PROMO_SKY_PS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_WEEKLY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_TECNICA_COD"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_TECNICA_DES"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L02" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L01" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L00" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L03" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_A00" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="L_REV_PRS_PROMO_SKY_SB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[L_REV_PRS_PROMO_SKY_SB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_WEEKLY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_TECNICA_COD"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_TECNICA_DES"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L02" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L01" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L00" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L03" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_A00" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="L_REV_PRS_PROMO_SKY_STORICHE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[L_REV_PRS_PROMO_SKY_STORICHE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].Columns[PROMO_TYPE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_TYPE"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L04]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_TYPE]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_WEEKLY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].Columns[PROMO_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_SKY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_SKY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L04]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L04" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L03" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L02" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L01" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="800"
+                      name="PRS_L00" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              localeId="1033"
+              name="L_REV_PRS_PROMO_SKY_TK"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[L_REV_PRS_PROMO_SKY_TK]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].Columns[PROMO_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_CLUSTER"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY_RGR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO_WEEKLY_RGR"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].Columns[PROMO_WEEKLY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_WEEKLY"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_COD]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_TECNICA_COD"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]" />
+                    <inputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].Columns[PROMO_TECNICA_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8000"
+                      cachedName="PROMO_TECNICA_DES"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L02]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L02" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L01]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L01" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PRS_L00" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_L03]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_L03" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input].ExternalColumns[PRS_A00]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRS_A00" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="S_REV_PRS_PROMO_SKY"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[S_REV_PRS_PROMO_SKY]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+	PROMO_WEEKLY_RGR, 
+	PROMO_CLUSTER, 
+	replace(replace(PROMO_WEEKLY, char(9), ''), char(10), '') as PROMO_WEEKLY, 
+                PROMO_ID as PROMO_TECNICA_COD,
+	case when PROMO_ID like '-%' /*PROMO_ID &lt; 0*/ then
+                        replace(replace(PROMO_DES, char(9), ''), char(10), '')
+               else PROMO_ID + ' - ' +replace(replace(PROMO_DES, char(9), ''), char(10), '') end as PROMO_TECNICA_DES
+from S_PROMO
+	where PROMO_TYPE = 'FA'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_WEEKLY" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_TECNICA_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_TECNICA_DES" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              localeId="1033"
+              name="S_REV_PRS_PROMO_SKY_AC"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[S_REV_PRS_PROMO_SKY_PS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+	PROMO_WEEKLY_RGR, 
+	PROMO_CLUSTER, 
+	replace(replace(PROMO_WEEKLY, char(9), ''), char(10), '') as PROMO_WEEKLY,
+	PROMO_ID as PROMO_TECNICA_COD,
+	case when PROMO_ID &lt; 0 then
+                        replace(replace(PROMO_DES, char(9), ''), char(10), '')
+               else PROMO_ID + ' - ' +replace(replace(PROMO_DES, char(9), ''), char(10), '') end as PROMO_TECNICA_DES
+from S_PROMO
+	where PROMO_TYPE = 'AC'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_WEEKLY" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_TECNICA_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_TECNICA_DES" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="S_REV_PRS_PROMO_SKY_MANUALI"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+case
+	when PROMO_CLUSTER = 'NONE' then null
+	else DIS_DES
+end as DIS_DES, 
+cast(PROMO_WEEKLY_RGR as varchar(255)) as PROMO_WEEKLY_RGR, 
+case
+	when PROMO_CLUSTER = 'NONE' then DIS_DES
+	else PROMO_CLUSTER
+end as PROMO_CLUSTER, 
+case
+	when PROMO_WEEKLY is null then PROMO_CLUSTER
+	else PROMO_WEEKLY
+end as PROMO_WEEKLY, 
+PROMO_SKY
+from [S_REV_PRS_PROMO_SKY_MANUALI]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[DIS_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[DIS_DES]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[DIS_DES]"
+                      name="DIS_DES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_SKY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].Columns[PROMO_SKY]"
+                      name="PROMO_SKY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[DIS_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DIS_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_WEEKLY" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output].ExternalColumns[PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_SKY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[DIS_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[DIS_DES]"
+                      name="DIS_DES" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[PROMO_SKY]"
+                      name="PROMO_SKY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="S_REV_PRS_PROMO_SKY_PS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[S_REV_PRS_PROMO_SKY_PS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+	PROMO_WEEKLY_RGR, 
+	PROMO_CLUSTER, 
+	replace(replace(PROMO_WEEKLY, char(9), ''), char(10), '') as PROMO_WEEKLY,
+	PROMO_ID as PROMO_TECNICA_COD,
+	case when PROMO_ID like '-%' /*PROMO_ID &lt; 0*/ then
+                        replace(replace(PROMO_DES, char(9), ''), char(10), '')
+               else PROMO_ID + ' - ' +replace(replace(PROMO_DES, char(9), ''), char(10), '') end as PROMO_TECNICA_DES
+from S_PROMO
+	where PROMO_TYPE = 'PS'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_WEEKLY" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_TECNICA_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_TECNICA_DES" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="S_REV_PRS_PROMO_SKY_SB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[S_REV_PRS_PROMO_SKY_SB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+	PROMO_WEEKLY_RGR, 
+	PROMO_CLUSTER, 
+	replace(replace(PROMO_WEEKLY, char(9), ''), char(10), '') as PROMO_WEEKLY,
+	PROMO_ID as PROMO_TECNICA_COD,
+	case when PROMO_ID &lt; 0 then
+                        replace(replace(PROMO_DES, char(9), ''), char(10), '')
+               else PROMO_ID + ' - ' +replace(replace(PROMO_DES, char(9), ''), char(10), '') end as PROMO_TECNICA_DES
+from S_PROMO
+	where PROMO_TYPE = 'SB'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_WEEKLY" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_TECNICA_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_TECNICA_DES" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="S_REV_PRS_PROMO_SKY_STORICHE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[S_REV_PRS_PROMO_SKY_STORICHE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+case
+	when PROMO_CLUSTER = 'NONE' then null
+	else PROMO_TYPE
+end as PROMO_TYPE, 
+cast(PROMO_WEEKLY_RGR as varchar(255)) as PROMO_WEEKLY_RGR, 
+case
+	when PROMO_CLUSTER = 'NONE' then PROMO_TYPE
+	else PROMO_CLUSTER
+end as PROMO_CLUSTER, 
+case
+	when PROMO_WEEKLY is null then PROMO_CLUSTER
+	else PROMO_WEEKLY
+end as PROMO_WEEKLY, 
+PROMO_SKY
+from [S_REV_PRS_PROMO_SKY_STORICHE]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TYPE]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_TYPE]"
+                      name="PROMO_TYPE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_SKY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].Columns[PROMO_SKY]"
+                      name="PROMO_SKY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_TYPE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_WEEKLY" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_SKY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_TYPE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_TYPE]"
+                      name="PROMO_TYPE" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[PROMO_SKY]"
+                      name="PROMO_SKY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              localeId="1033"
+              name="S_REV_PRS_PROMO_SKY_TK"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[S_REV_PRS_PROMO_SKY_PS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct 
+	PROMO_WEEKLY_RGR, 
+	PROMO_CLUSTER, 
+	replace(replace(PROMO_WEEKLY, char(9), ''), char(10), '') as PROMO_WEEKLY,
+	PROMO_ID as PROMO_TECNICA_COD,
+	case when PROMO_ID &lt; 0 then
+                        replace(replace(PROMO_DES, char(9), ''), char(10), '')
+               else PROMO_ID + ' - ' +replace(replace(PROMO_DES, char(9), ''), char(10), '') end as PROMO_TECNICA_DES
+from S_PROMO
+	where PROMO_TYPE = 'TK'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_WEEKLY_RGR" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_WEEKLY" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_TECNICA_COD" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output].ExternalColumns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      name="PROMO_TECNICA_DES" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY_RGR]"
+                      name="PROMO_WEEKLY_RGR" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_CLUSTER]"
+                      name="PROMO_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_WEEKLY]"
+                      name="PROMO_WEEKLY" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_COD]"
+                      name="PROMO_TECNICA_COD" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8000"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[PROMO_TECNICA_DES]"
+                      name="PROMO_TECNICA_DES" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Crea Anagrafiche PROMO.Paths[OLE DB Source Output]"
+              endId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Crea Anagrafiche PROMO.Paths[OLE DB Source Output1]"
+              endId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_SB.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_SB.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Crea Anagrafiche PROMO.Paths[OLE DB Source Output2]"
+              endId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_PS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_PS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Crea Anagrafiche PROMO.Paths[OLE DB Source Output3]"
+              endId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_MANUALI.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_MANUALI.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Crea Anagrafiche PROMO.Paths[OLE DB Source Output4]"
+              endId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_STORICHE.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_STORICHE.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Crea Anagrafiche PROMO.Paths[OLE DB Source Output5]"
+              endId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_TK.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_TK.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Crea Anagrafiche PROMO.Paths[OLE DB Source Output6]"
+              endId="Package\Crea Anagrafiche PROMO\L_REV_PRS_PROMO_SKY_AC.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Anagrafiche PROMO\S_REV_PRS_PROMO_SKY_AC.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Populate V_REV_PRS_PROMO_SKY_ALL_STORICO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d7611125-47d4-48ed-a82c-6c01779c3b08}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate V_REV_PRS_PROMO_SKY_ALL_STORICO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{915DEE37-4983-4B0D-82F9-F4B607415E80}"
+          SQLTask:SqlStatementSource="insert into &#xA;V_REV_PRS_PROMO_SKY_ALL_STORICO&#xA;select&#xA;&#x9;case when PRS_L00 like 'STO - %' then SUBSTRING(PRS_L00,7,10)&#xA;&#x9;else PRS_L00 end as PRS_L00, PRS_U02&#xA;from V_REV_PRS_PROMO_SKY_ALL " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{99c32a3f-a0a6-4823-8da5-4ef685289e98}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{915DEE37-4983-4B0D-82F9-F4B607415E80}"
+          SQLTask:SqlStatementSource="truncate table L_REV_PRS_PROMO_SKY&#xA;truncate table L_REV_PRS_PROMO_SKY_SB&#xA;truncate table L_REV_PRS_PROMO_SKY_PS&#xA;truncate table L_REV_PRS_PROMO_SKY_TK&#xA;truncate table L_REV_PRS_PROMO_SKY_AC&#xA;truncate table L_REV_PRS_PROMO_SKY_MANUALI&#xA;truncate table L_REV_PRS_PROMO_SKY_STORICHE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table V_REV_PRS_PROMO_SKY_ALL_STORICO"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{d12f5e08-efd3-4f1f-b0b0-0f503b8f2027}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table V_REV_PRS_PROMO_SKY_ALL_STORICO"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{915DEE37-4983-4B0D-82F9-F4B607415E80}"
+          SQLTask:SqlStatementSource="truncate table V_REV_PRS_PROMO_SKY_ALL_STORICO&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1E5793F1-2F34-4A5B-9C93-FF772EBBC68B}"
+      DTS:From="Package\Truncate table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Crea Anagrafiche PROMO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{B4075AB5-991B-4DC7-855D-00AA361DD7A8}"
+      DTS:From="Package\Crea Anagrafiche PROMO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Truncate table V_REV_PRS_PROMO_SKY_ALL_STORICO" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{2D88437C-D6D1-4CE2-822D-DF035030C7B3}"
+      DTS:From="Package\Truncate table V_REV_PRS_PROMO_SKY_ALL_STORICO"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Populate V_REV_PRS_PROMO_SKY_ALL_STORICO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="300,44"
+          Id="Package\Crea Anagrafiche PROMO"
+          TopLeft="11.5,83.3867924528302" />
+        <NodeLayout
+          Size="300,44"
+          Id="Package\Populate V_REV_PRS_PROMO_SKY_ALL_STORICO"
+          TopLeft="5.53773584905661,264.896226415094" />
+        <NodeLayout
+          Size="300,44"
+          Id="Package\Truncate table"
+          TopLeft="11.5,5.5" />
+        <NodeLayout
+          Size="300,44"
+          Id="Package\Truncate table V_REV_PRS_PROMO_SKY_ALL_STORICO"
+          TopLeft="5.5,171.160377358491" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="161.235849056604,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="161.235849056604,127.311320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-6,43.8490566037736"
+              Start="0,0"
+              End="-6,36.3490566037736">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9245283018868" />
+                  <mssgle:LineSegment
+                    End="-6,21.9245283018868" />
+                  <mssgle:LineSegment
+                    End="-6,36.3490566037736" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="155.235849056604,215.084905660377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0.0377358490566166,49.811320754717"
+              Start="0,0"
+              End="0.0377358490566166,42.311320754717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.9056603773585" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,24.9056603773585" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,42.311320754717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

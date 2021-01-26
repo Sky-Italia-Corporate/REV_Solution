@@ -1,0 +1,1956 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/2/2012 9:30:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{E5C46D6D-F675-4D88-8888-D86515DD3169}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M04_AP_F2_S1_DM"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="117"
+  DTS:VersionGUID="{60C2515D-864C-4E87-973F-E198FC351E42}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F1A12B53-753E-4E72-896D-8254E45C5BA9}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M04_AP_F2_S1_DM-{F1A12B53-753E-4E72-896D-8254E45C5BA9}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M04_AP_F2_S1_DM-{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{3D235BAE-95FE-4B5B-8BE6-6C4DE4B1A168}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FA5B30FC-638F-42D2-A72A-02B282A1068E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FYWK">
+      <DTS:VariableValue
+        DTS:DataType="8">1317</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{3D235BAE-95FE-4B5B-8BE6-6C4DE4B1A168}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Popola F_REV_ACCOUNT_PROTETTI"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E845D06E-F9E5-4DBE-8352-BAADDA9E176D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popola F_REV_ACCOUNT_PROTETTI"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Check se categoria protezione è tra quelle presenti nel cubo"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[M_REV_ACCOUNT_PROTETTI_CATEGORIE_FILTRATE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[M_REV_ACCOUNT_PROTETTI_CATEGORIE_FILTRATE]) [refTable]
+where [refTable].[CATEGORIA_RC_SCONTO] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CATEGORIA_RC_SCONTO" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CATEGORIA_PROTEZIONE]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Inputs[Lookup Input].Columns[CATEGORIA_PROTEZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_PROTEZIONE"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CATEGORIA_PROTEZIONE]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">CATEGORIA_RC_SCONTO</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Fittizio CATEGORIA PROTEZIONE"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Inputs[Derived Column Input].Columns[CATEGORIA_PROTEZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_PROTEZIONE"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CATEGORIA_PROTEZIONE]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"***-NO_CATEGORIA_PROTEZIONE"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"***-NO_CATEGORIA_PROTEZIONE"</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="F_REV_ACCOUNT_PROTETTI"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[F_REV_ACCOUNT_PROTETTI]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[VOLUMI]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[MOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MOP"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[MOP]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[SCONTO_TOT]"
+                      cachedDataType="numeric"
+                      cachedName="SCONTO_TOT"
+                      cachedPrecision="38"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[SCONTO_TOT]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[SCONTO_TOT]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[PACCHETTO_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PACCHETTO_REALE"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[PACCHETTO_REALE]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[CATEGORIA_PROTEZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_PROTEZIONE"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_PROTEZIONE]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CATEGORIA_PROTEZIONE]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[BB_CTR_STA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CTR_STA"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_CTR_STA]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_CTR_STA]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[BB_OR_CLS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_OR_CLS"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_OR_CLS]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_OR_CLS]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOP" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      dataType="i4"
+                      name="VOLUMI" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[SCONTO_TOT]"
+                      dataType="numeric"
+                      name="SCONTO_TOT"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_PROTEZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CTR_STA" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_OR_CLS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+	GIO_ID,
+	PACCHETTO_REALE,
+	CATEGORIA_RC_SCONTO as CATEGORIA_PROTEZIONE,
+	cast(	case when s_tcn.TCN_DES ='DTH' then 'Standard'
+				else s_tcn.TCN_DES
+			end
+	as varchar(50)) as TECNOLOGIA,
+	cast(s_cls.CLS_DES as varchar(50)) as CLUSTER,
+	'***-NO_MOP' AS MOP,
+	sf.BB_CTR_STA,
+	sf.BB_PRD_ID,
+	sf.BB_OR_CLS,
+	sf.BB_VOICE_FLG,
+	sf.BUNDLE_FLG,
+	SUM(VOLUMI) AS VOLUMI,
+	-SUM(ACCPR_DAY) AS SCONTO_TOT	
+from SF_REV_ACCOUNT_PROTETTI_GG sf
+join M_REV_CALC_WEEK wk
+	on sf.FYWK = right(wk.SCE_ID,2)+right(wk.WEEK_ID,2)
+left join S_REV_TCN_TECNOLOGIA s_tcn
+	on sf.TCN_ID = s_tcn.TCN_ID	
+left join S_REV_CLS_CLUSTER s_cls
+	on sf.CLS_ID = s_cls.CLS_ID	
+group by GIO_ID, 
+	PACCHETTO_REALE,
+	CATEGORIA_RC_SCONTO,
+	cast(	case when s_tcn.TCN_DES ='DTH' then 'Standard'
+				else s_tcn.TCN_DES
+			end
+	as varchar(50)),
+	cast(s_cls.CLS_DES as varchar(50)),
+	sf.BB_CTR_STA,
+	sf.BB_PRD_ID,
+	sf.BB_OR_CLS,
+	sf.BB_VOICE_FLG,
+	sf.BUNDLE_FLG</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[PACCHETTO_REALE]"
+                      length="255"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[PACCHETTO_REALE]"
+                      name="PACCHETTO_REALE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CATEGORIA_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[CATEGORIA_PROTEZIONE]"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CATEGORIA_PROTEZIONE]"
+                      name="CATEGORIA_PROTEZIONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER]"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CLUSTER]"
+                      name="CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[MOP]"
+                      length="10"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[MOP]"
+                      name="MOP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      name="VOLUMI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[SCONTO_TOT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[SCONTO_TOT]"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[SCONTO_TOT]"
+                      name="SCONTO_TOT"
+                      precision="38"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_CTR_STA]"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_CTR_STA]"
+                      name="BB_CTR_STA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_OR_CLS]"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_OR_CLS]"
+                      name="BB_OR_CLS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PACCHETTO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[CATEGORIA_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_PROTEZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MOP" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      dataType="i4"
+                      name="VOLUMI" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[SCONTO_TOT]"
+                      dataType="numeric"
+                      name="SCONTO_TOT"
+                      precision="38"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CTR_STA" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_OR_CLS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[PACCHETTO_REALE]"
+                      name="PACCHETTO_REALE" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[CATEGORIA_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[CATEGORIA_PROTEZIONE]"
+                      name="CATEGORIA_PROTEZIONE" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[CLUSTER]"
+                      name="CLUSTER" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[MOP]"
+                      name="MOP" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_CTR_STA]"
+                      name="BB_CTR_STA" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_OR_CLS]"
+                      name="BB_OR_CLS" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      name="VOLUMI" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[SCONTO_TOT]"
+                      dataType="numeric"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[SCONTO_TOT]"
+                      name="SCONTO_TOT"
+                      precision="38"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Merges multiple datasets."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[VOLUMI]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[VOLUMI]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[GIO_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[MOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MOP"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[MOP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[MOP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[SCONTO_TOT]"
+                      cachedDataType="numeric"
+                      cachedName="SCONTO_TOT"
+                      cachedPrecision="38"
+                      cachedScale="10"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[SCONTO_TOT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[SCONTO_TOT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[PACCHETTO_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PACCHETTO_REALE"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[PACCHETTO_REALE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[PACCHETTO_REALE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[CATEGORIA_PROTEZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_PROTEZIONE"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CATEGORIA_PROTEZIONE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CATEGORIA_PROTEZIONE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[TECNOLOGIA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CLUSTER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CLUSTER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[BB_CTR_STA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CTR_STA"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_CTR_STA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_CTR_STA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[BB_OR_CLS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_OR_CLS"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_OR_CLS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_OR_CLS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[VOLUMI]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[VOLUMI]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[GIO_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[MOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MOP"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[MOP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[MOP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[SCONTO_TOT]"
+                      cachedDataType="numeric"
+                      cachedName="SCONTO_TOT"
+                      cachedPrecision="38"
+                      cachedScale="10"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[SCONTO_TOT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[SCONTO_TOT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[PACCHETTO_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PACCHETTO_REALE"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[PACCHETTO_REALE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[PACCHETTO_REALE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[CATEGORIA_PROTEZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_PROTEZIONE"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CATEGORIA_PROTEZIONE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CATEGORIA_PROTEZIONE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[TECNOLOGIA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[CLUSTER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CLUSTER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[BB_CTR_STA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CTR_STA"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_CTR_STA]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_CTR_STA]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[BB_OR_CLS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_OR_CLS"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_OR_CLS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_OR_CLS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[VOLUMI]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[VOLUMI]"
+                      name="VOLUMI" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[MOP]"
+                      name="MOP" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[SCONTO_TOT]"
+                      dataType="numeric"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[SCONTO_TOT]"
+                      name="SCONTO_TOT"
+                      precision="38"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[PACCHETTO_REALE]"
+                      name="PACCHETTO_REALE" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CATEGORIA_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CATEGORIA_PROTEZIONE]"
+                      name="CATEGORIA_PROTEZIONE" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[CLUSTER]"
+                      name="CLUSTER" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_CTR_STA]"
+                      name="BB_CTR_STA" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_OR_CLS]"
+                      name="BB_OR_CLS" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Derived Column Output]"
+              endId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Lookup Match Output]"
+              endId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Inputs[Union All Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Lookup No Match Output]"
+              endId="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[OLE DB Source Output]"
+              endId="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Union All Output 1]"
+              endId="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI.Inputs[OLE DB Destination Input]"
+              name="Union All Output 1"
+              startId="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate F_REV_ACCOUNT_PROTETTI"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{091fb00b-18c6-4138-996f-a4fa1a51a2d9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate F_REV_ACCOUNT_PROTETTI"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C87C29EE-5B12-41A0-BCBB-0AFA3B438413}"
+          SQLTask:SqlStatementSource="truncate table F_REV_ACCOUNT_PROTETTI&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F55CD65E-44B0-47D2-B498-12F1C42836DF}"
+      DTS:From="Package\Truncate F_REV_ACCOUNT_PROTETTI"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Popola F_REV_ACCOUNT_PROTETTI" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="272,44"
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI"
+          TopLeft="5.5,104.745283018868" />
+        <NodeLayout
+          Size="272,44"
+          Id="Package\Truncate F_REV_ACCOUNT_PROTETTI"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="141.27358490566,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.3207547169811"
+              Start="0,0"
+              End="0,47.8207547169811">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.8207547169811" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Popola F_REV_ACCOUNT_PROTETTI">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="639,42"
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo"
+          TopLeft="5.5,5.49999999999989" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI\Fittizio CATEGORIA PROTEZIONE"
+          TopLeft="386,209.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI\Union All"
+          TopLeft="264.5,311.5" />
+        <NodeLayout
+          Size="361,42"
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI\Check se categoria protezione è tra quelle presenti nel cubo"
+          TopLeft="144.5,107.5" />
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI"
+          TopLeft="216.5,413.5" />
+        <EdgeLayout
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Union All Output 1]"
+          TopLeft="325,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[OLE DB Source Output]"
+          TopLeft="325,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Lookup No Match Output]"
+          TopLeft="383.833333333333,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="120.166666666667,60"
+              Start="0,0"
+              End="120.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1588527302813" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1588527302813"
+                    Point2="0,24.1588527302813"
+                    Point3="4,24.1588527302813" />
+                  <mssgle:LineSegment
+                    End="116.166666666667,24.1588527302813" />
+                  <mssgle:CubicBezierSegment
+                    Point1="116.166666666667,24.1588527302813"
+                    Point2="120.166666666667,24.1588527302813"
+                    Point3="120.166666666667,28.1588527302813" />
+                  <mssgle:LineSegment
+                    End="120.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.27694661458334,29.1588527302813,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Lookup Match Output]"
+          TopLeft="266.166666666667,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.0000000000001,162"
+              Start="0,0"
+              End="40.0000000000001,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.1291298017695" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76.1291298017695"
+                    Point2="0,80.1291298017695"
+                    Point3="4,80.1291298017695" />
+                  <mssgle:LineSegment
+                    End="36.0000000000001,80.1291298017695" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.0000000000001,80.1291298017695"
+                    Point2="40.0000000000001,80.1291298017695"
+                    Point3="40.0000000000001,84.1291298017695" />
+                  <mssgle:LineSegment
+                    End="40.0000000000001,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-28.19138671875,85.1291298017695,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola F_REV_ACCOUNT_PROTETTI.Paths[Derived Column Output]"
+          TopLeft="504,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-160.166666666667,60"
+              Start="0,0"
+              End="-160.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="-4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="-156.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-156.166666666667,35.5301794453507"
+                    Point2="-160.166666666667,35.5301794453507"
+                    Point3="-160.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="-160.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popola F_REV_ACCOUNT_PROTETTI\F_REV_ACCOUNT_PROTETTI">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popola F_REV_ACCOUNT_PROTETTI\Solo FYWK corrente da SF_REV_ACCOUNT_PROTETTI_GG + AGGREGAZIONE + DERIVED COLUMN + Sconto negativo">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

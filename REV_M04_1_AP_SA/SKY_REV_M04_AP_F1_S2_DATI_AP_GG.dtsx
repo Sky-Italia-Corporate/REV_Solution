@@ -1,0 +1,1096 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/2/2012 4:53:02 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{98611F47-4161-4653-88E9-5C2F871B491E}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M04_AP_F1_S2_DATI_AP_GG"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="113"
+  DTS:VersionGUID="{169E7094-C56B-40E5-96B9-8EE46D593580}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2FD56728-360B-430D-9906-9B52A33D16D8}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M04_AP_F1_S2_DATI_AP_GG-{2FD56728-360B-430D-9906-9B52A33D16D8}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{4632CFFE-E9A2-4363-9A5F-319943D64861}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M04_AP_F1_S2_DATI_AP_GG-{4632CFFE-E9A2-4363-9A5F-319943D64861}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{95706EF7-70A7-4969-BA6A-7A40387FDE15}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{95706EF7-70A7-4969-BA6A-7A40387FDE15}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ae6a7ba7-60af-49f8-bfe9-82b12dc11940}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Populate SF_REV_ACCOUNT_PROTETTI_GG"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SF_REV_ACCOUNT_PROTETTI]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+	sf.FYWK,
+	tm.GIO_ID,
+	sf.RC_SCONTO_PROTEZIONE,
+	sf.CATEGORIA_RC_SCONTO, 
+	sf.ID_PACCHETTO_REALE, 
+	sf.IMP_SCONTO_PROTEZIONE, 
+	sf.TCN_ID,
+	sf.CLS_ID,
+	sf.VOLUMI, 
+	case when tm.Gio_Uda = 'FATT. SOL' then
+		((sf.IMP_SCONTO_PROTEZIONE * sf.VOLUMI * 12 / 365) / iva.VAL_IVA) 
+	else
+		((sf.IMP_SCONTO_PROTEZIONE * sf.VOLUMI / 28) / iva.VAL_IVA) 
+	end AS ACCPR_DAY,
+	sf.BB_CTR_STA,
+	sf.BB_PRD_ID,
+	sf.BB_OR_CLS,
+	sf.BB_VOICE_FLG,
+	sf.BUNDLE_FLG
+FROM SF_REV_ACCOUNT_PROTETTI sf
+join M_REV_CALC_WEEK wk
+	on sf.FYWK = right(wk.SCE_ID,2)+RIGHT(wk.WEEK_ID,2)
+left join V_M_REV_TEMPO tm 
+	on sf.FYWK = RIGHT(tm.ANN_ID, 2)+RIGHT(tm.WEE2_ID, 2) 
+,(SELECT TOP 1 VAL_IVA FROM M_REV_VALORE_IVA WHERE APPL_NAME = 'AccountProtetti') iva</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[RC_SCONTO_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[RC_SCONTO_PROTEZIONE]"
+                      length="50"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[RC_SCONTO_PROTEZIONE]"
+                      name="RC_SCONTO_PROTEZIONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[IMP_SCONTO_PROTEZIONE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[IMP_SCONTO_PROTEZIONE]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[IMP_SCONTO_PROTEZIONE]"
+                      name="IMP_SCONTO_PROTEZIONE"
+                      precision="10"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[VOLUMI]"
+                      name="VOLUMI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[FYWK]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[FYWK]"
+                      length="4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[FYWK]"
+                      name="FYWK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[ACCPR_DAY]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[ACCPR_DAY]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[ACCPR_DAY]"
+                      name="ACCPR_DAY"
+                      precision="28"
+                      scale="6"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[ID_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[ID_PACCHETTO_REALE]"
+                      length="133"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[ID_PACCHETTO_REALE]"
+                      name="ID_PACCHETTO_REALE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[CATEGORIA_RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[CATEGORIA_RC_SCONTO]"
+                      length="50"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[CATEGORIA_RC_SCONTO]"
+                      name="CATEGORIA_RC_SCONTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      name="TCN_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[CLS_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[CLS_ID]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[CLS_ID]"
+                      name="CLS_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_CTR_STA]"
+                      length="50"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_CTR_STA]"
+                      name="BB_CTR_STA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_OR_CLS]"
+                      length="80"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_OR_CLS]"
+                      name="BB_OR_CLS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[RC_SCONTO_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_SCONTO_PROTEZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[IMP_SCONTO_PROTEZIONE]"
+                      dataType="numeric"
+                      name="IMP_SCONTO_PROTEZIONE"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[VOLUMI]"
+                      dataType="i4"
+                      name="VOLUMI" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[FYWK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FYWK" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[ACCPR_DAY]"
+                      dataType="numeric"
+                      name="ACCPR_DAY"
+                      precision="38"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[ID_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="133"
+                      name="ID_PACCHETTO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[CATEGORIA_RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_RC_SCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      dataType="i4"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[CLS_ID]"
+                      dataType="i4"
+                      name="CLS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CTR_STA" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_OR_CLS" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[RC_SCONTO_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[RC_SCONTO_PROTEZIONE]"
+                      name="RC_SCONTO_PROTEZIONE" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[CATEGORIA_RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[CATEGORIA_RC_SCONTO]"
+                      name="CATEGORIA_RC_SCONTO" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ID_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="133"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ID_PACCHETTO_REALE]"
+                      name="ID_PACCHETTO_REALE" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[IMP_SCONTO_PROTEZIONE]"
+                      dataType="numeric"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[IMP_SCONTO_PROTEZIONE]"
+                      name="IMP_SCONTO_PROTEZIONE"
+                      precision="10"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      dataType="i4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[VOLUMI]"
+                      name="VOLUMI" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ACCPR_DAY]"
+                      dataType="numeric"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ACCPR_DAY]"
+                      name="ACCPR_DAY"
+                      precision="38"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[CLS_ID]"
+                      dataType="i4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[CLS_ID]"
+                      name="CLS_ID" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[FYWK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[FYWK]"
+                      name="FYWK" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_CTR_STA]"
+                      name="BB_CTR_STA" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_OR_CLS]"
+                      name="BB_OR_CLS" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SF_REV_ACCOUNT_PROTETTI_GG"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SF_REV_ACCOUNT_PROTETTI_GG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[RC_SCONTO_PROTEZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RC_SCONTO_PROTEZIONE"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[RC_SCONTO_PROTEZIONE]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[RC_SCONTO_PROTEZIONE]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[IMP_SCONTO_PROTEZIONE]"
+                      cachedDataType="numeric"
+                      cachedName="IMP_SCONTO_PROTEZIONE"
+                      cachedPrecision="10"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[IMP_SCONTO_PROTEZIONE]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[IMP_SCONTO_PROTEZIONE]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[VOLUMI]"
+                      cachedDataType="i4"
+                      cachedName="VOLUMI"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[VOLUMI]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[ACCPR_DAY]"
+                      cachedDataType="numeric"
+                      cachedName="ACCPR_DAY"
+                      cachedPrecision="28"
+                      cachedScale="6"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[ACCPR_DAY]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[ACCPR_DAY]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[FYWK]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="FYWK"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[FYWK]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[FYWK]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[ID_PACCHETTO_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="133"
+                      cachedName="ID_PACCHETTO_REALE"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO_REALE]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[ID_PACCHETTO_REALE]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[CATEGORIA_RC_SCONTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CATEGORIA_RC_SCONTO"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_RC_SCONTO]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[CATEGORIA_RC_SCONTO]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[TCN_ID]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[CLS_ID]"
+                      cachedDataType="i4"
+                      cachedName="CLS_ID"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[CLS_ID]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[CLS_ID]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[BB_CTR_STA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CTR_STA"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_CTR_STA]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_CTR_STA]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[BB_OR_CLS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_OR_CLS"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_OR_CLS]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_OR_CLS]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[RC_SCONTO_PROTEZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_SCONTO_PROTEZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[IMP_SCONTO_PROTEZIONE]"
+                      dataType="numeric"
+                      name="IMP_SCONTO_PROTEZIONE"
+                      precision="10"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      dataType="i4"
+                      name="VOLUMI" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[ACCPR_DAY]"
+                      dataType="numeric"
+                      name="ACCPR_DAY"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[FYWK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FYWK" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PACCHETTO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[CATEGORIA_RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CATEGORIA_RC_SCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      dataType="i4"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[CLS_ID]"
+                      dataType="i4"
+                      name="CLS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_CTR_STA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CTR_STA" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_OR_CLS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_OR_CLS" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG.Paths[OLE DB Source Output]"
+              endId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pulizia SF_REV_ACCOUNT_PROTETTI_GG"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6d58f5d3-3f75-4e96-8f20-1a182e340f64}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pulizia SF_REV_ACCOUNT_PROTETTI_GG"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4632CFFE-E9A2-4363-9A5F-319943D64861}"
+          SQLTask:SqlStatementSource="DELETE sf_gg&#xA;FROM SF_REV_ACCOUNT_PROTETTI_GG sf_gg&#xA;join M_REV_CALC_WEEK wk&#xA;&#x9;on sf_gg.FYWK = right(wk.SCE_ID,2)+right(wk.WEEK_ID,2)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{2CD952E1-3213-4DAE-9044-CF62D336911D}"
+      DTS:From="Package\Pulizia SF_REV_ACCOUNT_PROTETTI_GG"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="287,42"
+          Id="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG"
+          TopLeft="33.5,111.38679245283" />
+        <NodeLayout
+          Size="356,44"
+          Id="Package\Pulizia SF_REV_ACCOUNT_PROTETTI_GG"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="180.25,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.88679245283"
+              Start="0,0"
+              End="0,54.38679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.38679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="243,42"
+          Id="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG"
+          TopLeft="176.5,107.5" />
+        <NodeLayout
+          Size="585,42"
+          Id="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG.Paths[OLE DB Source Output]"
+          TopLeft="298,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI + FILTRO DINAMICO + Calcolo ACCPR_DAY + Left Join con M_REV_TEMPO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Populate SF_REV_ACCOUNT_PROTETTI_GG\SF_REV_ACCOUNT_PROTETTI_GG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

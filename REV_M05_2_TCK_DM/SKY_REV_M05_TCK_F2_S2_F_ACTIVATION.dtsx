@@ -1,0 +1,2284 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{A7F5D6B5-A704-42DD-8D0D-5A656BFAE393}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M05_TCK_F2_S2_F_ACTIVATION"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{C7F50650-4226-4F8C-8A6B-295DB5D25E27}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import from SF_REV_TCK_TICKET"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{F168B8B9-C7E0-4304-AA21-0D6FAAFA18E4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import from SF_REV_TCK_TICKET"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates and groups values in a dataset."
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[TCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TCK_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[PCK_RGR_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_RGR_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_RGR_DES]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[SUBS]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[REVENUE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[REVENUE_SETTIMANALE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE_SETTIMANALE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE_SETTIMANALE]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="TCN_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCN_DES]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[ATT_PER_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="ATT_PER_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Match Output].Columns[ATT_PER_DES]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1].Columns[CMP_PER_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="CMP_PER_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Output].Columns[CMP_PER_DES]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TIPO_DATO]"
+                      name="TIPO_DATO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TIPO_DATO]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TCK_ID]"
+                      name="TCK_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[PCK_RGR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[PCK_RGR_DES]"
+                      name="PCK_RGR_DES">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_RGR_DES]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[CLU_IPTV]"
+                      name="CLU_IPTV">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[SUBS]"
+                      dataType="i8"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[SUBS]"
+                      name="SUBS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[REVENUE]"
+                      dataType="numeric"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[REVENUE]"
+                      name="REVENUE"
+                      precision="18"
+                      scale="10">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[REVENUE_SETTIMANALE]"
+                      dataType="numeric"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[REVENUE_SETTIMANALE]"
+                      name="REVENUE_SETTIMANALE"
+                      precision="18"
+                      scale="10">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE_SETTIMANALE]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TCN_DES]"
+                      name="TCN_DES">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCN_DES]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[ATT_PER_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[ATT_PER_DES]"
+                      name="ATT_PER_DES">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del "periodino".Outputs[Lookup Match Output].Columns[ATT_PER_DES]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[CMP_PER_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[CMP_PER_DES]"
+                      name="CMP_PER_DES">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del "periodino".Outputs[Derived Column Output].Columns[CMP_PER_DES]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Costruisce la descrizione per la competenza del &quot;periodino&quot;"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Inputs[Derived Column Input].Columns[ATT_PER_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="ATT_PER_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Match Output].Columns[ATT_PER_DES]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Output].Columns[CMP_PER_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="25"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Output].Columns[CMP_PER_DES]"
+                      name="CMP_PER_DES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,25,1252)([SUBSTRING](#{Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del "periodino".Outputs[Lookup Match Output].Columns[ATT_PER_DES]},1,18) + " (Cmp.)")</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,25,1252)(SUBSTRING(ATT_PER_DES,1,18) + " (Cmp.)")</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Fittizio Pacchetto"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Output].Columns[PCK_RGR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Output].Columns[PCK_RGR_DES]"
+                      name="PCK_RGR_DES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"***-Raggruppamento Pacchetto Mancante"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"***-Raggruppamento Pacchetto Mancante"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="F_REV_TCK_TICKET_ATTIVAZIONI"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[F_REV_TCK_TICKET_ATTIVAZIONI]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[TCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TCK_ID"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[TCK_ID]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TCK_ID]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[PCK_RGR_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_RGR_DES"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[PCK_RGR_DES]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[PCK_RGR_DES]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[REVENUE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[REVENUE]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[REVENUE]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[REVENUE_SETTIMANALE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE_SETTIMANALE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[REVENUE_SETTIMANALE]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[REVENUE_SETTIMANALE]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="TCN_DES"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[TCN_DES]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[CLU_IPTV]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[SUBS]"
+                      cachedDataType="i8"
+                      cachedName="SUBS"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[SUBS]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[ATT_PER_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="ATT_PER_DES"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER_DES]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[ATT_PER_DES]" />
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].Columns[CMP_PER_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="25"
+                      cachedName="CMP_PER_DES"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER_DES]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1].Columns[CMP_PER_DES]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[TCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[PCK_RGR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PCK_RGR_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      dataType="i4"
+                      name="SUBS" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[REVENUE]"
+                      dataType="numeric"
+                      name="REVENUE"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[REVENUE_SETTIMANALE]"
+                      dataType="numeric"
+                      name="REVENUE_SETTIMANALE"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="ATT_PER_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="CMP_PER_DES" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Normalizza Pacchetto"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[S_REV_PCK_PACCHETTO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[S_REV_PCK_PACCHETTO]) [refTable]
+where [refTable].[PCK_RC] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PCK_RC" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_ID" dataType="DT_STR" length="133" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_DES" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_RGR_DES" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_LEV2_RGR" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Inputs[Lookup Input].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PCK_RC</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Match Output].Columns[PCK_RGR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Match Output].Columns[PCK_RGR_DES]"
+                      name="PCK_RGR_DES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PCK_RGR_DES</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Normalizzo Ticket"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Inputs[Derived Column Input].Columns[TCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TCK_ID"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[ISNULL](#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLS_ID]}) ? #{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]} : #{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]} + "_" + #{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLS_ID]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">ISNULL(CLS_ID) ? TCK_ID : TCK_ID + "_" + CLS_ID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Inputs[Derived Column Input].Columns[CLS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CLS_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLS_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Recupera la descrizione del &quot;periodino&quot;"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Period_ID, Period_DES
+from V_M_REV_PERIOD_ATTIVAZIONE</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select Period_ID, Period_DES
+from V_M_REV_PERIOD_ATTIVAZIONE) [refTable]
+where [refTable].[Period_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Period_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Period_DES" dataType="DT_STR" length="25" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[ATT_PER_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Inputs[Lookup Input].Columns[ATT_PER_ID]"
+                      cachedDataType="i4"
+                      cachedName="ATT_PER_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[ATT_PER_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">Period_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Match Output].Columns[ATT_PER_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="25"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Match Output].Columns[ATT_PER_DES]"
+                      name="ATT_PER_DES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">Period_DES</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SF_REV_TCK_TICKET"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	TIPO_DATO, 
+	ATT_PER_ID, TCK_ID, CLS_ID, PCK_ID, 
+	cast(s.TCN_DES as varchar(20)) as TCN_DES, 
+	CLU_IPTV, SUBS, REVENUE, REVENUE_SETTIMANALE
+from SF_REV_TCK_TICKET sf
+join S_REV_TCN_TECNOLOGIA s on sf.TCN_ID = s.TCN_ID
+where ATT_PER_ID = CMP_PER_ID</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TIPO_DATO]"
+                      length="50"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_ID]"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCK_ID]"
+                      name="TCK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[CLS_ID]"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLS_ID]"
+                      name="CLS_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      name="PCK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      name="SUBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[REVENUE]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE]"
+                      name="REVENUE"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE_SETTIMANALE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[REVENUE_SETTIMANALE]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE_SETTIMANALE]"
+                      name="REVENUE_SETTIMANALE"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCN_DES]"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCN_DES]"
+                      name="TCN_DES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[ATT_PER_ID]"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]"
+                      name="ATT_PER_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[CLS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CLS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      dataType="i4"
+                      name="SUBS" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[REVENUE]"
+                      dataType="numeric"
+                      name="REVENUE"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[REVENUE_SETTIMANALE]"
+                      dataType="numeric"
+                      name="REVENUE_SETTIMANALE"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TCN_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].ExternalColumns[ATT_PER_ID]"
+                      dataType="i4"
+                      name="ATT_PER_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[ATT_PER_ID]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[ATT_PER_ID]"
+                      name="ATT_PER_ID" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_ID]"
+                      name="TCK_ID" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[CLS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[CLS_ID]"
+                      name="CLS_ID" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[TCN_DES]"
+                      name="TCN_DES" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      name="SUBS" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[REVENUE]"
+                      dataType="numeric"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[REVENUE]"
+                      name="REVENUE"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[REVENUE_SETTIMANALE]"
+                      dataType="numeric"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[REVENUE_SETTIMANALE]"
+                      name="REVENUE_SETTIMANALE"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from SF_REV_TCK_TICKET\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Merges multiple datasets."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TIPO_DATO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TIPO_DATO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[TCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TCK_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[CLS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CLS_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLS_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLS_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[SUBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[REVENUE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[REVENUE_SETTIMANALE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE_SETTIMANALE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE_SETTIMANALE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE_SETTIMANALE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLU_IPTV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[PCK_RGR_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_RGR_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Match Output].Columns[PCK_RGR_DES]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_RGR_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="TCN_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCN_DES]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCN_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1].Columns[ATT_PER_ID]"
+                      cachedDataType="i4"
+                      cachedName="ATT_PER_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[ATT_PER_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TIPO_DATO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TIPO_DATO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[TCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TCK_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[CLS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CLS_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLS_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLS_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[SUBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[REVENUE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[REVENUE_SETTIMANALE]"
+                      cachedDataType="numeric"
+                      cachedName="REVENUE_SETTIMANALE"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[REVENUE_SETTIMANALE]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE_SETTIMANALE]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[CLU_IPTV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[PCK_RGR_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_RGR_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Output].Columns[PCK_RGR_DES]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_RGR_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="TCN_DES"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[TCN_DES]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCN_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2].Columns[ATT_PER_ID]"
+                      cachedDataType="i4"
+                      cachedName="ATT_PER_ID"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[ATT_PER_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TIPO_DATO]"
+                      name="TIPO_DATO" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCK_ID]"
+                      name="TCK_ID" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLS_ID]"
+                      name="CLS_ID" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[SUBS]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[SUBS]"
+                      name="SUBS" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE]"
+                      dataType="numeric"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE]"
+                      name="REVENUE"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE_SETTIMANALE]"
+                      dataType="numeric"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[REVENUE_SETTIMANALE]"
+                      name="REVENUE_SETTIMANALE"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]"
+                      name="CLU_IPTV" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_RGR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[PCK_RGR_DES]"
+                      name="PCK_RGR_DES" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[TCN_DES]"
+                      name="TCN_DES" />
+                    <outputColumn
+                      refId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[ATT_PER_ID]"
+                      dataType="i4"
+                      lineageId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1].Columns[ATT_PER_ID]"
+                      name="ATT_PER_ID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Aggregate Output 1]"
+              endId="Package\Import from SF_REV_TCK_TICKET\F_REV_TCK_TICKET_ATTIVAZIONI.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Derived Column Output]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Derived Column Output1]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Inputs[Lookup Input]"
+              name="Derived Column Output"
+              startId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Derived Column Output2]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Aggregate.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Lookup Match Output]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Union All.Inputs[Union All Input 1]"
+              name="Lookup Match Output"
+              startId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Lookup Match Output1]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Costruisce la descrizione per la competenza del &quot;periodino&quot;.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Import from SF_REV_TCK_TICKET\Recupera la descrizione del &quot;periodino&quot;.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Lookup No Match Output]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Fittizio Pacchetto.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[OLE DB Source Output]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Normalizza Pacchetto.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import from SF_REV_TCK_TICKET\SF_REV_TCK_TICKET.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Import from SF_REV_TCK_TICKET.Paths[Union All Output 1]"
+              endId="Package\Import from SF_REV_TCK_TICKET\Normalizzo Ticket.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Import from SF_REV_TCK_TICKET\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table F_REV_TCK_TICKET_ATTIVAZIONI"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{773FD584-624E-42E4-B9EA-225AC60120C8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table F_REV_TCK_TICKET_ATTIVAZIONI"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="truncate table F_REV_TCK_TICKET_ATTIVAZIONI&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{084AF98C-8D60-4ECE-9334-C62411C70286}"
+      DTS:From="Package\truncate table F_REV_TCK_TICKET_ATTIVAZIONI"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import from SF_REV_TCK_TICKET" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="241,44"
+          Id="Package\Import from SF_REV_TCK_TICKET"
+          TopLeft="5.5,100.367924528302" />
+        <NodeLayout
+          Size="241,44"
+          Id="Package\truncate table F_REV_TCK_TICKET_ATTIVAZIONI"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="125.801886792453,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,50.9433962264151"
+              Start="0,0"
+              End="0,43.4433962264151">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.4433962264151" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

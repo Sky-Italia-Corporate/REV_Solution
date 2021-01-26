@@ -1,0 +1,1487 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{0FA40624-41A5-4F0B-B16C-8B3565617B21}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M12_F1_S5_CREA_SF"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{CE1F8FDE-7FAE-47CE-B3E3-3C163AE8FE10}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M12_F1_S5_CREA_SF-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M12_F1_S5_CREA_SF-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cancella Adj manuali"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ff2546dd-420f-4b56-a239-0f156a798256}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cancella Adj manuali"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="delete from SF_REV_ACT_ACTFEE_PRS&#xA;where TIPO_DATO IN ( 'MAN' , 'ADJ' )&#xA;&#x9;and SCE_ID in (select SCE_ID from M_REV_CALC_WEEK)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cancella da SF i dati della settimana di calcolo"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B5726DCB-DFA9-4EAB-B32D-52349BE4677E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cancella da SF i dati della settimana di calcolo"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="delete from SF_REV_ACT_ACTFEE_PRS&#xA;where SCE_ID = (select SCE_ID from M_REV_CALC_WEEK)&#xA;&#x9;and WEEK_ID = (select WEEK_ID from M_REV_CALC_WEEK)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Competenzia dati di ST in SF"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{ED34C013-998C-45A1-A5DF-971CFC42BDFE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Competenzia dati di ST in SF"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SF_REV_ACT_ACTFEE_PRS"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SF_REV_ACT_ACTFEE_PRS]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[SCE_ID]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[WEEK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="36"
+                      cachedName="WEEK_ID"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[WEEK_ID]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[COD_PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_PROMO_TEC"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[RC_PACCHETTO_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="RC_PACCHETTO_REALE"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO_REALE]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO_REALE]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA_SERVIZIO_ATTIVATO"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA_SERVIZIO_ATTIVATO]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[NEW_EXISTING]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NEW_EXISTING"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[NEW_EXISTING]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[NEW_EXISTING]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[MV_YES_NO]"
+                      cachedDataType="i4"
+                      cachedName="MV_YES_NO"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[MV_YES_NO]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[MV_YES_NO]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[NUM_CLI]"
+                      cachedDataType="i4"
+                      cachedName="NUM_CLI"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[NUM_CLI]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[NUM_CLI]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[ACT_FEE_L]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_L"
+                      cachedPrecision="38"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_L]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_L]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[ACT_FEE_S]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_S"
+                      cachedPrecision="38"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_S]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_S]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[ACT_FEE_N]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_N"
+                      cachedPrecision="38"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_N]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[DATA_ATT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ATT"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[DATA_ATT]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="TIPO_DATO"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[COD_LISTINO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="COD_LISTINO"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[COD_LISTINO]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[CLUSTER_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER_IPTV"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="9"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[FLG_BUNDLE]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA_SERVIZIO_ATTIVATO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NEW_EXISTING" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[MV_YES_NO]"
+                      dataType="i4"
+                      name="MV_YES_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[NUM_CLI]"
+                      dataType="i4"
+                      name="NUM_CLI" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_L]"
+                      dataType="numeric"
+                      name="ACT_FEE_L"
+                      precision="38"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_S]"
+                      dataType="numeric"
+                      name="ACT_FEE_S"
+                      precision="38"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N]"
+                      dataType="numeric"
+                      name="ACT_FEE_N"
+                      precision="38"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="25"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="21"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input].ExternalColumns[FLG_BUNDLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="FLG_BUNDLE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ST_REV_ACT_ACTFEE_PRS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+	c.Gio_id as GIO_ID, b.SCE_ID, b.WEEK_ID, DATA_ATT,
+/**LUME 19/06/2013 modifica per inserimento adjustment in REVACT **/
+'AUTO' AS TIPO_DATO,
+ COD_PROMO_TEC, RC_PACCHETTO_REALE, TECNOLOGIA_SERVIZIO_ATTIVATO, 
+	NEW_EXISTING, MV_YES_NO, sum(ACTIVATION_TO_COUNT) as NUM_CLI, sum(ACT_FEE_L) as ACT_FEE_L, 
+	sum(ACT_FEE_S) as ACT_FEE_S, sum(ACT_FEE_N) as ACT_FEE_N, COD_LISTINO,
+	/* ProgettoTELECOM_FRMR:Aggiunto TECNOLOGIA e CLUSTER_IPTV */
+	TECNOLOGIA, CLUSTER_IPTV
+		,   [BB_CONTRACT_STATUS]
+    ,[BB_PRD_ID]
+    ,[BB_ORIGIN_CLUSTER]
+    ,[BB_VOICE_FLG]
+    ,[BUNDLE_FLG]
+from (	select 
+			ROW, ACCOUNT, DATA_ATT, COD_PROMO_TEC, COD_PROMO_SKY, (VALORE_LORDO/b.VAL_IVA) as VALORE_LORDO, 
+			(SCONTO/b.VAL_IVA) as SCONTO, (VALORE_NETTO/b.VAL_IVA) as VALORE_NETTO, STATO_PROMO, 
+			RC_PACCHETTO_REALE, TECNOLOGIA_ADESIONE, TECNOLOGIA_SERVIZIO_ATTIVATO, NEW_EXISTING, 
+			FLAG_BUNDLE_ATTIVAZIONE, COMBINAZIONE_PREMIUM_ATVZ, PRIORITY, a.VAL_IVA, 
+			(ACT_FEE_L/b.VAL_IVA) as ACT_FEE_L, (ACT_FEE_S/b.VAL_IVA) as ACT_FEE_S, 
+			(ACT_FEE_N/b.VAL_IVA) as ACT_FEE_N, COUNT_MYSKYHD, COUNT_MYSKY, COUNT_HD, COUNT_MV_MYSKYHD, 
+			COUNT_MV_MYSKY, COUNT_MV_HD, COUNT_MV_SD, MV_YES_NO, COD_LISTINO, 
+			/* ProgettoTELECOM_FRMR:Aggiunto TECNOLOGIA e CLUSTER_IPTV */
+			TECNOLOGIA, CLUSTER_IPTV,
+			1 as ACTIVATION_TO_COUNT ,
+			case when [BB_CONTRACT_STATUS_DES] is null then  'ZZZ_NO_BB_CONTRACT_STATUS' else[BB_CONTRACT_STATUS_DES]    end   as   [BB_CONTRACT_STATUS]
+            ,case when [PRODUCT_CODE]  is null then  'ZZZ_NO_BB_PRODUCT' else [PRODUCT_CODE] end as [BB_PRD_ID]
+            ,case when [ORIGIN_CLUSTER]  is null then  'ZZZ_NO_ORIGIN_CLUSTER' else [ORIGIN_CLUSTER]  end as [BB_ORIGIN_CLUSTER]
+            ,case when [VOICE_FLAG] is null then  'N' else [VOICE_FLAG] end  as [BB_VOICE_FLG]
+           , ISNULL(LTRIM(RTRIM(Case when (BB.FLG_BUNDLE) = '0' then 'No Bundle'
+                 when (BB.FLG_BUNDLE) = '1' then 'Bundle' end)), 'No Bundle') AS BUNDLE_FLG
+		from ST_REV_ACT_ACTFEE_PRS a
+		left join  [SKY_SA_BB].[dbo].[SF_SUB_BBC_SUB_SCBB] bb on a.ACCOUNT = bb.ACCOUNT_TV and a.DATA_ATT = bb.GIO_ID
+		,(select VAL_IVA from M_REV_VALORE_IVA where APPL_NAME = 'Actfee_Export') b ) a join M_REV_TEMPO c on a.DATA_ATT=c.Gio_Id,
+M_REV_CALC_WEEK b
+group by c.Gio_Id,b.SCE_ID, b.WEEK_ID, DATA_ATT, COD_PROMO_TEC, RC_PACCHETTO_REALE, TECNOLOGIA_SERVIZIO_ATTIVATO, NEW_EXISTING, 
+	MV_YES_NO, COD_LISTINO, TECNOLOGIA, CLUSTER_IPTV
+	,   [BB_CONTRACT_STATUS]
+    ,[BB_PRD_ID]
+    ,[BB_ORIGIN_CLUSTER]
+    ,[BB_VOICE_FLG]
+    ,[BUNDLE_FLG]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      length="5"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      length="36"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[WEEK_ID]"
+                      name="WEEK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[RC_PACCHETTO_REALE]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[RC_PACCHETTO_REALE]"
+                      name="RC_PACCHETTO_REALE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      name="TECNOLOGIA_SERVIZIO_ATTIVATO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[NEW_EXISTING]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[NEW_EXISTING]"
+                      name="NEW_EXISTING"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[MV_YES_NO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[MV_YES_NO]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[MV_YES_NO]"
+                      name="MV_YES_NO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[NUM_CLI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[NUM_CLI]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[NUM_CLI]"
+                      name="NUM_CLI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_L]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_L]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_L]"
+                      name="ACT_FEE_L"
+                      precision="38"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_S]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_S]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_S]"
+                      name="ACT_FEE_S"
+                      precision="38"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_N]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_N]"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[ACT_FEE_N]"
+                      name="ACT_FEE_N"
+                      precision="38"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      name="DATA_ATT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[TIPO_DATO]"
+                      length="4"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      length="255"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER_IPTV]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]"
+                      name="CLUSTER_IPTV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="255"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="255"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="9"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA_SERVIZIO_ATTIVATO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NEW_EXISTING" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[MV_YES_NO]"
+                      dataType="i4"
+                      name="MV_YES_NO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[NUM_CLI]"
+                      dataType="i4"
+                      name="NUM_CLI" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_L]"
+                      dataType="numeric"
+                      name="ACT_FEE_L"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_S]"
+                      dataType="numeric"
+                      name="ACT_FEE_S"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_N]"
+                      dataType="numeric"
+                      name="ACT_FEE_N"
+                      precision="38"
+                      scale="6" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[WEEK_ID]"
+                      name="WEEK_ID" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      name="DATA_ATT" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[RC_PACCHETTO_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[RC_PACCHETTO_REALE]"
+                      name="RC_PACCHETTO_REALE" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA_SERVIZIO_ATTIVATO]"
+                      name="TECNOLOGIA_SERVIZIO_ATTIVATO" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[NEW_EXISTING]"
+                      name="NEW_EXISTING" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[MV_YES_NO]"
+                      dataType="i4"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[MV_YES_NO]"
+                      name="MV_YES_NO" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[NUM_CLI]"
+                      dataType="i4"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[NUM_CLI]"
+                      name="NUM_CLI" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_L]"
+                      dataType="numeric"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_L]"
+                      name="ACT_FEE_L"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_S]"
+                      dataType="numeric"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_S]"
+                      name="ACT_FEE_S"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_N]"
+                      dataType="numeric"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_N]"
+                      name="ACT_FEE_N"
+                      precision="38"
+                      scale="6" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[CLUSTER_IPTV]"
+                      name="CLUSTER_IPTV" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Competenzia dati di ST in SF.Paths[OLE DB Source Output]"
+              endId="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Crea tabella ST"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4F6A24B8-7CB6-4EA4-A662-9C660DCB5B6E}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Crea tabella ST"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="/**** Drop and Create della ST_REV_ACT_ACTFEE_PRS ****/&#xA;&#xA;IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ST_REV_ACT_ACTFEE_PRS]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[ST_REV_ACT_ACTFEE_PRS]&#xA;GO&#xA;&#xA;USE [SKY_REV]&#xA;GO&#xA;&#xA;CREATE TABLE [dbo].[ST_REV_ACT_ACTFEE_PRS](&#xA;&#x9;[ROW] [bigint] NULL,&#xA;&#x9;[ACCOUNT] [varchar](50) NULL,&#xA;&#x9;[DATA_ATT] [varchar](50) NULL,&#xA;&#x9;[COD_PROMO_TEC] [varchar](50) NULL,&#xA;&#x9;[COD_PROMO_SKY] [varchar](50) NULL,&#xA;&#x9;[VALORE_LORDO] [numeric](18, 10) NULL,&#xA;&#x9;[SCONTO] [numeric](18, 10) NULL,&#xA;&#x9;[VALORE_NETTO] [numeric](18, 10) NULL,&#xA;&#x9;[STATO_PROMO] [varchar](50) NULL,&#xA;&#x9;[RC_PACCHETTO_REALE] [varchar](50) NULL,&#xA;&#x9;[TECNOLOGIA_ADESIONE] [varchar](50) NULL,&#xA;&#x9;[TECNOLOGIA_SERVIZIO_ATTIVATO] [varchar](50) NULL,&#xA;&#x9;[NEW_EXISTING] [varchar](50) NULL,&#xA;&#x9;[FLAG_BUNDLE_ATTIVAZIONE] [varchar](50) NULL,&#xA;&#x9;[COMBINAZIONE_PREMIUM_ATVZ] [varchar](50) NULL,&#xA;&#x9;[PRIORITY] [int] NULL,&#xA;&#x9;[VAL_IVA] [numeric](8, 6) NULL,&#xA;&#x9;[ACT_FEE_L] [numeric](38, 10) NULL,&#xA;&#x9;[ACT_FEE_S] [numeric](38, 10) NULL,&#xA;&#x9;[ACT_FEE_N] [numeric](38, 10) NULL,&#xA;&#x9;[COUNT_MYSKYHD] [int] NULL,&#xA;&#x9;[COUNT_MYSKY] [int] NULL,&#xA;&#x9;[COUNT_HD] [int] NULL,&#xA;&#x9;[COUNT_MV_MYSKYHD] [int] NULL,&#xA;&#x9;[COUNT_MV_MYSKY] [int] NULL,&#xA;&#x9;[COUNT_MV_HD] [int] NULL,&#xA;&#x9;[COUNT_MV_SD] [int] NULL,&#xA;&#x9;[MV_YES_NO] [int] NOT NULL,&#xA;&#x9;[COD_LISTINO] [varchar](255) NULL,&#xA;&#x9;/* ProgettoTELECOM_FRMR: aggiunto TECNOLOGIA e CLUSTER_IPTV */&#xA;&#x9;[TECNOLOGIA] [varchar](50) NULL,&#xA;&#x9;[CLUSTER_IPTV] [varchar](50) NULL&#xA;) ON [PRIMARY]&#xA;GO&#xA;&#xA;/*** Tabella attivazioni no multivision ***/&#xA;select &#xA;&#x9;ROW_NUMBER() over (order by a.ACCOUNT) as ROW, a.ACCOUNT, a.DATA_ATT, a.COD_PROMO_TEC, a.COD_PROMO_SKY, &#xA;&#x9;a.VALORE_LORDO, a.SCONTO, a.VALORE_NETTO, a.STATO_PROMO, a.RC_PACCHETTO_REALE, a.TECNOLOGIA_ADESIONE, &#xA;&#x9;a.TECNOLOGIA_SERVIZIO_ATTIVATO, a.NEW_EXISTING, a.FLAG_BUNDLE_ATTIVAZIONE, a.COMBINAZIONE_PREMIUM_ATVZ, &#xA;&#x9;b.PRIORITY, a.VAL_IVA, a.ACT_FEE_L, a.ACT_FEE_S, a.ACT_FEE_N, COUNT_MYSKYHD, COUNT_MYSKY, COUNT_HD, &#xA;&#x9;COUNT_MV_MYSKYHD, COUNT_MV_MYSKY, COUNT_MV_HD, COUNT_MV_SD, 0 as MV_YES_NO, COD_LISTINO, TECNOLOGIA, CLUSTER_IPTV&#xA;into #TEMP_TABLE_NO_MV&#xA;from WT_REV_ACT_ACTFEE_PRS_PER_EXPORT a&#xA;join dbo.M_REV_ACT_PRS_TCN_PRIORITY b&#xA;&#x9;on a.TECNOLOGIA_ADESIONE = b.TECNOLOGIA_ADESIONE &#xA;&#x9;&#x9;and a.TECNOLOGIA_SERVIZIO_ATTIVATO = b.TECNOLOGIA_SERVIZIO_ATTIVATO&#xA;join WT_REV_ACT_ACTFEE_PRS_VOLUMI c&#xA;&#x9;&#x9;on  a.ACCOUNT = c.ACCOUNT&#xA;&#x9;&#x9;&#x9;and a.COMBINAZIONE_PREMIUM_ATVZ = c.COMBINAZIONE_PREMIUM_ATVZ&#xA;where a.TECNOLOGIA_SERVIZIO_ATTIVATO != 'MV'&#xA;go&#xA;&#x9;&#xA;/*** Tabella attivazioni multivision ***/&#xA;select &#xA;&#x9;ROW_NUMBER() over (order by a.ACCOUNT) as ROW, a.ACCOUNT, a.DATA_ATT, a.COD_PROMO_TEC, a.COD_PROMO_SKY, &#xA;&#x9;a.VALORE_LORDO, a.SCONTO, a.VALORE_NETTO, a.STATO_PROMO, a.RC_PACCHETTO_REALE, a.TECNOLOGIA_ADESIONE, &#xA;&#x9;a.TECNOLOGIA_SERVIZIO_ATTIVATO, a.NEW_EXISTING, a.FLAG_BUNDLE_ATTIVAZIONE, a.COMBINAZIONE_PREMIUM_ATVZ, &#xA;&#x9;a.VAL_IVA, a.ACT_FEE_L, a.ACT_FEE_S, a.ACT_FEE_N, COD_LISTINO, TECNOLOGIA, CLUSTER_IPTV&#xA;into #TEMP_TABLE_MV&#xA;from WT_REV_ACT_ACTFEE_PRS_PER_EXPORT a&#xA;where a.TECNOLOGIA_SERVIZIO_ATTIVATO = 'MV'&#xA;go&#xA;&#xA;/************************************************************************************/&#xA;/***&#x9;&#x9;&#x9;INIZIO CURSORE PER ASSEGNAZIONE MV_MYSKYHD&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  ***/&#xA;/************************************************************************************/&#xA;&#xA;declare ACC_CURSOR cursor for select distinct ACCOUNT from #TEMP_TABLE_NO_MV where COUNT_MV_MYSKYHD &gt; 0&#xA;declare @ACC_CORRENTE as integer;&#xA;declare @NUMERO_RIGHE_MV as integer;&#xA;declare @MAXROW_NOMV as integer;&#xA;declare @MAXROW_MV as integer;&#xA;declare @MV_TO_ASSIGN as integer;&#xA;declare @COMBINAZIONE_PRS as varchar(255);&#xA;declare @PROMO_TO_SEARCH as integer;&#xA;declare @FOUNDED as integer;&#xA;&#xA;open ACC_CURSOR&#xA;&#xA;fetch next from ACC_CURSOR into @ACC_CORRENTE&#xA;while @@FETCH_STATUS = 0&#xA;begin&#xA;&#x9;&#xA;&#x9;declare PRS_CURSOR cursor for select distinct COMBINAZIONE_PREMIUM_ATVZ from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;where COUNT_MV_MYSKYHD &gt; 0 and ACCOUNT = @ACC_CORRENTE&#xA;&#x9;&#x9;&#xA;&#x9;open PRS_CURSOR&#xA;&#x9;&#xA;&#x9;fetch next from PRS_CURSOR into @COMBINAZIONE_PRS&#xA;&#x9;while @@FETCH_STATUS = 0&#xA;&#x9;begin&#xA;&#x9;&#xA;&#x9;&#x9;set @NUMERO_RIGHE_MV = (select count(*) from #TEMP_TABLE_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;set @MV_TO_ASSIGN = (select distinct(COUNT_MV_MYSKYHD) from #TEMP_TABLE_NO_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;while @MV_TO_ASSIGN != 0 and @NUMERO_RIGHE_MV != 0&#xA;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;if @NUMERO_RIGHE_MV != 0&#xA;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;set @MAXROW_MV = (  select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;set @PROMO_TO_SEARCH = &#x9;(select COD_PROMO_TEC from #TEMP_TABLE_MV where ROW = @MAXROW_MV);&#xA;&#x9;&#x9;&#x9;&#x9;set @FOUNDED = ( select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count(*) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'MYSKYHD' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and COD_PROMO_TEC = @PROMO_TO_SEARCH );&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;if @FOUNDED != 0&#xA;&#x9;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;set @MAXROW_NOMV = (select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'MYSKYHD' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and COD_PROMO_TEC = @PROMO_TO_SEARCH&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;end&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;set @MAXROW_NOMV = (select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'MYSKYHD' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;end&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;update a&#xA;&#x9;&#x9;&#x9;&#x9;set MV_YES_NO = 1, a.ACT_FEE_L = a.ACT_FEE_L + b.ACT_FEE_L,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;a.ACT_FEE_S = a.ACT_FEE_S + b.ACT_FEE_S, a.ACT_FEE_N = a.ACT_FEE_N + b.ACT_FEE_N,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;COUNT_MYSKYHD = 0, COUNT_MYSKY = 0, COUNT_HD = 0&#xA;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV a&#xA;&#x9;&#x9;&#x9;&#x9;cross join (select * from #TEMP_TABLE_MV where ROW = @MAXROW_MV) b&#xA;&#x9;&#x9;&#x9;&#x9;where a.ROW = @MAXROW_NOMV&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;update #TEMP_TABLE_NO_MV&#xA;&#x9;&#x9;&#x9;&#x9;set COUNT_MV_MYSKYHD = ( COUNT_MV_MYSKYHD - 1 )&#xA;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;delete from #TEMP_TABLE_MV where ROW = @MAXROW_MV&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;set @NUMERO_RIGHE_MV = (select count(*) from #TEMP_TABLE_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#x9;&#x9;set @MV_TO_ASSIGN = (select distinct(COUNT_MV_MYSKYHD) from #TEMP_TABLE_NO_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#x9;end&#x9;&#xA;&#x9;&#x9;end&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;fetch next from PRS_CURSOR into @COMBINAZIONE_PRS&#xA;&#x9;end&#xA;&#x9;&#xA;&#x9;close PRS_CURSOR&#xA;&#x9;deallocate PRS_CURSOR&#xA;&#x9;&#xA;&#x9;fetch next from ACC_CURSOR into @ACC_CORRENTE&#xA;end&#xA;&#xA;close ACC_CURSOR&#xA;deallocate ACC_CURSOR&#xA;go&#xA;&#xA;--update #TEMP_TABLE_NO_MV&#xA;--set COUNT_MV_MYSKYHD = 0&#xA;--go&#xA;&#xA;/************************************************************************************/&#xA;/***&#x9;&#x9;&#x9;FINE CURSORE PER ASSEGNAZIONE MV_MYSKYHD&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  ***/&#xA;/************************************************************************************/&#xA;&#xA;/************************************************************************************/&#xA;/***&#x9;&#x9;&#x9;INIZIO CURSORE PER ASSEGNAZIONE MV_MYSKY&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  ***/&#xA;/************************************************************************************/&#xA;&#xA;declare ACC_CURSOR cursor for select distinct ACCOUNT from #TEMP_TABLE_NO_MV where COUNT_MV_MYSKY &gt; 0&#xA;declare @ACC_CORRENTE as integer;&#xA;declare @NUMERO_RIGHE_MV as integer;&#xA;declare @MAXROW_NOMV as integer;&#xA;declare @MAXROW_MV as integer;&#xA;declare @MV_TO_ASSIGN as integer;&#xA;declare @COMBINAZIONE_PRS as varchar(255);&#xA;declare @PROMO_TO_SEARCH as integer;&#xA;declare @FOUNDED as integer;&#xA;&#xA;open ACC_CURSOR&#xA;&#xA;fetch next from ACC_CURSOR into @ACC_CORRENTE&#xA;while @@FETCH_STATUS = 0&#xA;begin&#xA;&#x9;&#xA;&#x9;declare PRS_CURSOR cursor for select distinct COMBINAZIONE_PREMIUM_ATVZ from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;where COUNT_MV_MYSKY &gt; 0 and ACCOUNT = @ACC_CORRENTE&#xA;&#x9;&#x9;&#xA;&#x9;open PRS_CURSOR&#xA;&#x9;&#xA;&#x9;fetch next from PRS_CURSOR into @COMBINAZIONE_PRS&#xA;&#x9;while @@FETCH_STATUS = 0&#xA;&#x9;begin&#xA;&#x9;&#xA;&#x9;&#x9;set @NUMERO_RIGHE_MV = (select count(*) from #TEMP_TABLE_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;set @MV_TO_ASSIGN = (select distinct(COUNT_MV_MYSKY) from #TEMP_TABLE_NO_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;while @MV_TO_ASSIGN != 0 and @NUMERO_RIGHE_MV != 0&#xA;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;if @NUMERO_RIGHE_MV != 0&#xA;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;set @MAXROW_MV = (  select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;set @PROMO_TO_SEARCH = &#x9;(select COD_PROMO_TEC from #TEMP_TABLE_MV where ROW = @MAXROW_MV);&#xA;&#x9;&#x9;&#x9;&#x9;set @FOUNDED = ( select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count(*) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'MYSKY' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and COD_PROMO_TEC = @PROMO_TO_SEARCH );&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;if @FOUNDED != 0&#xA;&#x9;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;set @MAXROW_NOMV = (select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'MYSKY' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and COD_PROMO_TEC = @PROMO_TO_SEARCH&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;end&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;set @MAXROW_NOMV = (select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'MYSKY' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;end&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;update a&#xA;&#x9;&#x9;&#x9;&#x9;set MV_YES_NO = 1, a.ACT_FEE_L = a.ACT_FEE_L + b.ACT_FEE_L,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;a.ACT_FEE_S = a.ACT_FEE_S + b.ACT_FEE_S, a.ACT_FEE_N = a.ACT_FEE_N + b.ACT_FEE_N,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;COUNT_MYSKYHD = 0, COUNT_MYSKY = 0, COUNT_HD = 0&#xA;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV a&#xA;&#x9;&#x9;&#x9;&#x9;cross join (select * from #TEMP_TABLE_MV where ROW = @MAXROW_MV) b&#xA;&#x9;&#x9;&#x9;&#x9;where a.ROW = @MAXROW_NOMV&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;update #TEMP_TABLE_NO_MV&#xA;&#x9;&#x9;&#x9;&#x9;set COUNT_MV_MYSKY = ( COUNT_MV_MYSKY - 1 )&#xA;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;delete from #TEMP_TABLE_MV where ROW = @MAXROW_MV&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;set @NUMERO_RIGHE_MV = (select count(*) from #TEMP_TABLE_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#x9;&#x9;set @MV_TO_ASSIGN = (select distinct(COUNT_MV_MYSKY) from #TEMP_TABLE_NO_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#x9;end&#x9;&#xA;&#x9;&#x9;end&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;fetch next from PRS_CURSOR into @COMBINAZIONE_PRS&#xA;&#x9;end&#xA;&#x9;&#xA;&#x9;close PRS_CURSOR&#xA;&#x9;deallocate PRS_CURSOR&#xA;&#x9;&#xA;&#x9;fetch next from ACC_CURSOR into @ACC_CORRENTE&#xA;end&#xA;&#xA;close ACC_CURSOR&#xA;deallocate ACC_CURSOR&#xA;go&#xA;&#xA;--update #TEMP_TABLE_NO_MV&#xA;--set COUNT_MV_MYSKY = 0&#xA;--go&#xA;&#xA;/************************************************************************************/&#xA;/***&#x9;&#x9;&#x9;FINE CURSORE PER ASSEGNAZIONE MV_MYSKY&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  ***/&#xA;/************************************************************************************/&#xA;&#xA;/************************************************************************************/&#xA;/***&#x9;&#x9;&#x9;INIZIO CURSORE PER ASSEGNAZIONE MV_HD&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  ***/&#xA;/************************************************************************************/&#xA;&#xA;declare ACC_CURSOR cursor for select distinct ACCOUNT from #TEMP_TABLE_NO_MV where COUNT_MV_HD &gt; 0&#xA;declare @ACC_CORRENTE as integer;&#xA;declare @NUMERO_RIGHE_MV as integer;&#xA;declare @MAXROW_NOMV as integer;&#xA;declare @MAXROW_MV as integer;&#xA;declare @MV_TO_ASSIGN as integer;&#xA;declare @COMBINAZIONE_PRS as varchar(255);&#xA;declare @PROMO_TO_SEARCH as integer;&#xA;declare @FOUNDED as integer;&#xA;&#xA;open ACC_CURSOR&#xA;&#xA;fetch next from ACC_CURSOR into @ACC_CORRENTE&#xA;while @@FETCH_STATUS = 0&#xA;begin&#xA;&#x9;&#xA;&#x9;declare PRS_CURSOR cursor for select distinct COMBINAZIONE_PREMIUM_ATVZ &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where COUNT_MV_HD &gt; 0 and ACCOUNT = @ACC_CORRENTE&#xA;&#x9;&#x9;&#xA;&#x9;open PRS_CURSOR&#xA;&#x9;&#xA;&#x9;fetch next from PRS_CURSOR into @COMBINAZIONE_PRS&#xA;&#x9;while @@FETCH_STATUS = 0&#xA;&#x9;begin&#xA;&#x9;&#xA;&#x9;&#x9;set @NUMERO_RIGHE_MV = (select count(*) from #TEMP_TABLE_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;set @MV_TO_ASSIGN = (select distinct(COUNT_MV_HD) from #TEMP_TABLE_NO_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;while @MV_TO_ASSIGN != 0 and @NUMERO_RIGHE_MV != 0&#xA;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;if @NUMERO_RIGHE_MV != 0&#xA;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;set @MAXROW_MV = (  select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;set @PROMO_TO_SEARCH = &#x9;(select COD_PROMO_TEC from #TEMP_TABLE_MV where ROW = @MAXROW_MV);&#xA;&#x9;&#x9;&#x9;&#x9;set @FOUNDED = ( select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;count(*) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9; where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'HD' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and COD_PROMO_TEC = @PROMO_TO_SEARCH );&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;if @FOUNDED != 0&#xA;&#x9;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;set @MAXROW_NOMV = (select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'HD' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and COD_PROMO_TEC = @PROMO_TO_SEARCH&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;end&#xA;&#x9;&#x9;&#x9;&#x9;else&#xA;&#x9;&#x9;&#x9;&#x9;begin&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;set @MAXROW_NOMV = (select &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;max(ROW) &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and TECNOLOGIA_SERVIZIO_ATTIVATO = 'HD' &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and MV_YES_NO = 0 and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;group by ACCOUNT );&#xA;&#x9;&#x9;&#x9;&#x9;end&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;update a&#xA;&#x9;&#x9;&#x9;&#x9;set MV_YES_NO = 1, a.ACT_FEE_L = a.ACT_FEE_L + b.ACT_FEE_L,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;a.ACT_FEE_S = a.ACT_FEE_S + b.ACT_FEE_S, a.ACT_FEE_N = a.ACT_FEE_N + b.ACT_FEE_N,&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;COUNT_MYSKYHD = 0, COUNT_MYSKY = 0, COUNT_HD = 0&#xA;&#x9;&#x9;&#x9;&#x9;from #TEMP_TABLE_NO_MV a&#xA;&#x9;&#x9;&#x9;&#x9;cross join (select * from #TEMP_TABLE_MV where ROW = @MAXROW_MV) b&#xA;&#x9;&#x9;&#x9;&#x9;where a.ROW = @MAXROW_NOMV&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;update #TEMP_TABLE_NO_MV&#xA;&#x9;&#x9;&#x9;&#x9;set COUNT_MV_HD = ( COUNT_MV_HD - 1 )&#xA;&#x9;&#x9;&#x9;&#x9;where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;delete from #TEMP_TABLE_MV where ROW = @MAXROW_MV&#xA;&#x9;&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9;set @NUMERO_RIGHE_MV = (select count(*) from #TEMP_TABLE_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#x9;&#x9;set @MV_TO_ASSIGN = (select distinct(COUNT_MV_HD) from #TEMP_TABLE_NO_MV where ACCOUNT = @ACC_CORRENTE and COMBINAZIONE_PREMIUM_ATVZ = @COMBINAZIONE_PRS)&#xA;&#x9;&#x9;&#x9;end&#x9;&#xA;&#x9;&#x9;end&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;fetch next from PRS_CURSOR into @COMBINAZIONE_PRS&#xA;&#x9;end&#xA;&#x9;&#xA;&#x9;close PRS_CURSOR&#xA;&#x9;deallocate PRS_CURSOR&#xA;&#x9;&#xA;&#x9;fetch next from ACC_CURSOR into @ACC_CORRENTE&#xA;end&#xA;&#xA;close ACC_CURSOR&#xA;deallocate ACC_CURSOR&#xA;go&#xA;&#xA;--update #TEMP_TABLE_NO_MV&#xA;--set COUNT_MV_HD = 0&#xA;--go&#xA;&#xA;/************************************************************************************/&#xA;/***&#x9;&#x9;&#x9;FINE CURSORE PER ASSEGNAZIONE MV_HD&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;  ***/&#xA;/************************************************************************************/&#xA;&#xA;/*** Riporta le attivazioni MV_SD ***/&#xA;insert into #TEMP_TABLE_NO_MV&#xA;select &#xA;&#x9;ROW, ACCOUNT, DATA_ATT, COD_PROMO_TEC, COD_PROMO_SKY, VALORE_LORDO, SCONTO, VALORE_NETTO,&#xA;&#x9;STATO_PROMO, RC_PACCHETTO_REALE, TECNOLOGIA_ADESIONE, 'SD' as TECNOLOGIA_SERVIZIO_ATTIVATO ,&#xA;&#x9;NEW_EXISTING, FLAG_BUNDLE_ATTIVAZIONE, COMBINAZIONE_PREMIUM_ATVZ, 0 as PRIORITY, VAL_IVA,&#xA;&#x9;ACT_FEE_L, ACT_FEE_S, ACT_FEE_N, 0 as COUNT_MYSKYHD, 0 as COUNT_MYSKY, 0 as COUNT_MYD,&#xA;&#x9;0 as COUNT_MV_MYSKYHD, 0 as COUNT_MV_MYSKY, 0 as COUNT_MV_HD, 1 as COUNT_MV_SD, &#xA;&#x9;1 as MV_YES_NO, COD_LISTINO, TECNOLOGIA, CLUSTER_IPTV&#xA;from #TEMP_TABLE_MV&#xA;&#xA;update #TEMP_TABLE_NO_MV&#xA;set COUNT_MV_SD = 0&#xA;&#xA;insert into ST_REV_ACT_ACTFEE_PRS&#xA;select * from #TEMP_TABLE_NO_MV&#xA;&#xA;drop table #TEMP_TABLE_NO_MV&#xA;drop table #TEMP_TABLE_MV" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C80B01A6-8C89-4C18-8D7A-770A1F4C8E67}"
+      DTS:From="Package\Crea tabella ST"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Cancella da SF i dati della settimana di calcolo" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{62F35AF7-EDA9-4D06-929B-ECF357BA396F}"
+      DTS:From="Package\Cancella da SF i dati della settimana di calcolo"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Competenzia dati di ST in SF" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{A692B166-1D37-49FF-84D7-155DD6F3E58D}"
+      DTS:From="Package\Cancella Adj manuali"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Crea tabella ST" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="226,44"
+          Id="Package\Cancella Adj manuali"
+          TopLeft="5.99056603773585,5.5" />
+        <NodeLayout
+          Size="228,44"
+          Id="Package\Cancella da SF i dati della settimana di calcolo"
+          TopLeft="5.5,165.27358490566" />
+        <NodeLayout
+          Size="228,44"
+          Id="Package\Competenzia dati di ST in SF"
+          TopLeft="6.48113207547171,249.216981132075" />
+        <NodeLayout
+          Size="228,44"
+          Id="Package\Crea tabella ST"
+          TopLeft="5.5,85.3867924528302" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="119.311320754717,129.311320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9622641509434"
+              Start="0,0"
+              End="0,28.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="119.990566037736,209.27358490566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.943396226415"
+              Start="0,0"
+              End="0,32.443396226415">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.443396226415" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="119.311320754717,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9622641509434"
+              Start="0,0"
+              End="0,28.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Competenzia dati di ST in SF">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="282,44"
+          Id="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS"
+          TopLeft="5.5,83.3867924528302" />
+        <NodeLayout
+          Size="282,44"
+          Id="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Competenzia dati di ST in SF.Paths[OLE DB Source Output]"
+          TopLeft="146.783018867925,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Competenzia dati di ST in SF\SF_REV_ACT_ACTFEE_PRS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Competenzia dati di ST in SF\ST_REV_ACT_ACTFEE_PRS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

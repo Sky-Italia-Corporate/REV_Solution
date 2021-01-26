@@ -1,0 +1,270 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/23/2012 6:01:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{6ED10483-DD63-40FC-B5D5-36EADDA2EF40}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M01_SCONTI_F1_S8_TICKET_STORICHE_EXTRASISTEMA"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{7E032209-B8D3-4871-A52D-2FA6CBF882BF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F5597A4C-DB49-4EDA-B2BF-A96E5B0AAEE2}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F1_S8_TICKET_STORICHE_EXTRASISTEMA-{F5597A4C-DB49-4EDA-B2BF-A96E5B0AAEE2}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2D34F445-E757-42D1-81E8-F96CFB3C76FE}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F1_S8_TICKET_STORICHE_EXTRASISTEMA-{2D34F445-E757-42D1-81E8-F96CFB3C76FE}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{7AED06CD-5FD9-481F-812D-92F7CE8C7877}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{7AED06CD-5FD9-481F-812D-92F7CE8C7877}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Anagrafica promo STORICHE - MANUALI"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{45bc21f6-4057-40f8-8d9e-d83b72ef737e}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Anagrafica promo STORICHE - MANUALI"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2D34F445-E757-42D1-81E8-F96CFB3C76FE}"
+          SQLTask:SqlStatementSource="--eliminazione della calc week dalla tabella di storico&#xA;delete&#xA;from M_REV_STO_CONFIGURAZIONE_PROMO_MANUALI_PRS&#xA;where WEEK_ID = (select top 1 WEEK_ID from M_REV_CALC_WEEK)&#xA;and SCE_ID = (select top 1 SCE_ID from M_REV_CALC_WEEK)&#xA;&#xA;delete&#xA;from M_REV_STO_CONFIGURAZIONE_PROMO_STORICHE_PRS&#xA;where WEEK_ID = (select top 1 WEEK_ID from M_REV_CALC_WEEK)&#xA;and SCE_ID = (select top 1 SCE_ID from M_REV_CALC_WEEK)&#xA;&#xA;--inserimento della week nella tabella di storico&#xA;insert into M_REV_STO_CONFIGURAZIONE_PROMO_MANUALI_PRS&#xA;select b.SCE_ID, b.WEEK_ID, a.*&#xA;from M_REV_CONFIGURAZIONE_PROMO_MANUALI_PRS a, M_REV_CALC_WEEK b&#xA;&#xA;truncate table M_REV_CONFIGURAZIONE_PROMO_MANUALI_PRS&#xA;&#xA;insert into M_REV_STO_CONFIGURAZIONE_PROMO_STORICHE_PRS&#xA;select b.SCE_ID, b.WEEK_ID, a.*&#xA;from M_REV_CONFIGURAZIONE_PROMO_STORICHE_PRS a, M_REV_CALC_WEEK b&#xA;&#xA;truncate table M_REV_CONFIGURAZIONE_PROMO_STORICHE_PRS&#xA;&#xA;-- Riporta valori dal passato&#xA;insert into M_REV_CONFIGURAZIONE_PROMO_MANUALI_PRS&#xA;select a.PROMO_TYPE, a.PROMO_CLUSTER, a.PROMO_WEEKLY_RGR, isnull(a.PROMO_WEEKLY, a.PROMO_SKY) as PROMO_WEEKLY, a.PROMO_SKY--, null AS NUM_ATTIVAZIONI &#xA;from M_REV_STO_CONFIGURAZIONE_PROMO_MANUALI_PRS a&#xA;left outer join M_REV_CONFIGURAZIONE_PROMO_MANUALI_PRS b on a.PROMO_SKY = b.PROMO_SKY  &#xA;where SCE_ID+'-'+WEEK_ID=(select max(SCE_ID+'-'+WEEK_ID) from M_REV_STO_CONFIGURAZIONE_PROMO_MANUALI_PRS where PROMO_SKY = a.PROMO_SKY)&#xA;&#xA;insert into M_REV_CONFIGURAZIONE_PROMO_STORICHE_PRS&#xA;select a.PROMO_TYPE, a.PROMO_CLUSTER, a.PROMO_WEEKLY_RGR, isnull(a.PROMO_WEEKLY, a.PROMO_SKY) as PROMO_WEEKLY, a.PROMO_SKY--, null AS NUM_ATTIVAZIONI &#xA;from M_REV_STO_CONFIGURAZIONE_PROMO_STORICHE_PRS a&#xA;left outer join M_REV_CONFIGURAZIONE_PROMO_STORICHE_PRS b on a.PROMO_SKY = b.PROMO_SKY  &#xA;where a.SCE_ID+'-'+a.WEEK_ID=(select max(SCE_ID+'-'+WEEK_ID) from M_REV_STO_CONFIGURAZIONE_PROMO_STORICHE_PRS where PROMO_SKY = a.PROMO_SKY)&#xA;&#xA;update M_REV_CONFIGURAZIONE_PROMO_MANUALI_PRS&#xA;set PROMO_WEEKLY = PROMO_SKY&#xA;where PROMO_WEEKLY is null&#xA;&#xA;update M_REV_CONFIGURAZIONE_PROMO_STORICHE_PRS&#xA;set PROMO_WEEKLY = PROMO_SKY&#xA;where PROMO_WEEKLY is null&#xA;&#xA;--creazione tabella S&#xA;delete&#xA;from S_REV_PRS_PROMO_SKY_MANUALI&#xA;where PROMO_SKY in (select distinct replace(replace(PROMO_SKY, char(9), ''), char(10), '') as PROMO_SKY &#xA;       from M_REV_CONFIGURAZIONE_PROMO_MANUALI_PRS)&#xA;&#xA;insert into S_REV_PRS_PROMO_SKY_MANUALI&#xA;select distinct a.PROMO_TYPE, a.PROMO_WEEKLY_RGR, a.PROMO_CLUSTER, &#xA;case&#xA; when a.PROMO_WEEKLY is null then replace(replace(a.PROMO_SKY, char(9), ''), char(10), '')&#xA; else replace(replace(a.PROMO_WEEKLY, char(9), ''), char(10), '') &#xA;end as PROMO_WEEKLY, replace(replace(a.PROMO_SKY, char(9), ''), char(10), '') as PROMO_SKY &#xA;from M_REV_CONFIGURAZIONE_PROMO_MANUALI_PRS a&#xA;&#xA;delete&#xA;from S_REV_PRS_PROMO_SKY_STORICHE&#xA;where PROMO_SKY in (select distinct replace(replace(PROMO_SKY, char(9), ''), char(10), '') as PROMO_SKY &#xA;       from M_REV_CONFIGURAZIONE_PROMO_STORICHE_PRS)&#xA;&#xA;insert into S_REV_PRS_PROMO_SKY_STORICHE&#xA;select distinct a.PROMO_TYPE, a.PROMO_WEEKLY_RGR, a.PROMO_CLUSTER, &#xA;case&#xA; when a.PROMO_WEEKLY is null then replace(replace(a.PROMO_SKY, char(9), ''), char(10), '')&#xA; else replace(replace(a.PROMO_WEEKLY, char(9), ''), char(10), '') &#xA;end as PROMO_WEEKLY, replace(replace(a.PROMO_SKY, char(9), ''), char(10), '') as PROMO_SKY &#xA;from M_REV_CONFIGURAZIONE_PROMO_STORICHE_PRS a&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Storicizzazione Sconti Ticket"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{91a72478-ee1c-4a32-8f64-2076cd54865d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Storicizzazione Sconti Ticket"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2D34F445-E757-42D1-81E8-F96CFB3C76FE}"
+          SQLTask:SqlStatementSource="delete&#xA;from M_REV_STO_SCONTI_TICKET&#xA;where FY = (select top 1 SCE_ID&#xA;   from M_REV_CALC_WEEK)&#xA;and WEEK_ID = (select top 1 WEEK_ID&#xA;   from M_REV_CALC_WEEK)&#xA;&#xA;insert into M_REV_STO_SCONTI_TICKET&#xA;select b.SCE_ID, b.WEEK_ID, a.*&#xA;from V_REV_SCO_TICKET a, M_REV_CALC_WEEK b&#xA;&#xA;GO&#xA;&#xA;delete&#xA;from M_REV_STO_SCO_TICKET_DETTAGLIO&#xA;where FY = (select top 1 SCE_ID&#xA;   from M_REV_CALC_WEEK)&#xA;and WEEK_ID = (select top 1 WEEK_ID&#xA;   from M_REV_CALC_WEEK)&#xA;&#xA;insert into M_REV_STO_SCO_TICKET_DETTAGLIO&#xA;select b.SCE_ID, b.WEEK_ID, a.*&#xA;from V_REV_SCO_TICKET_DETTAGLIO a, M_REV_CALC_WEEK b&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D7E07BD2-E3E5-4D22-A0AA-0F45C21C4543}"
+      DTS:From="Package\Storicizzazione Sconti Ticket"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Anagrafica promo STORICHE - MANUALI" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="292,44"
+          Id="Package\Anagrafica promo STORICHE - MANUALI"
+          TopLeft="5.5,83.3867924528302" />
+        <NodeLayout
+          Size="292,44"
+          Id="Package\Storicizzazione Sconti Ticket"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="151.235849056604,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

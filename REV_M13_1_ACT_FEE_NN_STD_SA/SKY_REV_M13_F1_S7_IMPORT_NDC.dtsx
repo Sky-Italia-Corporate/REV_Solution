@@ -1,0 +1,1775 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{8AB57624-7D2D-482E-B306-E0E27FFEF4BD}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M13_F1_S7_IMPORT_NDC"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{589BCF4B-0629-41BF-B735-D9D2E8701567}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[EXPORT_NDC_NN_STD]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Export note di credito per activation fee non standard"
+      DTS:DTSID="{5545296B-E6E2-49EF-B077-9CD4522FB8A9}"
+      DTS:ObjectName="EXPORT_NDC_NN_STD">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWASHYP02\StagingArea\RESREV\export_files\REVACT_Export_NDC_NN_STD.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SCENARIO"
+              DTS:DTSID="{78077DE5-8AAD-4680-8D0D-4590E1ED53D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GIO_ID"
+              DTS:DTSID="{921868AA-5A30-4C1C-B6D1-4646F3401BFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MEASURES"
+              DTS:DTSID="{ED3BDF22-0FA6-4DE1-85E9-2D8FF9056F3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_DATO"
+              DTS:DTSID="{ACBE3631-6348-4D65-A8D3-DB0AA9B9F01C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_ACT_FEE"
+              DTS:DTSID="{84FF6533-B61A-4EA6-8281-41745BCD74CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NEW_EXISTING"
+              DTS:DTSID="{EAA3E562-FC5D-4268-B719-C3D69B83C21C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MULTIVISION"
+              DTS:DTSID="{B6E30462-B0BD-47D1-AB52-6F3D90D040C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TCN_ATV"
+              DTS:DTSID="{EA3DC657-5293-482E-B486-E5616F937BE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MOP"
+              DTS:DTSID="{06D2D225-2C15-4C19-B55B-0B68C4F6FC62}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DURATA"
+              DTS:DTSID="{10D71EE2-9BF5-4D52-A1E3-A7002B1ECC82}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TECNOLOGIA"
+              DTS:DTSID="{4E852F6B-8AF4-4B78-8E65-7528C26DE66D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLUSTER"
+              DTS:DTSID="{EAEA4961-26F3-4E4C-B987-FA336CECB30E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CANALE"
+              DTS:DTSID="{4C93BB8A-97EC-4E1C-92DB-6F51D6B8333D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRONTO_SKY"
+              DTS:DTSID="{2ACDACB1-029E-4C79-B1FF-2659A1B5DFDD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PACCHETTO"
+              DTS:DTSID="{B6374237-F46D-41B7-ACE4-5D1746D2A91C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROMO"
+              DTS:DTSID="{50E1DB87-F25E-4C00-8EB4-F0FD8817A6D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLG_CAP"
+              DTS:DTSID="{97FEDDF2-A091-41A7-B0CB-C4ACA4AEFA09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_CONTRACT_STATUS"
+              DTS:DTSID="{4AD0A743-C289-4EBB-97FA-0CC5E1CB02DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_PRD_ID"
+              DTS:DTSID="{C7B8817D-C61C-4E18-94EB-E18BC3B5E7BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_ORIGIN_CLUSTER"
+              DTS:DTSID="{56C41596-96BD-4C1A-9033-1563A60862FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="4"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_VOICE_FLG"
+              DTS:DTSID="{FEB3B3B6-CC62-4E1F-B909-6824D513EEC1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_BUNDLE_FLG"
+              DTS:DTSID="{27558D91-9BA1-4D9A-8C68-C7A01C6660C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NDC"
+              DTS:DTSID="{8CC693B7-E13E-4404-B293-83735C23B76D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;User ID=HYPSYS9_CONSOLE;Initial Catalog=SKY_REV;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0FBE0836-7986-42F1-AA91-294011F15F69}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-SKY_REV_M11_F1_S9_IMPORT_NDC-{0FBE0836-7986-42F1-AA91-294011F15F69}SQL02.SSIS_CONFIGURATIONS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;REV_ServerApp02&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{B38D1203-6A8E-47DA-848A-DAA95A283D7A}"
+      DTS:ObjectName="REV_ServerApp02" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;File_EXPORT_NDC_NN_STD&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{D909888C-B770-4BC9-B306-66217C7B8E27}"
+      DTS:ObjectName="File_EXPORT_NDC_NN_STD" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0A77A6B9-78D6-4B34-9996-85B9B785C719}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerApp02">
+      <DTS:VariableValue
+        DTS:DataType="8">DEVRMWASHYP02</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export Note di Credito - Activation Fee NN STD"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{320FAD7C-D097-46AC-B541-3E0770DC2879}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export Note di Credito - Activation Fee NN STD"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"/C \"E:\\StagingArea\\PsExec\\PsExec \\\\"+ @[User::ServerApp02] +" E:\\StagingArea\\RESREV\\batch\\load_REV_ACT\\REVACT_EXPORT_NDC_NN_STD.bat -accepteula\""</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\CMD.exe"
+          Arguments="/C &quot;E:\StagingArea\PsExec\PsExec \\DEVRMWASHYP02 E:\StagingArea\RESREV\batch\load_REV_ACT\REVACT_EXPORT_NDC_NN_STD.bat -accepteula&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Note di Credito - Activation Fee NN STD"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5322201D-F8AB-490B-88A1-111A7A95C530}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Note di Credito - Activation Fee NN STD"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1040"
+              name="EXPORT_NDC_PRS"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[EXPORT_NDC_NN_STD]"
+                  connectionManagerRefId="Package.ConnectionManagers[EXPORT_NDC_NN_STD]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MEASURES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[MEASURES]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MEASURES]"
+                      name="MEASURES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TIPO_DATO]"
+                      length="50"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TIPO_ACT_FEE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACT_FEE]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TIPO_ACT_FEE]"
+                      name="TIPO_ACT_FEE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[NEW_EXISTING]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[NEW_EXISTING]"
+                      name="NEW_EXISTING"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MULTIVISION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[MULTIVISION]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MULTIVISION]"
+                      name="MULTIVISION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TCN_ATV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TCN_ATV]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TCN_ATV]"
+                      name="TCN_ATV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[MOP]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MOP]"
+                      name="MOP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[DURATA]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[DURATA]"
+                      name="DURATA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[CANALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[CANALE]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[CANALE]"
+                      name="CANALE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PRONTO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[PRONTO_SKY]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PRONTO_SKY]"
+                      name="PRONTO_SKY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[PACCHETTO]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PACCHETTO]"
+                      name="PACCHETTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[PROMO]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PROMO]"
+                      name="PROMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[NDC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[NDC]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[NDC]"
+                      name="NDC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[FLG_CAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[FLG_CAP]"
+                      length="20"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[FLG_CAP]"
+                      name="FLG_CAP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[CLUSTER]"
+                      length="255"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[CLUSTER]"
+                      name="CLUSTER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[SCENARIO]"
+                      length="5"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[SCENARIO]"
+                      name="SCENARIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_BUNDLE_FLG]"
+                      name="BB_BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[MEASURES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MEASURES" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACT_FEE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TIPO_ACT_FEE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NEW_EXISTING" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[MULTIVISION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MULTIVISION" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TCN_ATV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TCN_ATV" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MOP" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DURATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[CANALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CANALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[PRONTO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRONTO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[NDC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NDC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[FLG_CAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FLG_CAP" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCENARIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].ExternalColumns[BB_BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_REV_EXPORT_REVACT_NDC_NN_STD"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_REV_EXPORT_REVACT_NDC_NN_STD]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[MEASURES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="MEASURES"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[MEASURES]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MEASURES]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[TIPO_ACT_FEE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TIPO_ACT_FEE"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACT_FEE]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TIPO_ACT_FEE]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[NEW_EXISTING]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="NEW_EXISTING"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[NEW_EXISTING]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[NEW_EXISTING]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[MULTIVISION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="MULTIVISION"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[MULTIVISION]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MULTIVISION]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[TCN_ATV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TCN_ATV"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ATV]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TCN_ATV]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[MOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="MOP"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[MOP]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[DURATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DURATA"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[DURATA]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[DURATA]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[CANALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CANALE"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[CANALE]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[CANALE]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[PRONTO_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PRONTO_SKY"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[PRONTO_SKY]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PRONTO_SKY]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PACCHETTO"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PACCHETTO]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[PROMO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PROMO"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[PROMO]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[PROMO]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[NDC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="NDC"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[NDC]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[NDC]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[FLG_CAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="FLG_CAP"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[FLG_CAP]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CLUSTER"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[SCENARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCENARIO"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[SCENARIO]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[SCENARIO]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].Columns[BB_BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_BUNDLE_FLG]"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output].Columns[BB_BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[MEASURES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MEASURES" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACT_FEE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TIPO_ACT_FEE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NEW_EXISTING" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[MULTIVISION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MULTIVISION" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ATV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TCN_ATV" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MOP" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DURATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[CANALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CANALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[PRONTO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRONTO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[NDC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NDC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="FLG_CAP" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCENARIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Note di Credito - Activation Fee NN STD.Paths[Flat File Source Output]"
+              endId="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate T_REV_EXPORT_REVACT_NDC_NN_STD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2E794DE5-EF51-4445-B257-D13CA7EAD4F9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate T_REV_EXPORT_REVACT_NDC_NN_STD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="truncate table T_REV_EXPORT_REVACT_NDC_NN_STD&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7979BF42-260E-490C-A73C-6E35536B6D4E}"
+      DTS:From="Package\Export Note di Credito - Activation Fee NN STD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Truncate T_REV_EXPORT_REVACT_NDC_NN_STD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{434B0175-ED76-4214-97EF-278F87500D5E}"
+      DTS:From="Package\Truncate T_REV_EXPORT_REVACT_NDC_NN_STD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Import Note di Credito - Activation Fee NN STD" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="330,44"
+          Id="Package\Export Note di Credito - Activation Fee NN STD"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="330,44"
+          Id="Package\Import Note di Credito - Activation Fee NN STD"
+          TopLeft="5.5,161.27358490566" />
+        <NodeLayout
+          Size="330,44"
+          Id="Package\Truncate T_REV_EXPORT_REVACT_NDC_NN_STD"
+          TopLeft="5.5,83.3867924528302" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="170.745283018868,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="170.745283018868,127.311320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Note di Credito - Activation Fee NN STD">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="301,44"
+          Id="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD"
+          TopLeft="5.5,79.6132075471698" />
+        <NodeLayout
+          Size="301,44"
+          Id="Package\Import Note di Credito - Activation Fee NN STD\EXPORT_NDC_PRS"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Import Note di Credito - Activation Fee NN STD.Paths[Flat File Source Output]"
+          TopLeft="155.764150943396,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.188679245283"
+              Start="0,0"
+              End="0,22.688679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.688679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Note di Credito - Activation Fee NN STD\T_REV_EXPORT_REVACT_NDC_NN_STD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

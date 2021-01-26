@@ -1,0 +1,215 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/14/2012 9:48:59 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{750E40EE-220F-4E76-A493-4330B43EE06C}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M02_PREMIUM_F1_S3_VALOR_PREZZI"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{0BE95716-70E1-4785-95E1-3AB402AA1F98}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{00CD979D-8B38-4C4A-8E35-31A94601144E}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M02_PREMIUM_F1_S3_VALOR_PREZZI-{00CD979D-8B38-4C4A-8E35-31A94601144E}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{AF090958-7732-480D-AA0A-D803C9EE749F}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M02_PREMIUM_F1_S3_VALOR_PREZZI-{AF090958-7732-480D-AA0A-D803C9EE749F}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{99FAE44C-3712-4D34-89D1-3AEF5EB412A7}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{99FAE44C-3712-4D34-89D1-3AEF5EB412A7}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiornamento Storico Prezzi e Anagrafica Prezzi M_REV_PREZZI_PREMIUM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2487b7b4-609c-493d-b3f1-15a596bddc64}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiornamento Storico Prezzi e Anagrafica Prezzi M_REV_PREZZI_PREMIUM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{AF090958-7732-480D-AA0A-D803C9EE749F}"
+          SQLTask:SqlStatementSource="delete &#xA;from M_REV_STO_PREZZI_PREMIUM&#xA;where&#x9;WEEK_ID = (select top 1 WEEK_ID from M_REV_CALC_WEEK) and &#xA;&#x9;&#x9;SCE_ID = (select top 1 SCE_ID from M_REV_CALC_WEEK) and&#xA;&#x9;&#x9;PRS_DES &lt;&gt; 'HD - SKY Q PLUS'&#xA;&#xA;insert into M_REV_STO_PREZZI_PREMIUM&#xA;select SCE_ID, WEEK_ID, PRS_DES, PREZZO_CDW, PREZZO, VOLUMI_SETTIMANALI&#xA;from M_REV_PREZZI_PREMIUM a, (select top 1 SCE_ID, WEEK_ID from M_REV_CALC_WEEK) b&#xA;where a.PRS_DES &lt;&gt; 'HD - SKY Q PLUS'&#xA;&#xA;--drop table M_REV_PREZZI_PREMIUM&#xA;delete from M_REV_PREZZI_PREMIUM&#xA;where PRS_DES &lt;&gt; 'HD - SKY Q PLUS'&#xA;&#xA;insert into M_REV_PREZZI_PREMIUM&#xA;select d.PRS_DES, d.PREZZO_CDW, c.PREZZO, d.VOLUMI_SETTIMANALI&#xA;--into M_REV_PREZZI_PREMIUM&#xA;from (&#xA;&#x9;&#x9;select&#x9;case&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;when PRS2_DES in ('SKYGO','BOX SETS','SKYGO PLUS','SKY Q PLUS','UHD','MS') then b.PRS1_DES&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else b.PRS1_DES+' - '+b.MOD_DES &#xA;&#x9;&#x9;&#x9;&#x9;end as PRS_DES,&#xA;&#x9;&#x9;&#x9;&#x9;a.IMP_RC_CANONE_SERV as PREZZO_CDW, &#xA;&#x9;&#x9;&#x9;&#x9;sum(SUBS) as VOLUMI_SETTIMANALI&#xA;&#x9;&#x9;from ST_REV_PREMIUM_VOLUMI a&#xA;&#x9;&#x9;join S_REV_PRS_PREMIUM_SETTIMANALE b&#xA;&#x9;&#x9;&#x9;on a.PRS_RC = b.PRS_RC and a.MOD_ID = b.MOD_ID&#xA;&#x9;&#x9;where a.GIO_ID = (&#x9;select max(Gio_Id)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from M_REV_TEMPO&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;where Wee2_Id = (select top 1 WEEK_ID from M_REV_CALC_WEEK)&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;and right(Ann_Id, 2) = (select top 1 right(SCE_ID, 2) from M_REV_CALC_WEEK))&#xA;&#x9;&#x9;group by case&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;when PRS2_DES in ('SKYGO','BOX SETS','SKYGO PLUS','SKY Q PLUS','UHD','MS') then b.PRS1_DES&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;else b.PRS1_DES+' - '+b.MOD_DES &#xA;&#x9;&#x9;&#x9;&#x9;end, a.IMP_RC_CANONE_SERV&#xA;) d&#xA;left outer join (&#x9;select a.*&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;from M_REV_STO_PREZZI_PREMIUM a&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;join (&#x9;select max(SCE_ID+WEEK_ID)as FYWEEK&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;from M_REV_STO_PREZZI_PREMIUM&#xA;&#x9;&#x9;&#x9;&#x9;) b on (a.SCE_ID+a.WEEK_ID) = b.FYWEEK&#xA;) c on d.PRS_DES = c.PRS_DES and &#xA;&#x9;&#x9;d.PREZZO_CDW = c.PREZZO_CDW&#xA;--0:03&#xA;&#xA;update M_REV_PREZZI_PREMIUM&#xA;set PREZZO = PREZZO_CDW&#xA;where PREZZO is null&#xA;&#x9;&#x9;and PRS_DES &lt;&gt; 'HD - SKY Q PLUS' &#xA;--0:00" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="276,44"
+          Id="Package\Aggiornamento Storico Prezzi e Anagrafica Prezzi M_REV_PREZZI_PREMIUM"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

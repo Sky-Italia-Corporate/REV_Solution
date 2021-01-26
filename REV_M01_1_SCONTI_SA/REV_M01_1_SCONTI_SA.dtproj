@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeploymentModel>Package</DeploymentModel>
+  <ProductVersion>14.0.3002.113</ProductVersion>
+  <SchemaVersion>9.0.1.0</SchemaVersion>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <Database>
+    <Name>REV_M01_SCONTI_SA.database</Name>
+    <FullPath>REV_M01_SCONTI_SA.database</FullPath>
+  </Database>
+  <DataSources />
+  <DataSourceViews />
+  <DeploymentModelSpecificContent>
+    <Manifest>
+      <DTSPackages>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S1_FIRSTACT.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S1_FIRSTACT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S1_RC_ATTIVATI.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S1_RC_ATTIVATI.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S1_UNISCE_FLUSSI_e_AGGIORNA_PROMO.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S1_UNISCE_FLUSSI_e_AGGIORNA_PROMO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S2_PROMO_MAP_UNICO.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S2_PROMO_MAP_UNICO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S3_PROMO_UNDEFINED.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S3_PROMO_UNDEFINED.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S4_PROMO_SD_HD.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S4_PROMO_SD_HD.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S4_RC_FITTIZI_E_CONFIGURAZIONI.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S4_RC_FITTIZI_E_CONFIGURAZIONI.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S5_ANAGRAFICA_PROMO.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S5_ANAGRAFICA_PROMO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S6_ANAGRAFICA_PRODOTTO.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S6_ANAGRAFICA_PRODOTTO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S6b_UPD_CESS_PARCO.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S6b_UPD_CESS_PARCO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S7_ANAGRAFICA_PROMO_PRODOTTI.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S7_ANAGRAFICA_PROMO_PRODOTTI.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S8_TICKET_STORICHE_EXTRASISTEMA.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S8_TICKET_STORICHE_EXTRASISTEMA.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F1_S9_REVENUE_SHARE.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F1_S9_REVENUE_SHARE.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F2_S1_VOLUMI_RC_VOUCHER.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F2_S1_VOLUMI_RC_VOUCHER.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F2_S3_PREPARAZIONE_TABELLE.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F2_S3_PREPARAZIONE_TABELLE.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F2_S4_US_GAAP_CASH_DISCOUNT.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F2_S4_US_GAAP_CASH_DISCOUNT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F2_S5_MGMT_CASH_DISCOUNT.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F2_S5_MGMT_CASH_DISCOUNT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F2_S6_AGGIORNA_ANAGRAFICHE.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F2_S6_AGGIORNA_ANAGRAFICHE.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F3_S1_COMPETENZIAZIONE_MGMT.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F3_S1_COMPETENZIAZIONE_MGMT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F3_S2_COMPETENZIAZIONE_US_GAAP.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F3_S2_COMPETENZIAZIONE_US_GAAP.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S1_SF_DIS_ATTIVAZIONI.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S1_SF_DIS_ATTIVAZIONI.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S10_INSERT_ADJ_SF.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S10_INSERT_ADJ_SF.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S11_ANAG_FLG_CAP.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S11_ANAG_FLG_CAP.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S12_ARPU.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S12_ARPU.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S2_SF_DIS_SCONTI_MGMT.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S2_SF_DIS_SCONTI_MGMT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S3_SF_DIS_SCONTI_US_GAAP.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S3_SF_DIS_SCONTI_US_GAAP.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S4_CHURN_MGMT.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S4_CHURN_MGMT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S5_CHURN_US_GAAP.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S5_CHURN_US_GAAP.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S6_SF_DIS_CHURN_MGMT.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S6_SF_DIS_CHURN_MGMT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S7_SF_DIS_CHURN_US_GAAP.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S7_SF_DIS_CHURN_US_GAAP.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S8_SF_DIS_CHURN.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S8_SF_DIS_CHURN.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M01_SCONTI_F4_S9_IMPORT_ADJ.dtsx</Name>
+          <FullPath>SKY_REV_M01_SCONTI_F4_S9_IMPORT_ADJ.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+      </DTSPackages>
+    </Manifest>
+  </DeploymentModelSpecificContent>
+  <ControlFlowParts />
+  <Miscellaneous />
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <OutputPath>E:\StagingArea\DEPLOY_PKG_SSIS\REV\bin\REV_M01_1_SCONTI_SA</OutputPath>
+        <ConnectionMappings />
+        <ConnectionProviderMappings />
+        <ConnectionSecurityMappings />
+        <DatabaseStorageLocations />
+        <TargetServerVersion>SQLServer2017</TargetServerVersion>
+        <ParameterConfigurationValues />
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

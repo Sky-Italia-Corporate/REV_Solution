@@ -1,0 +1,2394 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/23/2009 5:58:53 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{356207E0-1AFE-4976-9D99-A64CDA4B3CD1}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M07_OPTIONS_F2_S2_FACT_OPTIONS_OPENING"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{BE4C03B6-6D6D-482F-8F55-40F19683D37E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5B3E079E-444D-4EC1-B848-719075C51333}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_1_08_FACT_OPTIONS_OPENING-{5B3E079E-444D-4EC1-B848-719075C51333}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{80D3FA8A-1FA2-42D4-A35C-BE041EC7D229}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_1_08_FACT_OPTIONS_OPENING-{80D3FA8A-1FA2-42D4-A35C-BE041EC7D229}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{B8D07E4A-2EC5-495B-B0B1-EBC870C3934D}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{B8D07E4A-2EC5-495B-B0B1-EBC870C3934D}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0FB15AC8-25BB-40DD-9E89-7FAF04D45309}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="From SF_REV_OPTIONS To F_REV_OPTIONS_OPE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Fittizio Tecnologia - ***-NO_TECNOLOGIA"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Output].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="100"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Output].Columns[TCN_DES]"
+                      name="TCN_DES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,100,1252)"***-NO_TECNOLOGIA"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,100,1252)"***-NO_TECNOLOGIA"</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="F_REV_OPTIONS_OPE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[F_REV_OPTIONS_OPE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[OPT_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="OPT_ID"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[OPT_ID]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[OPT_ID]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[SUBS]"
+                      cachedDataType="numeric"
+                      cachedName="SUBS"
+                      cachedPrecision="18"
+                      cachedScale="5"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[SUBS]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[Gio_Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Gio_Id"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[Gio_Id]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[Gio_Id]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TCN_DES"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[TCN_DES]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[TCN_DES]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[CLU_IPTV]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[RGR_OPT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="RGR_OPT"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[RGR_OPT]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[RGR_OPT]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[OPT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="OPT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      dataType="numeric"
+                      name="SUBS"
+                      precision="18"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[Gio_Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Gio_Id" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TCN_DES" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[RGR_OPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="RGR_OPT" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates and groups values in a dataset."
+              name="Group By"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[Gio_Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Gio_Id"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[Gio_Id]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[OPT_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="OPT_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[OPT_ID]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TCN_DES"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_DES]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[SUBS]"
+                      cachedDataType="numeric"
+                      cachedName="SUBS"
+                      cachedPrecision="18"
+                      cachedScale="5"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[SUBS]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[RGR_OPT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="RGR_OPT"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[RGR_OPT]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[Gio_Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[Gio_Id]"
+                      name="Gio_Id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[Gio_Id]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[OPT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[OPT_ID]"
+                      name="OPT_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[OPT_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[TCN_DES]"
+                      name="TCN_DES">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_DES]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[CLU_IPTV]"
+                      name="CLU_IPTV">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[SUBS]"
+                      dataType="numeric"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[SUBS]"
+                      name="SUBS"
+                      precision="18"
+                      scale="5">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[RGR_OPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[RGR_OPT]"
+                      name="RGR_OPT">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[RGR_OPT]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;5"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	TCN_ID,
+	case
+		when TCN_DES = 'DTH' then 'Standard'
+		else TCN_DES
+	end as TCN_DES
+from S_REV_TCN_TECNOLOGIA</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select
+	TCN_ID,
+	case
+		when TCN_DES = 'DTH' then 'Standard'
+		else TCN_DES
+	end as TCN_DES
+from S_REV_TCN_TECNOLOGIA) [refTable]
+where [refTable].[TCN_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="TCN_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TCN_DES" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[TCN_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Inputs[Lookup Input].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[TCN_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">TCN_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Match Output].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="100"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Match Output].Columns[TCN_DES]"
+                      name="TCN_DES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">TCN_DES</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SF_REV_OPTIONS"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/* ATT69082_SkyGo_Extra - FRMR: Spaccatura cubo REVDAY e creazione cubo REVOP */
+select 
+    week_days.Gio_Id,
+    isnull(curr_week.OPT_ID, prev_week.OPT_ID) as OPT_ID,  
+    isnull(curr_week.RGR_OPT, prev_week.RGR_OPT) as RGR_OPT,  
+    -- Viene perso il dettaglio di pacchetto che non viene riportato sul cubo
+    isnull(curr_week.TCN_ID, prev_week.TCN_ID) as TCN_ID,
+    upper(isnull(curr_week.CLU_IPTV, prev_week.CLU_IPTV)) as CLU_IPTV,
+    cast((isnull(curr_week.SUBS, 0) + isnull(prev_week.SUBS, 0))/2.0 as decimal(18, 5)) as SUBS,
+	ISNULL(curr_week.BB_CONTRACT_STATUS,'ZZZ_NO_BB_CONTRACT_STATUS') AS BB_CONTRACT_STATUS,
+	ISNULL(curr_week.BB_ORIGIN_CLUSTER,'ZZZ_NO_ORIGIN_CLUSTER') AS BB_ORIGIN_CLUSTER,
+	ISNULL(curr_week.BB_PRD_ID,'ZZZ_NO_BB_PRODUCT') AS BB_PRD_ID,
+	CASE WHEN curr_week.BB_VOICE_FLG='Y_BB' THEN 'Y'
+		WHEN curr_week.BB_VOICE_FLG='N_BB' THEN 'N' ELSE ISNULL(curr_week.BB_VOICE_FLG,'N') END AS BB_VOICE_FLG,
+	ISNULL(curr_week.BUNDLE_FLG,'No Bundle') AS BUNDLE_FLG
+from (
+    select 
+	   SCE_ID, 
+	   Wee2_Id, 
+	   PCK_ID, 
+	   OPT_ID,
+	   RGR_OPT,
+	   TCN_ID,
+	   CLU_IPTV, 
+	   sum(SUBS) as SUBS
+	   ,BB_CONTRACT_STATUS
+	   ,BB_ORIGIN_CLUSTER
+	   ,BB_PRD_ID
+	   ,BB_VOICE_FLG
+	   ,BUNDLE_FLG
+    from SF_REV_OPTIONS sf
+    join M_REV_PREV_WEEK prev_wk
+	   on right(sf.SCE_ID, 2) + right(sf.Wee2_Id, 2) = right(prev_wk.CURR_YEAR, 2) + right(prev_wk.CURR_WEEK, 2)
+    group by SCE_ID, 
+	   Wee2_Id, 
+	   PCK_ID, 
+	   OPT_ID,
+	   RGR_OPT,
+	   TCN_ID,
+	   CLU_IPTV	
+	   ,BB_CONTRACT_STATUS
+	   ,BB_ORIGIN_CLUSTER
+	   ,BB_PRD_ID
+	   ,BB_VOICE_FLG
+	   ,BUNDLE_FLG
+) prev_week
+full outer join (
+    select 
+	   SCE_ID, 
+	   Wee2_Id, 
+	   PCK_ID, 
+	   OPT_ID,
+	   RGR_OPT,
+	   TCN_ID,
+	   CLU_IPTV, 
+	   sum(SUBS) as SUBS
+	   ,BB_CONTRACT_STATUS
+	   ,BB_ORIGIN_CLUSTER
+	   ,BB_PRD_ID
+	   ,BB_VOICE_FLG
+	   ,BUNDLE_FLG
+    from SF_REV_OPTIONS sf
+    join M_REV_PREV_WEEK prev_wk
+	   on right(sf.SCE_ID, 2) + right(sf.Wee2_Id, 2) = right(prev_wk.PREV_YEAR, 2) + right(prev_wk.PREV_WEEK, 2)
+    group by SCE_ID, 
+	   Wee2_Id, 
+	   PCK_ID, 
+	   OPT_ID,
+	   RGR_OPT,
+	   TCN_ID,
+	   CLU_IPTV
+	   ,BB_CONTRACT_STATUS
+	   ,BB_ORIGIN_CLUSTER
+	   ,BB_PRD_ID
+	   ,BB_VOICE_FLG
+	   ,BUNDLE_FLG
+) curr_week 
+    on prev_week.OPT_ID = curr_week.OPT_ID 
+		and prev_week.RGR_OPT = curr_week.RGR_OPT
+	    and prev_week.PCK_ID = curr_week.PCK_ID
+	    and prev_week.TCN_ID = curr_week.TCN_ID
+	    and prev_week.CLU_IPTV = curr_week.CLU_IPTV
+cross join (
+    select
+		  t.Gio_Id
+	   from SKY_REV.dbo.M_REV_CALC_WEEK m 
+	   inner join SKY_REV.dbo.M_REV_TEMPO t 
+		  on right(m.SCE_ID, 2) = right(t.Ann_Id, 2)
+			 and m.WEEK_ID = t.Wee2_Id
+) week_days</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[OPT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[OPT_ID]"
+                      length="255"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[OPT_ID]"
+                      name="OPT_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[Gio_Id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[Gio_Id]"
+                      length="8"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[Gio_Id]"
+                      name="Gio_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      name="SUBS"
+                      precision="18"
+                      scale="5"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      name="TCN_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      length="20"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[RGR_OPT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[RGR_OPT]"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[RGR_OPT]"
+                      name="RGR_OPT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[OPT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="OPT_ID" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[Gio_Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="Gio_Id" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      dataType="numeric"
+                      name="SUBS"
+                      precision="18"
+                      scale="5" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      dataType="i4"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[RGR_OPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="RGR_OPT" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[OPT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[OPT_ID]"
+                      name="OPT_ID" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[Gio_Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[Gio_Id]"
+                      name="Gio_Id" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[RGR_OPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[RGR_OPT]"
+                      name="RGR_OPT" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      dataType="numeric"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      name="SUBS"
+                      precision="18"
+                      scale="5" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Merges multiple datasets."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[OPT_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="OPT_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[OPT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[OPT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[Gio_Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Gio_Id"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[Gio_Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[Gio_Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[SUBS]"
+                      cachedDataType="numeric"
+                      cachedName="SUBS"
+                      cachedPrecision="18"
+                      cachedScale="5"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[SUBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[TCN_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[CLU_IPTV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TCN_DES"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Match Output].Columns[TCN_DES]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[RGR_OPT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="RGR_OPT"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[RGR_OPT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[RGR_OPT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[OPT_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="OPT_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[OPT_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[OPT_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[Gio_Id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="Gio_Id"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[Gio_Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[Gio_Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[SUBS]"
+                      cachedDataType="numeric"
+                      cachedName="SUBS"
+                      cachedPrecision="18"
+                      cachedScale="5"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[SUBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[TCN_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[CLU_IPTV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TCN_DES"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Output].Columns[TCN_DES]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[RGR_OPT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="RGR_OPT"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[RGR_OPT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[RGR_OPT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[OPT_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[OPT_ID]"
+                      name="OPT_ID" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[Gio_Id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[Gio_Id]"
+                      name="Gio_Id" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[SUBS]"
+                      dataType="numeric"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[SUBS]"
+                      name="SUBS"
+                      precision="18"
+                      scale="5" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_ID]"
+                      dataType="i4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]"
+                      name="CLU_IPTV" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[TCN_DES]"
+                      name="TCN_DES" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[RGR_OPT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[RGR_OPT]"
+                      name="RGR_OPT" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Aggregate Output 1]"
+              endId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Derived Column Output]"
+              endId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Lookup Match Output]"
+              endId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Inputs[Union All Input 1]"
+              name="Lookup Match Output"
+              startId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Lookup No Match Output]"
+              endId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA.Inputs[Derived Column Input]"
+              name="Lookup No Match Output"
+              startId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Outputs[Lookup No Match Output]" />
+            <path
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[OLE DB Source Output]"
+              endId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Union All Output 1]"
+              endId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By.Inputs[Aggregate Input 1]"
+              name="Union All Output 1"
+              startId="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table F_REV_OPTIONS_OPE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DDFA3008-B072-46F8-B3AF-6255293CB9CB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table F_REV_OPTIONS_OPE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{80D3FA8A-1FA2-42D4-A35C-BE041EC7D229}"
+          SQLTask:SqlStatementSource="truncate table F_REV_OPTIONS_OPE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{170D1D08-8E2B-4991-BC40-F8A9D97EC4AD}"
+      DTS:From="Package\Truncate table F_REV_OPTIONS_OPE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="205,44"
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE"
+          TopLeft="5.5,99.311320754717" />
+        <NodeLayout
+          Size="205,44"
+          Id="Package\Truncate table F_REV_OPTIONS_OPE"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="107.801886792453,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.8867924528302"
+              Start="0,0"
+              End="0,42.3867924528302">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.3867924528302" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Group By"
+          TopLeft="127,413.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS"
+          TopLeft="106,5.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Union All"
+          TopLeft="128,311.5" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE"
+          TopLeft="96.0000000000001,515.5" />
+        <NodeLayout
+          Size="366,42"
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Recupero descrizione tecnologia - S_REV_TCN_TECNOLOGIA"
+          TopLeft="5.5,107.5" />
+        <NodeLayout
+          Size="280,42"
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\Fittizio Tecnologia - ***-NO_TECNOLOGIA"
+          TopLeft="249.5,209.5" />
+        <EdgeLayout
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Union All Output 1]"
+          TopLeft="188.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[OLE DB Source Output]"
+          TopLeft="188.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Lookup No Match Output]"
+          TopLeft="248.166666666667,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="141.333333333333,60"
+              Start="0,0"
+              End="141.333333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.1566920565832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.1566920565832"
+                    Point2="0,24.1566920565832"
+                    Point3="4,24.1566920565832" />
+                  <mssgle:LineSegment
+                    End="137.333333333333,24.1566920565832" />
+                  <mssgle:CubicBezierSegment
+                    Point1="137.333333333333,24.1566920565832"
+                    Point2="141.333333333333,24.1566920565832"
+                    Point3="141.333333333333,28.1566920565832" />
+                  <mssgle:LineSegment
+                    End="141.333333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="14.8602799479167,29.1566920565832,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Lookup Match Output]"
+          TopLeft="128.833333333333,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="40.8333333333334,162"
+              Start="0,0"
+              End="40.8333333333334,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,76.1230667255855" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,76.1230667255855"
+                    Point2="0,80.1230667255855"
+                    Point3="4,80.1230667255855" />
+                  <mssgle:LineSegment
+                    End="36.8333333333334,80.1230667255855" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.8333333333334,80.1230667255855"
+                    Point2="40.8333333333334,80.1230667255855"
+                    Point3="40.8333333333334,84.1230667255855" />
+                  <mssgle:LineSegment
+                    End="40.8333333333334,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.7747200520833,85.1230667255855,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Derived Column Output]"
+          TopLeft="389.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-182.166666666667,60"
+              Start="0,0"
+              End="-182.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="-4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="-178.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-178.166666666667,35.5301794453507"
+                    Point2="-182.166666666667,35.5301794453507"
+                    Point3="-182.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="-182.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE.Paths[Aggregate Output 1]"
+          TopLeft="188.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\SF_REV_OPTIONS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\From SF_REV_OPTIONS To F_REV_OPTIONS_OPE\F_REV_OPTIONS_OPE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

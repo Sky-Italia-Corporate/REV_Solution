@@ -1,0 +1,1946 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/2/2012 9:30:17 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{01EAA301-B109-4A12-8EE8-29377DB8D836}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M00_X_K12_CONF_AFC"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{6FB7F082-7033-40EC-82FD-BF39B40EBB28}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AN_K12_CFGKNN]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5DF3B799-7D64-4D7D-9813-214FE801154C}"
+      DTS:ObjectName="AN_K12_CFGKNN">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RESREV\kenan\RV_AN_K12_CFGKNN.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="X_KENAN_ID"
+              DTS:DTSID="{02FA6B81-2B79-492D-9A1B-3C2E3925288A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODICE_PS"
+              DTS:DTSID="{D6F2D245-9C5F-475B-B431-392A06AD3FC0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DESC_CODE_PS"
+              DTS:DTSID="{08E52149-F565-421B-BBE4-C4EEA9281892}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLAG_RATEI_RISCONTI"
+              DTS:DTSID="{3D72480B-D217-49F1-821E-BD538621D0B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CODE_MODE_CALCOLO_NRC"
+              DTS:DTSID="{289FAC82-98F9-4144-9ECF-6CBA27C9A0AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRODOTTO"
+              DTS:DTSID="{C587FB69-897D-43F3-8BF4-0858813FD301}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_FINE_NRC"
+              DTS:DTSID="{DB7E6D52-FBF3-4A1B-9757-0437320282CD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLAG_CALC_DATA_LAYOUT_FATT"
+              DTS:DTSID="{1E3B2EFD-856B-4233-9456-2896B08D7D4B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLAG_PRORATA"
+              DTS:DTSID="{E26EE09E-8D4D-46FB-B914-BC499C08B38A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CUSTOMER_TAG"
+              DTS:DTSID="{42FFA33A-E2AE-4B0B-B553-5668B1DD6D96}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTO_1"
+              DTS:DTSID="{C670812B-8871-4504-AD66-9F39F2902729}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTO_2"
+              DTS:DTSID="{22E4B33B-7166-49A2-AA84-3A2C129AFED7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_ULTIMO_AGG"
+              DTS:DTSID="{2D91D5B8-B768-492D-AEAF-5A3293066FD1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="IPTV_RS"
+              DTS:DTSID="{02DB9084-2B18-474E-953A-A52D7B658AF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GLOBAL_KEY"
+              DTS:DTSID="{15F8DEE5-EA32-4146-8788-2EB3574C685C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8BCF4A81-B204-4352-94C1-39664CEC82EB}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_X_K12_CONF_AFC-{8BCF4A81-B204-4352-94C1-39664CEC82EB}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1CC45D80-7BE3-465E-B859-68A9741C6BB3}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_X_K12_CONF_AFC-{1CC45D80-7BE3-465E-B859-68A9741C6BB3}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{80D63AE7-0700-4218-A1C9-5FEF6909911F}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_X_K12_CONF_AFC-{80D63AE7-0700-4218-A1C9-5FEF6909911F}SQL02.SSIS_CONFIGURATIONS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;File_AN_K12_CFGKNN&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{97172264-DF3A-406F-8AF9-ACE60F15695F}"
+      DTS:ObjectName="File_AN_K12_CFGKNN" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{6C4F7718-B92D-4016-8B88-AE213D874134}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{6C4F7718-B92D-4016-8B88-AE213D874134}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import flusso K12_CFGKNN"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{38dec93d-e576-48ee-9fe5-87c90a9597a9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import flusso K12_CFGKNN"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="K12_CFGKNN"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AN_K12_CFGKNN]"
+                  connectionManagerRefId="Package.ConnectionManagers[AN_K12_CFGKNN]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[X_KENAN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[X_KENAN_ID]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[X_KENAN_ID]"
+                      name="X_KENAN_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODICE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CODICE_PS]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODICE_PS]"
+                      name="CODICE_PS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DESC_CODE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[DESC_CODE_PS]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DESC_CODE_PS]"
+                      name="DESC_CODE_PS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_RATEI_RISCONTI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[FLAG_RATEI_RISCONTI]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_RATEI_RISCONTI]"
+                      name="FLAG_RATEI_RISCONTI"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODE_MODE_CALCOLO_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CODE_MODE_CALCOLO_NRC]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODE_MODE_CALCOLO_NRC]"
+                      name="CODE_MODE_CALCOLO_NRC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[PRODOTTO]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[PRODOTTO]"
+                      name="PRODOTTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_FINE_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[DATA_FINE_NRC]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_FINE_NRC]"
+                      name="DATA_FINE_NRC"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      name="FLAG_CALC_DATA_LAYOUT_FATT"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[FLAG_PRORATA]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_PRORATA]"
+                      name="FLAG_PRORATA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CUSTOMER_TAG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_TAG]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CUSTOMER_TAG]"
+                      name="CUSTOMER_TAG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CONTO_1]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_1]"
+                      name="CONTO_1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CONTO_2]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_2]"
+                      name="CONTO_2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_ULTIMO_AGG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[DATA_ULTIMO_AGG]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_ULTIMO_AGG]"
+                      name="DATA_ULTIMO_AGG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[IPTV_RS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[IPTV_RS]"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[IPTV_RS]"
+                      name="IPTV_RS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[GLOBAL_KEY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[GLOBAL_KEY]"
+                      length="255"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[GLOBAL_KEY]"
+                      name="GLOBAL_KEY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[X_KENAN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="X_KENAN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CODICE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CODICE_PS" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[DESC_CODE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_CODE_PS" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[FLAG_RATEI_RISCONTI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_RATEI_RISCONTI" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CODE_MODE_CALCOLO_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CODE_MODE_CALCOLO_NRC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRODOTTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[DATA_FINE_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_FINE_NRC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_CALC_DATA_LAYOUT_FATT" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[FLAG_PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_PRORATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CUSTOMER_TAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_TAG" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CONTO_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_1" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[CONTO_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[DATA_ULTIMO_AGG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ULTIMO_AGG" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[IPTV_RS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="IPTV_RS" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].ExternalColumns[GLOBAL_KEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="GLOBAL_KEY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_REV_AN_K12_CFGKNN"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_REV_AN_K12_CFGKNN]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[X_KENAN_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="X_KENAN_ID"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[X_KENAN_ID]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[X_KENAN_ID]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[CODICE_PS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CODICE_PS"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_PS]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CODICE_PS]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[DESC_CODE_PS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_CODE_PS"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[DESC_CODE_PS]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DESC_CODE_PS]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[FLAG_RATEI_RISCONTI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLAG_RATEI_RISCONTI"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_RATEI_RISCONTI]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_RATEI_RISCONTI]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[CODE_MODE_CALCOLO_NRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CODE_MODE_CALCOLO_NRC"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CODE_MODE_CALCOLO_NRC]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CODE_MODE_CALCOLO_NRC]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[PRODOTTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRODOTTO"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[PRODOTTO]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[PRODOTTO]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[DATA_FINE_NRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_FINE_NRC"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FINE_NRC]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DATA_FINE_NRC]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[CUSTOMER_TAG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUSTOMER_TAG"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_TAG]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CUSTOMER_TAG]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[DATA_ULTIMO_AGG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ULTIMO_AGG"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ULTIMO_AGG]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DATA_ULTIMO_AGG]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[CONTO_1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_1"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_1]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CONTO_1]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[CONTO_2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_2"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_2]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CONTO_2]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[FLAG_PRORATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLAG_PRORATA"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_PRORATA]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_PRORATA]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].Columns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLAG_CALC_DATA_LAYOUT_FATT"
+                      externalMetadataColumnId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_CALC_DATA_LAYOUT_FATT]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[X_KENAN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="X_KENAN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CODICE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CODICE_PS" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[DESC_CODE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DESC_CODE_PS" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_RATEI_RISCONTI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_RATEI_RISCONTI" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CODE_MODE_CALCOLO_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CODE_MODE_CALCOLO_NRC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRODOTTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FINE_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_FINE_NRC" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_CALC_DATA_LAYOUT_FATT" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_PRORATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_TAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CUSTOMER_TAG" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_1" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_2" />
+                    <externalMetadataColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ULTIMO_AGG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ULTIMO_AGG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates and groups values in a dataset."
+              name="Usato per aggregare togliendo il campo IPTV_RS"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[X_KENAN_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="X_KENAN_ID"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[X_KENAN_ID]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[CODICE_PS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CODICE_PS"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODICE_PS]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[DESC_CODE_PS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DESC_CODE_PS"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DESC_CODE_PS]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[FLAG_RATEI_RISCONTI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLAG_RATEI_RISCONTI"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_RATEI_RISCONTI]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[CODE_MODE_CALCOLO_NRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CODE_MODE_CALCOLO_NRC"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODE_MODE_CALCOLO_NRC]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[PRODOTTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRODOTTO"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[PRODOTTO]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[DATA_FINE_NRC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_FINE_NRC"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_FINE_NRC]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLAG_CALC_DATA_LAYOUT_FATT"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_CALC_DATA_LAYOUT_FATT]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[FLAG_PRORATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLAG_PRORATA"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_PRORATA]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[CUSTOMER_TAG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CUSTOMER_TAG"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CUSTOMER_TAG]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[CONTO_1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_1"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_1]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[CONTO_2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_2"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_2]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[DATA_ULTIMO_AGG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ULTIMO_AGG"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_ULTIMO_AGG]" />
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1].Columns[GLOBAL_KEY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="GLOBAL_KEY"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[GLOBAL_KEY]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[X_KENAN_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[X_KENAN_ID]"
+                      name="X_KENAN_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[X_KENAN_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CODICE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CODICE_PS]"
+                      name="CODICE_PS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODICE_PS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DESC_CODE_PS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DESC_CODE_PS]"
+                      name="DESC_CODE_PS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DESC_CODE_PS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_RATEI_RISCONTI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_RATEI_RISCONTI]"
+                      name="FLAG_RATEI_RISCONTI">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_RATEI_RISCONTI]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CODE_MODE_CALCOLO_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CODE_MODE_CALCOLO_NRC]"
+                      name="CODE_MODE_CALCOLO_NRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CODE_MODE_CALCOLO_NRC]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[PRODOTTO]"
+                      name="PRODOTTO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[PRODOTTO]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DATA_FINE_NRC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DATA_FINE_NRC]"
+                      name="DATA_FINE_NRC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_FINE_NRC]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_CALC_DATA_LAYOUT_FATT]"
+                      name="FLAG_CALC_DATA_LAYOUT_FATT">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_CALC_DATA_LAYOUT_FATT]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[FLAG_PRORATA]"
+                      name="FLAG_PRORATA">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[FLAG_PRORATA]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CUSTOMER_TAG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CUSTOMER_TAG]"
+                      name="CUSTOMER_TAG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CUSTOMER_TAG]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CONTO_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CONTO_1]"
+                      name="CONTO_1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_1]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CONTO_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[CONTO_2]"
+                      name="CONTO_2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[CONTO_2]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DATA_ULTIMO_AGG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[DATA_ULTIMO_AGG]"
+                      name="DATA_ULTIMO_AGG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[DATA_ULTIMO_AGG]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[GLOBAL_KEY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1].Columns[GLOBAL_KEY]"
+                      name="GLOBAL_KEY">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[GLOBAL_KEY]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Evaluates and directs rows in a dataset."
+              name="Where X_KENAN_ID è valorizzato"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Inputs[Conditional Split Input].Columns[X_KENAN_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="X_KENAN_ID"
+                      lineageId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[X_KENAN_ID]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[X_KENAN_ID_VALUATED]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="X_KENAN_ID_VALUATED"
+                  synchronousInputId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output].Columns[X_KENAN_ID]} != ""</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">X_KENAN_ID != ""</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import flusso K12_CFGKNN.Paths[Aggregate Output 1]"
+              endId="Package\Import flusso K12_CFGKNN\T_REV_AN_K12_CFGKNN.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Import flusso K12_CFGKNN.Paths[Flat File Source Output]"
+              endId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Inputs[Conditional Split Input]"
+              name="Flat File Source Output"
+              startId="Package\Import flusso K12_CFGKNN\K12_CFGKNN.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import flusso K12_CFGKNN.Paths[X_KENAN_ID_VALUATED]"
+              endId="Package\Import flusso K12_CFGKNN\Usato per aggregare togliendo il campo IPTV_RS.Inputs[Aggregate Input 1]"
+              name="X_KENAN_ID_VALUATED"
+              startId="Package\Import flusso K12_CFGKNN\Where X_KENAN_ID è valorizzato.Outputs[X_KENAN_ID_VALUATED]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9472eab4-d0c5-4bd8-b6ec-a62b059e185c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1CC45D80-7BE3-465E-B859-68A9741C6BB3}"
+          SQLTask:SqlStatementSource="truncate table T_REV_AN_K12_CFGKNN" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update ultima colonna"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0f69bb4b-43ae-4435-8515-6282830c7fb6}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update ultima colonna"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1CC45D80-7BE3-465E-B859-68A9741C6BB3}"
+          SQLTask:SqlStatementSource="/**&#xA; * 30/07/2010: Questa update serve per ignorare eventuali ';' nell'ultima colonna della tabella T&#xA; * per far sì che l'aggiunta di una colonna nel file importato possa essere ignorata&#xA; * (di default SSIS concatena tutti i nuovi campi nell'ultima colonna)&#xA; *&#xA;**/&#xA;update T_REV_AN_K12_CFGKNN&#xA;set DATA_ULTIMO_AGG =&#xA;case&#xA; when charindex(';', DATA_ULTIMO_AGG )&gt;0 and left(DATA_ULTIMO_AGG , charindex(';', DATA_ULTIMO_AGG )-1) = ''&#xA;  then NULL&#xA; when charindex(';',DATA_ULTIMO_AGG )&gt;0&#xA;  then left(DATA_ULTIMO_AGG , charindex(';', DATA_ULTIMO_AGG )-1)&#xA; else DATA_ULTIMO_AGG &#xA;end" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E59E4474-2436-4DED-95B5-268AB46965A6}"
+      DTS:From="Package\Truncate Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Import flusso K12_CFGKNN" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{D8108A55-5359-4E38-987F-213FCADA92C2}"
+      DTS:From="Package\Import flusso K12_CFGKNN"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Update ultima colonna" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        <NodeLayout
+          Size="223,44"
+          Id="Package\Import flusso K12_CFGKNN"
+          TopLeft="5.5,103.38679245283" />
+        <NodeLayout
+          Size="223,44"
+          Id="Package\Truncate Table"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="223,44"
+          Id="Package\Update ultima colonna"
+          TopLeft="5.5,204.330188679245" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="116.820754716981,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,53.9622641509434"
+              Start="0,0"
+              End="0,46.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="116.820754716981,147.311320754717">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,57.0188679245283"
+              Start="0,0"
+              End="0,49.5188679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5188679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="LERO - 20150310 - CR255 Telecom&#xD;&#xA;Trasparentata nuova colonna FLAG IPTVRS"
+          ParentId="Package"
+          Size="226,65"
+          Id="8f6aabd3-defc-46f8-a04c-c47b99e160f4"
+          TopLeft="255.311320754717,102.556603773585">
+          <AnnotationLayout.FontInfo>
+            <mssge:FontInfo
+              Family="Tahoma"
+              Size="11.25"
+              Color="#FF080000">
+              <mssge:FontInfo.TextDecorations>
+                <av:TextDecorationCollection />
+              </mssge:FontInfo.TextDecorations>
+            </mssge:FontInfo>
+          </AnnotationLayout.FontInfo>
+        </AnnotationLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

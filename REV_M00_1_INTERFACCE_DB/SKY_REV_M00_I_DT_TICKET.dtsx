@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/8/2012 11:57:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{619E8402-1C48-4127-A770-FEA87EFC19B2}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M00_I_DT_TICKET"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{12CD6B9B-5D7E-4240-B2FE-DB81CD37772A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B72742EE-72FF-41F6-81D1-0C1E8CB6D773}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_I_DT_TICKET-{B72742EE-72FF-41F6-81D1-0C1E8CB6D773}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1642F990-7437-48B3-9D7B-EA276D39D3D8}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_I_DT_TICKET-{1642F990-7437-48B3-9D7B-EA276D39D3D8}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_SA]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{90D59A20-2DB9-481A-838B-1FD9EABDCC68}"
+      DTS:ObjectName="SKY_SA">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_SA;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_I_DT_TICKET-{90D59A20-2DB9-481A-838B-1FD9EABDCC68}SKY_SA;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{84D4BB3A-468E-4879-B755-CC5E23161865}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{84D4BB3A-468E-4879-B755-CC5E23161865}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Import Ticket Tables"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{81af5f5a-6ec8-4e15-a7f0-cf5c886fbb83}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Ticket Tables"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Ticket Tables\SF_SBT_TICKET"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SF_SBT_TICKET"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	sf.TCK_RC,
+	sf.TCK_END_DATE,
+	sf.GIO_ID,
+    sf.TAB_ID,
+    sf.TCN_ID,
+    sf.STM_ID,
+    sf.SCE_ID,
+    sf.WDS_ID,
+    sf.MOP_ID,
+    sf.PCK_ID,
+    sf.TCK_RC_MULTI,
+    sf.TCK_START_DATE,
+    sf.SUBS,
+    upper(sf.CLU_IPTV) as CLU_IPTV
+from SF_SBT_TICKET sf
+join (select GIO_ID
+	  from SKY_REV.dbo.M_REV_TEMPO a
+	  join SKY_REV.dbo.M_REV_CALC_WEEK b
+		on right(a.ANN_ID,2) = right(b.SCE_ID,2) and a.WEE2_ID = b.WEEK_ID ) m
+on sf.GIO_ID = m.GIO_ID
+where sf.FM_WK like '%WK%'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Ticket Tables\SF_SBT_TICKET.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_SA]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_SA]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_RC]"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_RC]"
+                      name="TCK_RC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_END_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_END_DATE]"
+                      length="8"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_END_DATE]"
+                      name="TCK_END_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TAB_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TAB_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TAB_ID]"
+                      name="TAB_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      name="TCN_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[STM_ID]"
+                      length="3"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[STM_ID]"
+                      name="STM_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      length="20"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[WDS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[WDS_ID]"
+                      length="20"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[WDS_ID]"
+                      name="WDS_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[MOP_ID]"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[MOP_ID]"
+                      name="MOP_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      name="PCK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_RC_MULTI]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_RC_MULTI]"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_RC_MULTI]"
+                      name="TCK_RC_MULTI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_START_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_START_DATE]"
+                      length="8"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_START_DATE]"
+                      name="TCK_START_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      name="SUBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      length="20"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TCK_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_END_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="TCK_END_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TAB_ID]"
+                      dataType="i4"
+                      name="TAB_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      dataType="i4"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="STM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[WDS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="WDS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_RC_MULTI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TCK_RC_MULTI" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[TCK_START_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="TCK_START_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      dataType="i4"
+                      name="SUBS" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_RC]"
+                      name="TCK_RC" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_END_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_END_DATE]"
+                      name="TCK_END_DATE" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TAB_ID]"
+                      dataType="i4"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TAB_ID]"
+                      name="TAB_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[STM_ID]"
+                      name="STM_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[WDS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[WDS_ID]"
+                      name="WDS_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[MOP_ID]"
+                      name="MOP_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_RC_MULTI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_RC_MULTI]"
+                      name="TCK_RC_MULTI" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_START_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[TCK_START_DATE]"
+                      name="TCK_START_DATE" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      dataType="i4"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      name="SUBS" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Ticket Tables\T_SBT_TICKET"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_SBT_TICKET"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_SBT_TICKET]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Ticket Tables\T_SBT_TICKET.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[TCK_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TCK_RC"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_RC]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_RC]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[TCK_END_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="TCK_END_DATE"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_END_DATE]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_END_DATE]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[TAB_ID]"
+                      cachedDataType="i4"
+                      cachedName="TAB_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TAB_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TAB_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCN_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[STM_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="STM_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[STM_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[STM_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="SCE_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[SCE_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[WDS_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="WDS_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[WDS_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[WDS_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[MOP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MOP_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[MOP_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[MOP_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PCK_ID"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[PCK_ID]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[TCK_RC_MULTI]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TCK_RC_MULTI"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_RC_MULTI]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_RC_MULTI]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[TCK_START_DATE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="TCK_START_DATE"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_START_DATE]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[TCK_START_DATE]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[SUBS]" />
+                    <inputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      externalMetadataColumnId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      lineageId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output].Columns[CLU_IPTV]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TAB_ID]"
+                      dataType="i4"
+                      name="TAB_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      dataType="i4"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="STM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[WDS_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="WDS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TCK_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_RC_MULTI]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TCK_RC_MULTI" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_START_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="TCK_START_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[TCK_END_DATE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="TCK_END_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      dataType="i4"
+                      name="SUBS" />
+                    <externalMetadataColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Ticket Tables\T_SBT_TICKET.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Ticket Tables\T_SBT_TICKET.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Ticket Tables\T_SBT_TICKET.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Ticket Tables\T_SBT_TICKET.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Ticket Tables.Paths[OLE DB Source Output]"
+              endId="Package\Import Ticket Tables\T_SBT_TICKET.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Import Ticket Tables\SF_SBT_TICKET.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table T_SBT_TICKET"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{f0ba13b5-7965-4c3c-93b2-4a28861252ed}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table T_SBT_TICKET"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1642F990-7437-48B3-9D7B-EA276D39D3D8}"
+          SQLTask:SqlStatementSource="truncate table T_SBT_TICKET&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5aadcfd5-e278-49d2-a837-fa757abd8f92}"
+      DTS:From="Package\truncate table T_SBT_TICKET"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Ticket Tables" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="233,44"
+          Id="Package\Import Ticket Tables"
+          TopLeft="5.5,121.764150943396" />
+        <NodeLayout
+          Size="233,44"
+          Id="Package\truncate table T_SBT_TICKET"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="121.801886792453,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,72.3396226415094"
+              Start="0,0"
+              End="0,64.8396226415094">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,64.8396226415094" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

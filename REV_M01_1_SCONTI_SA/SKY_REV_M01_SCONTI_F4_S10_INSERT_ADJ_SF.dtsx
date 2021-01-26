@@ -1,0 +1,2171 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{E55C42C9-C5E4-4284-AC03-943870967942}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M01_SCONTI_F4_S10_INSERT_ADJ_SF"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{B50C081D-4872-4DEB-A197-6360B00B6582}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F4_S10_INSERT_ADJ_SF-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F4_S10_INSERT_ADJ_SF-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cancella Adj manuali MGMT"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4EEF6FF1-A711-4D6B-B1B4-00A40B983920}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cancella Adj manuali MGMT"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="delete SF&#xA;from SF_REV_DIS_SCONTI_MGMT SF&#xA;join V_M_REV_PERIOD_ATTIVAZIONE V&#xA;on SF.ATT_PER_ID = V.Period_ID&#xA;where RIGHT(LEFT(FiscalYear,4),2) = (select right(SCE_ID,2) from M_REV_CALC_WEEK)&#xA;and TIPO_DATO IN ('MAN','ADJ')&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Cancella Adj manuali USGAAP"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{acbe1aed-9e9e-46e6-9b34-ae8df42fbc04}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cancella Adj manuali USGAAP"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="delete SF&#xA;from SF_REV_DIS_SCONTI_US_GAAP SF&#xA;join V_M_REV_PERIOD_ATTIVAZIONE V&#xA;on SF.ATT_PER_ID = V.Period_ID&#xA;where RIGHT(LEFT(FiscalYear,4),2) = (select right(SCE_ID,2) from M_REV_CALC_WEEK)&#xA;and TIPO_DATO IN ('MAN','ADJ')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8191F6D4-CE9F-4C11-BE4C-DFC8C2D8D19B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Azzera Volumi"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Azzera Volumi"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Azzera Volumi.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Azzera Volumi.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Output].Columns[VOLUMI]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Output].Columns[VOLUMI]"
+                      name="VOLUMI"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Azzera Volumi.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Evaluates and directs rows in a dataset."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[TOT_DIS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TOT_DIS"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TOT_DIS]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Sconto MGMT]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sconto MGMT"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[FINDSTRING](#{Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TOT_DIS]},"Sconto MGMT",1) &gt; 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">FINDSTRING(TOT_DIS,"Sconto MGMT",1) &gt; 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Sconto US GAAP]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Sconto US GAAP"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[FINDSTRING](#{Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TOT_DIS]},"Sconto US GAAP",1) &gt; 0</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">FINDSTRING(TOT_DIS,"Sconto US GAAP",1) &gt; 0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PACCHETTO"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PACCHETTO]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">"***-NO_PCK - P001"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"***-NO_PCK - P001"</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input].Columns[VALORE_PROMO]"
+                      cachedDataType="numeric"
+                      cachedName="VALORE_PROMO"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VALORE_PROMO]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VALORE_PROMO]} * -1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">VALORE_PROMO * -1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FLG_CAP_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FLG_CAP_ID]"
+                      name="FLG_CAP_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">0</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\recupera PROMO_ID"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="recupera PROMO_ID"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct PROMO_ID,PROMO_DES from S_PROMO
+where PROMO_ID LIKE '88888%'
+/*** LERO - 20130909 - Introdotto per poter inserire ADJ su promo on PS affogate in Discounts on SB ***/
+	union
+select MAX(PROMO_ID) as PROMO_ID, 'Multivision free 3 mesi' as PROMO_DES from S_PROMO where PROMO_WEEKLY_RGR = 'Multivision free 3 mesi'</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select distinct PROMO_ID,PROMO_DES from S_PROMO
+where PROMO_ID LIKE '88888%'
+/*** LERO - 20130909 - Introdotto per poter inserire ADJ su promo on PS affogate in Discounts on SB ***/
+	union
+select MAX(PROMO_ID) as PROMO_ID, 'Multivision free 3 mesi' as PROMO_DES from S_PROMO where PROMO_WEEKLY_RGR = 'Multivision free 3 mesi') [refTable]
+where [refTable].[PROMO_DES] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PROMO_ID" dataType="DT_STR" length="500" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PROMO_DES" dataType="DT_STR" length="500" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PROMO]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\recupera PROMO_ID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\recupera PROMO_ID.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\recupera PROMO_ID.Inputs[Lookup Input].Columns[PROMO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PROMO"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PROMO]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PROMO_DES</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Data Flow Task\recupera PROMO_ID.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Match Output].Columns[PROMO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="500"
+                      lineageId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Match Output].Columns[PROMO_ID]"
+                      name="PROMO_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PROMO_ID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Data Flow Task\recupera PROMO_ID.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Data Flow Task\recupera PROMO_ID.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SF_REV_DIS_SCONTI_MGMT"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SF_REV_DIS_SCONTI_MGMT]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VOUCHER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[VALORE_PROMO]"
+                      cachedDataType="numeric"
+                      cachedName="VALORE_PROMO"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PROMO]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VALORE_PROMO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[VOLUMI]"
+                      cachedDataType="numeric"
+                      cachedName="VOLUMI"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Output].Columns[VOLUMI]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PACCHETTO"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PACCHETTO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[PROMO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      lineageId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Match Output].Columns[PROMO_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[FLG_CAP_ID]"
+                      cachedDataType="i4"
+                      cachedName="FLG_CAP_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP_ID]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FLG_CAP_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[ATT_PER_ID]"
+                      cachedDataType="i4"
+                      cachedName="ATT_PER_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[CMP_PER_ID]"
+                      cachedDataType="i4"
+                      cachedName="CMP_PER_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CMP_PER_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      dataType="numeric"
+                      name="VOLUMI"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PROMO]"
+                      dataType="numeric"
+                      name="VALORE_PROMO"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP_ID]"
+                      dataType="i4"
+                      name="FLG_CAP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER_ID]"
+                      dataType="i4"
+                      name="ATT_PER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER_ID]"
+                      dataType="i4"
+                      name="CMP_PER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SF_REV_DIS_SCONTI_US_GAAP"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SF_REV_DIS_SCONTI_US_GAAP]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VOUCHER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PACCHETTO"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PACCHETTO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[VALORE_PROMO]"
+                      cachedDataType="numeric"
+                      cachedName="VALORE_PROMO"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PROMO_US_GAAP]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VALORE_PROMO]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[PROMO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      lineageId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Match Output].Columns[PROMO_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[FLG_CAP_ID]"
+                      cachedDataType="i4"
+                      cachedName="FLG_CAP_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP_ID]"
+                      lineageId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[FLG_CAP_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[ATT_PER_ID]"
+                      cachedDataType="i4"
+                      cachedName="ATT_PER_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[CMP_PER_ID]"
+                      cachedDataType="i4"
+                      cachedName="CMP_PER_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CMP_PER_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[RC_PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="RC_PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PROMO_US_GAAP]"
+                      dataType="numeric"
+                      name="VALORE_PROMO_US_GAAP"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP_ID]"
+                      dataType="i4"
+                      name="FLG_CAP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER_ID]"
+                      dataType="i4"
+                      name="ATT_PER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER_ID]"
+                      dataType="i4"
+                      name="CMP_PER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="T_REV_DIS_INP_ADJ"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_REV_DIS_INP_ADJ]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">/*** 20130909 - FIX LERO - Il substring delle ultime due cifre viene utilizzato perche alcuni ADJ non venivano convertiti in numero a causa di spazi alla fine della cifra esportata ***/
+SELECT 
+	TOT_DIS, 
+	TIPO_DATO, 
+	VOUCHER, 
+	vAtt.Period_ID as ATT_PER_ID,
+	vCmp.Period_ID as CMP_PER_ID,
+	PACCHETTO, 
+	PROMO, 
+	FLG_CAP_CRITICO,
+	TECNOLOGIA,
+	CLUSTER,
+	BB_CONTRACT_STATUS,
+	BB_PRD_ID,
+	BB_ORIGIN_CLUSTER,
+	BB_VOICE_FLG,
+	BUNDLE_FLG,
+	cast(SUBSTRING(VALORE,1,len(VALORE)-2) AS NUMERIC(18,10)) AS VALORE_PROMO 
+FROM T_REV_DIS_INP_ADJ T
+join V_M_REV_PERIOD_ATTIVAZIONE vAtt
+on T.ATT_PER = vAtt.Period_DES
+join V_M_REV_PERIOD_COMPETENZA vCmp
+on T.CMP_PER = vCmp.Period_DES</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TOT_DIS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[TOT_DIS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TOT_DIS]"
+                      name="TOT_DIS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[TIPO_DATO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      name="VOUCHER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[PACCHETTO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PACCHETTO]"
+                      name="PACCHETTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[PROMO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[PROMO]"
+                      name="PROMO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VALORE_PROMO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PROMO]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[VALORE_PROMO]"
+                      name="VALORE_PROMO"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[FLG_CAP_CRITICO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[FLG_CAP_CRITICO]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[FLG_CAP_CRITICO]"
+                      name="FLG_CAP_CRITICO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CLUSTER]"
+                      name="CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[ATT_PER_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[ATT_PER_ID]"
+                      name="ATT_PER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CMP_PER_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[CMP_PER_ID]"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[CMP_PER_ID]"
+                      name="CMP_PER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[TOT_DIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TOT_DIS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PROMO]"
+                      dataType="numeric"
+                      name="VALORE_PROMO"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[FLG_CAP_CRITICO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLG_CAP_CRITICO" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[ATT_PER_ID]"
+                      dataType="i4"
+                      name="ATT_PER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[CMP_PER_ID]"
+                      dataType="i4"
+                      name="CMP_PER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[TOT_DIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[TOT_DIS]"
+                      name="TOT_DIS" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      name="VOUCHER" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[ATT_PER_ID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[ATT_PER_ID]"
+                      name="ATT_PER_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[CMP_PER_ID]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[CMP_PER_ID]"
+                      name="CMP_PER_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[PACCHETTO]"
+                      name="PACCHETTO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[PROMO]"
+                      name="PROMO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[FLG_CAP_CRITICO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[FLG_CAP_CRITICO]"
+                      name="FLG_CAP_CRITICO" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[CLUSTER]"
+                      name="CLUSTER" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[VALORE_PROMO]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[VALORE_PROMO]"
+                      name="VALORE_PROMO"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Azzera Volumi.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Lookup Output]"
+              endId="Package\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Output"
+              startId="Package\Data Flow Task\recupera PROMO_ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\recupera PROMO_ID.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\T_REV_DIS_INP_ADJ.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sconto MGMT]"
+              endId="Package\Data Flow Task\Azzera Volumi.Inputs[Derived Column Input]"
+              name="Sconto MGMT"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Sconto MGMT]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sconto US GAAP]"
+              endId="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP.Inputs[OLE DB Destination Input]"
+              name="Sconto US GAAP"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Sconto US GAAP]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{F8AC8BA2-B588-4438-BF34-087AC7471414}"
+      DTS:From="Package\Cancella Adj manuali MGMT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Cancella Adj manuali USGAAP" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{4362BA50-30F3-4F73-97BE-340DBB39E9D3}"
+      DTS:From="Package\Cancella Adj manuali USGAAP"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="216,44"
+          Id="Package\Cancella Adj manuali MGMT"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="216,44"
+          Id="Package\Cancella Adj manuali USGAAP"
+          TopLeft="5.5,86.8584905660377" />
+        <NodeLayout
+          Size="216,44"
+          Id="Package\Data Flow Task"
+          TopLeft="5.5,169.235849056604" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="113.311320754717,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,37.4339622641509"
+              Start="0,0"
+              End="0,29.9339622641509">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.9339622641509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="113.311320754717,130.783018867925">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,38.4528301886792"
+              Start="0,0"
+              End="0,30.9528301886792">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9528301886792" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="217,42"
+          Id="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT"
+          TopLeft="262,515.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="293,311.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Data Flow Task\Derived Column"
+          TopLeft="293.5,209.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Data Flow Task\recupera PROMO_ID"
+          TopLeft="282.5,107.5" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Data Flow Task\T_REV_DIS_INP_ADJ"
+          TopLeft="280.5,5.5" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP"
+          TopLeft="5.50000000000003,413.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Data Flow Task\Azzera Volumi"
+          TopLeft="298,413.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sconto US GAAP]"
+          TopLeft="346,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-224.5,60"
+              Start="0,0"
+              End="-224.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.367816091954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.367816091954"
+                    Point2="0,24.367816091954"
+                    Point3="-4,24.367816091954" />
+                  <mssgle:LineSegment
+                    End="-220.5,24.367816091954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-220.5,24.367816091954"
+                    Point2="-224.5,24.367816091954"
+                    Point3="-224.5,28.367816091954" />
+                  <mssgle:LineSegment
+                    End="-224.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-149.2355859375,29.367816091954,73.971171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sconto MGMT]"
+          TopLeft="395,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-24.4999999999999,60"
+              Start="0,0"
+              End="-24.4999999999999,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.367816091954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.367816091954"
+                    Point2="0,24.367816091954"
+                    Point3="-4,24.367816091954" />
+                  <mssgle:LineSegment
+                    End="-20.4999999999999,24.367816091954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.4999999999999,24.367816091954"
+                    Point2="-24.4999999999999,24.367816091954"
+                    Point3="-24.4999999999999,28.367816091954" />
+                  <mssgle:LineSegment
+                    End="-24.4999999999999,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-43.574375,29.367816091954,62.64875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="370.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Lookup Output]"
+          TopLeft="370.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="370.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="370.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\SF_REV_DIS_SCONTI_MGMT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\T_REV_DIS_INP_ADJ">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\SF_REV_DIS_SCONTI_US_GAAP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

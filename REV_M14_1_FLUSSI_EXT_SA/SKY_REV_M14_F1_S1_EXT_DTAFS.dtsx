@@ -1,0 +1,2758 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{F98626DC-B6AC-4792-8516-85ADBD069DC2}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M14_F1_S1_EXT_DTAFS"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{99BC092C-401C-415A-B33B-B1CC892FF693}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{98648E93-BBA4-4652-A5F5-69CE5045F5BC}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M14_F1_S1_EXT_DTAFS-{98648E93-BBA4-4652-A5F5-69CE5045F5BC}SQL02.SSIS_CONFIGURATIONS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;VAR_ExportDir_DashboardSIM&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{C699197E-B047-447D-8A55-D26568866899}"
+      DTS:ObjectName="VAR_ExportDir_DashboardSIM" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;VAR_ExportDirLocal_DashboardSIM&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{2C1ACA78-3595-47DF-9515-0656B2B462A7}"
+      DTS:ObjectName="VAR_ExportDirLocal_DashboardSIM" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C07BAE69-59C4-4692-A66B-CE9D68B4B5C6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExportDir">
+      <DTS:VariableValue
+        DTS:DataType="8">\\filesrvmi03\Dati3\Hyperion\DATI_COLLAUDO\REV\4_EXPORT_SIM\MIRROR_filesrvmi06</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6166A652-B063-427F-81B0-C9D6B91526A8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExportDirLocal">
+      <DTS:VariableValue
+        DTS:DataType="8">\\filesrvmi03\Dati3\Hyperion\DATI_COLLAUDO\REV\4_EXPORT_SIM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DF15EA7A-A982-4944-8413-F12DA5304C32}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SceId">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AB8E2541-FB6E-4BF8-BFC3-8F7CB8276AEC}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Timestamp">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AB9D4DB5-0761-463C-B695-D2CBBC3A5D63}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="WeekId">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract file DTAFS su share di rete Dashboard SIM"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{7D81CD20-A15E-4530-B05E-42E93E5253E2}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract file DTAFS su share di rete Dashboard SIM"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_abafa1111dcc41a182d48d17e616bc6f"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="User::ExportDir,User::ExportDirLocal,User::SceId,User::Timestamp,User::WeekId">
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyCopyright("Copyright @  2014")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("3d5b0927-44c4-4a07-85b0-9baf72d37e70")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="st_abafa1111dcc41a182d48d17e616bc6f.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ST_abafa1111dcc41a182d48d17e616bc6f.vbproj</RootNamespace>
+    <AssemblyName>ST_abafa1111dcc41a182d48d17e616bc6f.vbproj</AssemblyName>
+    <StartupObject></StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{565576D2-0521-4757-AC1C-ABE2422D9C83}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>st_abafa1111dcc41a182d48d17e616bc6f</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>st_abafa1111dcc41a182d48d17e616bc6f</msb:DisplayName>
+    <msb:ProjectId>{9C1FCB54-5723-47FC-8461-8DD5766B9413}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="st_abafa1111dcc41a182d48d17e616bc6f.vbproj" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.IO
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+    Public Sub Main()
+        Dim strConn As String = "Data Source=SQL02;Initial Catalog=SKY_REV;User ID=HYPSYS9_CONSOLE;Password=cx0Sky48P3"
+        Dim conn As SqlConnection = New SqlConnection(strConn)
+
+        If My.Computer.FileSystem.FileExists(Dts.Variables.Item("ExportDir").Value + "\RV_Act_Fee_Std_DT" + Dts.Variables("SceId").Value.ToString() + Dts.Variables("WeekId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt") Then
+            My.Computer.FileSystem.DeleteFile(Dts.Variables.Item("ExportDir").Value + "\RV_Act_Fee_Std_DT" + Dts.Variables("SceId").Value.ToString() + Dts.Variables("WeekId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt")
+        End If
+
+        Dim sw As StreamWriter = New StreamWriter(Dts.Variables.Item("ExportDir").Value + "\RV_Act_Fee_Std_DT" + Dts.Variables("SceId").Value.ToString() + Dts.Variables("WeekId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt", False)
+        Dim da As SqlDataAdapter = New SqlDataAdapter("select * from WT_REV_EXPORT_DTAFS_DASHBOARD_SIM order by DATA_ATT", conn)
+        Dim ds As DataSet = New DataSet()
+
+
+        da.Fill(ds, "WT_REV_EXPORT_DTAFS_DASHBOARD_SIM")
+        Dim dt As DataTable = ds.Tables("WT_REV_EXPORT_DTAFS_DASHBOARD_SIM")
+
+        Dim iColCount As Integer = dt.Columns.Count
+
+        Dim i As Integer
+        For i = 0 To iColCount - 1
+            sw.Write(dt.Columns(i))
+            If i < iColCount - 1 Then
+                sw.Write(";")
+            End If
+        Next
+        sw.Write(sw.NewLine)
+
+        Dim j As Integer
+        For j = 0 To dt.Rows.Count - 1
+            Dim dr As DataRow
+            dr = dt.Rows(j)
+            Dim k As Integer
+            For k = 0 To iColCount - 1
+                If Not Convert.IsDBNull(dr(k)) Then
+                    sw.Write(Replace((dr(k).ToString()), ",", "."))
+                    If k < iColCount - 1 Then
+                        sw.Write(";")
+                    End If
+                End If
+            Next
+            sw.Write(sw.NewLine)
+        Next
+        sw.Close()
+
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+          <BinaryItem
+            Name="ST_abafa1111dcc41a182d48d17e616bc6f.vbproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAB5vYl4AAAAAAAAAAOAAIiALAVAAACIAAAAIAAAAAAAAAkEA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAALBAAABPAAAAAGAAAIgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAACCEAAAAgAAAAIgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAIgEAAAAYAAAAAYAAAAkAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADk
+QAAAAAAAAEgAAAACAAUAnCUAAFwaAAABAAAAAAAAAPg/AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqQnMiAAAKKCYAAAqACAAABCoeAignAAAKKgAAGzABAD8A
+AAAAAAAAfgcAAAQtMn4IAAAEKCYAAAooKAAACn4HAAAELRxzDQAABoAHAAAE3hB+CAAABCgmAAAK
+KCkAAArcfgcAAAQqAAEQAAACAB0ADCkAEAAAAAAeAigqAAAKKhMwBwB0AwAAAQAAEXIzAABwCgZz
+KwAACgsoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAAAApy9AAAcCgxAAAKAigtAAAK
+by4AAApyGgEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4AAApyJgEAcG8vAAAKbzAAAApv
+MgAACigxAAAKcjQBAHAoMQAACgIoLQAACm8uAAAKcjgBAHBvLwAACm8wAAAKbzIAAAooMQAACnJM
+AQBwKDEAAAooMwAACm80AAAKObgAAAAoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAA
+AApy9AAAcCgxAAAKAigtAAAKby4AAApyGgEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4A
+AApyJgEAcG8vAAAKbzAAAApvMgAACigxAAAKcjQBAHAoMQAACgIoLQAACm8uAAAKcjgBAHBvLwAA
+Cm8wAAAKbzIAAAooMQAACnJMAQBwKDEAAAooMwAACm81AAAKAigtAAAKby4AAApy4AAAcG8vAAAK
+bzAAAApy9AAAcCgxAAAKAigtAAAKby4AAApyGgEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAK
+by4AAApyJgEAcG8vAAAKbzAAAApvMgAACigxAAAKcjQBAHAoMQAACgIoLQAACm8uAAAKcjgBAHBv
+LwAACm8wAAAKbzIAAAooMQAACnJMAQBwKDEAAAooMwAAChZzNgAACgxyVgEAcAdzNwAACnM4AAAK
+DQly2wEAcG85AAAKJglvOgAACnLbAQBwbzsAAAoTBBEEbzwAAApvPQAAChMFEQUX2hMIFhMGKy0I
+EQRvPAAAChEGbz4AAApvPwAAChEGEQUX2i8LCHIfAgBwb0AAAAoRBhfWEwYRBhEIMc0ICG9BAAAK
+b0AAAAoRBG9CAAAKb0MAAAoX2hMJFhMHOIcAAAARBG9CAAAKEQdvRAAAChMKEQUX2hMMFhMLK1QR
+ChELb0UAAAooJgAACihGAAAKLTkIEQoRC29FAAAKbzIAAApyIwIAcHInAgBwFxUWKEcAAApvQAAA
+ChELEQUX2i8LCHIfAgBwb0AAAAoRCxfWEwsRCxEMMaYICG9BAAAKb0AAAAoRBxfWEwcRBxEJPnD/
+//8Ib0gAAAoCKC0AAAoWb0kAAAoqNgIDKCYAAAooSgAACioeAihLAAAKKi7QCAAAAigjAAAKKh4C
+KDIAAAoqAAATMAEAFAAAAAIAABECjAUAABstCCgBAAArCisCAgoGKiID/hUFAAAbKgAAABMwAgAo
+AAAAAwAAEQJ7TQAACm9OAAAKCgaMCAAAGy0SKAIAACsKAntNAAAKBm9PAAAKBipKAigiAAAKAnNQ
+AAAKfU0AAAoqAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAMwIAAAjfgAAOAkA
+APwKAAAjU3RyaW5ncwAAAAA0FAAALAIAACNVUwBgFgAAEAAAACNHVUlEAAAAcBYAAOwDAAAjQmxv
+YgAAAAAAAAACAAABVx2iCQkPAAAA+gEzABYAAAEAAABBAAAACgAAAAwAAAAZAAAABAAAAFAAAAAC
+AAAANwAAAAMAAAAEAAAACAAAAAkAAAAIAAAAAQAAAAYAAAABAAAAAwAAAAMAAAACAAAAAACRBQEA
+AAAAAAYApQO9CAYASgS9CAYAfAL+Bw8AkgkAAAYAvQJmBgYAiANmBgYAMQRmBgYAxQNmBgYA3gNm
+BgYABANmBgYA+QPfBQYAqQJ3CAYAJQJ3CAYAUANmBgYAHwOkBAoASAJUBwoACgJ7BQoAkAJ7BQ4A
+wQFNCA4AzgcRCAYAOAP+Bw4A1AKWCA4A7AKjAAYARwrfBQ4AcAdNCA4AbQOjAAYAdAHfBQ4AAQA/
+BQoAMwLrBQYARAf+CAYA1AZRBgoA7AE8BgYAXwL+BxIADwQWBRIApQEWBQYAxwTfBRYAswZ0CgYA
+dQc0ABYAWAqOABYAAwGOABYApgqOAAYA5gXfBQYAFgHfBQYA4ApmBgYA7Am9CAYA9geTBA4AvQcR
+CA4A6QrdCBIAaQUWBRoAsAlFARoADQFFAQ4A+wmWCA4A4AmWCBYAoQd0ChYAkwfBBhYAeAaOABYA
+jAaOABYA0QGOABYAEwaOAAYAggc0ABYAoQaOAAYAlArfBQ4AugmjAA4AuQCjAAYA3wffBQAAAAAr
+AAAAAAABAAEAAAAAAC4GrgpNAAEAAQAAAAAAzAeuClEAAQACAAABEABOCq4KYQABAAMAAAAAAEcJ
+DwlhAAUACAAAARAAwgnMBIEABwAMAAEAAAAIBswEjQAJAA8ABQEAAD8IAABhAAkAEQAFAQAAEAAA
+AGEACQAYAAIBAAAVCgAAqQAKABoAMQAJB3wBMQDgBoQBMQD0BowBMQAiB5QBEQDXB5wBEQCZAaAB
+EQBoBKQBEQA3CqgBIQCcCjoBBgaGAKsBVoAFCq4BVoB5Aa4BUCAAAAAABhjpBwYAAQBYIAAAAAAG
+GOkHBgABAGAgAAAAABEY7weyAQEAiiAAAAAAEwiwB7YBAQCWIAAAAAATCB4GuwEBAKIgAAAAABMI
+bAfAAQEAriAAAAAAEwgvCMUBAQC6IAAAAAADGOkHBgABAMIgAAAAABYIQAfKAQEA7iAAAAAAFgiB
+Ac8BAQD1IAAAAAAWCI0B1AEBAP0gAAAAABEY7weyAQIADiEAAAAABhjpBwYAAgAYIQAAAAAWCHAE
+2gECAHQhAAAAAAYY6QcGAAIAfCEAAAAABgAOBgYAAgD8JAAAAADGAs0JFgECAAolAAAAAMYC9wDj
+AAMAEiUAAAAAgwBxAd8BAwAeJQAAAADGAr4ErAADACglAAAAABEAcwDkAQMASCUAAAAAAQBfAOwB
+BAC6IAAAAAAGGOkHBgAFAFQlAAAAAAMI3gBKAAUAiCUAAAAABhjpBwYABQAAAAEAjQQAAAEA3gYA
+AAEA7gAAAAEA7gAJAOkHAQARAOkHBgAZAOkHCgApAOkHEAAxAOkHEAA5AOkHEABBAOkHEABJAOkH
+EABRAOkHEABZAOkHFQBhAOkHFQBpAOkHEABxAOkHEAB5AOkHEACBAOkHGgCRAOkHIACpAOkHBgCx
+AOkHBgC5AOkHBgDRAOkHJgDpAOkHEAAJAekHBgARAekHBgCZAOkHBgChAOkHBgAMAOkHBgAUAOkH
+BgAcAOkHBgAkAOkHBgAMAN4ASgAUAN4ASgAcAN4ASgAkAN4ASgDBAOkHBgDZACgBTwDZANwKVwDx
+AOkHXQBpAYQEZQABAekHBgBxAY0HagBxAWAKagAZAekHBgApAekHEAB5AdcFiQAZAQ0KjwCJAawJ
+lQCRAc4FmwCZAXAEogChAUQKpgDBAL4ErACpAb4EsACBASMKtQCBAToBEAAxAekHugCxAekHwAA5
+AekHBgC5AcAFyAA5AaEJ0ADBAc4F1gBBAdQJ3QDRAYoK4wDJAc4F5wDhAR8C7gAxAR8CEADhAWUB
+rABBAS4K8wDpAYoK4wDpAc4F+QBJAc4FAAHxAcUFBQH5AccACgExAQQCBgCJAWUKAQDBAM0JFgHB
+APcA4wAJAs8AIwE0AJwKOgE8AHAESgA8AHoEUQE8AOkHBgAIACwAcgEIADAAdwEpAKsApQMuAAsA
+HAIuABMAJQIuABsARAIuACMATQIuACsAfQIuADMAfQIuADsATQIuAEMAgwIuAEsAfQIuAFMAmgIu
+AFsAfQIuAGMAoAIuAGsAygIuAHMA1wJAAIsAdwFAAIMAIQNDAHsAKgNDAIMAIQNJAKsAtgNjAHsA
+KgNjAIMAIQNpAKsAygOAAIsAdwGDAJMAdwGDAJsAdwGDAHsAKgOJAKsA1wOgAIsAdwGpAIMARALA
+AIsAdwHJAIMARALgAIsAdwHjALsAdwHjAFMAfQLpALMAdwEDAYMAIQMDAaMAQwMjAYMAIQMjAVsA
+fQIgAoMAIQMgAosAdwFAAoMAIQNAAosAdwFgAoMAIQNgAosAdwGAAoMAIQOAAosAdwGgAosAdwHA
+AosAdwHgAosAdwHgAoMAIQMAA4sAdwEgA4sAdwEgA4MAIQNvABsBLgEEAAEABQAFAAYABwAJAAgA
+AADOB/QBAAAwBvkBAABwB/4BAABBCAMCAABEBwgCAACdAQ0CAACNBBICAADiABcCAgAEAAMAAgAF
+AAUAAgAGAAcAAgAHAAkAAgAJAAsAAgAKAA0AAQALAA0AAgAOAA8AAgAYABEALgA1ADwAQwAgATMB
+QgFJAQSAAAABAAAAAAAAAAAAAAAAAMwEAAAEAAAAAAAAAAAAAABXAZoAAAAAAAQAAAAAAAAAAAAA
+AFcB3wUAAAAACgAAAAAAAAAAAAAAYAGjAAAAAAAOAAAAAAAAAAAAAABpAfcEAAAAAAQAAAAAAAAA
+AAAAAFcBjgAAAAAADgAAAAAAAAAAAAAAaQE+AAAAAAAAAAAAAQAAAFMJAAAIAAQACQAEAAoABwAA
+ABAAEgBdAAAAEAArAF0AAAAAAC0AXQCZACkBmQBMAQAAAENvbnRleHRWYWx1ZWAxAFRocmVhZFNh
+ZmVPYmplY3RQcm92aWRlcmAxADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNyb3NvZnQuU3FsU2VydmVy
+Lk1hbmFnZWREVFMAVABEaXNwb3NlX19JbnN0YW5jZV9fAENyZWF0ZV9fSW5zdGFuY2VfXwB2YWx1
+ZV9fAFN5c3RlbS5EYXRhAG1zY29ybGliAE1pY3Jvc29mdC5WaXN1YWxCYXNpYwBDb21wYXJlTWV0
+aG9kAFJlcGxhY2UAQ3JlYXRlSW5zdGFuY2UAZ2V0X0dldEluc3RhbmNlAGluc3RhbmNlAEdldEhh
+c2hDb2RlAERhdGFUYWJsZQBWYXJpYWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhh
+bmRsZQBEZWxldGVGaWxlAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAZ2V0X05ld0xp
+bmUAR2V0VHlwZQBGYWlsdXJlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAF9yZXNDdWx0dXJlAFZT
+VEFSVFNjcmlwdE9iamVjdE1vZGVsQmFzZQBBcHBsaWNhdGlvbkJhc2UASW50ZXJuYWxEYXRhQ29s
+bGVjdGlvbkJhc2UAQXBwbGljYXRpb25TZXR0aW5nc0Jhc2UAQ2xvc2UARWRpdG9yQnJvd3NhYmxl
+U3RhdGUAV3JpdGUAR3VpZEF0dHJpYnV0ZQBIZWxwS2V5d29yZEF0dHJpYnV0ZQBHZW5lcmF0ZWRD
+b2RlQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJp
+YnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBBc3NlbWJs
+eVRpdGxlQXR0cmlidXRlAFN0YW5kYXJkTW9kdWxlQXR0cmlidXRlAEhpZGVNb2R1bGVOYW1lQXR0
+cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0
+ZQBEZWJ1Z2dlckhpZGRlbkF0dHJpYnV0ZQBBc3NlbWJseUZpbGVWZXJzaW9uQXR0cmlidXRlAE15
+R3JvdXBDb2xsZWN0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29t
+cGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNz
+ZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAQ0xTQ29tcGxpYW50QXR0cmlidXRlAFNTSVNTY3JpcHRU
+YXNrRW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNv
+bXBhdGliaWxpdHlBdHRyaWJ1dGUAbV9WYWx1ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAEdldE9iamVj
+dFZhbHVlAFN5c3RlbS5UaHJlYWRpbmcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmlu
+ZwBNYXRoAFNUX2FiYWZhMTExMWRjYzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJvagBNaWNyb3Nv
+ZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2Ny
+aXB0VGFzawBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABTY3JpcHRP
+YmplY3RNb2RlbABTeXN0ZW0uQ29tcG9uZW50TW9kZWwAU1RfYWJhZmExMTExZGNjNDFhMTgyZDQ4
+ZDE3ZTYxNmJjNmYudmJwcm9qLmRsbABGaWxsAElzREJOdWxsAGdldF9JdGVtAGdldF9GaWxlU3lz
+dGVtAEVudW0AU3lzdGVtLkNvbXBvbmVudE1vZGVsLkRlc2lnbgBTY3JpcHRNYWluAERhdGFDb2x1
+bW4AZ2V0X0FwcGxpY2F0aW9uAE15QXBwbGljYXRpb24AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lz
+dGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24ARGF0YVRhYmxlQ29sbGVjdGlvbgBE
+YXRhQ29sdW1uQ29sbGVjdGlvbgBEYXRhUm93Q29sbGVjdGlvbgBTcWxDb25uZWN0aW9uAFN5c3Rl
+bS5EYXRhLkNvbW1vbgBDdWx0dXJlSW5mbwBtX0FwcE9iamVjdFByb3ZpZGVyAG1fVXNlck9iamVj
+dFByb3ZpZGVyAG1fQ29tcHV0ZXJPYmplY3RQcm92aWRlcgBtX015V2ViU2VydmljZXNPYmplY3RQ
+cm92aWRlcgBnZXRfUmVzb3VyY2VNYW5hZ2VyAFN5c3RlbS5Db2RlRG9tLkNvbXBpbGVyAGdldF9V
+c2VyAFN0cmVhbVdyaXRlcgBUZXh0V3JpdGVyAEVudGVyAERiRGF0YUFkYXB0ZXIAU3FsRGF0YUFk
+YXB0ZXIAZ2V0X0NvbXB1dGVyAFNlcnZlckNvbXB1dGVyAE15Q29tcHV0ZXIAX3Jlc01ncgBBY3Rp
+dmF0b3IALmN0b3IALmNjdG9yAE1vbml0b3IAU3lzdGVtLkRpYWdub3N0aWNzAE1pY3Jvc29mdC5W
+aXN1YWxCYXNpYy5EZXZpY2VzAGdldF9XZWJTZXJ2aWNlcwBNeVdlYlNlcnZpY2VzAE1pY3Jvc29m
+dC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkludGVyb3BT
+ZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUnVu
+dGltZS5Db21waWxlclNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5NeVNlcnZpY2VzAFN5
+c3RlbS5SZXNvdXJjZXMAU1RfYWJhZmExMTExZGNjNDFhMTgyZDQ4ZDE3ZTYxNmJjNmYudmJwcm9q
+Lk15LlJlc291cmNlcwBNeVJlc291cmNlcwBTVF9hYmFmYTExMTFkY2M0MWExODJkNDhkMTdlNjE2
+YmM2Zi52YnByb2ouUmVzb3VyY2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBnZXRfVGFibGVz
+AGdldF9WYXJpYWJsZXMAU3RyaW5ncwBNeVNldHRpbmdzAEVxdWFscwBnZXRfQ29sdW1ucwBDb252
+ZXJzaW9ucwBSdW50aW1lSGVscGVycwBPcGVyYXRvcnMAU3VjY2VzcwBnZXRfRHRzAFNjcmlwdFJl
+c3VsdHMARmlsZUV4aXN0cwBnZXRfUm93cwBtX1N5bmNPYmplY3QAQWRkT2JqZWN0AE15UHJvamVj
+dABEYXRhU2V0AEV4aXQAc2V0X1Rhc2tSZXN1bHQAU3lzdGVtLkRhdGEuU3FsQ2xpZW50AGdldF9D
+b3VudABDb252ZXJ0AG1fQ29udGV4dABEYXRhUm93AFNUX2FiYWZhMTExMWRjYzQxYTE4MmQ0OGQx
+N2U2MTZiYzZmLnZicHJvai5NeQBnZXRfQXNzZW1ibHkARmlsZVN5c3RlbVByb3h5AAAAAAAxTQB5
+AC4AUgBlAHMAbwB1AHIAYwBlAHMALgBNAHkAUgBlAHMAbwB1AHIAYwBlAHMAAICrRABhAHQAYQAg
+AFMAbwB1AHIAYwBlAD0AUwBRAEwAMAAyADsASQBuAGkAdABpAGEAbAAgAEMAYQB0AGEAbABvAGcA
+PQBTAEsAWQBfAFIARQBWADsAVQBzAGUAcgAgAEkARAA9AEgAWQBQAFMAWQBTADkAXwBDAE8ATgBT
+AE8ATABFADsAUABhAHMAcwB3AG8AcgBkAD0AYwB4ADAAUwBrAHkANAA4AFAAMwAAE0UAeABwAG8A
+cgB0AEQAaQByAAAlXABSAFYAXwBBAGMAdABfAEYAZQBlAF8AUwB0AGQAXwBEAFQAAAtTAGMAZQBJ
+AGQAAA1XAGUAZQBrAEkAZAAAA18AABNUAGkAbQBlAHMAdABhAG0AcAAACS4AdAB4AHQAAICDcwBl
+AGwAZQBjAHQAIAAqACAAZgByAG8AbQAgAFcAVABfAFIARQBWAF8ARQBYAFAATwBSAFQAXwBEAFQA
+QQBGAFMAXwBEAEEAUwBIAEIATwBBAFIARABfAFMASQBNACAAbwByAGQAZQByACAAYgB5ACAARABB
+AFQAQQBfAEEAVABUAABDVwBUAF8AUgBFAFYAXwBFAFgAUABPAFIAVABfAEQAVABBAEYAUwBfAEQA
+QQBTAEgAQgBPAEEAUgBEAF8AUwBJAE0AAAM7AAADLAAAAy4AAAAKOpDTB+CsQr+gPdoIkVaSAAQg
+AQEIAyAAAQUgAQEREQQgAQEOBCABAQIFIAIBDg4FIAEBEUUHIAQBDg4ODgYVEiQBEgwGFRIkARII
+BhUSJAESZQYVEiQBEiAEIAATAAcAARJtEYCtBSAAEoCxByACAQ4SgLEEAAEcHAQAAQEcGQcNDhKA
+lRKAmRKAnRKAoQgICAgIEoClCAgFIAASgMEFIAASgMUFIAASgMkGIAESgM0cAyAAHAUAAhwcHAMg
+AA4EAAEOHAQgAQIOBSACAQ4CByACAQ4SgJUHIAIIEoCdDgUgABKA4QYgARKAoQ4FIAASgOUDIAAI
+BiABEoDtCAQgAQEcBSAAEoD1BiABEoClCAQgARwIBAABAhwLAAYODg4OCAgRgQEEIAECHAQHAR4A
+Ah4ABRABAB4ABAoBHgAEBwETAAYVEiQBEwAHBhUScQETAAYVEnEBEwACEwAECgETAAUgAQETAAi3
+elxWGTTgiQiwP19/EdUKOgiJhF3NgIDMkQQAAAAABAEAAAAHBhUSJAESDAcGFRIkARIIBwYVEiQB
+EmUHBhUSJAESIAMGEnkDBhJ9AwYSGAIGHAIGCAMGESgDAAABBAAAEgwEAAASCAQAABJlBAAAEiAE
+AAASeQQAABJ9BQABARJ9BAAAEhgEIAASbQcQAQEeAB4ABzABAQEQHgAECAASDAQIABIIBAgAEmUE
+CAASIAQIABJ5BAgAEn0ECAASGAQoABMACAEACAAAAAAAHgEAAQBUAhZXcmFwTm9uRXhjZXB0aW9u
+VGhyb3dzAQgBAAIAAAAAAC8BACpTVF9hYmFmYTExMTFkY2M0MWExODJkNDhkMTdlNjE2YmM2Zi52
+YnByb2oAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAxNAAABQEAAQAAKQEAJDNkNWIwOTI3LTQ0
+YzQtNGEwNy04NWIwLTliYWY3MmQzN2U3MAAADAEABzEuMC4wLjAAAEkBABouTkVURnJhbWV3b3Jr
+LFZlcnNpb249djQuNQEAVA4URnJhbWV3b3JrRGlzcGxheU5hbWUSLk5FVCBGcmFtZXdvcmsgNC41
+CAEAAQAAAAAAGAEACk15VGVtcGxhdGUIMTEuMC4wLjAAAGEBADRTeXN0ZW0uV2ViLlNlcnZpY2Vz
+LlByb3RvY29scy5Tb2FwSHR0cENsaWVudFByb3RvY29sEkNyZWF0ZV9fSW5zdGFuY2VfXxNEaXNw
+b3NlX19JbnN0YW5jZV9fAAAAEAEAC015LkNvbXB1dGVyAAATAQAOTXkuQXBwbGljYXRpb24AAAwB
+AAdNeS5Vc2VyAAATAQAOTXkuV2ViU2VydmljZXMAAAC0AAAAzsrvvgEAAACRAAAAbFN5c3RlbS5S
+ZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1
+cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3Vy
+Y2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAA2EAAAAAAAAAAAAAA
+8kAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAORAAAAAAAAAAAAAAAAAX0NvckRsbE1haW4AbXNj
+b3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
+AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
+ACwEAAAAAAAAAAAAACwENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
+sASMAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABoAwAAAQAwADAAMAAwADAANABi
+ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
+bQBlAAAAAAAAAAAAfgArAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABf
+AGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAxADYA
+YgBjADYAZgAuAHYAYgBwAHIAbwBqAAAAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAA
+ADEALgAwAC4AMAAuADAAAAB+AC8AAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAVABfAGEA
+YgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAxADYAYgBj
+ADYAZgAuAHYAYgBwAHIAbwBqAC4AZABsAGwAAAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIA
+aQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADEANAAAACoAAQABAEwAZQBn
+AGEAbABUAHIAYQBkAGUAbQBhAHIAawBzAAAAAAAAAAAAhgAvAAEATwByAGkAZwBpAG4AYQBsAEYA
+aQBsAGUAbgBhAG0AZQAAAFMAVABfAGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAy
+AGQANAA4AGQAMQA3AGUANgAxADYAYgBjADYAZgAuAHYAYgBwAHIAbwBqAC4AZABsAGwAAAAAAHYA
+KwABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBUAF8AYQBiAGEAZgBhADEAMQAxADEAZABj
+AGMANAAxAGEAMQA4ADIAZAA0ADgAZAAxADcAZQA2ADEANgBiAGMANgBmAC4AdgBiAHAAcgBvAGoA
+AAAAADQACAABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4
+AAgAAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAAAEMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract file DTAFS su StagingArea locale"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{48dc164b-42d4-4821-8031-10b11d06e26b}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract file DTAFS su StagingArea locale"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_5b153a68cfc34c7793125b4578461837"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="User::ExportDir,User::ExportDirLocal,User::SceId,User::Timestamp,User::WeekId">
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyCopyright("Copyright @  2014")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("3d5b0927-44c4-4a07-85b0-9baf72d37e70")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.IO
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+    Public Sub Main()
+        Dim strConn As String = "Data Source=SQL02;Initial Catalog=SKY_REV;User ID=HYPSYS9_CONSOLE;Password=cx0Sky48P3"
+        Dim conn As SqlConnection = New SqlConnection(strConn)
+
+        If My.Computer.FileSystem.FileExists(Dts.Variables.Item("ExportDirLocal").Value + "\RV_Act_Fee_Std_DT" + Dts.Variables("SceId").Value.ToString() + Dts.Variables("WeekId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt") Then
+            My.Computer.FileSystem.DeleteFile(Dts.Variables.Item("ExportDirLocal").Value + "\RV_Act_Fee_Std_DT" + Dts.Variables("SceId").Value.ToString() + Dts.Variables("WeekId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt")
+        End If
+
+        Dim sw As StreamWriter = New StreamWriter(Dts.Variables.Item("ExportDirLocal").Value + "\RV_Act_Fee_Std_DT" + Dts.Variables("SceId").Value.ToString() + Dts.Variables("WeekId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt", False)
+        Dim da As SqlDataAdapter = New SqlDataAdapter("select * from WT_REV_EXPORT_DTAFS_DASHBOARD_SIM order by DATA_ATT", conn)
+        Dim ds As DataSet = New DataSet()
+
+
+        da.Fill(ds, "WT_REV_EXPORT_DTAFS_DASHBOARD_SIM")
+        Dim dt As DataTable = ds.Tables("WT_REV_EXPORT_DTAFS_DASHBOARD_SIM")
+
+        Dim iColCount As Integer = dt.Columns.Count
+
+        Dim i As Integer
+        For i = 0 To iColCount - 1
+            sw.Write(dt.Columns(i))
+            If i < iColCount - 1 Then
+                sw.Write(";")
+            End If
+        Next
+        sw.Write(sw.NewLine)
+
+        Dim j As Integer
+        For j = 0 To dt.Rows.Count - 1
+            Dim dr As DataRow
+            dr = dt.Rows(j)
+            Dim k As Integer
+            For k = 0 To iColCount - 1
+                If Not Convert.IsDBNull(dr(k)) Then
+                    sw.Write(Replace((dr(k).ToString()), ",", "."))
+                    If k < iColCount - 1 Then
+                        sw.Write(";")
+                    End If
+                End If
+            Next
+            sw.Write(sw.NewLine)
+        Next
+        sw.Close()
+
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>st_5b153a68cfc34c7793125b4578461837</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>st_5b153a68cfc34c7793125b4578461837</msb:DisplayName>
+    <msb:ProjectId>{8F2ED95E-879F-46A7-8E85-D9315109A398}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="st_5b153a68cfc34c7793125b4578461837.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="st_5b153a68cfc34c7793125b4578461837.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ST_abafa1111dcc41a182d48d17e616bc6f.vbproj</RootNamespace>
+    <AssemblyName>st_5b153a68cfc34c7793125b4578461837</AssemblyName>
+    <StartupObject></StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{565576D2-0521-4757-AC1C-ABE2422D9C83}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+          <BinaryItem
+            Name="st_5b153a68cfc34c7793125b4578461837.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAC1vYl4AAAAAAAAAAOAAIiALAVAAACIAAAAIAAAAAAAAKkEA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAANhAAABPAAAAAGAAAGgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAMCEAAAAgAAAAIgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAGgEAAAAYAAAAAYAAAAkAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAM
+QQAAAAAAAEgAAAACAAUAnCUAAIQaAAABAAAAAAAAACBAAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqQnMiAAAKKCYAAAqACAAABCoeAignAAAKKgAAGzABAD8A
+AAAAAAAAfgcAAAQtMn4IAAAEKCYAAAooKAAACn4HAAAELRxzDQAABoAHAAAE3hB+CAAABCgmAAAK
+KCkAAArcfgcAAAQqAAEQAAACAB0ADCkAEAAAAAAeAigqAAAKKhMwBwB0AwAAAQAAEXIzAABwCgZz
+KwAACgsoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAAAApy/gAAcCgxAAAKAigtAAAK
+by4AAApyJAEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4AAApyMAEAcG8vAAAKbzAAAApv
+MgAACigxAAAKcj4BAHAoMQAACgIoLQAACm8uAAAKckIBAHBvLwAACm8wAAAKbzIAAAooMQAACnJW
+AQBwKDEAAAooMwAACm80AAAKObgAAAAoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAA
+AApy/gAAcCgxAAAKAigtAAAKby4AAApyJAEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4A
+AApyMAEAcG8vAAAKbzAAAApvMgAACigxAAAKcj4BAHAoMQAACgIoLQAACm8uAAAKckIBAHBvLwAA
+Cm8wAAAKbzIAAAooMQAACnJWAQBwKDEAAAooMwAACm81AAAKAigtAAAKby4AAApy4AAAcG8vAAAK
+bzAAAApy/gAAcCgxAAAKAigtAAAKby4AAApyJAEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAK
+by4AAApyMAEAcG8vAAAKbzAAAApvMgAACigxAAAKcj4BAHAoMQAACgIoLQAACm8uAAAKckIBAHBv
+LwAACm8wAAAKbzIAAAooMQAACnJWAQBwKDEAAAooMwAAChZzNgAACgxyYAEAcAdzNwAACnM4AAAK
+DQly5QEAcG85AAAKJglvOgAACnLlAQBwbzsAAAoTBBEEbzwAAApvPQAAChMFEQUX2hMIFhMGKy0I
+EQRvPAAAChEGbz4AAApvPwAAChEGEQUX2i8LCHIpAgBwb0AAAAoRBhfWEwYRBhEIMc0ICG9BAAAK
+b0AAAAoRBG9CAAAKb0MAAAoX2hMJFhMHOIcAAAARBG9CAAAKEQdvRAAAChMKEQUX2hMMFhMLK1QR
+ChELb0UAAAooJgAACihGAAAKLTkIEQoRC29FAAAKbzIAAApyLQIAcHIxAgBwFxUWKEcAAApvQAAA
+ChELEQUX2i8LCHIpAgBwb0AAAAoRCxfWEwsRCxEMMaYICG9BAAAKb0AAAAoRBxfWEwcRBxEJPnD/
+//8Ib0gAAAoCKC0AAAoWb0kAAAoqNgIDKCYAAAooSgAACioeAihLAAAKKi7QCAAAAigjAAAKKh4C
+KDIAAAoqAAATMAEAFAAAAAIAABECjAUAABstCCgBAAArCisCAgoGKiID/hUFAAAbKgAAABMwAgAo
+AAAAAwAAEQJ7TQAACm9OAAAKCgaMCAAAGy0SKAIAACsKAntNAAAKBm9PAAAKBipKAigiAAAKAnNQ
+AAAKfU0AAAoqAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAMwIAAAjfgAAOAkA
+ABgLAAAjU3RyaW5ncwAAAABQFAAAOAIAACNVUwCIFgAAEAAAACNHVUlEAAAAmBYAAOwDAAAjQmxv
+YgAAAAAAAAACAAABVx2iCQkPAAAA+gEzABYAAAEAAABBAAAACgAAAAwAAAAZAAAABAAAAFAAAAAC
+AAAANwAAAAMAAAAEAAAACAAAAAkAAAAIAAAAAQAAAAYAAAABAAAAAwAAAAMAAAACAAAAAAC1BQEA
+AAAAAAYAyQPaCAYAbgTaCAYAoAIbCA8ArwkAAAYA4QKDBgYArAODBgYAVQSDBgYA6QODBgYAAgSD
+BgYAKAODBgYAHQT8BQYAzQKUCAYASQKUCAYAdAODBgYAQwPIBAoAbAJxBwoALgKfBQoAtAKfBQ4A
+5QFqCA4A6wcuCAYAXAMbCA4A+AKzCA4AEAPHAAYAZAr8BQ4AjQdqCA4AkQPHAAYAmAH8BQ4AAQBj
+BQoAVwIIBgYAYQcbCQYA8QZuBgoAEAJZBgYAgwIbCBIAMwQ6BRIAyQE6BQYA6wT8BRYA0AaRCgYA
+kgdYABYAdQqyABYAJwGyABYAwwqyAAYAAwb8BQYAOgH8BQYA/QqDBgYACQraCAYAEwi3BA4A2gcu
+CA4ABgv6CBIAjQU6BRoAzQlpARoAMQFpAQ4AGAqzCA4A/QmzCBYAvgeRChYAsAfeBhYAlQayABYA
+qQayABYA9QGyABYAMAayAAYAnwdYABYAvgayAAYAsQr8BQ4A1wnHAA4A3QDHAAYA/Af8BQAAAABP
+AAAAAAABAAEAAAAAAEsGywpNAAEAAQAAAAAA6QfLClEAAQACAAABEABrCssKYQABAAMAAAAAAGQJ
+LAlhAAUACAAAARAA3wnwBIEABwAMAAEAAAAlBvAEjQAJAA8ABQEAAFwIAABhAAkAEQAFAQAAEAAA
+AGEACQAYAAIBAAAyCgAAqQAKABoAMQAmB3wBMQD9BoQBMQARB4wBMQA/B5QBEQD0B5wBEQC9AaAB
+EQCMBKQBEQBUCqgBIQC5CjoBBgaqAKsBVoAiCq4BVoCdAa4BUCAAAAAABhgGCAYAAQBYIAAAAAAG
+GAYIBgABAGAgAAAAABEYDAiyAQEAiiAAAAAAEwjNB7YBAQCWIAAAAAATCDsGuwEBAKIgAAAAABMI
+iQfAAQEAriAAAAAAEwhMCMUBAQC6IAAAAAADGAYIBgABAMIgAAAAABYIXQfKAQEA7iAAAAAAFgil
+Ac8BAQD1IAAAAAAWCLEB1AEBAP0gAAAAABEYDAiyAQIADiEAAAAABhgGCAYAAgAYIQAAAAAWCJQE
+2gECAHQhAAAAAAYYBggGAAIAfCEAAAAABgArBgYAAgD8JAAAAADGAuoJFgECAAolAAAAAMYCGwHj
+AAMAEiUAAAAAgwCVAd8BAwAeJQAAAADGAuIErAADACglAAAAABEAlwDkAQMASCUAAAAAAQCDAOwB
+BAC6IAAAAAAGGAYIBgAFAFQlAAAAAAMIAgFKAAUAiCUAAAAABhgGCAYABQAAAAEAsQQAAAEA+wYA
+AAEAEgEAAAEAEgEJAAYIAQARAAYIBgAZAAYICgApAAYIEAAxAAYIEAA5AAYIEABBAAYIEABJAAYI
+EABRAAYIEABZAAYIFQBhAAYIFQBpAAYIEABxAAYIEAB5AAYIEACBAAYIGgCRAAYIIACpAAYIBgCx
+AAYIBgC5AAYIBgDRAAYIJgDpAAYIEAAJAQYIBgARAQYIBgCZAAYIBgChAAYIBgAMAAYIBgAUAAYI
+BgAcAAYIBgAkAAYIBgAMAAIBSgAUAAIBSgAcAAIBSgAkAAIBSgDBAAYIBgDZAEwBTwDZAPkKVwDx
+AAYIXQBpAagEZQABAQYIBgBxAaoHagBxAX0KagAZAQYIBgApAQYIEAB5AfQFiQAZASoKjwCJAckJ
+lQCRAesFmwCZAZQEogChAWEKpgDBAOIErACpAeIEsACBAUAKtQCBAV4BEAAxAQYIugCxAQYIwAA5
+AQYIBgC5Ad0FyAA5Ab4J0ADBAesF1gBBAfEJ3QDRAacK4wDJAesF5wDhAUMC7gAxAUMCEADhAYkB
+rABBAUsK8wDpAacK4wDpAesF+QBJAesFAAHxAeIFBQH5AesACgExASgCBgCJAYIKAQDBAOoJFgHB
+ABsB4wAJAvMAIwE0ALkKOgE8AJQESgA8AJ4EUQE8AAYIBgAIACwAcgEIADAAdwEpAKsApQMuAAsA
+HAIuABMAJQIuABsARAIuACMATQIuACsAfQIuADMAfQIuADsATQIuAEMAgwIuAEsAfQIuAFMAmgIu
+AFsAfQIuAGMAoAIuAGsAygIuAHMA1wJAAIsAdwFAAIMAIQNDAHsAKgNDAIMAIQNJAKsAtgNjAHsA
+KgNjAIMAIQNpAKsAygOAAIsAdwGDAJMAdwGDAJsAdwGDAHsAKgOJAKsA1wOgAIsAdwGpAIMARALA
+AIsAdwHJAIMARALgAIsAdwHjALsAdwHjAFMAfQLpALMAdwEDAYMAIQMDAaMAQwMjAYMAIQMjAVsA
+fQIgAoMAIQMgAosAdwFAAoMAIQNAAosAdwFgAoMAIQNgAosAdwGAAoMAIQOAAosAdwGgAosAdwHA
+AosAdwHgAosAdwHgAoMAIQMAA4sAdwEgA4sAdwEgA4MAIQNvABsBLgEEAAEABQAFAAYABwAJAAgA
+AADrB/QBAABNBvkBAACNB/4BAABeCAMCAABhBwgCAADBAQ0CAACxBBICAAAGARcCAgAEAAMAAgAF
+AAUAAgAGAAcAAgAHAAkAAgAJAAsAAgAKAA0AAQALAA0AAgAOAA8AAgAYABEALgA1ADwAQwAgATMB
+QgFJAQSAAAABAAAAAAAAAAAAAAAAACsAAAAEAAAAAAAAAAAAAABXAb4AAAAAAAQAAAAAAAAAAAAA
+AFcB/AUAAAAACgAAAAAAAAAAAAAAYAHHAAAAAAAOAAAAAAAAAAAAAABpARsFAAAAAAQAAAAAAAAA
+AAAAAFcBsgAAAAAADgAAAAAAAAAAAAAAaQFiAAAAAAAAAAAAAQAAAHAJAAAIAAQACQAEAAoABwAA
+ABAAEgCBAAAAEAArAIEAAAAAAC0AgQCZACkBmQBMAQAAAENvbnRleHRWYWx1ZWAxAFRocmVhZFNh
+ZmVPYmplY3RQcm92aWRlcmAxAHN0XzViMTUzYTY4Y2ZjMzRjNzc5MzEyNWI0NTc4NDYxODM3ADxN
+b2R1bGU+AFN5c3RlbS5JTwBNaWNyb3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMAVABEaXNwb3Nl
+X19JbnN0YW5jZV9fAENyZWF0ZV9fSW5zdGFuY2VfXwB2YWx1ZV9fAFN5c3RlbS5EYXRhAG1zY29y
+bGliAE1pY3Jvc29mdC5WaXN1YWxCYXNpYwBDb21wYXJlTWV0aG9kAFJlcGxhY2UAQ3JlYXRlSW5z
+dGFuY2UAZ2V0X0dldEluc3RhbmNlAGluc3RhbmNlAEdldEhhc2hDb2RlAERhdGFUYWJsZQBWYXJp
+YWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBEZWxldGVGaWxlAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAZ2V0X05ld0xpbmUAR2V0VHlwZQBGYWlsdXJlAGdl
+dF9DdWx0dXJlAHNldF9DdWx0dXJlAF9yZXNDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVs
+QmFzZQBBcHBsaWNhdGlvbkJhc2UASW50ZXJuYWxEYXRhQ29sbGVjdGlvbkJhc2UAQXBwbGljYXRp
+b25TZXR0aW5nc0Jhc2UAQ2xvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAV3JpdGUAR3VpZEF0dHJp
+YnV0ZQBIZWxwS2V5d29yZEF0dHJpYnV0ZQBHZW5lcmF0ZWRDb2RlQXR0cmlidXRlAERlYnVnZ2Vy
+Tm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVB
+dHRyaWJ1dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAFN0YW5k
+YXJkTW9kdWxlQXR0cmlidXRlAEhpZGVNb2R1bGVOYW1lQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVt
+YXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBEZWJ1Z2dlckhpZGRlbkF0dHJp
+YnV0ZQBBc3NlbWJseUZpbGVWZXJzaW9uQXR0cmlidXRlAE15R3JvdXBDb2xsZWN0aW9uQXR0cmli
+dXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0
+dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1
+dGUAQ0xTQ29tcGxpYW50QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0
+ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUA
+bV9WYWx1ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAEdldE9iamVjdFZhbHVlAFN5c3RlbS5UaHJlYWRp
+bmcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBNYXRoAFNUX2FiYWZhMTExMWRj
+YzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJvagBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRh
+c2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBNaWNyb3NvZnQuVmlz
+dWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABTY3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29t
+cG9uZW50TW9kZWwAc3RfNWIxNTNhNjhjZmMzNGM3NzkzMTI1YjQ1Nzg0NjE4MzcuZGxsAEZpbGwA
+SXNEQk51bGwAZ2V0X0l0ZW0AZ2V0X0ZpbGVTeXN0ZW0ARW51bQBTeXN0ZW0uQ29tcG9uZW50TW9k
+ZWwuRGVzaWduAFNjcmlwdE1haW4ARGF0YUNvbHVtbgBnZXRfQXBwbGljYXRpb24ATXlBcHBsaWNh
+dGlvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVm
+bGVjdGlvbgBEYXRhVGFibGVDb2xsZWN0aW9uAERhdGFDb2x1bW5Db2xsZWN0aW9uAERhdGFSb3dD
+b2xsZWN0aW9uAFNxbENvbm5lY3Rpb24AU3lzdGVtLkRhdGEuQ29tbW9uAEN1bHR1cmVJbmZvAG1f
+QXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIAbV9Db21wdXRlck9iamVjdFBy
+b3ZpZGVyAG1fTXlXZWJTZXJ2aWNlc09iamVjdFByb3ZpZGVyAGdldF9SZXNvdXJjZU1hbmFnZXIA
+U3lzdGVtLkNvZGVEb20uQ29tcGlsZXIAZ2V0X1VzZXIAU3RyZWFtV3JpdGVyAFRleHRXcml0ZXIA
+RW50ZXIARGJEYXRhQWRhcHRlcgBTcWxEYXRhQWRhcHRlcgBnZXRfQ29tcHV0ZXIAU2VydmVyQ29t
+cHV0ZXIATXlDb21wdXRlcgBfcmVzTWdyAEFjdGl2YXRvcgAuY3RvcgAuY2N0b3IATW9uaXRvcgBT
+eXN0ZW0uRGlhZ25vc3RpY3MATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkRldmljZXMAZ2V0X1dlYlNl
+cnZpY2VzAE15V2ViU2VydmljZXMATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkFwcGxpY2F0aW9uU2Vy
+dmljZXMAU3lzdGVtLlJ1bnRpbWUuSW50ZXJvcFNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNp
+Yy5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMATWljcm9z
+b2Z0LlZpc3VhbEJhc2ljLk15U2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF9hYmFmYTExMTFk
+Y2M0MWExODJkNDhkMTdlNjE2YmM2Zi52YnByb2ouTXkuUmVzb3VyY2VzAE15UmVzb3VyY2VzAFNU
+X2FiYWZhMTExMWRjYzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJvai5SZXNvdXJjZXMucmVzb3Vy
+Y2VzAERlYnVnZ2luZ01vZGVzAGdldF9UYWJsZXMAZ2V0X1ZhcmlhYmxlcwBTdHJpbmdzAE15U2V0
+dGluZ3MARXF1YWxzAGdldF9Db2x1bW5zAENvbnZlcnNpb25zAFJ1bnRpbWVIZWxwZXJzAE9wZXJh
+dG9ycwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBGaWxlRXhpc3RzAGdldF9Sb3dzAG1f
+U3luY09iamVjdABBZGRPYmplY3QATXlQcm9qZWN0AERhdGFTZXQARXhpdABzZXRfVGFza1Jlc3Vs
+dABTeXN0ZW0uRGF0YS5TcWxDbGllbnQAZ2V0X0NvdW50AENvbnZlcnQAbV9Db250ZXh0AERhdGFS
+b3cAU1RfYWJhZmExMTExZGNjNDFhMTgyZDQ4ZDE3ZTYxNmJjNmYudmJwcm9qLk15AGdldF9Bc3Nl
+bWJseQBGaWxlU3lzdGVtUHJveHkAAAAAMU0AeQAuAFIAZQBzAG8AdQByAGMAZQBzAC4ATQB5AFIA
+ZQBzAG8AdQByAGMAZQBzAACAq0QAYQB0AGEAIABTAG8AdQByAGMAZQA9AFMAUQBMADAAMgA7AEkA
+bgBpAHQAaQBhAGwAIABDAGEAdABhAGwAbwBnAD0AUwBLAFkAXwBSAEUAVgA7AFUAcwBlAHIAIABJ
+AEQAPQBIAFkAUABTAFkAUwA5AF8AQwBPAE4AUwBPAEwARQA7AFAAYQBzAHMAdwBvAHIAZAA9AGMA
+eAAwAFMAawB5ADQAOABQADMAAB1FAHgAcABvAHIAdABEAGkAcgBMAG8AYwBhAGwAACVcAFIAVgBf
+AEEAYwB0AF8ARgBlAGUAXwBTAHQAZABfAEQAVAAAC1MAYwBlAEkAZAAADVcAZQBlAGsASQBkAAAD
+XwAAE1QAaQBtAGUAcwB0AGEAbQBwAAAJLgB0AHgAdAAAgINzAGUAbABlAGMAdAAgACoAIABmAHIA
+bwBtACAAVwBUAF8AUgBFAFYAXwBFAFgAUABPAFIAVABfAEQAVABBAEYAUwBfAEQAQQBTAEgAQgBP
+AEEAUgBEAF8AUwBJAE0AIABvAHIAZABlAHIAIABiAHkAIABEAEEAVABBAF8AQQBUAFQAAENXAFQA
+XwBSAEUAVgBfAEUAWABQAE8AUgBUAF8ARABUAEEARgBTAF8ARABBAFMASABCAE8AQQBSAEQAXwBT
+AEkATQAAAzsAAAMsAAADLgAAAAAA3pWB5dVM0k+L7Z7CfuoYTQAEIAEBCAMgAAEFIAEBEREEIAEB
+DgQgAQECBSACAQ4OBSABARFFByAEAQ4ODg4GFRIkARIMBhUSJAESCAYVEiQBEmUGFRIkARIgBCAA
+EwAHAAESbRGArQUgABKAsQcgAgEOEoCxBAABHBwEAAEBHBkHDQ4SgJUSgJkSgJ0SgKEICAgICBKA
+pQgIBSAAEoDBBSAAEoDFBSAAEoDJBiABEoDNHAMgABwFAAIcHBwDIAAOBAABDhwEIAECDgUgAgEO
+AgcgAgEOEoCVByACCBKAnQ4FIAASgOEGIAESgKEOBSAAEoDlAyAACAYgARKA7QgEIAEBHAUgABKA
+9QYgARKApQgEIAEcCAQAAQIcCwAGDg4ODggIEYEBBCABAhwEBwEeAAIeAAUQAQAeAAQKAR4ABAcB
+EwAGFRIkARMABwYVEnEBEwAGFRJxARMAAhMABAoBEwAFIAEBEwAIt3pcVhk04IkIsD9ffxHVCjoI
+iYRdzYCAzJEEAAAAAAQBAAAABwYVEiQBEgwHBhUSJAESCAcGFRIkARJlBwYVEiQBEiADBhJ5AwYS
+fQMGEhgCBhwCBggDBhEoAwAAAQQAABIMBAAAEggEAAASZQQAABIgBAAAEnkEAAASfQUAAQESfQQA
+ABIYBCAAEm0HEAEBHgAeAAcwAQEBEB4ABAgAEgwECAASCAQIABJlBAgAEiAECAASeQQIABJ9BAgA
+EhgEKAATAAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAv
+AQAqU1RfYWJhZmExMTExZGNjNDFhMTgyZDQ4ZDE3ZTYxNmJjNmYudmJwcm9qAAAFAQAAAAAWAQAR
+Q29weXJpZ2h0IEAgIDIwMTQAAAUBAAEAACkBACQzZDViMDkyNy00NGM0LTRhMDctODViMC05YmFm
+NzJkMzdlNzAAAAwBAAcxLjAuMC4wAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQO
+FEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQgBAAEAAAAAABgBAApNeVRl
+bXBsYXRlCDExLjAuMC4wAABhAQA0U3lzdGVtLldlYi5TZXJ2aWNlcy5Qcm90b2NvbHMuU29hcEh0
+dHBDbGllbnRQcm90b2NvbBJDcmVhdGVfX0luc3RhbmNlX18TRGlzcG9zZV9fSW5zdGFuY2VfXwAA
+ABABAAtNeS5Db21wdXRlcgAAEwEADk15LkFwcGxpY2F0aW9uAAAMAQAHTXkuVXNlcgAAEwEADk15
+LldlYlNlcnZpY2VzAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNl
+UmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1Ymxp
+Y0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3Vy
+Y2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAABBAAAAAAAAAAAAABpBAAAAIAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAMQQAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAg
+ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
+AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
+AAwEAAAAAAAAAAAAAAwENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
+sARsAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABIAwAAAQAwADAAMAAwADAANABi
+ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
+bQBlAAAAAAAAAAAAfgArAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABf
+AGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAxADYA
+YgBjADYAZgAuAHYAYgBwAHIAbwBqAAAAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAA
+ADEALgAwAC4AMAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAHMAdABfADUA
+YgAxADUAMwBhADYAOABjAGYAYwAzADQAYwA3ADcAOQAzADEAMgA1AGIANAA1ADcAOAA0ADYAMQA4
+ADMANwAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAA
+eQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA0AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBt
+AGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAA
+cwB0AF8ANQBiADEANQAzAGEANgA4AGMAZgBjADMANABjADcANwA5ADMAMQAyADUAYgA0ADUANwA4
+ADQANgAxADgAMwA3AC4AZABsAGwAAAB2ACsAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMA
+VABfAGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAx
+ADYAYgBjADYAZgAuAHYAYgBwAHIAbwBqAAAAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMA
+aQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBp
+AG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAAAsMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{8D50BEE4-F77A-49EF-A75E-7F93644ACCBB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+cast(isnull(ACC_ID,'0') as varchar(10)) as ACCOUNT,		
+cast(isnull(DAT_ATT,'99991231') as varchar(8)) as DATA_ATT,			
+cast(isnull(PCK_ID,'Undefined') as varchar(100)) as RC_PCK_REALE,		
+cast(isnull(INP_CNN,'0') as decimal(20,10)) as VALORE_PCK_REALE_NET,
+cast(isnull(b.STA_LEV0_DES, 'Undefined') as varchar(100)) as STATO_MOV,	
+cast(isnull(LST_ID,'Undefined') as varchar(100)) as COD_LISTINO,
+isnull(cast(PRT_ID as varchar (100)),'Undefined') as COD_PROMO_TEC,
+cast(isnull(PRS_ID,'Undefined') as varchar(100)) as COD_PROMO_SKY,
+cast(isnull(GCV_ID,'Undefined') as varchar(100)) as VOUCHER,
+cast(isnull(ACT_FEE_L,'0') as decimal(20,10)) as ACT_FEE_L,
+cast(isnull(ACT_FEE_S,'0') as decimal(20,10)) as ACT_FEE_S,
+cast(isnull(ACT_FEE_N,'0') as decimal(20,10)) as ACT_FEE_N,
+cast(isnull(QUOTA_MV,'0') as decimal(20,10)) as QUOTA_MV,
+cast(isnull(ACT_FEE_N_FINAL,'0') as decimal(20,10)) as ACT_FEE_N_FINAL,
+cast(isnull(c.STIMA/d.Tot_Account,'0') as decimal(20,10)) as ACT_FEE_NO_STD_STIMA_CDG
+
+from WT_REV_FIRSTACT_PER_EXPORT a
+left join SKY_SA.dbo.S_SUB_STA_STATO b
+	on a.STA_ID = b.STA_ID
+-- recupero il valore STIMA inserito dall'utente in ConsoleWeb		
+cross join M_REV_ACTFEE_NN_STD_STIMA	c
+
+-- calcolo il numero totale di Account sul quale spalmare il valore STIMA
+cross join (
+	select COUNT(*) as Tot_Account
+	from WT_REV_FIRSTACT_PER_EXPORT a
+	where TAB_ID in
+				--filtro clienti RESIDENZIALI
+				( select elemento from [SKY_REV].dbo.M_REV_MAPPING_DIM_FACT_TABLE 
+					where [FACT_TABLE]= 'SF_REV_ACTFEE' AND DIMENSIONE = 'TIPO_ABBONATO' )
+		and STA_ID in 
+				-- filtro stati FIRST ACTIVATION
+				( select elemento from [SKY_REV].dbo.M_REV_MAPPING_DIM_FACT_TABLE 
+					where [FACT_TABLE]= 'SF_REV_ACTFEE' AND DIMENSIONE = 'STATO' )
+		and SUBENTRO like '%N%'
+)d
+
+where TAB_ID in
+			--filtro clienti RESIDENZIALI
+			( select elemento from [SKY_REV].dbo.M_REV_MAPPING_DIM_FACT_TABLE 
+				where [FACT_TABLE]= 'SF_REV_ACTFEE' AND DIMENSIONE = 'TIPO_ABBONATO' )
+	and a.STA_ID in 
+			-- filtro stati FIRST ACTIVATION
+			( select elemento from [SKY_REV].dbo.M_REV_MAPPING_DIM_FACT_TABLE 
+				where [FACT_TABLE]= 'SF_REV_ACTFEE' AND DIMENSIONE = 'STATO' )
+	and SUBENTRO like '%N%'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT]"
+                      length="10"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACCOUNT]"
+                      name="ACCOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      name="DATA_ATT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[RC_PCK_REALE]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[RC_PCK_REALE]"
+                      name="RC_PCK_REALE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[VALORE_PCK_REALE_NET]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PCK_REALE_NET]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[VALORE_PCK_REALE_NET]"
+                      name="VALORE_PCK_REALE_NET"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[STATO_MOV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[STATO_MOV]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[STATO_MOV]"
+                      name="STATO_MOV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_SKY]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]"
+                      name="COD_PROMO_SKY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[VOUCHER]"
+                      name="VOUCHER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_L]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_L]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_L]"
+                      name="ACT_FEE_L"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_S]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_S]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_S]"
+                      name="ACT_FEE_S"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_N]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_N]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_N]"
+                      name="ACT_FEE_N"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_N_FINAL]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_N_FINAL]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_N_FINAL]"
+                      name="ACT_FEE_N_FINAL"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      name="ACT_FEE_NO_STD_STIMA_CDG"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[QUOTA_MV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[QUOTA_MV]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[QUOTA_MV]"
+                      name="QUOTA_MV"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_PCK_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PCK_REALE_NET]"
+                      dataType="numeric"
+                      name="VALORE_PCK_REALE_NET"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[STATO_MOV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="STATO_MOV" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_L]"
+                      dataType="numeric"
+                      name="ACT_FEE_L"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_S]"
+                      dataType="numeric"
+                      name="ACT_FEE_S"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_N]"
+                      dataType="numeric"
+                      name="ACT_FEE_N"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_N_FINAL]"
+                      dataType="numeric"
+                      name="ACT_FEE_N_FINAL"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      dataType="numeric"
+                      name="ACT_FEE_NO_STD_STIMA_CDG"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].ExternalColumns[QUOTA_MV]"
+                      dataType="numeric"
+                      name="QUOTA_MV"
+                      precision="20"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACCOUNT]"
+                      name="ACCOUNT" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      name="DATA_ATT" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[RC_PCK_REALE]"
+                      name="RC_PCK_REALE" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[VALORE_PCK_REALE_NET]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[VALORE_PCK_REALE_NET]"
+                      name="VALORE_PCK_REALE_NET"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[STATO_MOV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[STATO_MOV]"
+                      name="STATO_MOV" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_SKY]"
+                      name="COD_PROMO_SKY" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[VOUCHER]"
+                      name="VOUCHER" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_L]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_L]"
+                      name="ACT_FEE_L"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_S]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_S]"
+                      name="ACT_FEE_S"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_N]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_N]"
+                      name="ACT_FEE_N"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[QUOTA_MV]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[QUOTA_MV]"
+                      name="QUOTA_MV"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_N_FINAL]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_N_FINAL]"
+                      name="ACT_FEE_N_FINAL"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      name="ACT_FEE_NO_STD_STIMA_CDG"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[WT_REV_EXPORT_DTAFS_DASHBOARD_SIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[ACCOUNT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ACCOUNT"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACCOUNT]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[DATA_ATT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="DATA_ATT"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[DATA_ATT]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[RC_PCK_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="RC_PCK_REALE"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_PCK_REALE]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[RC_PCK_REALE]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[VALORE_PCK_REALE_NET]"
+                      cachedDataType="numeric"
+                      cachedName="VALORE_PCK_REALE_NET"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PCK_REALE_NET]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[VALORE_PCK_REALE_NET]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[STATO_MOV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="STATO_MOV"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[STATO_MOV]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[STATO_MOV]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[COD_LISTINO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="COD_LISTINO"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_LISTINO]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[COD_PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="COD_PROMO_TEC"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[COD_PROMO_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="COD_PROMO_SKY"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_SKY]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="VOUCHER"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[VOUCHER]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[ACT_FEE_L]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_L"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_L]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_L]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[ACT_FEE_S]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_S"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_S]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_S]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[ACT_FEE_N]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_N"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_N]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[ACT_FEE_N_FINAL]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_N_FINAL"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N_FINAL]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_N_FINAL]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      cachedDataType="numeric"
+                      cachedName="ACT_FEE_NO_STD_STIMA_CDG"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[ACT_FEE_NO_STD_STIMA_CDG]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[QUOTA_MV]"
+                      cachedDataType="numeric"
+                      cachedName="QUOTA_MV"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[QUOTA_MV]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output].Columns[QUOTA_MV]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_PCK_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PCK_REALE_NET]"
+                      dataType="numeric"
+                      name="VALORE_PCK_REALE_NET"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[STATO_MOV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="STATO_MOV" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_L]"
+                      dataType="numeric"
+                      name="ACT_FEE_L"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_S]"
+                      dataType="numeric"
+                      name="ACT_FEE_S"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N]"
+                      dataType="numeric"
+                      name="ACT_FEE_N"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N_FINAL]"
+                      dataType="numeric"
+                      name="ACT_FEE_N_FINAL"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_NO_STD_STIMA_CDG]"
+                      dataType="numeric"
+                      name="ACT_FEE_NO_STD_STIMA_CDG"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[QUOTA_MV]"
+                      dataType="numeric"
+                      name="QUOTA_MV"
+                      precision="20"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Paths[OLE DB Source Output]"
+              endId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\WT_REV_EXPORT_DTAFS_DASHBOARD_SIM.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM\Recupera i campi presenti nella WT_REV_FIRSTACT_PER_EXPORT e calcola ACT_FEE_NO_STD_STIMA_CDG.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Week, Scenario e Timestamp"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{19296a38-7cd1-469b-9083-75c9d8f41414}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Week, Scenario e Timestamp"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="select SceId = right(sce_id,2), WeekId = right(week_id,2), Timestamp = cast(datepart(year,GETDATE()) as varchar(4)) +&#xA;    right('00'+cast(datepart(month,GETDATE()) as varchar(2)),2) +&#xA;    right('00'+cast(datepart(day,GETDATE()) as varchar(2)),2) +&#xA;    right('00'+cast(datepart(hour,GETDATE()) as varchar(2)),2) +&#xA;    right('00'+cast(datepart(minute,GETDATE()) as varchar(2)),2) +&#xA;    right('00'+cast(datepart(second,GETDATE()) as varchar(2)),2) from M_REV_CALC_WEEK"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="WeekId"
+            SQLTask:DtsVariableName="User::WeekId" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="SceId"
+            SQLTask:DtsVariableName="User::SceId" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Timestamp"
+            SQLTask:DtsVariableName="User::Timestamp" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{0E0C8F66-C294-4CA9-8AD2-4FF44AC17A1C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="truncate table WT_REV_EXPORT_DTAFS_DASHBOARD_SIM" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3687D8C9-3CEC-45BA-8BA8-B8BD3FD33C8A}"
+      DTS:From="Package\Truncate Table WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{335663CD-A366-446D-BE5B-5CAEEF782AD2}"
+      DTS:From="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Set Week, Scenario e Timestamp" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{9577487F-0369-4EA1-98AB-F67DF49760DA}"
+      DTS:From="Package\Set Week, Scenario e Timestamp"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Extract file DTAFS su share di rete Dashboard SIM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{1BE66923-6AA8-45E9-B2E3-453B0FE37FDD}"
+      DTS:From="Package\Extract file DTAFS su share di rete Dashboard SIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Extract file DTAFS su StagingArea locale" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="206,44"
+          Id="Package\Extract file DTAFS su share di rete Dashboard SIM"
+          TopLeft="63.8773584905661,330.971698113208" />
+        <NodeLayout
+          Size="206,44"
+          Id="Package\Extract file DTAFS su StagingArea locale"
+          TopLeft="63.8773584905661,408.858490566038" />
+        <NodeLayout
+          Size="322,44"
+          Id="Package\popola WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+          TopLeft="5.5,113.311320754717" />
+        <NodeLayout
+          Size="206,44"
+          Id="Package\Set Week, Scenario e Timestamp"
+          TopLeft="63.8773584905661,226.066037735849" />
+        <NodeLayout
+          Size="322,44"
+          Id="Package\Truncate Table WT_REV_EXPORT_DTAFS_DASHBOARD_SIM"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="166.707547169811,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,63.8867924528302"
+              Start="0,0"
+              End="0,56.3867924528302">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,56.3867924528302" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="166.707547169811,157.235849056604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,68.8301886792453"
+              Start="0,0"
+              End="0,61.3301886792453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.3301886792453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="166.707547169811,269.990566037736">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60.9811320754717"
+              Start="0,0"
+              End="0,53.4811320754717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.4811320754717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="166.707547169811,374.896226415094">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

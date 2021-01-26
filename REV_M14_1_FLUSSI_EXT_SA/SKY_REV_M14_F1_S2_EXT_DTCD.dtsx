@@ -1,0 +1,2880 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{AEF22255-D413-4F94-AC7E-28A2506ACC8E}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M14_F1_S2_EXT_DTCD"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="138"
+  DTS:VersionGUID="{BD8B11F1-8E36-4A85-A36A-42DF6196B710}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M14_F1_S2_EXT_DTCD-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M14_F1_S2_EXT_DTCD-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{DA3A63CF-C36A-48E1-89C3-16E7991D3E7C}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M14_F1_S2_EXT_DTCD-{DA3A63CF-C36A-48E1-89C3-16E7991D3E7C}SQL02.SSIS_CONFIGURATIONS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;VAR_ExportDir_DashboardSIM&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{96C11D2C-25D3-4147-A9B7-842173D8C09A}"
+      DTS:ObjectName="VAR_ExportDir_DashboardSIM" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;VAR_ExportDirLocal_DashboardSIM&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{13D5450B-962B-442A-9CA8-9A57FB659F44}"
+      DTS:ObjectName="VAR_ExportDirLocal_DashboardSIM" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6F719FC6-3B4A-42B4-965A-C1736CD50809}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExportDir">
+      <DTS:VariableValue
+        DTS:DataType="8">\\filesrvmi03\Dati3\Hyperion\DATI_COLLAUDO\REV\4_EXPORT_SIM\MIRROR_filesrvmi06</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ACD5DFAC-DE9D-4CE4-811C-019C5BCA75F7}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExportDirLocal">
+      <DTS:VariableValue
+        DTS:DataType="8">\\filesrvmi03\Dati3\Hyperion\DATI_COLLAUDO\REV\4_EXPORT_SIM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9173001E-2E4A-4878-953F-D1234C55897B}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="MonthId">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{73CE307B-A29A-4598-8D3C-45C591D6105A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Timestamp">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{35C8B837-75A9-469F-996D-3B978BB3CE51}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="YearId">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Extract file DTCD su share di rete DASHBOARD_SIM"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{0e4eae44-dc76-425e-aa7a-b3368ab4c585}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract file DTCD su share di rete DASHBOARD_SIM"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_e426bf2fbaae45fd87a75c98280ec4ba"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="User::ExportDir,User::ExportDirLocal,User::MonthId,User::Timestamp,User::YearId">
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyCopyright("Copyright @  2014")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("3d5b0927-44c4-4a07-85b0-9baf72d37e70")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.IO
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+    Public Sub Main()
+        Dim strConn As String = "Data Source=SQL02;Initial Catalog=SKY_REV;User ID=HYPSYS9_CONSOLE;Password=cx0Sky48P3"
+        Dim conn As SqlConnection = New SqlConnection(strConn)
+
+        If My.Computer.FileSystem.FileExists(Dts.Variables.Item("ExportDir").Value + "\RV_Cash_Discount_DT" + Dts.Variables("YearId").Value.ToString() + Dts.Variables("MonthId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt") Then
+            My.Computer.FileSystem.DeleteFile(Dts.Variables.Item("ExportDir").Value + "\RV_Cash_Discount_DT" + Dts.Variables("YearId").Value.ToString() + Dts.Variables("MonthId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt")
+        End If
+
+        Dim sw As StreamWriter = New StreamWriter(Dts.Variables.Item("ExportDir").Value + "\RV_Cash_Discount_DT" + Dts.Variables("YearId").Value.ToString() + Dts.Variables("MonthId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt", False)
+        Dim da As SqlDataAdapter = New SqlDataAdapter("select * from WT_REV_EXPORT_DTCD_DASHBOARD_SIM", conn)
+        Dim ds As DataSet = New DataSet()
+
+
+        da.Fill(ds, "WT_REV_EXPORT_DTCD_DASHBOARD_SIM")
+        Dim dt As DataTable = ds.Tables("WT_REV_EXPORT_DTCD_DASHBOARD_SIM")
+
+        Dim iColCount As Integer = dt.Columns.Count
+
+        Dim i As Integer
+        For i = 0 To iColCount - 1
+            sw.Write(dt.Columns(i))
+            If i < iColCount - 1 Then
+                sw.Write(";")
+            End If
+        Next
+        sw.Write(sw.NewLine)
+
+
+        Dim j As Integer
+        Dim strToWrite As String
+        For j = 0 To dt.Rows.Count - 1
+            Dim dr As DataRow
+            dr = dt.Rows(j)
+            Dim k As Integer
+            For k = 0 To iColCount - 1
+                If Not Convert.IsDBNull(dr(k)) Then
+                    sw.Write(Replace((dr(k).ToString()), ",", "."))
+                    If k < iColCount - 1 Then
+                        sw.Write(";")
+                    End If
+                End If
+            Next
+            sw.Write(sw.NewLine)
+        Next
+        sw.Close()
+
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>st_e426bf2fbaae45fd87a75c98280ec4ba</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>st_e426bf2fbaae45fd87a75c98280ec4ba</msb:DisplayName>
+    <msb:ProjectId>{09C12A8D-1447-4724-AFC5-0D5D0D129546}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="st_e426bf2fbaae45fd87a75c98280ec4ba.vbproj" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="st_e426bf2fbaae45fd87a75c98280ec4ba.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ST_abafa1111dcc41a182d48d17e616bc6f.vbproj</RootNamespace>
+    <AssemblyName>st_e426bf2fbaae45fd87a75c98280ec4ba</AssemblyName>
+    <StartupObject></StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{565576D2-0521-4757-AC1C-ABE2422D9C83}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+          <BinaryItem
+            Name="st_e426bf2fbaae45fd87a75c98280ec4ba.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADtvYl4AAAAAAAAAAOAAIiALAVAAACIAAAAIAAAAAAAA/kAA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKxAAABPAAAAAGAAAGgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAABCEAAAAgAAAAIgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAGgEAAAAYAAAAAYAAAAkAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADg
+QAAAAAAAAEgAAAACAAUAnCUAAFgaAAABAAAAAAAAAPQ/AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqQnMiAAAKKCYAAAqACAAABCoeAignAAAKKgAAGzABAD8A
+AAAAAAAAfgcAAAQtMn4IAAAEKCYAAAooKAAACn4HAAAELRxzDQAABoAHAAAE3hB+CAAABCgmAAAK
+KCkAAArcfgcAAAQqAAEQAAACAB0ADCkAEAAAAAAeAigqAAAKKhMwBwB0AwAAAQAAEXIzAABwCgZz
+KwAACgsoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAAAApy9AAAcCgxAAAKAigtAAAK
+by4AAApyHgEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4AAApyLAEAcG8vAAAKbzAAAApv
+MgAACigxAAAKcjwBAHAoMQAACgIoLQAACm8uAAAKckABAHBvLwAACm8wAAAKbzIAAAooMQAACnJU
+AQBwKDEAAAooMwAACm80AAAKObgAAAAoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAA
+AApy9AAAcCgxAAAKAigtAAAKby4AAApyHgEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4A
+AApyLAEAcG8vAAAKbzAAAApvMgAACigxAAAKcjwBAHAoMQAACgIoLQAACm8uAAAKckABAHBvLwAA
+Cm8wAAAKbzIAAAooMQAACnJUAQBwKDEAAAooMwAACm81AAAKAigtAAAKby4AAApy4AAAcG8vAAAK
+bzAAAApy9AAAcCgxAAAKAigtAAAKby4AAApyHgEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAK
+by4AAApyLAEAcG8vAAAKbzAAAApvMgAACigxAAAKcjwBAHAoMQAACgIoLQAACm8uAAAKckABAHBv
+LwAACm8wAAAKbzIAAAooMQAACnJUAQBwKDEAAAooMwAAChZzNgAACgxyXgEAcAdzNwAACnM4AAAK
+DQlyvAEAcG85AAAKJglvOgAACnK8AQBwbzsAAAoTBBEEbzwAAApvPQAAChMFEQUX2hMIFhMGKy0I
+EQRvPAAAChEGbz4AAApvPwAAChEGEQUX2i8LCHL+AQBwb0AAAAoRBhfWEwYRBhEIMc0ICG9BAAAK
+b0AAAAoRBG9CAAAKb0MAAAoX2hMJFhMHOIcAAAARBG9CAAAKEQdvRAAAChMKEQUX2hMMFhMLK1QR
+ChELb0UAAAooJgAACihGAAAKLTkIEQoRC29FAAAKbzIAAApyAgIAcHIGAgBwFxUWKEcAAApvQAAA
+ChELEQUX2i8LCHL+AQBwb0AAAAoRCxfWEwsRCxEMMaYICG9BAAAKb0AAAAoRBxfWEwcRBxEJPnD/
+//8Ib0gAAAoCKC0AAAoWb0kAAAoqNgIDKCYAAAooSgAACioeAihLAAAKKi7QCAAAAigjAAAKKh4C
+KDIAAAoqAAATMAEAFAAAAAIAABECjAUAABstCCgBAAArCisCAgoGKiID/hUFAAAbKgAAABMwAgAo
+AAAAAwAAEQJ7TQAACm9OAAAKCgaMCAAAGy0SKAIAACsKAntNAAAKBm9PAAAKBipKAigiAAAKAnNQ
+AAAKfU0AAAoqAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAMwIAAAjfgAAOAkA
+ABgLAAAjU3RyaW5ncwAAAABQFAAADAIAACNVUwBcFgAAEAAAACNHVUlEAAAAbBYAAOwDAAAjQmxv
+YgAAAAAAAAACAAABVx2iCQkPAAAA+gEzABYAAAEAAABBAAAACgAAAAwAAAAZAAAABAAAAFAAAAAC
+AAAANwAAAAMAAAAEAAAACAAAAAkAAAAIAAAAAQAAAAYAAAABAAAAAwAAAAMAAAACAAAAAAC1BQEA
+AAAAAAYAyQPaCAYAbgTaCAYAoAIbCA8ArwkAAAYA4QKDBgYArAODBgYAVQSDBgYA6QODBgYAAgSD
+BgYAKAODBgYAHQT8BQYAzQKUCAYASQKUCAYAdAODBgYAQwPIBAoAbAJxBwoALgKfBQoAtAKfBQ4A
+5QFqCA4A6wcuCAYAXAMbCA4A+AKzCA4AEAPHAAYAZAr8BQ4AjQdqCA4AkQPHAAYAmAH8BQ4AAQBj
+BQoAVwIIBgYAYQcbCQYA8QZuBgoAEAJZBgYAgwIbCBIAMwQ6BRIAyQE6BQYA6wT8BRYA0AaRCgYA
+kgc0ABYAdQqyABYAJwGyABYAwwqyAAYAAwb8BQYAOgH8BQYA/QqDBgYACQraCAYAEwi3BA4A2gcu
+CA4ABgv6CBIAjQU6BRoAzQlpARoAMQFpAQ4AGAqzCA4A/QmzCBYAvgeRChYAsAfeBhYAlQayABYA
+qQayABYA9QGyABYAMAayAAYAnwc0ABYAvgayAAYAsQr8BQ4A1wnHAA4A3QDHAAYA/Af8BQAAAAAr
+AAAAAAABAAEAAAAAAEsGywpNAAEAAQAAAAAA6QfLClEAAQACAAABEABrCssKYQABAAMAAAAAAGQJ
+LAlhAAUACAAAARAA3wnwBIEABwAMAAEAAAAlBvAEjQAJAA8ABQEAAFwIAABhAAkAEQAFAQAAEAAA
+AGEACQAYAAIBAAAyCgAAqQAKABoAMQAmB3wBMQD9BoQBMQARB4wBMQA/B5QBEQD0B5wBEQC9AaAB
+EQCMBKQBEQBUCqgBIQC5CjoBBgaGAKsBVoAiCq4BVoCdAa4BUCAAAAAABhgGCAYAAQBYIAAAAAAG
+GAYIBgABAGAgAAAAABEYDAiyAQEAiiAAAAAAEwjNB7YBAQCWIAAAAAATCDsGuwEBAKIgAAAAABMI
+iQfAAQEAriAAAAAAEwhMCMUBAQC6IAAAAAADGAYIBgABAMIgAAAAABYIXQfKAQEA7iAAAAAAFgil
+Ac8BAQD1IAAAAAAWCLEB1AEBAP0gAAAAABEYDAiyAQIADiEAAAAABhgGCAYAAgAYIQAAAAAWCJQE
+2gECAHQhAAAAAAYYBggGAAIAfCEAAAAABgArBgYAAgD8JAAAAADGAuoJFgECAAolAAAAAMYCGwHj
+AAMAEiUAAAAAgwCVAd8BAwAeJQAAAADGAuIErAADACglAAAAABEAcwDkAQMASCUAAAAAAQBfAOwB
+BAC6IAAAAAAGGAYIBgAFAFQlAAAAAAMIAgFKAAUAiCUAAAAABhgGCAYABQAAAAEAsQQAAAEA+wYA
+AAEAEgEAAAEAEgEJAAYIAQARAAYIBgAZAAYICgApAAYIEAAxAAYIEAA5AAYIEABBAAYIEABJAAYI
+EABRAAYIEABZAAYIFQBhAAYIFQBpAAYIEABxAAYIEAB5AAYIEACBAAYIGgCRAAYIIACpAAYIBgCx
+AAYIBgC5AAYIBgDRAAYIJgDpAAYIEAAJAQYIBgARAQYIBgCZAAYIBgChAAYIBgAMAAYIBgAUAAYI
+BgAcAAYIBgAkAAYIBgAMAAIBSgAUAAIBSgAcAAIBSgAkAAIBSgDBAAYIBgDZAEwBTwDZAPkKVwDx
+AAYIXQBpAagEZQABAQYIBgBxAaoHagBxAX0KagAZAQYIBgApAQYIEAB5AfQFiQAZASoKjwCJAckJ
+lQCRAesFmwCZAZQEogChAWEKpgDBAOIErACpAeIEsACBAUAKtQCBAV4BEAAxAQYIugCxAQYIwAA5
+AQYIBgC5Ad0FyAA5Ab4J0ADBAesF1gBBAfEJ3QDRAacK4wDJAesF5wDhAUMC7gAxAUMCEADhAYkB
+rABBAUsK8wDpAacK4wDpAesF+QBJAesFAAHxAeIFBQH5AesACgExASgCBgCJAYIKAQDBAOoJFgHB
+ABsB4wAJAvMAIwE0ALkKOgE8AJQESgA8AJ4EUQE8AAYIBgAIACwAcgEIADAAdwEpAKsApQMuAAsA
+HAIuABMAJQIuABsARAIuACMATQIuACsAfQIuADMAfQIuADsATQIuAEMAgwIuAEsAfQIuAFMAmgIu
+AFsAfQIuAGMAoAIuAGsAygIuAHMA1wJAAIsAdwFAAIMAIQNDAHsAKgNDAIMAIQNJAKsAtgNjAHsA
+KgNjAIMAIQNpAKsAygOAAIsAdwGDAJMAdwGDAJsAdwGDAHsAKgOJAKsA1wOgAIsAdwGpAIMARALA
+AIsAdwHJAIMARALgAIsAdwHjALsAdwHjAFMAfQLpALMAdwEDAYMAIQMDAaMAQwMjAYMAIQMjAVsA
+fQIgAoMAIQMgAosAdwFAAoMAIQNAAosAdwFgAoMAIQNgAosAdwGAAoMAIQOAAosAdwGgAosAdwHA
+AosAdwHgAosAdwHgAoMAIQMAA4sAdwEgA4sAdwEgA4MAIQNvABsBLgEEAAEABQAFAAYABwAJAAgA
+AADrB/QBAABNBvkBAACNB/4BAABeCAMCAABhBwgCAADBAQ0CAACxBBICAAAGARcCAgAEAAMAAgAF
+AAUAAgAGAAcAAgAHAAkAAgAJAAsAAgAKAA0AAQALAA0AAgAOAA8AAgAYABEALgA1ADwAQwAgATMB
+QgFJAQSAAAABAAAAAAAAAAAAAAAAAI4AAAAEAAAAAAAAAAAAAABXAb4AAAAAAAQAAAAAAAAAAAAA
+AFcB/AUAAAAACgAAAAAAAAAAAAAAYAHHAAAAAAAOAAAAAAAAAAAAAABpARsFAAAAAAQAAAAAAAAA
+AAAAAFcBsgAAAAAADgAAAAAAAAAAAAAAaQE+AAAAAAAAAAAAAQAAAHAJAAAIAAQACQAEAAoABwAA
+ABAAEgBdAAAAEAArAF0AAAAAAC0AXQCZACkBmQBMAQAAAENvbnRleHRWYWx1ZWAxAFRocmVhZFNh
+ZmVPYmplY3RQcm92aWRlcmAxADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNyb3NvZnQuU3FsU2VydmVy
+Lk1hbmFnZWREVFMAVABEaXNwb3NlX19JbnN0YW5jZV9fAENyZWF0ZV9fSW5zdGFuY2VfXwB2YWx1
+ZV9fAHN0X2U0MjZiZjJmYmFhZTQ1ZmQ4N2E3NWM5ODI4MGVjNGJhAFN5c3RlbS5EYXRhAG1zY29y
+bGliAE1pY3Jvc29mdC5WaXN1YWxCYXNpYwBDb21wYXJlTWV0aG9kAFJlcGxhY2UAQ3JlYXRlSW5z
+dGFuY2UAZ2V0X0dldEluc3RhbmNlAGluc3RhbmNlAEdldEhhc2hDb2RlAERhdGFUYWJsZQBWYXJp
+YWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBEZWxldGVGaWxlAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAZ2V0X05ld0xpbmUAR2V0VHlwZQBGYWlsdXJlAGdl
+dF9DdWx0dXJlAHNldF9DdWx0dXJlAF9yZXNDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVs
+QmFzZQBBcHBsaWNhdGlvbkJhc2UASW50ZXJuYWxEYXRhQ29sbGVjdGlvbkJhc2UAQXBwbGljYXRp
+b25TZXR0aW5nc0Jhc2UAQ2xvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAV3JpdGUAR3VpZEF0dHJp
+YnV0ZQBIZWxwS2V5d29yZEF0dHJpYnV0ZQBHZW5lcmF0ZWRDb2RlQXR0cmlidXRlAERlYnVnZ2Vy
+Tm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVB
+dHRyaWJ1dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAFN0YW5k
+YXJkTW9kdWxlQXR0cmlidXRlAEhpZGVNb2R1bGVOYW1lQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVt
+YXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBEZWJ1Z2dlckhpZGRlbkF0dHJp
+YnV0ZQBBc3NlbWJseUZpbGVWZXJzaW9uQXR0cmlidXRlAE15R3JvdXBDb2xsZWN0aW9uQXR0cmli
+dXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0
+dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1
+dGUAQ0xTQ29tcGxpYW50QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0
+ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUA
+bV9WYWx1ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAEdldE9iamVjdFZhbHVlAFN5c3RlbS5UaHJlYWRp
+bmcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBNYXRoAFNUX2FiYWZhMTExMWRj
+YzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJvagBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRh
+c2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBNaWNyb3NvZnQuVmlz
+dWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABTY3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29t
+cG9uZW50TW9kZWwAc3RfZTQyNmJmMmZiYWFlNDVmZDg3YTc1Yzk4MjgwZWM0YmEuZGxsAEZpbGwA
+SXNEQk51bGwAZ2V0X0l0ZW0AZ2V0X0ZpbGVTeXN0ZW0ARW51bQBTeXN0ZW0uQ29tcG9uZW50TW9k
+ZWwuRGVzaWduAFNjcmlwdE1haW4ARGF0YUNvbHVtbgBnZXRfQXBwbGljYXRpb24ATXlBcHBsaWNh
+dGlvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVm
+bGVjdGlvbgBEYXRhVGFibGVDb2xsZWN0aW9uAERhdGFDb2x1bW5Db2xsZWN0aW9uAERhdGFSb3dD
+b2xsZWN0aW9uAFNxbENvbm5lY3Rpb24AU3lzdGVtLkRhdGEuQ29tbW9uAEN1bHR1cmVJbmZvAG1f
+QXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIAbV9Db21wdXRlck9iamVjdFBy
+b3ZpZGVyAG1fTXlXZWJTZXJ2aWNlc09iamVjdFByb3ZpZGVyAGdldF9SZXNvdXJjZU1hbmFnZXIA
+U3lzdGVtLkNvZGVEb20uQ29tcGlsZXIAZ2V0X1VzZXIAU3RyZWFtV3JpdGVyAFRleHRXcml0ZXIA
+RW50ZXIARGJEYXRhQWRhcHRlcgBTcWxEYXRhQWRhcHRlcgBnZXRfQ29tcHV0ZXIAU2VydmVyQ29t
+cHV0ZXIATXlDb21wdXRlcgBfcmVzTWdyAEFjdGl2YXRvcgAuY3RvcgAuY2N0b3IATW9uaXRvcgBT
+eXN0ZW0uRGlhZ25vc3RpY3MATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkRldmljZXMAZ2V0X1dlYlNl
+cnZpY2VzAE15V2ViU2VydmljZXMATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkFwcGxpY2F0aW9uU2Vy
+dmljZXMAU3lzdGVtLlJ1bnRpbWUuSW50ZXJvcFNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNp
+Yy5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMATWljcm9z
+b2Z0LlZpc3VhbEJhc2ljLk15U2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF9hYmFmYTExMTFk
+Y2M0MWExODJkNDhkMTdlNjE2YmM2Zi52YnByb2ouTXkuUmVzb3VyY2VzAE15UmVzb3VyY2VzAFNU
+X2FiYWZhMTExMWRjYzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJvai5SZXNvdXJjZXMucmVzb3Vy
+Y2VzAERlYnVnZ2luZ01vZGVzAGdldF9UYWJsZXMAZ2V0X1ZhcmlhYmxlcwBTdHJpbmdzAE15U2V0
+dGluZ3MARXF1YWxzAGdldF9Db2x1bW5zAENvbnZlcnNpb25zAFJ1bnRpbWVIZWxwZXJzAE9wZXJh
+dG9ycwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBGaWxlRXhpc3RzAGdldF9Sb3dzAG1f
+U3luY09iamVjdABBZGRPYmplY3QATXlQcm9qZWN0AERhdGFTZXQARXhpdABzZXRfVGFza1Jlc3Vs
+dABTeXN0ZW0uRGF0YS5TcWxDbGllbnQAZ2V0X0NvdW50AENvbnZlcnQAbV9Db250ZXh0AERhdGFS
+b3cAU1RfYWJhZmExMTExZGNjNDFhMTgyZDQ4ZDE3ZTYxNmJjNmYudmJwcm9qLk15AGdldF9Bc3Nl
+bWJseQBGaWxlU3lzdGVtUHJveHkAAAAAMU0AeQAuAFIAZQBzAG8AdQByAGMAZQBzAC4ATQB5AFIA
+ZQBzAG8AdQByAGMAZQBzAACAq0QAYQB0AGEAIABTAG8AdQByAGMAZQA9AFMAUQBMADAAMgA7AEkA
+bgBpAHQAaQBhAGwAIABDAGEAdABhAGwAbwBnAD0AUwBLAFkAXwBSAEUAVgA7AFUAcwBlAHIAIABJ
+AEQAPQBIAFkAUABTAFkAUwA5AF8AQwBPAE4AUwBPAEwARQA7AFAAYQBzAHMAdwBvAHIAZAA9AGMA
+eAAwAFMAawB5ADQAOABQADMAABNFAHgAcABvAHIAdABEAGkAcgAAKVwAUgBWAF8AQwBhAHMAaABf
+AEQAaQBzAGMAbwB1AG4AdABfAEQAVAAADVkAZQBhAHIASQBkAAAPTQBvAG4AdABoAEkAZAAAA18A
+ABNUAGkAbQBlAHMAdABhAG0AcAAACS4AdAB4AHQAAF1zAGUAbABlAGMAdAAgACoAIABmAHIAbwBt
+ACAAVwBUAF8AUgBFAFYAXwBFAFgAUABPAFIAVABfAEQAVABDAEQAXwBEAEEAUwBIAEIATwBBAFIA
+RABfAFMASQBNAABBVwBUAF8AUgBFAFYAXwBFAFgAUABPAFIAVABfAEQAVABDAEQAXwBEAEEAUwBI
+AEIATwBBAFIARABfAFMASQBNAAADOwAAAywAAAMuAAAAAIsCn6JNFGtImftSqJpGVLwABCABAQgD
+IAABBSABARERBCABAQ4EIAEBAgUgAgEODgUgAQERRQcgBAEODg4OBhUSJAESDAYVEiQBEggGFRIk
+ARJlBhUSJAESIAQgABMABwABEm0RgK0FIAASgLEHIAIBDhKAsQQAARwcBAABARwZBw0OEoCVEoCZ
+EoCdEoChCAgICAgSgKUICAUgABKAwQUgABKAxQUgABKAyQYgARKAzRwDIAAcBQACHBwcAyAADgQA
+AQ4cBCABAg4FIAIBDgIHIAIBDhKAlQcgAggSgJ0OBSAAEoDhBiABEoChDgUgABKA5QMgAAgGIAES
+gO0IBCABARwFIAASgPUGIAESgKUIBCABHAgEAAECHAsABg4ODg4ICBGBAQQgAQIcBAcBHgACHgAF
+EAEAHgAECgEeAAQHARMABhUSJAETAAcGFRJxARMABhUScQETAAITAAQKARMABSABARMACLd6XFYZ
+NOCJCLA/X38R1Qo6CImEXc2AgMyRBAAAAAAEAQAAAAcGFRIkARIMBwYVEiQBEggHBhUSJAESZQcG
+FRIkARIgAwYSeQMGEn0DBhIYAgYcAgYIAwYRKAMAAAEEAAASDAQAABIIBAAAEmUEAAASIAQAABJ5
+BAAAEn0FAAEBEn0EAAASGAQgABJtBxABAR4AHgAHMAEBARAeAAQIABIMBAgAEggECAASZQQIABIg
+BAgAEnkECAASfQQIABIYBCgAEwAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJv
+d3MBCAEAAgAAAAAALwEAKlNUX2FiYWZhMTExMWRjYzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJv
+agAABQEAAAAAFgEAEUNvcHlyaWdodCBAICAyMDE0AAAFAQABAAApAQAkM2Q1YjA5MjctNDRjNC00
+YTA3LTg1YjAtOWJhZjcyZDM3ZTcwAAAMAQAHMS4wLjAuMAAASQEAGi5ORVRGcmFtZXdvcmssVmVy
+c2lvbj12NC41AQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRIuTkVUIEZyYW1ld29yayA0LjUIAQAB
+AAAAAAAYAQAKTXlUZW1wbGF0ZQgxMS4wLjAuMAAAYQEANFN5c3RlbS5XZWIuU2VydmljZXMuUHJv
+dG9jb2xzLlNvYXBIdHRwQ2xpZW50UHJvdG9jb2wSQ3JlYXRlX19JbnN0YW5jZV9fE0Rpc3Bvc2Vf
+X0luc3RhbmNlX18AAAAQAQALTXkuQ29tcHV0ZXIAABMBAA5NeS5BcHBsaWNhdGlvbgAADAEAB015
+LlVzZXIAABMBAA5NeS5XZWJTZXJ2aWNlcwAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291
+cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
+ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMu
+UnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAADUQAAAAAAAAAAAAADuQAAA
+ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4EAAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVl
+LmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
+AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
+AAwEAAAAAAAAAAAAAAwENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
+sARsAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABIAwAAAQAwADAAMAAwADAANABi
+ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
+bQBlAAAAAAAAAAAAfgArAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABf
+AGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAxADYA
+YgBjADYAZgAuAHYAYgBwAHIAbwBqAAAAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAA
+ADEALgAwAC4AMAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAHMAdABfAGUA
+NAAyADYAYgBmADIAZgBiAGEAYQBlADQANQBmAGQAOAA3AGEANwA1AGMAOQA4ADIAOAAwAGUAYwA0
+AGIAYQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAA
+eQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA0AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBt
+AGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAA
+cwB0AF8AZQA0ADIANgBiAGYAMgBmAGIAYQBhAGUANAA1AGYAZAA4ADcAYQA3ADUAYwA5ADgAMgA4
+ADAAZQBjADQAYgBhAC4AZABsAGwAAAB2ACsAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMA
+VABfAGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAx
+ADYAYgBjADYAZgAuAHYAYgBwAHIAbwBqAAAAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMA
+aQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBp
+AG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAAAAMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Extract file DTCD su StagingArea locale"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{5f2bd8a1-36e3-46fc-b4a4-f096050bc1e1}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Extract file DTCD su StagingArea locale"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_0cc4e005d60246e1b70f83253f38288e"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="User::ExportDir,User::ExportDirLocal,User::MonthId,User::Timestamp,User::YearId">
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_abafa1111dcc41a182d48d17e616bc6f.vbproj")> 
+<Assembly: AssemblyCopyright("Copyright @  2014")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("3d5b0927-44c4-4a07-85b0-9baf72d37e70")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>st_0cc4e005d60246e1b70f83253f38288e</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>st_0cc4e005d60246e1b70f83253f38288e</msb:DisplayName>
+    <msb:ProjectId>{71286713-129C-456A-8DB5-336D2C85D49C}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="st_0cc4e005d60246e1b70f83253f38288e.vbproj" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.IO
+Imports System.Data
+Imports System.Data.SqlClient
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+    Public Sub Main()
+        Dim strConn As String = "Data Source=SQL02;Initial Catalog=SKY_REV;User ID=HYPSYS9_CONSOLE;Password=cx0Sky48P3"
+        Dim conn As SqlConnection = New SqlConnection(strConn)
+
+        If My.Computer.FileSystem.FileExists(Dts.Variables.Item("ExportDirLocal").Value + "\RV_Cash_Discount_DT" + Dts.Variables("YearId").Value.ToString() + Dts.Variables("MonthId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt") Then
+            My.Computer.FileSystem.DeleteFile(Dts.Variables.Item("ExportDirLocal").Value + "\RV_Cash_Discount_DT" + Dts.Variables("YearId").Value.ToString() + Dts.Variables("MonthId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt")
+        End If
+
+        Dim sw As StreamWriter = New StreamWriter(Dts.Variables.Item("ExportDirLocal").Value + "\RV_Cash_Discount_DT" + Dts.Variables("YearId").Value.ToString() + Dts.Variables("MonthId").Value.ToString() + "_" + Dts.Variables("Timestamp").Value.ToString() + ".txt", False)
+        Dim da As SqlDataAdapter = New SqlDataAdapter("select * from WT_REV_EXPORT_DTCD_DASHBOARD_SIM", conn)
+        Dim ds As DataSet = New DataSet()
+
+
+        da.Fill(ds, "WT_REV_EXPORT_DTCD_DASHBOARD_SIM")
+        Dim dt As DataTable = ds.Tables("WT_REV_EXPORT_DTCD_DASHBOARD_SIM")
+
+        Dim iColCount As Integer = dt.Columns.Count
+
+        Dim i As Integer
+        For i = 0 To iColCount - 1
+            sw.Write(dt.Columns(i))
+            If i < iColCount - 1 Then
+                sw.Write(";")
+            End If
+        Next
+        sw.Write(sw.NewLine)
+
+
+        Dim j As Integer
+        Dim strToWrite As String
+        For j = 0 To dt.Rows.Count - 1
+            Dim dr As DataRow
+            dr = dt.Rows(j)
+            Dim k As Integer
+            For k = 0 To iColCount - 1
+                If Not Convert.IsDBNull(dr(k)) Then
+                    sw.Write(Replace((dr(k).ToString()), ",", "."))
+                    If k < iColCount - 1 Then
+                        sw.Write(";")
+                    End If
+                End If
+            Next
+            sw.Write(sw.NewLine)
+        Next
+        sw.Close()
+
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="st_0cc4e005d60246e1b70f83253f38288e.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ST_abafa1111dcc41a182d48d17e616bc6f.vbproj</RootNamespace>
+    <AssemblyName>st_0cc4e005d60246e1b70f83253f38288e</AssemblyName>
+    <StartupObject></StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{565576D2-0521-4757-AC1C-ABE2422D9C83}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+          <BinaryItem
+            Name="st_0cc4e005d60246e1b70f83253f38288e.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAEdvYl4AAAAAAAAAAOAAIiALAVAAACIAAAAIAAAAAAAABkEA
+AAAgAAAAYAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACgAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAALRAAABPAAAAAGAAAGgEAAAAAAAAAAAAAAAAAAAA
+AAAAAIAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAADCEAAAAgAAAAIgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAGgEAAAAYAAAAAYAAAAkAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAIAAAAACAAAAKgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADo
+QAAAAAAAAEgAAAACAAUAnCUAAGAaAAABAAAAAAAAAPw/AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqQnMiAAAKKCYAAAqACAAABCoeAignAAAKKgAAGzABAD8A
+AAAAAAAAfgcAAAQtMn4IAAAEKCYAAAooKAAACn4HAAAELRxzDQAABoAHAAAE3hB+CAAABCgmAAAK
+KCkAAArcfgcAAAQqAAEQAAACAB0ADCkAEAAAAAAeAigqAAAKKhMwBwB0AwAAAQAAEXIzAABwCgZz
+KwAACgsoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAAAApy/gAAcCgxAAAKAigtAAAK
+by4AAApyKAEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4AAApyNgEAcG8vAAAKbzAAAApv
+MgAACigxAAAKckYBAHAoMQAACgIoLQAACm8uAAAKckoBAHBvLwAACm8wAAAKbzIAAAooMQAACnJe
+AQBwKDEAAAooMwAACm80AAAKObgAAAAoBAAABm8sAAAKAigtAAAKby4AAApy4AAAcG8vAAAKbzAA
+AApy/gAAcCgxAAAKAigtAAAKby4AAApyKAEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAKby4A
+AApyNgEAcG8vAAAKbzAAAApvMgAACigxAAAKckYBAHAoMQAACgIoLQAACm8uAAAKckoBAHBvLwAA
+Cm8wAAAKbzIAAAooMQAACnJeAQBwKDEAAAooMwAACm81AAAKAigtAAAKby4AAApy4AAAcG8vAAAK
+bzAAAApy/gAAcCgxAAAKAigtAAAKby4AAApyKAEAcG8vAAAKbzAAAApvMgAACigxAAAKAigtAAAK
+by4AAApyNgEAcG8vAAAKbzAAAApvMgAACigxAAAKckYBAHAoMQAACgIoLQAACm8uAAAKckoBAHBv
+LwAACm8wAAAKbzIAAAooMQAACnJeAQBwKDEAAAooMwAAChZzNgAACgxyaAEAcAdzNwAACnM4AAAK
+DQlyxgEAcG85AAAKJglvOgAACnLGAQBwbzsAAAoTBBEEbzwAAApvPQAAChMFEQUX2hMIFhMGKy0I
+EQRvPAAAChEGbz4AAApvPwAAChEGEQUX2i8LCHIIAgBwb0AAAAoRBhfWEwYRBhEIMc0ICG9BAAAK
+b0AAAAoRBG9CAAAKb0MAAAoX2hMJFhMHOIcAAAARBG9CAAAKEQdvRAAAChMKEQUX2hMMFhMLK1QR
+ChELb0UAAAooJgAACihGAAAKLTkIEQoRC29FAAAKbzIAAApyDAIAcHIQAgBwFxUWKEcAAApvQAAA
+ChELEQUX2i8LCHIIAgBwb0AAAAoRCxfWEwsRCxEMMaYICG9BAAAKb0AAAAoRBxfWEwcRBxEJPnD/
+//8Ib0gAAAoCKC0AAAoWb0kAAAoqNgIDKCYAAAooSgAACioeAihLAAAKKi7QCAAAAigjAAAKKh4C
+KDIAAAoqAAATMAEAFAAAAAIAABECjAUAABstCCgBAAArCisCAgoGKiID/hUFAAAbKgAAABMwAgAo
+AAAAAwAAEQJ7TQAACm9OAAAKCgaMCAAAGy0SKAIAACsKAntNAAAKBm9PAAAKBipKAigiAAAKAnNQ
+AAAKfU0AAAoqAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAMwIAAAjfgAAOAkA
+ABgLAAAjU3RyaW5ncwAAAABQFAAAFAIAACNVUwBkFgAAEAAAACNHVUlEAAAAdBYAAOwDAAAjQmxv
+YgAAAAAAAAACAAABVx2iCQkPAAAA+gEzABYAAAEAAABBAAAACgAAAAwAAAAZAAAABAAAAFAAAAAC
+AAAANwAAAAMAAAAEAAAACAAAAAkAAAAIAAAAAQAAAAYAAAABAAAAAwAAAAMAAAACAAAAAAC1BQEA
+AAAAAAYAyQPaCAYAbgTaCAYAoAIbCA8ArwkAAAYA4QKDBgYArAODBgYAVQSDBgYA6QODBgYAAgSD
+BgYAKAODBgYAHQT8BQYAzQKUCAYASQKUCAYAdAODBgYAQwPIBAoAbAJxBwoALgKfBQoAtAKfBQ4A
+5QFqCA4A6wcuCAYAXAMbCA4A+AKzCA4AEAOjAAYAZAr8BQ4AjQdqCA4AkQOjAAYAmAH8BQ4AAQBj
+BQoAVwIIBgYAYQcbCQYA8QZuBgoAEAJZBgYAgwIbCBIAMwQ6BRIAyQE6BQYA6wT8BRYA0AaRCgYA
+kgc0ABYAdQqOABYAJwGOABYAwwqOAAYAAwb8BQYAOgH8BQYA/QqDBgYACQraCAYAEwi3BA4A2gcu
+CA4ABgv6CBIAjQU6BRoAzQlpARoAMQFpAQ4AGAqzCA4A/QmzCBYAvgeRChYAsAfeBhYAlQaOABYA
+qQaOABYA9QGOABYAMAaOAAYAnwc0ABYAvgaOAAYAsQr8BQ4A1wmjAA4AuQCjAAYA/Af8BQAAAAAr
+AAAAAAABAAEAAAAAAEsGywpNAAEAAQAAAAAA6QfLClEAAQACAAABEABrCssKYQABAAMAAAAAAGQJ
+LAlhAAUACAAAARAA3wnwBIEABwAMAAEAAAAlBvAEjQAJAA8ABQEAAFwIAABhAAkAEQAFAQAAEAAA
+AGEACQAYAAIBAAAyCgAAqQAKABoAMQAmB3wBMQD9BoQBMQARB4wBMQA/B5QBEQD0B5wBEQC9AaAB
+EQCMBKQBEQBUCqgBIQC5CjoBBgaGAKsBVoAiCq4BVoCdAa4BUCAAAAAABhgGCAYAAQBYIAAAAAAG
+GAYIBgABAGAgAAAAABEYDAiyAQEAiiAAAAAAEwjNB7YBAQCWIAAAAAATCDsGuwEBAKIgAAAAABMI
+iQfAAQEAriAAAAAAEwhMCMUBAQC6IAAAAAADGAYIBgABAMIgAAAAABYIXQfKAQEA7iAAAAAAFgil
+Ac8BAQD1IAAAAAAWCLEB1AEBAP0gAAAAABEYDAiyAQIADiEAAAAABhgGCAYAAgAYIQAAAAAWCJQE
+2gECAHQhAAAAAAYYBggGAAIAfCEAAAAABgArBgYAAgD8JAAAAADGAuoJFgECAAolAAAAAMYCGwHj
+AAMAEiUAAAAAgwCVAd8BAwAeJQAAAADGAuIErAADACglAAAAABEAcwDkAQMASCUAAAAAAQBfAOwB
+BAC6IAAAAAAGGAYIBgAFAFQlAAAAAAMIAgFKAAUAiCUAAAAABhgGCAYABQAAAAEAsQQAAAEA+wYA
+AAEAEgEAAAEAEgEJAAYIAQARAAYIBgAZAAYICgApAAYIEAAxAAYIEAA5AAYIEABBAAYIEABJAAYI
+EABRAAYIEABZAAYIFQBhAAYIFQBpAAYIEABxAAYIEAB5AAYIEACBAAYIGgCRAAYIIACpAAYIBgCx
+AAYIBgC5AAYIBgDRAAYIJgDpAAYIEAAJAQYIBgARAQYIBgCZAAYIBgChAAYIBgAMAAYIBgAUAAYI
+BgAcAAYIBgAkAAYIBgAMAAIBSgAUAAIBSgAcAAIBSgAkAAIBSgDBAAYIBgDZAEwBTwDZAPkKVwDx
+AAYIXQBpAagEZQABAQYIBgBxAaoHagBxAX0KagAZAQYIBgApAQYIEAB5AfQFiQAZASoKjwCJAckJ
+lQCRAesFmwCZAZQEogChAWEKpgDBAOIErACpAeIEsACBAUAKtQCBAV4BEAAxAQYIugCxAQYIwAA5
+AQYIBgC5Ad0FyAA5Ab4J0ADBAesF1gBBAfEJ3QDRAacK4wDJAesF5wDhAUMC7gAxAUMCEADhAYkB
+rABBAUsK8wDpAacK4wDpAesF+QBJAesFAAHxAeIFBQH5AesACgExASgCBgCJAYIKAQDBAOoJFgHB
+ABsB4wAJAvMAIwE0ALkKOgE8AJQESgA8AJ4EUQE8AAYIBgAIACwAcgEIADAAdwEpAKsApQMuAAsA
+HAIuABMAJQIuABsARAIuACMATQIuACsAfQIuADMAfQIuADsATQIuAEMAgwIuAEsAfQIuAFMAmgIu
+AFsAfQIuAGMAoAIuAGsAygIuAHMA1wJAAIsAdwFAAIMAIQNDAHsAKgNDAIMAIQNJAKsAtgNjAHsA
+KgNjAIMAIQNpAKsAygOAAIsAdwGDAJMAdwGDAJsAdwGDAHsAKgOJAKsA1wOgAIsAdwGpAIMARALA
+AIsAdwHJAIMARALgAIsAdwHjALsAdwHjAFMAfQLpALMAdwEDAYMAIQMDAaMAQwMjAYMAIQMjAVsA
+fQIgAoMAIQMgAosAdwFAAoMAIQNAAosAdwFgAoMAIQNgAosAdwGAAoMAIQOAAosAdwGgAosAdwHA
+AosAdwHgAosAdwHgAoMAIQMAA4sAdwEgA4sAdwEgA4MAIQNvABsBLgEEAAEABQAFAAYABwAJAAgA
+AADrB/QBAABNBvkBAACNB/4BAABeCAMCAABhBwgCAADBAQ0CAACxBBICAAAGARcCAgAEAAMAAgAF
+AAUAAgAGAAcAAgAHAAkAAgAJAAsAAgAKAA0AAQALAA0AAgAOAA8AAgAYABEALgA1ADwAQwAgATMB
+QgFJAQSAAAABAAAAAAAAAAAAAAAAAMcAAAAEAAAAAAAAAAAAAABXAZoAAAAAAAQAAAAAAAAAAAAA
+AFcB/AUAAAAACgAAAAAAAAAAAAAAYAGjAAAAAAAOAAAAAAAAAAAAAABpARsFAAAAAAQAAAAAAAAA
+AAAAAFcBjgAAAAAADgAAAAAAAAAAAAAAaQE+AAAAAAAAAAAAAQAAAHAJAAAIAAQACQAEAAoABwAA
+ABAAEgBdAAAAEAArAF0AAAAAAC0AXQCZACkBmQBMAQAAAENvbnRleHRWYWx1ZWAxAFRocmVhZFNh
+ZmVPYmplY3RQcm92aWRlcmAxADxNb2R1bGU+AFN5c3RlbS5JTwBNaWNyb3NvZnQuU3FsU2VydmVy
+Lk1hbmFnZWREVFMAVABEaXNwb3NlX19JbnN0YW5jZV9fAENyZWF0ZV9fSW5zdGFuY2VfXwB2YWx1
+ZV9fAFN5c3RlbS5EYXRhAG1zY29ybGliAE1pY3Jvc29mdC5WaXN1YWxCYXNpYwBDb21wYXJlTWV0
+aG9kAHN0XzBjYzRlMDA1ZDYwMjQ2ZTFiNzBmODMyNTNmMzgyODhlAFJlcGxhY2UAQ3JlYXRlSW5z
+dGFuY2UAZ2V0X0dldEluc3RhbmNlAGluc3RhbmNlAEdldEhhc2hDb2RlAERhdGFUYWJsZQBWYXJp
+YWJsZQBSdW50aW1lVHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBEZWxldGVGaWxlAE1pY3Jv
+c29mdC5TcWxTZXJ2ZXIuRHRzLlJ1bnRpbWUAZ2V0X05ld0xpbmUAR2V0VHlwZQBGYWlsdXJlAGdl
+dF9DdWx0dXJlAHNldF9DdWx0dXJlAF9yZXNDdWx0dXJlAFZTVEFSVFNjcmlwdE9iamVjdE1vZGVs
+QmFzZQBBcHBsaWNhdGlvbkJhc2UASW50ZXJuYWxEYXRhQ29sbGVjdGlvbkJhc2UAQXBwbGljYXRp
+b25TZXR0aW5nc0Jhc2UAQ2xvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUAV3JpdGUAR3VpZEF0dHJp
+YnV0ZQBIZWxwS2V5d29yZEF0dHJpYnV0ZQBHZW5lcmF0ZWRDb2RlQXR0cmlidXRlAERlYnVnZ2Vy
+Tm9uVXNlckNvZGVBdHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVB
+dHRyaWJ1dGUAQ29tVmlzaWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAFN0YW5k
+YXJkTW9kdWxlQXR0cmlidXRlAEhpZGVNb2R1bGVOYW1lQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVt
+YXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBEZWJ1Z2dlckhpZGRlbkF0dHJp
+YnV0ZQBBc3NlbWJseUZpbGVWZXJzaW9uQXR0cmlidXRlAE15R3JvdXBDb2xsZWN0aW9uQXR0cmli
+dXRlAEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0
+dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1
+dGUAQ0xTQ29tcGxpYW50QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0
+ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUA
+bV9WYWx1ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAEdldE9iamVjdFZhbHVlAFN5c3RlbS5UaHJlYWRp
+bmcAU3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBNYXRoAFNUX2FiYWZhMTExMWRj
+YzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJvagBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRh
+c2sATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBNaWNyb3NvZnQuVmlz
+dWFsQmFzaWMuTXlTZXJ2aWNlcy5JbnRlcm5hbABTY3JpcHRPYmplY3RNb2RlbABTeXN0ZW0uQ29t
+cG9uZW50TW9kZWwAc3RfMGNjNGUwMDVkNjAyNDZlMWI3MGY4MzI1M2YzODI4OGUuZGxsAEZpbGwA
+SXNEQk51bGwAZ2V0X0l0ZW0AZ2V0X0ZpbGVTeXN0ZW0ARW51bQBTeXN0ZW0uQ29tcG9uZW50TW9k
+ZWwuRGVzaWduAFNjcmlwdE1haW4ARGF0YUNvbHVtbgBnZXRfQXBwbGljYXRpb24ATXlBcHBsaWNh
+dGlvbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVm
+bGVjdGlvbgBEYXRhVGFibGVDb2xsZWN0aW9uAERhdGFDb2x1bW5Db2xsZWN0aW9uAERhdGFSb3dD
+b2xsZWN0aW9uAFNxbENvbm5lY3Rpb24AU3lzdGVtLkRhdGEuQ29tbW9uAEN1bHR1cmVJbmZvAG1f
+QXBwT2JqZWN0UHJvdmlkZXIAbV9Vc2VyT2JqZWN0UHJvdmlkZXIAbV9Db21wdXRlck9iamVjdFBy
+b3ZpZGVyAG1fTXlXZWJTZXJ2aWNlc09iamVjdFByb3ZpZGVyAGdldF9SZXNvdXJjZU1hbmFnZXIA
+U3lzdGVtLkNvZGVEb20uQ29tcGlsZXIAZ2V0X1VzZXIAU3RyZWFtV3JpdGVyAFRleHRXcml0ZXIA
+RW50ZXIARGJEYXRhQWRhcHRlcgBTcWxEYXRhQWRhcHRlcgBnZXRfQ29tcHV0ZXIAU2VydmVyQ29t
+cHV0ZXIATXlDb21wdXRlcgBfcmVzTWdyAEFjdGl2YXRvcgAuY3RvcgAuY2N0b3IATW9uaXRvcgBT
+eXN0ZW0uRGlhZ25vc3RpY3MATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkRldmljZXMAZ2V0X1dlYlNl
+cnZpY2VzAE15V2ViU2VydmljZXMATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkFwcGxpY2F0aW9uU2Vy
+dmljZXMAU3lzdGVtLlJ1bnRpbWUuSW50ZXJvcFNlcnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNp
+Yy5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMATWljcm9z
+b2Z0LlZpc3VhbEJhc2ljLk15U2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTVF9hYmFmYTExMTFk
+Y2M0MWExODJkNDhkMTdlNjE2YmM2Zi52YnByb2ouTXkuUmVzb3VyY2VzAE15UmVzb3VyY2VzAFNU
+X2FiYWZhMTExMWRjYzQxYTE4MmQ0OGQxN2U2MTZiYzZmLnZicHJvai5SZXNvdXJjZXMucmVzb3Vy
+Y2VzAERlYnVnZ2luZ01vZGVzAGdldF9UYWJsZXMAZ2V0X1ZhcmlhYmxlcwBTdHJpbmdzAE15U2V0
+dGluZ3MARXF1YWxzAGdldF9Db2x1bW5zAENvbnZlcnNpb25zAFJ1bnRpbWVIZWxwZXJzAE9wZXJh
+dG9ycwBTdWNjZXNzAGdldF9EdHMAU2NyaXB0UmVzdWx0cwBGaWxlRXhpc3RzAGdldF9Sb3dzAG1f
+U3luY09iamVjdABBZGRPYmplY3QATXlQcm9qZWN0AERhdGFTZXQARXhpdABzZXRfVGFza1Jlc3Vs
+dABTeXN0ZW0uRGF0YS5TcWxDbGllbnQAZ2V0X0NvdW50AENvbnZlcnQAbV9Db250ZXh0AERhdGFS
+b3cAU1RfYWJhZmExMTExZGNjNDFhMTgyZDQ4ZDE3ZTYxNmJjNmYudmJwcm9qLk15AGdldF9Bc3Nl
+bWJseQBGaWxlU3lzdGVtUHJveHkAAAAAMU0AeQAuAFIAZQBzAG8AdQByAGMAZQBzAC4ATQB5AFIA
+ZQBzAG8AdQByAGMAZQBzAACAq0QAYQB0AGEAIABTAG8AdQByAGMAZQA9AFMAUQBMADAAMgA7AEkA
+bgBpAHQAaQBhAGwAIABDAGEAdABhAGwAbwBnAD0AUwBLAFkAXwBSAEUAVgA7AFUAcwBlAHIAIABJ
+AEQAPQBIAFkAUABTAFkAUwA5AF8AQwBPAE4AUwBPAEwARQA7AFAAYQBzAHMAdwBvAHIAZAA9AGMA
+eAAwAFMAawB5ADQAOABQADMAAB1FAHgAcABvAHIAdABEAGkAcgBMAG8AYwBhAGwAAClcAFIAVgBf
+AEMAYQBzAGgAXwBEAGkAcwBjAG8AdQBuAHQAXwBEAFQAAA1ZAGUAYQByAEkAZAAAD00AbwBuAHQA
+aABJAGQAAANfAAATVABpAG0AZQBzAHQAYQBtAHAAAAkuAHQAeAB0AABdcwBlAGwAZQBjAHQAIAAq
+ACAAZgByAG8AbQAgAFcAVABfAFIARQBWAF8ARQBYAFAATwBSAFQAXwBEAFQAQwBEAF8ARABBAFMA
+SABCAE8AQQBSAEQAXwBTAEkATQAAQVcAVABfAFIARQBWAF8ARQBYAFAATwBSAFQAXwBEAFQAQwBE
+AF8ARABBAFMASABCAE8AQQBSAEQAXwBTAEkATQAAAzsAAAMsAAADLgAArf7cymmHlUKxeXn9RLa5
+QAAEIAEBCAMgAAEFIAEBEREEIAEBDgQgAQECBSACAQ4OBSABARFFByAEAQ4ODg4GFRIkARIMBhUS
+JAESCAYVEiQBEmUGFRIkARIgBCAAEwAHAAESbRGArQUgABKAsQcgAgEOEoCxBAABHBwEAAEBHBkH
+DQ4SgJUSgJkSgJ0SgKEICAgICBKApQgIBSAAEoDBBSAAEoDFBSAAEoDJBiABEoDNHAMgABwFAAIc
+HBwDIAAOBAABDhwEIAECDgUgAgEOAgcgAgEOEoCVByACCBKAnQ4FIAASgOEGIAESgKEOBSAAEoDl
+AyAACAYgARKA7QgEIAEBHAUgABKA9QYgARKApQgEIAEcCAQAAQIcCwAGDg4ODggIEYEBBCABAhwE
+BwEeAAIeAAUQAQAeAAQKAR4ABAcBEwAGFRIkARMABwYVEnEBEwAGFRJxARMAAhMABAoBEwAFIAEB
+EwAIt3pcVhk04IkIsD9ffxHVCjoIiYRdzYCAzJEEAAAAAAQBAAAABwYVEiQBEgwHBhUSJAESCAcG
+FRIkARJlBwYVEiQBEiADBhJ5AwYSfQMGEhgCBhwCBggDBhEoAwAAAQQAABIMBAAAEggEAAASZQQA
+ABIgBAAAEnkEAAASfQUAAQESfQQAABIYBCAAEm0HEAEBHgAeAAcwAQEBEB4ABAgAEgwECAASCAQI
+ABJlBAgAEiAECAASeQQIABJ9BAgAEhgEKAATAAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2Vw
+dGlvblRocm93cwEIAQACAAAAAAAvAQAqU1RfYWJhZmExMTExZGNjNDFhMTgyZDQ4ZDE3ZTYxNmJj
+NmYudmJwcm9qAAAFAQAAAAAWAQARQ29weXJpZ2h0IEAgIDIwMTQAAAUBAAEAACkBACQzZDViMDky
+Ny00NGM0LTRhMDctODViMC05YmFmNzJkMzdlNzAAAAwBAAcxLjAuMC4wAABJAQAaLk5FVEZyYW1l
+d29yayxWZXJzaW9uPXY0LjUBAFQOFEZyYW1ld29ya0Rpc3BsYXlOYW1lEi5ORVQgRnJhbWV3b3Jr
+IDQuNQgBAAEAAAAAABgBAApNeVRlbXBsYXRlCDExLjAuMC4wAABhAQA0U3lzdGVtLldlYi5TZXJ2
+aWNlcy5Qcm90b2NvbHMuU29hcEh0dHBDbGllbnRQcm90b2NvbBJDcmVhdGVfX0luc3RhbmNlX18T
+RGlzcG9zZV9fSW5zdGFuY2VfXwAAABABAAtNeS5Db21wdXRlcgAAEwEADk15LkFwcGxpY2F0aW9u
+AAAMAQAHTXkuVXNlcgAAEwEADk15LldlYlNlcnZpY2VzAAAAtAAAAM7K774BAAAAkQAAAGxTeXN0
+ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
+dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
+c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAANxAAAAAAAAA
+AAAAAPZAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADoQAAAAAAAAAAAAAAAAF9Db3JEbGxNYWlu
+AG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABABAA
+AAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAAWGAA
+AAwEAAAAAAAAAAAAAAwENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9BO/+
+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEAVgBh
+AHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAAAAAA
+sARsAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABIAwAAAQAwADAAMAAwADAANABi
+ADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBOAGEA
+bQBlAAAAAAAAAAAAfgArAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMAVABf
+AGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAxADYA
+YgBjADYAZgAuAHYAYgBwAHIAbwBqAAAAAAAwAAgAAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAA
+ADEALgAwAC4AMAAuADAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAHMAdABfADAA
+YwBjADQAZQAwADAANQBkADYAMAAyADQANgBlADEAYgA3ADAAZgA4ADMAMgA1ADMAZgAzADgAMgA4
+ADgAZQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBvAHAA
+eQByAGkAZwBoAHQAIABAACAAIAAyADAAMQA0AAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQAZQBt
+AGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBlAAAA
+cwB0AF8AMABjAGMANABlADAAMAA1AGQANgAwADIANAA2AGUAMQBiADcAMABmADgAMwAyADUAMwBm
+ADMAOAAyADgAOABlAC4AZABsAGwAAAB2ACsAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAAAFMA
+VABfAGEAYgBhAGYAYQAxADEAMQAxAGQAYwBjADQAMQBhADEAOAAyAGQANAA4AGQAMQA3AGUANgAx
+ADYAYgBjADYAZgAuAHYAYgBwAHIAbwBqAAAAAAA0AAgAAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMA
+aQBvAG4AAAAxAC4AMAAuADAALgAwAAAAOAAIAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIAcwBp
+AG8AbgAAADEALgAwAC4AMAAuADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAwAAAAIMQAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{30ACB4C8-13C5-4439-8EAB-91A039469B32}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              name="Gestione casi particolari promo HD-SD ed RC indipendenti"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SF_REV_EXPORT_DTCD_DASHBOARD_SIM"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SF_REV_EXPORT_DTCD_DASHBOARD_SIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+FROM SF_REV_EXPORT_DTCD_DASHBOARD_SIM
+WHERE DATA_ATT_RC LIKE (
+	SELECT '%' + POVMese + '%'
+	FROM [dbo].[M_REV_POV_EXPORT_CASH_DISCOUNT]
+	) AND SCENARIO='EDITATO'</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT]"
+                      length="10"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[ACCOUNT]"
+                      name="ACCOUNT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_ATT]"
+                      name="DATA_ATT"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_PCK_VISIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[RC_PCK_VISIONE]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_PCK_VISIONE]"
+                      name="RC_PCK_VISIONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[RC_PCK_REALE]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_PCK_REALE]"
+                      name="RC_PCK_REALE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[VALORE_PACCHETTO_REALE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PACCHETTO_REALE]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[VALORE_PACCHETTO_REALE]"
+                      name="VALORE_PACCHETTO_REALE"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_SKY]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]"
+                      name="COD_PROMO_SKY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[RC_SCONTO]"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_SCONTO]"
+                      name="RC_SCONTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT_RC]"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_ATT_RC]"
+                      name="DATA_ATT_RC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_FIN_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DATA_FIN_RC]"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_FIN_RC]"
+                      name="DATA_FIN_RC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[CASH_DISCOUNT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[CASH_DISCOUNT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[CASH_DISCOUNT]"
+                      name="CASH_DISCOUNT"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DURATA_PROMO_GG]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DURATA_PROMO_GG]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DURATA_PROMO_GG]"
+                      name="DURATA_PROMO_GG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCONTO_MESE_MGMT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[SCONTO_MESE_MGMT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCONTO_MESE_MGMT]"
+                      name="SCONTO_MESE_MGMT"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCONTO_MESE_USGAAP]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[SCONTO_MESE_USGAAP]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCONTO_MESE_USGAAP]"
+                      name="SCONTO_MESE_USGAAP"
+                      precision="20"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="50"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER_IPTV]"
+                      length="50"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[CLUSTER_IPTV]"
+                      name="CLUSTER_IPTV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[SCENARIO]"
+                      length="9"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCENARIO]"
+                      name="SCENARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[WEEK]"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[WEEK]"
+                      name="WEEK"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[YEAR_MONTH_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[YEAR_MONTH_ID]"
+                      length="20"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[YEAR_MONTH_ID]"
+                      name="YEAR_MONTH_ID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[RC_PCK_VISIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_PCK_VISIONE" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_PCK_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[VALORE_PACCHETTO_REALE]"
+                      dataType="numeric"
+                      name="VALORE_PACCHETTO_REALE"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_SCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[FLG_CAP_ID]"
+                      dataType="i4"
+                      name="FLG_CAP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_ATT_RC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DATA_FIN_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_FIN_RC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[CASH_DISCOUNT]"
+                      dataType="numeric"
+                      name="CASH_DISCOUNT"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[DURATA_PROMO_GG]"
+                      dataType="i4"
+                      name="DURATA_PROMO_GG" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[SCONTO_MESE_MGMT]"
+                      dataType="numeric"
+                      name="SCONTO_MESE_MGMT"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[SCONTO_MESE_USGAAP]"
+                      dataType="numeric"
+                      name="SCONTO_MESE_USGAAP"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      name="SCENARIO" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="WEEK" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[YEAR_MONTH_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="YEAR_MONTH_ID" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].ExternalColumns[ROW_ID]"
+                      dataType="i4"
+                      name="ROW_ID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="9"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[SCENARIO]"
+                      name="SCENARIO" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[WEEK]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[WEEK]"
+                      name="WEEK" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[YEAR_MONTH_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[YEAR_MONTH_ID]"
+                      name="YEAR_MONTH_ID" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[ACCOUNT]"
+                      name="ACCOUNT" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DATA_ATT]"
+                      name="DATA_ATT" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[RC_PCK_VISIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[RC_PCK_VISIONE]"
+                      name="RC_PCK_VISIONE" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[RC_PCK_REALE]"
+                      name="RC_PCK_REALE" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[VALORE_PACCHETTO_REALE]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[VALORE_PACCHETTO_REALE]"
+                      name="VALORE_PACCHETTO_REALE"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[COD_LISTINO]"
+                      name="COD_LISTINO" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_TEC]"
+                      name="COD_PROMO_TEC" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[COD_PROMO_SKY]"
+                      name="COD_PROMO_SKY" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[RC_SCONTO]"
+                      name="RC_SCONTO" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DATA_ATT_RC]"
+                      name="DATA_ATT_RC" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[CLUSTER_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[CLUSTER_IPTV]"
+                      name="CLUSTER_IPTV" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DATA_FIN_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DATA_FIN_RC]"
+                      name="DATA_FIN_RC" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[CASH_DISCOUNT]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[CASH_DISCOUNT]"
+                      name="CASH_DISCOUNT"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DURATA_PROMO_GG]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[DURATA_PROMO_GG]"
+                      name="DURATA_PROMO_GG" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[SCONTO_MESE_MGMT]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[SCONTO_MESE_MGMT]"
+                      name="SCONTO_MESE_MGMT"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[SCONTO_MESE_USGAAP]"
+                      dataType="numeric"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[SCONTO_MESE_USGAAP]"
+                      name="SCONTO_MESE_USGAAP"
+                      precision="20"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[WT_REV_EXPORT_DTCD_DASHBOARD_SIM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[ACCOUNT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="ACCOUNT"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[ACCOUNT]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[DATA_ATT]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="DATA_ATT"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_ATT]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[RC_PCK_VISIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="RC_PCK_VISIONE"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_PCK_VISIONE]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_PCK_VISIONE]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[RC_PCK_REALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="RC_PCK_REALE"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_PCK_REALE]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_PCK_REALE]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[VALORE_PACCHETTO_REALE]"
+                      cachedDataType="numeric"
+                      cachedName="VALORE_PACCHETTO_REALE"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PACCHETTO_REALE]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[VALORE_PACCHETTO_REALE]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[COD_LISTINO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="COD_LISTINO"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_LISTINO]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[COD_PROMO_TEC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="COD_PROMO_TEC"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_PROMO_TEC]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[COD_PROMO_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="COD_PROMO_SKY"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_SKY]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[COD_PROMO_SKY]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[RC_SCONTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="RC_SCONTO"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_SCONTO]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[RC_SCONTO]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[DATA_ATT_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="DATA_ATT_RC"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT_RC]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_ATT_RC]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[DATA_FIN_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="DATA_FIN_RC"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FIN_RC]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[DATA_FIN_RC]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[CASH_DISCOUNT]"
+                      cachedDataType="numeric"
+                      cachedName="CASH_DISCOUNT"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[CASH_DISCOUNT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[CASH_DISCOUNT]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[SCONTO_MESE_MGMT]"
+                      cachedDataType="numeric"
+                      cachedName="SCONTO_MESE_MGMT"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[SCONTO_MESE_MGMT]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCONTO_MESE_MGMT]" />
+                    <inputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].Columns[SCONTO_MESE_USGAAP]"
+                      cachedDataType="numeric"
+                      cachedName="SCONTO_MESE_USGAAP"
+                      cachedPrecision="20"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[SCONTO_MESE_USGAAP]"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output].Columns[SCONTO_MESE_USGAAP]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ACCOUNT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_ATT" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_PCK_VISIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_PCK_VISIONE" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_PCK_REALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_PCK_REALE" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[VALORE_PACCHETTO_REALE]"
+                      dataType="numeric"
+                      name="VALORE_PACCHETTO_REALE"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_LISTINO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_LISTINO" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_TEC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_TEC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROMO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="COD_PROMO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[RC_SCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="RC_SCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATT_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_ATT_RC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FIN_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="DATA_FIN_RC" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[CASH_DISCOUNT]"
+                      dataType="numeric"
+                      name="CASH_DISCOUNT"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[SCONTO_MESE_MGMT]"
+                      dataType="numeric"
+                      name="SCONTO_MESE_MGMT"
+                      precision="20"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input].ExternalColumns[SCONTO_MESE_USGAAP]"
+                      dataType="numeric"
+                      name="SCONTO_MESE_USGAAP"
+                      precision="20"
+                      scale="10" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Paths[Derived Column Output]"
+              endId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM.Paths[OLE DB Source Output]"
+              endId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\Gestione casi particolari promo HD-SD ed RC indipendenti.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM\SF_REV_EXPORT_DTCD_DASHBOARD_SIM.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Set Month e Year"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{55FE8CCC-6A48-42C9-8CD4-8D89DEEC8F3B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Set Month e Year"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="select &#xA;&#x9;yearId = left(POVMESE, 2),&#xA;&#x9;monthId = right(POVMESE, 2),&#xA;&#x9;Timestamp = cast(datepart(year,GETDATE()) as varchar(4)) +&#xA;&#x9;    right('00'+cast(datepart(month,GETDATE()) as varchar(2)),2) +&#xA;&#x9;    right('00'+cast(datepart(day,GETDATE()) as varchar(2)),2) +&#xA;&#x9;    right('00'+cast(datepart(hour,GETDATE()) as varchar(2)),2) +&#xA;&#x9;    right('00'+cast(datepart(minute,GETDATE()) as varchar(2)),2) +&#xA;&#x9;    right('00'+cast(datepart(second,GETDATE()) as varchar(2)),2)&#xA;from&#xA;&#x9;[dbo].[M_REV_POV_EXPORT_CASH_DISCOUNT]"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="yearId"
+            SQLTask:DtsVariableName="User::YearId" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="monthId"
+            SQLTask:DtsVariableName="User::MonthId" />
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="Timestamp"
+            SQLTask:DtsVariableName="User::Timestamp" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{2c73b750-e91b-446a-a747-eb762618d9e0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="truncate table WT_REV_EXPORT_DTCD_DASHBOARD_SIM" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2E993A9D-AA4B-44F5-AD1B-1CE48E892CD6}"
+      DTS:From="Package\Truncate Table WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{58D80BF7-0E7F-4B74-A2EE-52D6F4E4D42D}"
+      DTS:From="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Set Month e Year" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{0E177A7B-2907-40B3-ABF0-CAA74A3573B5}"
+      DTS:From="Package\Set Month e Year"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Extract file DTCD su share di rete DASHBOARD_SIM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{43E7E8EC-716B-4334-991C-BB088598A6A3}"
+      DTS:From="Package\Extract file DTCD su share di rete DASHBOARD_SIM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Extract file DTCD su StagingArea locale" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218,44"
+          Id="Package\Extract file DTCD su share di rete DASHBOARD_SIM"
+          TopLeft="52.4056603773585,325.915094339623" />
+        <NodeLayout
+          Size="218,44"
+          Id="Package\Extract file DTCD su StagingArea locale"
+          TopLeft="52.4056603773585,427.650943396226" />
+        <NodeLayout
+          Size="312,44"
+          Id="Package\popola WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+          TopLeft="5.5,114.367924528302" />
+        <NodeLayout
+          Size="218,44"
+          Id="Package\Set Month e Year"
+          TopLeft="52.4056603773585,235.160377358491" />
+        <NodeLayout
+          Size="312,44"
+          Id="Package\Truncate Table WT_REV_EXPORT_DTCD_DASHBOARD_SIM"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="161.235849056604,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,64.9433962264151"
+              Start="0,0"
+              End="0,57.4433962264151">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.4433962264151" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="161.235849056604,158.292452830189">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,76.8679245283019"
+              Start="0,0"
+              End="0,69.3679245283019">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,69.3679245283019" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="161.235849056604,279.084905660377">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,46.8301886792453"
+              Start="0,0"
+              End="0,39.3301886792453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.3301886792453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="161.235849056604,369.839622641509">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,57.811320754717"
+              Start="0,0"
+              End="0,50.311320754717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.311320754717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

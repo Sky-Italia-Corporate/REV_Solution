@@ -1,0 +1,1021 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/20/2017 5:34:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPAPP-SVL02"
+  DTS:CreatorName="SKY\caccamisia"
+  DTS:DTSID="{38639CFB-8813-4F66-A56E-87D3BC254087}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M17_MIN_RIC_TB_F2_S1"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{2DAFB05D-1B4A-49CC-9D96-D402C0D37266}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3dd76f86-7f04-4069-ba51-c74995ee0ab6}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M10_SOSPESI_F2_S1-{01E00D5F-1451-41BF-A3DA-893B556C6861}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{fbc0a8d8-f93e-4013-add4-f1a74c0eeb31}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M10_SOSPESI_F2_S1-{D1AD491B-F6A6-4D19-BA98-532205512BAA}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{DB08A296-000D-4BAF-A417-C9710AB56C54}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{DB08A296-000D-4BAF-A417-C9710AB56C54}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Popola F_REV_MIN_RIC_TB"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{10861e1d-5102-4657-bb2c-effceeb7dc28}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popola F_REV_MIN_RIC_TB"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="F_REV_MIN_RIC_TB"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[F_REV_MIN_RIC_TB]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[TCN_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="TCN_DES"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[TCN_DES]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[TCN_DES]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[MOP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="MOP_ID"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[MOP_ID]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[MOP_ID]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[NUM_CLI]"
+                      cachedDataType="i4"
+                      cachedName="NUM_CLI"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[NUM_CLI]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[NUM_CLI]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="PCK_ID"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[PCK_ID]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[DUR_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DUR_DES"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[DUR_DES]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[DUR_DES]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[CLS_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLS_DES"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[CLS_DES]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[CLS_DES]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TCN_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MOP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[NUM_CLI]"
+                      dataType="i4"
+                      name="NUM_CLI" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[DUR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DUR_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[CLS_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLS_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SF_REV_MIN_RIC_TB"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 
+    sf.GIO_ID,
+    sf.PCK_ID,
+    sf.MOP_ID,
+    sf.TCN_DES,
+    sf.DUR_DES,
+    /*************************************************************/
+    --- LERO - 20150320 - CR255
+    --- Inserita logia che riporta il cluster IPTV se la tecnologia
+    --- è IPTV Telecom, se no mantiene il cluster originale
+    --- (in caso valorizzato con il fittizio)
+    case
+	   when sf.TCN_DES like '%SKY IPTV TELECOM%' then upper(sf.CLU_IPTV)
+	   else sf.CLS_DES
+    end as CLS_DES,
+------Integrazione TV-BB -------------
+	   sf.BB_CONTRACT_STATUS
+	  ,sf.BB_PRD_ID
+	  ,sf.BB_ORIGIN_CLUSTER
+	  ,sf.BB_VOICE_FLG
+	  ,sf.BUNDLE_FLG
+    ,sum(sf.NUM_CLI) as NUM_CLI
+from SF_REV_MIN_RIC_TB sf
+join (
+    select
+	    Gio_Id
+    from M_REV_CALC_WEEK wk
+    join M_REV_TEMPO tmp
+	   on right(wk.SCE_ID, 2) + right(wk.WEEK_ID, 2) = right(tmp.Ann_id, 2) + right(tmp.Wee2_id, 2)
+) week_days
+    on sf.GIO_ID = week_days.Gio_Id
+group by sf.GIO_ID,
+    sf.PCK_ID,
+    sf.MOP_ID,
+    sf.TCN_DES,
+    sf.DUR_DES,
+    sf.CLS_DES,
+	sf.BB_CONTRACT_STATUS
+	  ,sf.BB_PRD_ID
+	  ,sf.BB_ORIGIN_CLUSTER
+	  ,sf.BB_VOICE_FLG
+	  ,sf.BUNDLE_FLG
+    ,case
+	   when sf.TCN_DES like '%SKY IPTV TELECOM%' then upper(sf.CLU_IPTV)
+	   else sf.CLS_DES
+    end</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[TCN_DES]"
+                      length="100"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[TCN_DES]"
+                      name="TCN_DES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[MOP_ID]"
+                      length="255"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[MOP_ID]"
+                      name="MOP_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[NUM_CLI]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[NUM_CLI]"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[NUM_CLI]"
+                      name="NUM_CLI"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      length="255"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      name="PCK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[DUR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[DUR_DES]"
+                      length="50"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[DUR_DES]"
+                      name="DUR_DES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[CLS_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[CLS_DES]"
+                      length="50"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[CLS_DES]"
+                      name="CLS_DES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="TCN_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MOP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[NUM_CLI]"
+                      dataType="i4"
+                      name="NUM_CLI" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[DUR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DUR_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[CLS_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLS_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[TCN_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[TCN_DES]"
+                      name="TCN_DES" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[DUR_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[DUR_DES]"
+                      name="DUR_DES" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[MOP_ID]"
+                      name="MOP_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[NUM_CLI]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[NUM_CLI]"
+                      name="NUM_CLI" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[CLS_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[CLS_DES]"
+                      name="CLS_DES" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popola F_REV_MIN_RIC_TB.Paths[OLE DB Source Output]"
+              endId="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Table"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6ad1968c-9d06-4313-ae59-9a30b88a2af3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{fbc0a8d8-f93e-4013-add4-f1a74c0eeb31}"
+          SQLTask:SqlStatementSource="truncate table F_REV_MIN_RIC_TB" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{e9d53c15-523d-4dc7-932d-39a28248af60}"
+      DTS:From="Package\Truncate Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Popola F_REV_MIN_RIC_TB" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159,44"
+          Id="Package\Popola F_REV_MIN_RIC_TB"
+          TopLeft="5.5,87.1603773584906" />
+        <NodeLayout
+          Size="159,44"
+          Id="Package\Truncate Table"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="84.8584905660377,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.7358490566038"
+              Start="0,0"
+              End="0,30.2358490566038">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.2358490566038" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Popola F_REV_MIN_RIC_TB">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB"
+          TopLeft="8.50000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\Popola F_REV_MIN_RIC_TB.Paths[OLE DB Source Output]"
+          TopLeft="96.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popola F_REV_MIN_RIC_TB\F_REV_MIN_RIC_TB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popola F_REV_MIN_RIC_TB\SF_REV_MIN_RIC_TB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

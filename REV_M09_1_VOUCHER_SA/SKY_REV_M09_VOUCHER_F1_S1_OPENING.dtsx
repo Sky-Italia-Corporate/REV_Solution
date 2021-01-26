@@ -1,0 +1,2075 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/6/2013 3:49:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{AAD72506-3AC1-4C82-A261-256496C62326}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M09_VOUCHER_F1_S1_OPENING"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="66"
+  DTS:VersionGUID="{00193E50-A688-4ACC-8C9E-DFA9A2057495}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{88759E00-F263-4EC2-A3D3-C14C5A3D49D9}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M09_VOUCHER_F1_S1_OPENING-{88759E00-F263-4EC2-A3D3-C14C5A3D49D9}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{8C95D291-B5B8-497F-B132-43BF7ED9C554}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M09_VOUCHER_F1_S1_OPENING-{8C95D291-B5B8-497F-B132-43BF7ED9C554}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="D:\StagingArea\utilities\XML_Configurations\ICO_MONITOR.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{4C2B1B23-26D0-4D2D-B119-25F5E1A13476}"
+      DTS:ObjectName="ICO_MONITOR" />
+    <DTS:Configuration
+      DTS:ConfigurationString="D:\StagingArea\utilities\XML_Configurations\SKY_REV.dtsConfig"
+      DTS:ConfigurationType="1"
+      DTS:CreationName=""
+      DTS:DTSID="{5E343F62-1802-43F3-B3AC-1B9E77DCCA02}"
+      DTS:ObjectName="SKY_REV" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{EA9CD67D-E708-4781-AD5B-E470E53F8412}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{EA9CD67D-E708-4781-AD5B-E470E53F8412}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Popolamento SF"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{00504E75-90A2-4C1E-A2DE-8AB28B363F8B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popolamento SF"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Popolamento SF\SF_REV_VOUC_OPE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="SF_REV_VOUC_OPE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[SF_REV_VOUC_OPE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[SUBS]"
+                      cachedDataType="numeric"
+                      cachedName="SUBS"
+                      cachedPrecision="38"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[SUBS]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PCK_ID"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[PCK_ID]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCE_ID"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[SCE_ID]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[IMP_CNN]"
+                      cachedDataType="numeric"
+                      cachedName="IMP_CNN"
+                      cachedPrecision="18"
+                      cachedScale="10"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[IMP_CNN]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[IMP_CNN]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[PROMO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="PROMO_ID"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_ID]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[PROMO_ID]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      dataType="numeric"
+                      name="VOLUMI"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[IMP_CNN]"
+                      dataType="numeric"
+                      name="IMP_CNN"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento SF\SF_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\SF_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento SF\SF_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popolamento SF\ST_REV_VOUC_OPE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ST_REV_VOUC_OPE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ST_REV_VOUC_OPE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">-- Aggiunto il dettaglio PROMO_ID
+
+select c.PCK_ID, c.GIO_ID, c.SCE_ID ,sum(c.VOLUMI) as SUBS, d.IMP_CNN, c.PROMO_ID,
+		c.BB_CONTRACT_STATUS, c.BB_ORIGIN_CLUSTER, c.BB_PRD_ID, c.BB_VOICE_FLG,
+		c.BUNDLE_FLG
+from ST_REV_VOUC_OPE c join
+		(select pck_id, dat_id, max(imp_cnn) imp_cnn 
+		from SF_REV_PREZZI_OPE a
+		join
+		 (select  distinct convert(varchar(8), cast(t.Gio_Id as datetime)+1, 112) as Gio_Id,
+				week_ID,
+				SCE_ID
+				from M_REV_TEMPO t 
+				inner join M_REV_CALC_WEEK m 
+					on m.Week_ID = t.Wee2_Id 
+						and right(ltrim(rtrim(t.Ann_Id)), 2) = right(ltrim(rtrim(m.SCE_ID)), 2)) b 
+		on a.dat_id = b.gio_id
+		group by pck_id, dat_id) d
+on c.GIO_ID = d.DAT_ID 
+and c.PCK_ID = d.PCK_ID
+group by c.PCK_ID, c.GIO_ID, c.SCE_ID,d.IMP_CNN, c.PROMO_ID, 
+		c.BB_CONTRACT_STATUS, c.BB_ORIGIN_CLUSTER, c.BB_PRD_ID, c.BB_VOICE_FLG,
+		c.BUNDLE_FLG</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      length="50"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      name="PCK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      name="SUBS"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      length="5"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[IMP_CNN]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[IMP_CNN]"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[IMP_CNN]"
+                      name="IMP_CNN"
+                      precision="18"
+                      scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[PROMO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_ID]"
+                      length="500"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[PROMO_ID]"
+                      name="PROMO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      dataType="numeric"
+                      name="SUBS"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[IMP_CNN]"
+                      dataType="numeric"
+                      name="IMP_CNN"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[PROMO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      dataType="numeric"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      name="SUBS"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[IMP_CNN]"
+                      dataType="numeric"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[IMP_CNN]"
+                      name="IMP_CNN"
+                      precision="18"
+                      scale="10" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[PROMO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[PROMO_ID]"
+                      name="PROMO_ID" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popolamento SF.Paths[OLE DB Source Output]"
+              endId="Package\Popolamento SF\SF_REV_VOUC_OPE.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Popolamento SF\ST_REV_VOUC_OPE.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Popolamento ST"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{12355FEA-D4C5-47C3-8BD5-5D42C4CCD692}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popolamento ST"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Popolamento ST\Import voucher week attuale"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Import voucher week attuale"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+      'ACT' + SUBSTRING(v.Period_DES,3,2) as sce_id,
+      'W' + SUBSTRING(v.Period_DES,7,2) as week_id,
+      b.gio_id,
+      a.rc_pacchetto,
+      a.cod_promo_tec,
+	  a.BB_CONTRACT_STATUS,
+	  a.BB_PRD_ID,
+	  a.BB_ORIGIN_CLUSTER,
+	  a.BB_VOICE_FLG,
+	  a.BUNDLE_FLG,
+      sum(volumi) volumi
+FROM  SF_REV_DIS_SCONTI_MGMT a
+join V_M_REV_PERIOD_COMPETENZA v on a.CMP_PER_ID = v.Period_ID
+join s_promo c on a.cod_promo_tec = c.promo_id
+join (
+            select  distinct convert(varchar(8), cast(t.Gio_Id as datetime)+1, 112) as Gio_Id,
+            week_ID,
+            SCE_ID
+            from M_REV_TEMPO t
+            inner join M_REV_CALC_WEEK m
+                  on m.Week_ID = t.Wee2_Id
+                        and right(ltrim(rtrim(t.Ann_Id)), 2) = right(ltrim(rtrim(m.SCE_ID)), 2)
+) b on 'W' + SUBSTRING(v.Period_DES,7,2) = b.WEEK_ID and 'ACT' + SUBSTRING(v.Period_DES,3,2) = b.SCE_ID
+where c.voucher_no_voucher = 'Yes'
+and a.TIPO_DATO in ('AUTO','MAN')
+and 'W' + SUBSTRING(v.Period_DES,7,2) in
+(select distinct week_id from M_REV_CALC_WEEK)
+group by
+      'W' + SUBSTRING(v.Period_DES,7,2),
+      'ACT' + SUBSTRING(v.Period_DES,3,2),
+      b.gio_id,
+      a.rc_pacchetto,
+      a.cod_promo_tec,
+	  a.BB_CONTRACT_STATUS,
+	  a.BB_PRD_ID,
+	  a.BB_ORIGIN_CLUSTER,
+	  a.BB_VOICE_FLG,
+	  a.BUNDLE_FLG</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popolamento ST\Import voucher week attuale.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[sce_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[sce_id]"
+                      length="5"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[sce_id]"
+                      name="sce_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[week_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[week_id]"
+                      length="3"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[week_id]"
+                      name="week_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[gio_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[gio_id]"
+                      length="8"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[gio_id]"
+                      name="gio_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[rc_pacchetto]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[rc_pacchetto]"
+                      length="50"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[rc_pacchetto]"
+                      name="rc_pacchetto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[cod_promo_tec]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[cod_promo_tec]"
+                      length="50"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[cod_promo_tec]"
+                      name="cod_promo_tec"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[volumi]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[volumi]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[volumi]"
+                      name="volumi"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[sce_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="sce_id" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[week_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="week_id" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[gio_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="gio_id" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[rc_pacchetto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="rc_pacchetto" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[cod_promo_tec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="cod_promo_tec" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].ExternalColumns[volumi]"
+                      dataType="numeric"
+                      name="volumi"
+                      precision="38"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[sce_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[sce_id]"
+                      name="sce_id" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[week_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[week_id]"
+                      name="week_id" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[gio_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[gio_id]"
+                      name="gio_id" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[rc_pacchetto]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[rc_pacchetto]"
+                      name="rc_pacchetto" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[cod_promo_tec]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[cod_promo_tec]"
+                      name="cod_promo_tec" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[volumi]"
+                      dataType="numeric"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[volumi]"
+                      name="volumi"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popolamento ST\Lookup Pacchetto"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="Lookup Pacchetto"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[S_REV_PCK_PACCHETTO]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PCK_RC" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_ID" dataType="DT_STR" length="133" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_DES" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_RGR_DES" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PCK_LEV2_RGR" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Popolamento ST\127:invalid};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popolamento ST\Lookup Pacchetto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popolamento ST\Lookup Pacchetto.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popolamento ST\Lookup Pacchetto.Inputs[Lookup Input].Columns[rc_pacchetto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rc_pacchetto"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[rc_pacchetto]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">PCK_RC</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="RedirectRow"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Popolamento ST\Lookup Pacchetto.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Match Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="133"
+                      lineageId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Match Output].Columns[PCK_ID]"
+                      name="PCK_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">PCK_ID</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Popolamento ST\Lookup Pacchetto.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Popolamento ST\Lookup Pacchetto.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popolamento ST\ST_REV_VOUC_OPE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="ST_REV_VOUC_OPE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ST_REV_VOUC_OPE]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[sce_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="sce_id"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[sce_id]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[week_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="week_id"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[week_id]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[volumi]"
+                      cachedDataType="numeric"
+                      cachedName="volumi"
+                      cachedPrecision="38"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[volumi]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[gio_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="gio_id"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[gio_id]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="133"
+                      cachedName="PCK_ID"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      lineageId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Match Output].Columns[PCK_ID]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[cod_promo_tec]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="cod_promo_tec"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_ID]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[cod_promo_tec]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[WEEK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="WEEK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[VOLUMI]"
+                      dataType="numeric"
+                      name="VOLUMI"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="36"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[PROMO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="PROMO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento ST\ST_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popolamento ST\ST_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popolamento ST\ST_REV_VOUC_OPE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popolamento ST\Trash Destination"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Trash Destination; http://www.konesans.com"
+              description="Terminate the data flow path"
+              name="Trash Destination">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Konesans.TrashDestination</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput]"
+                  hasSideEffects="true"
+                  name="TrashInput">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput].Columns[sce_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="sce_id"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[sce_id]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput].Columns[week_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="week_id"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[week_id]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput].Columns[rc_pacchetto]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="rc_pacchetto"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[rc_pacchetto]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput].Columns[volumi]"
+                      cachedDataType="numeric"
+                      cachedName="volumi"
+                      cachedPrecision="38"
+                      cachedScale="2"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[volumi]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput].Columns[gio_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="gio_id"
+                      lineageId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output].Columns[gio_id]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      lineageId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      lineageId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popolamento ST.Paths[Lookup Error Output]"
+              endId="Package\Popolamento ST\Trash Destination.Inputs[TrashInput]"
+              name="Lookup Error Output"
+              startId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Error Output]" />
+            <path
+              refId="Package\Popolamento ST.Paths[Lookup Output]"
+              endId="Package\Popolamento ST\ST_REV_VOUC_OPE.Inputs[OLE DB Destination Input]"
+              name="Lookup Output"
+              startId="Package\Popolamento ST\Lookup Pacchetto.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Popolamento ST.Paths[OLE DB Source Output]"
+              endId="Package\Popolamento ST\Lookup Pacchetto.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Popolamento ST\Import voucher week attuale.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pulizia SF_REV_VOUC_OPE Drop&amp;Create ST_REV_VOUC_OPE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{15328f08-d621-4c19-919f-58d7c28a96bb}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pulizia SF_REV_VOUC_OPE Drop&amp;Create ST_REV_VOUC_OPE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8C95D291-B5B8-497F-B132-43BF7ED9C554}"
+          SQLTask:SqlStatementSource="delete&#xA;from SF_REV_VOUC_OPE&#xA;where GIO_ID in &#xA;(select distinct convert(varchar(8), cast(t.Gio_Id as datetime) + 1, 112)&#xA;from M_REV_CALC_WEEK m inner join M_REV_TEMPO t on right(ltrim(rtrim(m.SCE_ID)), 2) = right(ltrim(rtrim(t.Ann_Id)), 2)&#xA;and m.WEEK_ID = t.Wee2_Id)&#xA;&#xA;GO&#xA;/**** ST_REV_VOUC_OPE ****/&#xA;if  exists (select * from SYS.OBJECTS where OBJECT_ID = OBJECT_ID(N'[dbo].[ST_REV_VOUC_OPE]') and TYPE in (N'U'))&#xA;drop table [dbo].[ST_REV_VOUC_OPE]&#xA;&#xA;GO&#xA;CREATE TABLE [dbo].[ST_REV_VOUC_OPE](&#xA;&#x9;[SCE_ID] [varchar](5) NULL,&#xA;&#x9;[WEEK_ID] [varchar](36) NULL,&#xA;&#x9;[PCK_ID] [varchar](50) NULL,&#xA;&#x9;[PROMO_ID] [varchar] (500) NULL,&#xA;&#x9;[VOLUMI] [numeric](18, 2) NULL,&#xA;&#x9;[GIO_ID] [varchar](36) NULL,&#xA;&#x9;[BB_CONTRACT_STATUS] [varchar](50) NULL,&#xA;&#x9;[BB_PRD_ID] [varchar](80) NULL,&#xA;&#x9;[BB_ORIGIN_CLUSTER] [varchar](80) NULL,&#xA;&#x9;[BB_VOICE_FLG] [varchar](4) NULL,&#x9;&#xA;&#x9;[BUNDLE_FLG] [varchar](80) NULL&#xA;) ON [PRIMARY]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{79BB73EB-C38F-4531-A270-8865C4A31D1E}"
+      DTS:From="Package\Pulizia SF_REV_VOUC_OPE Drop&amp;Create ST_REV_VOUC_OPE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Popolamento ST" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{36FCD8F5-ECA9-4138-84A7-2B994EEEB2FF}"
+      DTS:From="Package\Popolamento ST"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Popolamento SF" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="226,44"
+          Id="Package\Popolamento SF"
+          TopLeft="5.5,210.179245283019" />
+        <NodeLayout
+          Size="226,44"
+          Id="Package\Popolamento ST"
+          TopLeft="5.5,101.349056603774" />
+        <NodeLayout
+          Size="226,44"
+          Id="Package\Pulizia SF_REV_VOUC_OPE Drop&amp;Create ST_REV_VOUC_OPE"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="118.330188679245,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.9245283018868"
+              Start="0,0"
+              End="0,44.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="118.330188679245,145.27358490566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.9056603773585"
+              Start="0,0"
+              End="0,57.4056603773585">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.4056603773585" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Popolamento SF">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Popolamento SF\ST_REV_VOUC_OPE"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Popolamento SF\SF_REV_VOUC_OPE"
+          TopLeft="5.50000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\Popolamento SF.Paths[OLE DB Source Output]"
+          TopLeft="92.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popolamento SF\SF_REV_VOUC_OPE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popolamento SF\ST_REV_VOUC_OPE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Popolamento ST">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Popolamento ST\ST_REV_VOUC_OPE"
+          TopLeft="5.50000000000006,209.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Popolamento ST\Trash Destination"
+          TopLeft="240.5,209.5" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Popolamento ST\Import voucher week attuale"
+          TopLeft="214.5,12.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Popolamento ST\Lookup Pacchetto"
+          TopLeft="240.5,108.5" />
+        <EdgeLayout
+          Id="Package\Popolamento ST.Paths[Lookup Output]"
+          TopLeft="295.833333333333,150.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-203.333333333333,59"
+              Start="0,0"
+              End="-203.333333333333,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9462102689487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9462102689487"
+                    Point2="0,23.9462102689487"
+                    Point3="-4,23.9462102689487" />
+                  <mssgle:LineSegment
+                    End="-199.333333333333,23.9462102689487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-199.333333333333,23.9462102689487"
+                    Point2="-203.333333333333,23.9462102689487"
+                    Point3="-203.333333333333,27.9462102689487" />
+                  <mssgle:LineSegment
+                    End="-203.333333333333,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-149.858053385417,28.9462102689487,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popolamento ST.Paths[Lookup Error Output]"
+          TopLeft="347.166666666667,150.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-25.6666666666666,59"
+              Start="0,0"
+              End="-25.6666666666666,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.9462102689487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.9462102689487"
+                    Point2="0,23.9462102689487"
+                    Point3="-4,23.9462102689487" />
+                  <mssgle:LineSegment
+                    End="-21.6666666666666,23.9462102689487" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-21.6666666666666,23.9462102689487"
+                    Point2="-25.6666666666666,23.9462102689487"
+                    Point3="-25.6666666666666,27.9462102689487" />
+                  <mssgle:LineSegment
+                    End="-25.6666666666666,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-58.6997200520833,28.9462102689487,91.7327734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popolamento ST.Paths[OLE DB Source Output]"
+          TopLeft="321.75,54.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popolamento ST\ST_REV_VOUC_OPE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popolamento ST\Import voucher week attuale">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

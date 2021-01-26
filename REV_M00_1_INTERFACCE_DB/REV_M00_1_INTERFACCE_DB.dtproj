@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeploymentModel>Package</DeploymentModel>
+  <ProductVersion>14.0.3002.113</ProductVersion>
+  <SchemaVersion>9.0.1.0</SchemaVersion>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <Database>
+    <Name>REV_M00_INTERFACCE.database</Name>
+    <FullPath>REV_M00_INTERFACCE.database</FullPath>
+  </Database>
+  <DataSources />
+  <DataSourceViews />
+  <DeploymentModelSpecificContent>
+    <Manifest>
+      <DTSPackages>
+        <DtsPackage FormatVersion="8">
+          <Name>DRAFT_SKY_REV_M00_I_AN_OFFERTA_ADESIONE_DRAFT.dtsx</Name>
+          <FullPath>DRAFT_SKY_REV_M00_I_AN_OFFERTA_ADESIONE_DRAFT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_CANALE.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_CANALE.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_CLUSTER.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_CLUSTER.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_DURATA.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_DURATA.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_METODO_PAGAMENTO.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_METODO_PAGAMENTO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_MODALITA.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_MODALITA.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_OPTION.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_OPTION.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_PACCHETTO.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_PACCHETTO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_PREMIUM.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_PREMIUM.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_PROMO_TECNICA.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_PROMO_TECNICA.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_PRONTO_SKY.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_PRONTO_SKY.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_RGR_PREMIUM.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_RGR_PREMIUM.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_STATO.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_STATO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_STATOMOVIMENTO.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_STATOMOVIMENTO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_TECNOLOGIA.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_TECNOLOGIA.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_TICKET.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_TICKET.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_AN_TIPO_ABBONATO.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_AN_TIPO_ABBONATO.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_DT_DELTA.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_DT_DELTA.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_DT_FIRSTACT.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_DT_FIRSTACT.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_DT_OPTIONS.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_DT_OPTIONS.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_DT_PREMIUM.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_DT_PREMIUM.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_DT_SITCOMP.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_DT_SITCOMP.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>SKY_REV_M00_I_DT_TICKET.dtsx</Name>
+          <FullPath>SKY_REV_M00_I_DT_TICKET.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+      </DTSPackages>
+    </Manifest>
+  </DeploymentModelSpecificContent>
+  <ControlFlowParts />
+  <Miscellaneous />
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <OutputPath>E:\StagingArea\DEPLOY_PKG_SSIS\REV\bin\REV_M00_1_INTERFACCE_DB</OutputPath>
+        <ConnectionMappings />
+        <ConnectionProviderMappings />
+        <ConnectionSecurityMappings />
+        <DatabaseStorageLocations />
+        <TargetServerVersion>SQLServer2017</TargetServerVersion>
+        <ParameterConfigurationValues />
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

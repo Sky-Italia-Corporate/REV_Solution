@@ -1,0 +1,1780 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{A141E77A-1173-4CD1-9047-3BCD25E67EB0}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M11_F1_S7_IMPORT_ADJ"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{009AF25F-59FD-483E-B36D-8624A6113D08}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M11_F1_S7_IMPORT_ADJ-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[IMPORT ADJ]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{844772EA-2C6E-4D48-B669-1037FEB8F80C}"
+      DTS:ObjectName="IMPORT ADJ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWASHYP02\StagingArea\RESREV\export_files\REVACT_Export_ADJ_STD.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SCENARIO"
+              DTS:DTSID="{242DE8B6-FA57-4395-B9AE-CFD10067F1F4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GIO_ID"
+              DTS:DTSID="{FD09546F-A242-4089-8883-291D4BD98B8D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MEASURES"
+              DTS:DTSID="{57AED864-FF4C-42B2-ADAF-06975E677B63}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_DATO"
+              DTS:DTSID="{A91E2ABF-12BD-4284-A829-EDECDD8DD5FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="11"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_ACT_FEE"
+              DTS:DTSID="{67DD3B30-771A-4E82-8CCC-E160EAA09CAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="19"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NEW_EXISTING"
+              DTS:DTSID="{B9629334-A1EB-4AE6-A6DB-7CE777141D12}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="18"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MULTIVISION"
+              DTS:DTSID="{AADA7D5F-B851-45AE-9E23-796D2C7CEDFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="14"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TCN_ATV"
+              DTS:DTSID="{2AAAC5AC-AD29-4A3F-B990-CBF33EE2A064}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MOP"
+              DTS:DTSID="{6BAF61A7-2466-47EA-8166-5B73A65457A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="13"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DURATA"
+              DTS:DTSID="{2E0E71B1-73C6-4E81-9DF3-A290FB453476}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="16"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TECNOLOGIA"
+              DTS:DTSID="{D7258D2C-B51A-4908-AACC-6D844D5BB13C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="14"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLUSTER"
+              DTS:DTSID="{190FA810-B75A-40DA-AFF7-2F9826BA5A5C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CANALE"
+              DTS:DTSID="{8E3E6D4D-97A7-4CB8-960E-B696C640EE77}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="17"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PRONTO_SKY"
+              DTS:DTSID="{9C220A05-534C-463D-A5B9-2FDE58A1F382}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="24"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PACCHETTO"
+              DTS:DTSID="{9E9D7A7A-DC66-43F5-AC12-4C5F3ACE0D40}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="12"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROMO"
+              DTS:DTSID="{30BB0C33-6CBC-4653-BC5C-830417B43A9D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="14"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLG_CAP"
+              DTS:DTSID="{A82F257B-CB4A-4569-8BE6-594593CB6A8E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_CONTRACT_STATUS"
+              DTS:DTSID="{1BC98EB6-3032-4E14-89A3-C15AA4A6DCB4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_PRD_ID"
+              DTS:DTSID="{4C026935-C42C-471E-9B21-F79AA2498CBE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="80"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_ORIGIN_CLUSTER"
+              DTS:DTSID="{3283E476-88F8-46F6-AEDF-04A96B5A352A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BB_VOICE_FLG"
+              DTS:DTSID="{3DE2BF98-0A5A-436A-A930-27393F9B1FA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BUNDLE_FLG"
+              DTS:DTSID="{13EBE44A-0878-46C6-B5EE-DF130291B8FD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACT_FEE_N"
+              DTS:DTSID="{51DF3784-61C6-40B8-AA6C-AE614A7FB7DD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;User ID=HYPSYS9_CONSOLE;Initial Catalog=SKY_REV;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M11_F1_S7_IMPORT_ADJ-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{347FBFC6-1342-4293-8923-A262B18DC77B}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11;Integrated Security=SSPI;Application Name=SSIS-SKY_REV_M11_F1_S7_IMPORT_ADJ-{347FBFC6-1342-4293-8923-A262B18DC77B}SQL02.SSIS_CONFIGURATIONS;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;File_IMPORT_ADJ&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{889EFCB5-49B2-4D8D-8A7B-195E53DD6265}"
+      DTS:ObjectName="File_IMPORT_ADJ" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;REV_ServerApp02&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{6DE80648-2A86-4FD1-B01B-01A4DB842CE4}"
+      DTS:ObjectName="REV_ServerApp02" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A504A824-94B1-4F00-AC39-0A4B163E3E22}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerApp02">
+      <DTS:VariableValue
+        DTS:DataType="8">DEVRMWASHYP02</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export dati"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{F84FB03C-2BB3-4E3B-B40A-8D9532F1DAD7}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export dati"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"/C \"E:\\StagingArea\\PsExec\\PsExec \\\\"+ @[User::ServerApp02] +" E:\\StagingArea\\RESREV\\batch\\load_REV_ACT\\REVACT_EXPORT_ADJ_STD.bat -accepteula\""</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\CMD.exe"
+          Arguments="/C &quot;E:\StagingArea\PsExec\PsExec \\DEVRMWASHYP02 E:\StagingArea\RESREV\batch\load_REV_ACT\REVACT_EXPORT_ADJ_STD.bat -accepteula&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import from TXT REVACT_Export_ADJ_STD"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1E08DFFB-595E-4ED9-94E7-B75B5E2C2A58}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import from TXT REVACT_Export_ADJ_STD"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Import dati manuali"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[IMPORT ADJ]"
+                  connectionManagerRefId="Package.ConnectionManagers[IMPORT ADJ]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[SCENARIO]"
+                      length="5"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[SCENARIO]"
+                      name="SCENARIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MEASURES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[MEASURES]"
+                      length="5"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MEASURES]"
+                      name="MEASURES"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TIPO_DATO]"
+                      length="3"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TIPO_ACT_FEE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACT_FEE]"
+                      length="11"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TIPO_ACT_FEE]"
+                      name="TIPO_ACT_FEE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MULTIVISION]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[MULTIVISION]"
+                      length="18"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MULTIVISION]"
+                      name="MULTIVISION"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TCN_ATV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TCN_ATV]"
+                      length="14"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TCN_ATV]"
+                      name="TCN_ATV"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[MOP]"
+                      length="10"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MOP]"
+                      name="MOP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[DURATA]"
+                      length="13"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[DURATA]"
+                      name="DURATA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="16"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[CANALE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[CANALE]"
+                      length="10"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[CANALE]"
+                      name="CANALE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PRONTO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[PRONTO_SKY]"
+                      length="17"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PRONTO_SKY]"
+                      name="PRONTO_SKY"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[PACCHETTO]"
+                      length="24"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PACCHETTO]"
+                      name="PACCHETTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[PROMO]"
+                      length="12"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PROMO]"
+                      name="PROMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[ACT_FEE_N]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[ACT_FEE_N]"
+                      length="50"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[ACT_FEE_N]"
+                      name="ACT_FEE_N"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[NEW_EXISTING]"
+                      length="19"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[NEW_EXISTING]"
+                      name="NEW_EXISTING"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[FLG_CAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[FLG_CAP]"
+                      length="14"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[FLG_CAP]"
+                      name="FLG_CAP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[CLUSTER]"
+                      length="14"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[CLUSTER]"
+                      name="CLUSTER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[GIO_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="80"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="50"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="50"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCENARIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[MEASURES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="MEASURES" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TIPO_ACT_FEE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="11"
+                      name="TIPO_ACT_FEE" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[MULTIVISION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="18"
+                      name="MULTIVISION" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TCN_ATV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="TCN_ATV" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="MOP" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="13"
+                      name="DURATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[CANALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CANALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[PRONTO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="17"
+                      name="PRONTO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="24"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="12"
+                      name="PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[ACT_FEE_N]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ACT_FEE_N" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="19"
+                      name="NEW_EXISTING" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[FLG_CAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="FLG_CAP" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="14"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[GIO_ID]"
+                      dataType="i4"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_REV_EXPORT_REVACT_ADJ_STD"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_REV_EXPORT_REVACT_ADJ_STD]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[SCENARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="SCENARIO"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[SCENARIO]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[SCENARIO]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[MEASURES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="MEASURES"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[MEASURES]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MEASURES]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="TIPO_DATO"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[TIPO_ACT_FEE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="TIPO_ACT_FEE"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACT_FEE]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TIPO_ACT_FEE]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[MULTIVISION]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="18"
+                      cachedName="MULTIVISION"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[MULTIVISION]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MULTIVISION]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[TCN_ATV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="TCN_ATV"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ATV]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TCN_ATV]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[MOP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="MOP"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[MOP]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[DURATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="13"
+                      cachedName="DURATA"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[DURATA]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[DURATA]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[CANALE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CANALE"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[CANALE]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[CANALE]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[PRONTO_SKY]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="17"
+                      cachedName="PRONTO_SKY"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[PRONTO_SKY]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PRONTO_SKY]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="24"
+                      cachedName="PACCHETTO"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PACCHETTO]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[PROMO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="PROMO"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[PROMO]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[PROMO]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[ACT_FEE_N]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ACT_FEE_N"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[ACT_FEE_N]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[NEW_EXISTING]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="19"
+                      cachedName="NEW_EXISTING"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[NEW_EXISTING]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[NEW_EXISTING]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[FLG_CAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="FLG_CAP"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[FLG_CAP]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="14"
+                      cachedName="CLUSTER"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedDataType="i4"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[GIO_ID]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[SCENARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="SCENARIO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[MEASURES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MEASURES" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_ACT_FEE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TIPO_ACT_FEE" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[NEW_EXISTING]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NEW_EXISTING" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[MULTIVISION]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MULTIVISION" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ATV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TCN_ATV" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[MOP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="MOP" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[DURATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DURATA" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[CANALE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CANALE" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[PRONTO_SKY]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PRONTO_SKY" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[ACT_FEE_N]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ACT_FEE_N" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="FLG_CAP" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import from TXT REVACT_Export_ADJ_STD.Paths[Flat File Source Output]"
+              endId="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate table T_REV_EXPORT_REVACT_ADJ_STD"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{DCB089B3-201C-4206-90EF-23A50C5A3B0C}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate table T_REV_EXPORT_REVACT_ADJ_STD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="truncate table T_REV_EXPORT_REVACT_ADJ_STD&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{389CCCAD-F890-4E7B-B6BA-566BF216C3AA}"
+      DTS:From="Package\truncate table T_REV_EXPORT_REVACT_ADJ_STD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import from TXT REVACT_Export_ADJ_STD" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F351C5F7-D62E-443D-BF7B-74B99143C03D}"
+      DTS:From="Package\Export dati"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\truncate table T_REV_EXPORT_REVACT_ADJ_STD" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="320,44"
+          Id="Package\Export dati"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="320,44"
+          Id="Package\Import from TXT REVACT_Export_ADJ_STD"
+          TopLeft="5.5,209.160377358491" />
+        <NodeLayout
+          Size="320,44"
+          Id="Package\truncate table T_REV_EXPORT_REVACT_ADJ_STD"
+          TopLeft="5.5,107.311320754717" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="165.72641509434,151.235849056604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,57.9245283018868"
+              Start="0,0"
+              End="0,50.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="165.72641509434,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,57.8867924528302"
+              Start="0,0"
+              End="0,50.3867924528302">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.3867924528302" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import from TXT REVACT_Export_ADJ_STD">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="247,42"
+          Id="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD"
+          TopLeft="5.5,133.311320754717" />
+        <NodeLayout
+          Size="290,44"
+          Id="Package\Import from TXT REVACT_Export_ADJ_STD\Import dati manuali"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package\Import from TXT REVACT_Export_ADJ_STD.Paths[Flat File Source Output]"
+          TopLeft="150.5,49.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-21.5,83.811320754717"
+              Start="0,0"
+              End="-21.5,76.311320754717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.9056603773585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.9056603773585"
+                    Point2="0,41.9056603773585"
+                    Point3="-4,41.9056603773585" />
+                  <mssgle:LineSegment
+                    End="-17.5,41.9056603773585" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.5,41.9056603773585"
+                    Point2="-21.5,41.9056603773585"
+                    Point3="-21.5,45.9056603773585" />
+                  <mssgle:LineSegment
+                    End="-21.5,76.311320754717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import from TXT REVACT_Export_ADJ_STD\T_REV_EXPORT_REVACT_ADJ_STD">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

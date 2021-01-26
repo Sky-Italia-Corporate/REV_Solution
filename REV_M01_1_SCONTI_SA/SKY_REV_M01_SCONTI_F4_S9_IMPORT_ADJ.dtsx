@@ -1,0 +1,1193 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{86436320-2C58-4590-A4F7-72D4CCB1C4CC}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M01_SCONTI_F4_S9_IMPORT_ADJ"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="44"
+  DTS:VersionGUID="{F9E7C581-153A-4F82-892B-53C0A3AC985C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F4_S9_IMPORT_ADJ-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[REVDIS_Export_ADJ]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{691504AD-A465-423D-BB18-773EEE10153A}"
+      DTS:ObjectName="REVDIS_Export_ADJ">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWASHYP02\StagingArea\RESREV\export_files\REVDIS_Export_ADJ.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TOT_DIS"
+              DTS:DTSID="{F9F5C761-E973-4155-B0F0-67C95FC451FE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_DATO"
+              DTS:DTSID="{4006997A-69FA-45C3-86E6-CAFE1D8EB145}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VOUCHER"
+              DTS:DTSID="{56C4A070-C10C-4091-BEB8-A46BF45175A5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ATT_PER"
+              DTS:DTSID="{F0E02ECE-3170-44A1-92D4-D7E1D7DF15B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CMP_PER"
+              DTS:DTSID="{EA4E2F7D-DC97-4F08-B7AD-A2C2D09685C2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PACCHETTO"
+              DTS:DTSID="{9645F14F-9ED3-40DD-A127-42317135430A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PROMO"
+              DTS:DTSID="{0426E658-3F9D-48FC-BE1F-0F4E9A16086A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLG_CAP_CRITICO"
+              DTS:DTSID="{7BECB3E2-36D9-4CAC-8EEC-4D4D91FD6BF7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TECNOLOGIA"
+              DTS:DTSID="{FDECAAD5-9DD6-4E73-B7F9-2F2124D96DF5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CLUSTER"
+              DTS:DTSID="{8F528EAE-81A5-4CB3-AD4E-5241D005BEA3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VALORE"
+              DTS:DTSID="{FAD7F6B9-FAD2-4D07-9E82-9EDF4A23D5EF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F4_S9_IMPORT_ADJ-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{3CDE3487-7C75-4CBD-B541-34426FEE983C}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F4_S9_IMPORT_ADJ-{3CDE3487-7C75-4CBD-B541-34426FEE983C}SQL02.SSIS_CONFIGURATIONS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;REV_ServerApp02&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{17AD53D7-7C7B-42E4-ADAC-B2B3EDE60484}"
+      DTS:ObjectName="REV_ServerApp02" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;File_REVDIS_Export_ADJ&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{1908CA0A-1E87-4F23-9FE9-C0352CF3A1C5}"
+      DTS:ObjectName="File_REVDIS_Export_ADJ" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A0002D16-98E0-45A3-8947-AE317837EED2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ServerApp02">
+      <DTS:VariableValue
+        DTS:DataType="8">DEVRMWASHYP02</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export dati"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{8f9e8dbd-d8af-40bd-b746-2d76f1707fc8}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export dati"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:PropertyExpression
+        DTS:Name="Arguments">"/C \"winrs -r:"+@[User::ServerApp02]+" E:\\StagingArea\\RESREV\\batch\\load\\REVDIS_EXPORT_ADJ.bat\""</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\CMD.exe"
+          Arguments="/C &quot;winrs -r:DEVRMWASHYP02 E:\StagingArea\RESREV\batch\load\REVDIS_EXPORT_ADJ.bat&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Popola tabella T_REV_DIS_INP_ADJ"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{4896669C-D1D4-4D28-8B8C-B47CDD853845}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popola tabella T_REV_DIS_INP_ADJ"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Import Adj"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[REVDIS_Export_ADJ]"
+                  connectionManagerRefId="Package.ConnectionManagers[REVDIS_Export_ADJ]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TOT_DIS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[TOT_DIS]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TOT_DIS]"
+                      name="TOT_DIS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[TIPO_DATO]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TIPO_DATO]"
+                      name="TIPO_DATO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[VOUCHER]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[VOUCHER]"
+                      name="VOUCHER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[PACCHETTO]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[PACCHETTO]"
+                      name="PACCHETTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[PROMO]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[PROMO]"
+                      name="PROMO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[VALORE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[VALORE]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[VALORE]"
+                      name="VALORE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[FLG_CAP_CRITICO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[FLG_CAP_CRITICO]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[FLG_CAP_CRITICO]"
+                      name="FLG_CAP_CRITICO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TECNOLOGIA]"
+                      name="TECNOLOGIA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[CLUSTER]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[CLUSTER]"
+                      name="CLUSTER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[ATT_PER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[ATT_PER]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[ATT_PER]"
+                      name="ATT_PER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[CMP_PER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[CMP_PER]"
+                      length="50"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[CMP_PER]"
+                      name="CMP_PER"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[TOT_DIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TOT_DIS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[VALORE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[FLG_CAP_CRITICO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLG_CAP_CRITICO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[ATT_PER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ATT_PER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].ExternalColumns[CMP_PER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CMP_PER" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_REV_DIS_INP_ADJ"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[T_REV_DIS_INP_ADJ]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[TOT_DIS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TOT_DIS"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[TOT_DIS]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TOT_DIS]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[TIPO_DATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TIPO_DATO"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TIPO_DATO]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VOUCHER"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[VOUCHER]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[PACCHETTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PACCHETTO"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[PACCHETTO]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[PROMO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PROMO"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[PROMO]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[PROMO]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[VALORE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VALORE"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[VALORE]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[VALORE]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[FLG_CAP_CRITICO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLG_CAP_CRITICO"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP_CRITICO]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[FLG_CAP_CRITICO]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[TECNOLOGIA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="TECNOLOGIA"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[TECNOLOGIA]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CLUSTER"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[ATT_PER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ATT_PER"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[ATT_PER]" />
+                    <inputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].Columns[CMP_PER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CMP_PER"
+                      externalMetadataColumnId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER]"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output].Columns[CMP_PER]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[TOT_DIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TOT_DIS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_DATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TIPO_DATO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[PACCHETTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PACCHETTO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[PROMO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PROMO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[VALORE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VALORE" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[FLG_CAP_CRITICO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLG_CAP_CRITICO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[TECNOLOGIA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TECNOLOGIA" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[ATT_PER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="ATT_PER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[CMP_PER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CMP_PER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popola tabella T_REV_DIS_INP_ADJ.Paths[Flat File Source Output]"
+              endId="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate T_REV_DIS_INP_ADJ"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{c9f1b395-45bc-45e3-a99e-45f04af1ac7d}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate T_REV_DIS_INP_ADJ"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="truncate table T_REV_DIS_INP_ADJ&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1FE88925-2381-4F3F-B2CA-462D9FBD2A68}"
+      DTS:From="Package\Truncate T_REV_DIS_INP_ADJ"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Popola tabella T_REV_DIS_INP_ADJ" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{64d40e47-e8e0-4374-b910-0922f34158f1}"
+      DTS:From="Package\Export dati"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Truncate T_REV_DIS_INP_ADJ" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223,44"
+          Id="Package\Export dati"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="223,44"
+          Id="Package\Popola tabella T_REV_DIS_INP_ADJ"
+          TopLeft="5.5,198.179245283019" />
+        <NodeLayout
+          Size="223,44"
+          Id="Package\Truncate T_REV_DIS_INP_ADJ"
+          TopLeft="5.5,101.839622641509" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="116.820754716981,145.764150943396">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,52.4150943396226"
+              Start="0,0"
+              End="0,44.9150943396226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.9150943396226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="116.820754716981,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,52.4150943396226"
+              Start="0,0"
+              End="0,44.9150943396226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.9150943396226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Popola tabella T_REV_DIS_INP_ADJ">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ"
+          TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Popola tabella T_REV_DIS_INP_ADJ\Import Adj"
+          TopLeft="30.5,5.5" />
+        <EdgeLayout
+          Id="Package\Popola tabella T_REV_DIS_INP_ADJ.Paths[Flat File Source Output]"
+          TopLeft="95.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popola tabella T_REV_DIS_INP_ADJ\T_REV_DIS_INP_ADJ">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

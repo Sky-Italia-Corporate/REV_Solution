@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{25CE29E8-797C-49A9-A788-6E2CA982F123}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M06_VOUCH_CDG_F1_S3_REPORT3"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="52"
+  DTS:VersionGUID="{2BF5CB40-32D5-46EC-8A9A-D394648F5FDF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Crea Report 3"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{097B7189-1E47-4222-89B3-B5BFEB2B19B5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Crea Report 3"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\Crea Report 3\Dati voucher scaduti"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Dati voucher scaduti"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	a.DATA_ESTRAZIONE, a.COD_PROD_SAP, b.ORD_INTERNO, b.CONTO_DARE, b.CONTO_AVERE,
+	a.COD_PRODOTTO, a.DATA_ATTIVAZIONE, a.MAR_SELLIN, a.MAR_PROFITTO, a.VAL_RISCONTATO,
+	a.DATA_ULTIMO_RISC, a.NUM_VOUCHER, a.COD_MAT_SAP, a.FLAG_ATTIVO
+from T_REV_SAP_RV_DT_S01 a
+join (
+	select distinct
+		COD_PROD_SAP, ORD_INTERNO, CONTO_DARE, CONTO_AVERE
+	from T_REV_SAP_RV_AN_S02
+) b
+	on a.COD_PROD_SAP = b.COD_PROD_SAP
+where FLAG_ATTIVO = 'N'
+order by 1</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Report 3\Dati voucher scaduti.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ESTRAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[DATA_ESTRAZIONE]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ESTRAZIONE]"
+                      name="DATA_ESTRAZIONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[COD_PROD_SAP]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_PROD_SAP]"
+                      name="COD_PROD_SAP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[ORD_INTERNO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[ORD_INTERNO]"
+                      length="255"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[ORD_INTERNO]"
+                      name="ORD_INTERNO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[CONTO_DARE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[CONTO_DARE]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[CONTO_DARE]"
+                      name="CONTO_DARE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[CONTO_AVERE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[CONTO_AVERE]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[CONTO_AVERE]"
+                      name="CONTO_AVERE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[COD_PRODOTTO]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_PRODOTTO]"
+                      name="COD_PRODOTTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ATTIVAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATTIVAZIONE]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ATTIVAZIONE]"
+                      name="DATA_ATTIVAZIONE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[MAR_SELLIN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[MAR_SELLIN]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[MAR_SELLIN]"
+                      name="MAR_SELLIN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[MAR_PROFITTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[MAR_PROFITTO]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[MAR_PROFITTO]"
+                      name="MAR_PROFITTO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[VAL_RISCONTATO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[VAL_RISCONTATO]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[VAL_RISCONTATO]"
+                      name="VAL_RISCONTATO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ULTIMO_RISC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[DATA_ULTIMO_RISC]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ULTIMO_RISC]"
+                      name="DATA_ULTIMO_RISC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[NUM_VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[NUM_VOUCHER]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[NUM_VOUCHER]"
+                      name="NUM_VOUCHER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_MAT_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[COD_MAT_SAP]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_MAT_SAP]"
+                      name="COD_MAT_SAP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[FLAG_ATTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[FLAG_ATTIVO]"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[FLAG_ATTIVO]"
+                      name="FLAG_ATTIVO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[DATA_ESTRAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ESTRAZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[COD_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROD_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[ORD_INTERNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ORD_INTERNO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[CONTO_DARE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_DARE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[CONTO_AVERE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_AVERE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[COD_PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PRODOTTO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[DATA_ATTIVAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATTIVAZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[MAR_SELLIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MAR_SELLIN" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[MAR_PROFITTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MAR_PROFITTO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[VAL_RISCONTATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VAL_RISCONTATO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[DATA_ULTIMO_RISC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ULTIMO_RISC" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[NUM_VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NUM_VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[COD_MAT_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_MAT_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].ExternalColumns[FLAG_ATTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_ATTIVO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[DATA_ESTRAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[DATA_ESTRAZIONE]"
+                      name="DATA_ESTRAZIONE" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[COD_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[COD_PROD_SAP]"
+                      name="COD_PROD_SAP" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[ORD_INTERNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[ORD_INTERNO]"
+                      name="ORD_INTERNO" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[CONTO_DARE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[CONTO_DARE]"
+                      name="CONTO_DARE" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[CONTO_AVERE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[CONTO_AVERE]"
+                      name="CONTO_AVERE" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[COD_PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[COD_PRODOTTO]"
+                      name="COD_PRODOTTO" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[DATA_ATTIVAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[DATA_ATTIVAZIONE]"
+                      name="DATA_ATTIVAZIONE" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[MAR_SELLIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[MAR_SELLIN]"
+                      name="MAR_SELLIN" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[MAR_PROFITTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[MAR_PROFITTO]"
+                      name="MAR_PROFITTO" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[VAL_RISCONTATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[VAL_RISCONTATO]"
+                      name="VAL_RISCONTATO" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[DATA_ULTIMO_RISC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[DATA_ULTIMO_RISC]"
+                      name="DATA_ULTIMO_RISC" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[NUM_VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[NUM_VOUCHER]"
+                      name="NUM_VOUCHER" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[COD_MAT_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[COD_MAT_SAP]"
+                      name="COD_MAT_SAP" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[FLAG_ATTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[FLAG_ATTIVO]"
+                      name="FLAG_ATTIVO" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="WT_REV_M06_REPORT3_X_EXPORT"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[WT_REV_M06_REPORT3_X_EXPORT]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[DATA_ESTRAZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ESTRAZIONE"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ESTRAZIONE]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ESTRAZIONE]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[COD_PROD_SAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_PROD_SAP"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROD_SAP]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_PROD_SAP]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[ORD_INTERNO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="ORD_INTERNO"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[ORD_INTERNO]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[ORD_INTERNO]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[CONTO_DARE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_DARE"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_DARE]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[CONTO_DARE]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[CONTO_AVERE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_AVERE"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_AVERE]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[CONTO_AVERE]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[COD_PRODOTTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_PRODOTTO"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[COD_PRODOTTO]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_PRODOTTO]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[DATA_ATTIVAZIONE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ATTIVAZIONE"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATTIVAZIONE]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ATTIVAZIONE]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[MAR_SELLIN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MAR_SELLIN"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[MAR_SELLIN]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[MAR_SELLIN]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[MAR_PROFITTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MAR_PROFITTO"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[MAR_PROFITTO]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[MAR_PROFITTO]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[VAL_RISCONTATO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="VAL_RISCONTATO"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[VAL_RISCONTATO]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[VAL_RISCONTATO]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[DATA_ULTIMO_RISC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="DATA_ULTIMO_RISC"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ULTIMO_RISC]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[DATA_ULTIMO_RISC]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[NUM_VOUCHER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NUM_VOUCHER"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[NUM_VOUCHER]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[NUM_VOUCHER]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[COD_MAT_SAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_MAT_SAP"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[COD_MAT_SAP]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[COD_MAT_SAP]" />
+                    <inputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].Columns[FLAG_ATTIVO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLAG_ATTIVO"
+                      externalMetadataColumnId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_ATTIVO]"
+                      lineageId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output].Columns[FLAG_ATTIVO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ESTRAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ESTRAZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROD_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[ORD_INTERNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ORD_INTERNO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_DARE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_DARE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_AVERE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_AVERE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[COD_PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PRODOTTO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ATTIVAZIONE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ATTIVAZIONE" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[MAR_SELLIN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MAR_SELLIN" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[MAR_PROFITTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MAR_PROFITTO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[VAL_RISCONTATO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="VAL_RISCONTATO" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[DATA_ULTIMO_RISC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="DATA_ULTIMO_RISC" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[NUM_VOUCHER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NUM_VOUCHER" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[COD_MAT_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_MAT_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input].ExternalColumns[FLAG_ATTIVO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLAG_ATTIVO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Crea Report 3.Paths[OLE DB Source Output]"
+              endId="Package\Crea Report 3\WT_REV_M06_REPORT3_X_EXPORT.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Crea Report 3\Dati voucher scaduti.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop and Create"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{7F759D89-6301-4BDF-A7FD-F29C25230455}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop and Create"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="/**** WT_REV_M06_REPORT3_X_EXPORT ****/&#xA;IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[WT_REV_M06_REPORT3_X_EXPORT]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[WT_REV_M06_REPORT3_X_EXPORT]&#xA;GO&#xA;&#xA;CREATE TABLE [WT_REV_M06_REPORT3_X_EXPORT] (&#xA;    [DATA_ESTRAZIONE] varchar(50),&#xA;    [COD_PROD_SAP] varchar(50),&#xA;    [ORD_INTERNO] varchar(255),&#xA;    [CONTO_DARE] varchar(50),&#xA;    [CONTO_AVERE] varchar(50),&#xA;    [COD_PRODOTTO] varchar(50),&#xA;    [DATA_ATTIVAZIONE] varchar(50),&#xA;    [MAR_SELLIN] varchar(50),&#xA;    [MAR_PROFITTO] varchar(50),&#xA;    [VAL_RISCONTATO] varchar(50),&#xA;    [DATA_ULTIMO_RISC] varchar(50),&#xA;    [NUM_VOUCHER] varchar(50),&#xA;    [COD_MAT_SAP] varchar(50),&#xA;    [FLAG_ATTIVO] varchar(50)&#xA;) ON [PRIMARY]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6C23721E-CA58-40C0-854D-20CD73432325}"
+      DTS:From="Package\Drop and Create"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Crea Report 3" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="220,44"
+          Id="Package\Crea Report 3"
+          TopLeft="5.5,83.3867924528302" />
+        <NodeLayout
+          Size="220,44"
+          Id="Package\Drop and Create"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="115.311320754717,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

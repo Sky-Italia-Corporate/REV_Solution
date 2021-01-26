@@ -1,0 +1,2432 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{CC0512AD-51FE-4C3A-8157-EF137D49EAF7}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M00_X_SAP_S02_VOUCHER"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{36B6EB18-4F1C-4FF5-BA1B-0EF60C7E7C6A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SAP_S02]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C55DB217-1DF2-4560-B28F-201CAE8177D6}"
+      DTS:ObjectName="SAP_S02">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1040"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\DEVRMWDBHYP01\StagingArea\RESREV\SAP\20130730_RV_AN_S02_VOUCHER.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COD_PROD_SAP"
+              DTS:DTSID="{07B84359-431E-4525-9AA0-10C16DF5EC65}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COD_PRODOTTO"
+              DTS:DTSID="{2E3AA622-45C6-45CC-A81B-53C7781C1DFD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DES_PROD_SAP"
+              DTS:DTSID="{E7EE8829-4B42-457C-87F6-2F0B564ACDB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ORD_INTERNO"
+              DTS:DTSID="{A44EC752-2066-4EB5-B1C3-D94DFD8CC6B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTO_DARE"
+              DTS:DTSID="{2D31FE0C-84C3-4869-AC90-80B04EF5AF15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTO_AVERE"
+              DTS:DTSID="{E00370F5-C3DA-4024-BD6E-4CB196838376}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ELEMENTO_WBS"
+              DTS:DTSID="{76B91237-0F43-4A3C-B181-64617C8B458B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FLG_PRORATA"
+              DTS:DTSID="{703A957F-BE0E-4A99-BBC4-3C56B32E624B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TIPO_RISCONTO"
+              DTS:DTSID="{4645A783-9206-47DC-AF5F-92A829C61022}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NNMESI_RISCONTO"
+              DTS:DTSID="{CACD8A3B-493A-4E61-8BCB-5DB7B94335BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="NNGG_RISCONTO"
+              DTS:DTSID="{53A276BD-BD94-4A43-B470-E64B2DCD506C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WAERS"
+              DTS:DTSID="{6EA64F91-4205-4B0B-B697-EDBF410644D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DMBTR"
+              DTS:DTSID="{32086134-8101-4EBB-85C8-27A34182E158}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="XREF3"
+              DTS:DTSID="{DBFDDADB-728B-4771-BD4E-18DD1AFBA3DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_FISSA_INIZIO"
+              DTS:DTSID="{B194AC73-2048-466E-9E44-941AFDE93EEB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="DATA_FISSA_FINE"
+              DTS:DTSID="{935634B5-D147-479F-A182-F6469430D7D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="STATUS"
+              DTS:DTSID="{973F07DA-9D1B-4AA2-A8D5-EA7858D2662B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="KOSTL"
+              DTS:DTSID="{5E4E73E0-584B-4E28-94A7-3E70B184C2EE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F2_S2_CALCOLO_SCONTO-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SQL02.SSIS_CONFIGURATIONS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1FC2FFF1-BC39-4D35-B113-86FA32F3DF08}"
+      DTS:ObjectName="SQL02.SSIS_CONFIGURATIONS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SSIS_CONFIGURATIONS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M00_X_SAP_VOUCHER-{1FC2FFF1-BC39-4D35-B113-86FA32F3DF08}SQL02.SSIS_CONFIGURATIONS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;ITEM_SAPFileLoop&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{2431467A-2C8E-4828-A386-C10D1D733C35}"
+      DTS:ObjectName="ITEM_SAPFileLoop" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;VAR_SAPFileFolder&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{FC181AD8-EC45-4CF1-BE1D-CF7E0D84C7D5}"
+      DTS:ObjectName="VAR_SAPFileFolder" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;SQL02.SSIS_CONFIGURATIONS&quot;;&quot;[dbo].[REV_Solution]&quot;;&quot;SAP_S02&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{AC8FF258-D935-4909-80A7-096827296BBA}"
+      DTS:ObjectName="SAP_S02" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4C539724-4C4E-4A12-9CD1-77FF4B1946B2}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ActualFile">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8DB658FA-D210-4826-B555-1D732462C76A}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ExtractDate">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{23AEB769-206C-481D-BE5A-9BD5D9332E6F}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="SAPFileFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">\\DEVRMWDBHYP01\StagingArea\RESREV\SAP</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiorna stringa di connessione"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Script Task"
+      DTS:DTSID="{589FD60B-62CF-4C01-8A66-5317C59FADA1}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiorna stringa di connessione"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_6f0a152b33294ed889bad662a5b546ec"
+          VSTAMajorVersion="15"
+          VSTAMinorVersion="0"
+          Language="VisualBasic"
+          ReadOnlyVariables="User::ExtractDate,User::SAPFileFolder">
+          <ProjectItem
+            Name="My Project\AssemblyInfo.vb"
+            Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_6f0a152b33294ed889bad662a5b546ec.vbproj")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("Microsoft")> 
+<Assembly: AssemblyProduct("ST_6f0a152b33294ed889bad662a5b546ec.vbproj")> 
+<Assembly: AssemblyCopyright("Copyright @ Microsoft 2013")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("3c91a5a3-e6ce-452d-88b2-2152b308f84c")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+          <ProjectItem
+            Name="st_6f0a152b33294ed889bad662a5b546ec.vbproj"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="utf-16"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!-- This section defines project-level properties.
+
+       Configuration - Specifies whether the default configuration is Release or Debug.
+       Platform - Specifies what CPU the output of this project can run on.
+       OutputType - Must be "Library" for VSTA.
+       NoStandardLibraries - Set to "false" for VSTA.
+       RootNamespace - In C#, this specifies the namespace given to new files.
+                       In Visual Basic, all objects are wrapped in this namespace at runtime.
+       AssemblyName - Name of the output assembly.
+  -->
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ST_6f0a152b33294ed889bad662a5b546ec.vbproj</RootNamespace>
+    <AssemblyName>ST_6f0a152b33294ed889bad662a5b546ec.vbproj</AssemblyName>
+    <StartupObject></StartupObject>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{E2E7F2BB-D545-4FB7-A7CB-F7E88154ABB6}</ProjectGuid>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile></TargetFrameworkProfile>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Debug" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section defines properties that are set when the "Release" configuration is
+       selected.
+
+       DebugSymbols - If true, create symbols (.pdb). If false, do not create symbols.
+       Optimize - If true, optimize the build output. If false, do not optimize.
+       OutputPath - Output path of the project relative to the project file.
+       EnableUnmanagedDebugging - If true, starting the debugger will attach both managed and unmanaged debuggers.
+       DefineConstants - Constants defined for the preprocessor.
+       Warning Level - Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants></DefineConstants>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <NoWarn>42016,42017,42018,42019,42032,42353,42354,42355,42353,42354,42355</NoWarn>
+  </PropertyGroup>
+  <!-- This section enables pre- and post-build steps. However,
+       it is recommended that MSBuild tasks be used instead of these properties.
+  -->
+  <PropertyGroup>
+    <PreBuildEvent></PreBuildEvent>
+    <PostBuildEvent></PostBuildEvent>
+  </PropertyGroup>
+  <!-- This sections specifies references for the project. -->
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=14.0.0.0, Culture=Neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <!-- Visual Basic supports Importing namespaces (equivalent to using statements in C#).-->
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <!-- This section defines the user source files that are part of the
+       project.
+
+       Compile - Specifies a source file to compile.
+       EmbeddedResource - Specifies a .resx file for embedded resources.
+       None - Specifies a file that is not to be passed to the compiler (for instance,
+              a text file or XML file).
+       AppDesigner - Specifies the directory where the application properties files can
+                     be found.
+  -->
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <!-- Include the default configuration information and metadata files for the add-in.
+         These files are copied to the build output directory when the project is
+         built, and the path to the configuration file is passed to add-in on the command
+         line when debugging.
+    -->
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- This section defines VSTA properties that describe the host-changable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="" />
+        <Host Name="SSIS_ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST140</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.settings"
+            Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Settings.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="Project"
+            Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="4.0" schemaVersion="1.0">
+  <msb:PropertyGroup>
+    <msb:CodeName>st_6f0a152b33294ed889bad662a5b546ec</msb:CodeName>
+    <msb:Language>msBuild</msb:Language>
+    <msb:DisplayName>st_6f0a152b33294ed889bad662a5b546ec</msb:DisplayName>
+    <msb:ProjectId>{A84E3FC0-BF28-4DA3-AC8A-7D7EE9BEC949}</msb:ProjectId>
+  </msb:PropertyGroup>
+  <msb:ItemGroup>
+    <msb:Project Include="st_6f0a152b33294ed889bad662a5b546ec.vbproj" />
+    <msb:File Include="My Project\AssemblyInfo.vb" />
+    <msb:File Include="ScriptMain.vb" />
+    <msb:File Include="My Project\Resources.resx" />
+    <msb:File Include="My Project\Resources.Designer.vb" />
+    <msb:File Include="My Project\Settings.settings" />
+    <msb:File Include="My Project\Settings.Designer.vb" />
+  </msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+          <ProjectItem
+            Name="ScriptMain.vb"
+            Encoding="UTF8"><![CDATA[' Microsoft SQL Server Integration Services Script Task
+' Write scripts using Microsoft Visual Basic 2008.
+' The ScriptMain is the entry point class of the script.
+
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+	Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+	Enum ScriptResults
+		Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+		Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+	End Enum
+	
+
+	' The execution engine calls this method when the task executes.
+	' To access the object model, use the Dts property. Connections, variables, events,
+	' and logging features are available as members of the Dts property as shown in the following examples.
+	'
+	' To reference a variable, call Dts.Variables("MyCaseSensitiveVariableName").Value
+	' To post a log entry, call Dts.Log("This is my log text", 999, Nothing)
+	' To fire an event, call Dts.Events.FireInformation(99, "test", "hit the help message", "", 0, True)
+	'
+	' To use the connections collection use something like the following:
+	' ConnectionManager cm = Dts.Connections.Add("OLEDB")
+	' cm.ConnectionString = "Data Source=localhost;Initial Catalog=AdventureWorks;Provider=SQLNCLI10;Integrated Security=SSPI;Auto Translate=False;"
+	'
+	' Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+	' 
+	' To open Help, press F1.
+
+	Public Sub Main()
+        Dim FileToOpen As String
+
+        FileToOpen = Dts.Variables.Item("SAPFileFolder").Value.ToString & "\" & Dts.Variables.Item("ExtractDate").Value.ToString & "_RV_AN_S02_VOUCHER.txt"
+        If Dir(FileToOpen) <> "" Then
+            Dts.Connections.Item("SAP_S02").ConnectionString = FileToOpen
+            Dts.TaskResult = ScriptResults.Success
+        Else
+            Dts.TaskResult = ScriptResults.Failure
+        End If
+	End Sub
+
+End Class]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.resx"
+            Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+          <ProjectItem
+            Name="My Project\Resources.Designer.vb"
+            Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+          <BinaryItem
+            Name="ST_6f0a152b33294ed889bad662a5b546ec.vbproj.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAL5UYl4AAAAAAAAAAOAAIiALAVAAABwAAAAIAAAAAAAA/jkA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAGAAAAAAAAAACAAAAAAgAAAAAAAAMAYIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAKw5AABPAAAAAEAAAKwEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAABBoAAAAgAAAAHAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAKwEAAAAQAAAAAYAAAAeAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADg
+OQAAAAAAAEgAAAACAAUAwCIAADQWAAABAAAAAAAAAPQ4AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKBgAAAoqHgIoGQAACiqmcxoAAAqAAQAABHMbAAAKgAIA
+AARzHAAACoADAAAEcx0AAAqABAAABCoufgEAAARvHgAACioufgIAAARvHwAACioufgMAAARvIAAA
+CioufgQAAARvIQAACioeAigiAAAKKq5+BQAABC0ecgEAAHDQBQAAAigjAAAKbyQAAApzJQAACoAF
+AAAEfgUAAAQqGn4GAAAEKh4CgAYAAAQqQnMiAAAKKCYAAAqACAAABCoeAignAAAKKgAAGzABAD8A
+AAAAAAAAfgcAAAQtMn4IAAAEKCYAAAooKAAACn4HAAAELRxzDQAABoAHAAAE3hB+CAAABCgmAAAK
+KCkAAArcfgcAAAQqAAEQAAACAB0ADCkAEAAAAAAeAigqAAAKKhMwBACXAAAAAQAAEQIoKwAACm8s
+AAAKcjMAAHBvLQAACm8uAAAKby8AAApyTwAAcAIoKwAACm8sAAAKclMAAHBvLQAACm8uAAAKby8A
+AApyawAAcCgwAAAKCgYWKDEAAApymQAAcBYoMgAACiwoAigrAAAKbzMAAApymwAAcG80AAAKBm81
+AAAKAigrAAAKFm82AAAKKgIoKwAAChdvNgAACio2AgMoJgAACig3AAAKKh4CKDgAAAoqLtAIAAAC
+KCMAAAoqHgIoLwAACioAAAATMAEAFAAAAAIAABECjAUAABstCCgBAAArCisCAgoGKiID/hUFAAAb
+KgAAABMwAgAoAAAAAwAAEQJ7OgAACm87AAAKCgaMCAAAGy0SKAIAACsKAns6AAAKBm88AAAKBipK
+AigiAAAKAnM9AAAKfToAAAoqAEJTSkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAPQH
+AAAjfgAAYAgAAHQJAAAjU3RyaW5ncwAAAADUEQAArAAAACNVUwCAEgAAEAAAACNHVUlEAAAAkBIA
+AKQDAAAjQmxvYgAAAAAAAAACAAABVx2iCQkPAAAA+gEzABYAAAEAAAAzAAAACgAAAAwAAAAZAAAA
+BAAAAD0AAAACAAAANwAAAAMAAAAEAAAACAAAAAkAAAAIAAAAAQAAAAUAAAABAAAAAwAAAAMAAAAC
+AAAAAABOBQEAAAAAAAYAPwPTBwYA5APTBwYACAIUBw8AhwgAAAYAVwIGBgYAIgMGBgYAywMGBgYA
+XwMGBgYAeAMGBgYAngIGBgYAkwOKBQYANQKNBwYAsQGNBwYA6gIGBgYAuQI+BAoA1AGqBgoAnAE4
+BQoAHAI4BQ4AdAFjBw4A4AYnBwYA0gIUBw4AbgKsBw4AhgKNAAYACgmKBQ4AxgZjBw4ABwONAAYA
+JwGKBQ4AAQD8BAoAvwGWBQYAiAbzBwYAGAbxBQoAhAHcBQYA6wEUBxIAqQPTBBIAWAHTBAYAhASK
+BQYAkQWKBQYA4ACKBQYAawkGBgYAxgjTBwYADActBBIAJgXTBBYAmggEARYA1wAEAQYAfQSKBQ4A
+hgWNAA4ASQKNAA4A1QisBxYAuggEARYAmAYEAQYA9QaKBQAAAAArAAAAAAABAAEAAAAAAM4FOQlN
+AAEAAQAAAAAA3gY5CVEAAQACAAABEAARCTkJYQABAAMAAAAAADwIBAhhAAUACAAAARAApAiJBIEA
+BwAMAAEAAACzBYkEjQAJAA8ABQEAAFUHAABhAAkAEQAFAQAAEAAAAGEACQAYAAIBAADvCAAAlQAK
+ABoAMQBNBhwBMQAkBiQBMQA4BiwBMQBmBjQBEQDpBjwBEQBMAUABEQACBEQBEQAECUgBIQAvCdoA
+BgZ8AEsBVoDfCE4BVoAsAU4BUCAAAAAABhj/BgYAAQBYIAAAAAAGGP8GBgABAGAgAAAAABEYBQdS
+AQEAiiAAAAAAEwjRBlYBAQCWIAAAAAATCL4FWwEBAKIgAAAAABMIwgZgAQEAriAAAAAAEwhFB2UB
+AQC6IAAAAAADGP8GBgABAMIgAAAAABYIhAZqAQEA7iAAAAAAFgg0AW8BAQD1IAAAAAAWCEABdAEB
+AP0gAAAAABEYBQdSAQIADiEAAAAABhj/BgYAAgAYIQAAAAAWCAoEegECAHQhAAAAAAYY/wYGAAIA
+fCEAAEgABgC5BQYAAgAfIgAAAADGAq8IsgACAC0iAAAAAMYCywC3AAMANSIAAAAAgwAkAX8BAwBB
+IgAAAADGAnsEigADAEwiAAAAABEAaQCEAQMAbCIAAAAAAQBVAIwBBAC6IAAAAAAGGP8GBgAFAHgi
+AAAAAAMIsgBKAAUArCIAAAAABhj/BgYABQAAAAEAJwQAAAEAIgYAAAEAwgAAAAEAwgAJAP8GAQAR
+AP8GBgAZAP8GCgApAP8GEAAxAP8GEAA5AP8GEABBAP8GEABJAP8GEABRAP8GEABZAP8GFQBhAP8G
+FQBpAP8GEABxAP8GEAB5AP8GEACBAP8GGgCRAP8GIACpAP8GBgCxAP8GBgC5AP8GBgDRAP8GJgDp
+AP8GEAAJAf8GBgARAf8GBgCZAP8GBgChAP8GBgAMAP8GBgAUAP8GBgAcAP8GBgAkAP8GBgAMALIA
+SgAUALIASgAcALIASgAkALIASgDBAP8GBgDZAPIATwDZAGcJVwDxAP8GXQBBAR4EZQABAf8GBgBJ
+AcsGagBJARsJagAZAf8GBgAZAecIcwBRAZYIeQBZAX0FfwBhAQoEhgDBAHsEigBpAf0IjgBxAfEG
+lgCBAVgEngBRAbYIpQCJAX0FqwCRAWYEEABRASAJAQDBAK8IsgDBAMsAtwCZAaMAwwA0AC8J2gA8
+AAoESgA8ABQE8QA8AP8GBgAIACwAEgEIADAAFwEpAKsAXQMuAAsAvAEuABMAxQEuABsA5AEuACMA
+7QEuACsAHQIuADMAIwIuADsA7QEuAEMAMgIuAEsAHQIuAFMAUgIuAFsAHQIuAGMAWAIuAGsAggIu
+AHMAjwJAAIsAFwFAAIMA2QJDAHsA4gJDAIMA2QJJAKsAbgNjAHsA4gJjAIMA2QJpAKsAggOAAIsA
+FwGDAJMAFwGDAJsAFwGDAHsA4gKJAKsAjwOgAIsAFwGpAIMA5AHAAIsAFwHJAIMA5AHgAIsAFwHj
+ALsAFwHjAFMAHQLpALMAFwEDAYMA2QIDAaMA+wIjAYMA2QIjAVsAHQIgAoMA2QIgAosAFwFAAoMA
+2QJAAosAFwFgAoMA2QJgAosAFwGAAoMA2QKAAosAFwGgAosAFwHAAosAFwHgAosAFwHgAoMA2QIA
+A4sAFwEgA4sAFwEgA4MA2QJvALsAzgAEAAEABQAFAAYABwAJAAgAAADgBpQBAADQBZkBAADGBp4B
+AABXB6MBAACIBqgBAABQAa0BAAAnBLIBAAC2ALcBAgAEAAMAAgAFAAUAAgAGAAcAAgAHAAkAAgAJ
+AAsAAgAKAA0AAQALAA0AAgAOAA8AAgAYABEALgA1ADwAQwDAANMA4gDpAASAAAABAAAAAAAAAAAA
+AAAAAIkEAAAEAAAAAAAAAAAAAAD3AIQAAAAAAAQAAAAAAAAAAAAAAPcAigUAAAAACgAAAAAAAAAA
+AAAAAAGNAAAAAAAOAAAAAAAAAAAAAAAJAbQEAAAAAA4AAAAAAAAAAAAAAAkBNAAAAAAAAAAAAAEA
+AABICAAACAAEAAkABAAKAAcAAAAQABIAUwAAABAAKwBTAAAAAAAtAFMAcwDJAHMA7AAAAAAAAENv
+bnRleHRWYWx1ZWAxAFRocmVhZFNhZmVPYmplY3RQcm92aWRlcmAxADxNb2R1bGU+AE1pY3Jvc29m
+dC5TcWxTZXJ2ZXIuTWFuYWdlZERUUwBUAERpc3Bvc2VfX0luc3RhbmNlX18AQ3JlYXRlX19JbnN0
+YW5jZV9fAHZhbHVlX18AbXNjb3JsaWIATWljcm9zb2Z0LlZpc3VhbEJhc2ljAENyZWF0ZUluc3Rh
+bmNlAGdldF9HZXRJbnN0YW5jZQBpbnN0YW5jZQBHZXRIYXNoQ29kZQBWYXJpYWJsZQBSdW50aW1l
+VHlwZUhhbmRsZQBHZXRUeXBlRnJvbUhhbmRsZQBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5SdW50
+aW1lAEdldFR5cGUARmFpbHVyZQBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBfcmVzQ3VsdHVyZQBW
+U1RBUlRTY3JpcHRPYmplY3RNb2RlbEJhc2UAQXBwbGljYXRpb25CYXNlAEFwcGxpY2F0aW9uU2V0
+dGluZ3NCYXNlAEVkaXRvckJyb3dzYWJsZVN0YXRlAEd1aWRBdHRyaWJ1dGUASGVscEtleXdvcmRB
+dHRyaWJ1dGUAR2VuZXJhdGVkQ29kZUF0dHJpYnV0ZQBEZWJ1Z2dlck5vblVzZXJDb2RlQXR0cmli
+dXRlAERlYnVnZ2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlQXR0cmlidXRlAENvbVZpc2li
+bGVBdHRyaWJ1dGUARmlsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxlQXR0cmlidXRlAFN0YW5kYXJk
+TW9kdWxlQXR0cmlidXRlAEhpZGVNb2R1bGVOYW1lQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJr
+QXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJpYnV0ZQBEZWJ1Z2dlckhpZGRlbkF0dHJpYnV0
+ZQBBc3NlbWJseUZpbGVWZXJzaW9uQXR0cmlidXRlAE15R3JvdXBDb2xsZWN0aW9uQXR0cmlidXRl
+AEFzc2VtYmx5RGVzY3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJp
+YnV0ZQBBc3NlbWJseVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUA
+Q0xTQ29tcGxpYW50QXR0cmlidXRlAFNTSVNTY3JpcHRUYXNrRW50cnlQb2ludEF0dHJpYnV0ZQBB
+c3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAbV9W
+YWx1ZQBnZXRfVmFsdWUAc2V0X1ZhbHVlAEdldE9iamVjdFZhbHVlAFN5c3RlbS5UaHJlYWRpbmcA
+U3lzdGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBDb21wYXJlU3RyaW5nAHNldF9Db25uZWN0aW9uU3Ry
+aW5nAFRvU3RyaW5nAE1hdGgAU1RfNmYwYTE1MmIzMzI5NGVkODg5YmFkNjYyYTViNTQ2ZWMudmJw
+cm9qAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuU2NyaXB0VGFzawBNaWNyb3NvZnQuU3FsU2VydmVyLkR0
+cy5UYXNrcy5TY3JpcHRUYXNrAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5NeVNlcnZpY2VzLkludGVy
+bmFsAFNjcmlwdE9iamVjdE1vZGVsAFN5c3RlbS5Db21wb25lbnRNb2RlbABTVF82ZjBhMTUyYjMz
+Mjk0ZWQ4ODliYWQ2NjJhNWI1NDZlYy52YnByb2ouZGxsAGdldF9JdGVtAEZpbGVTeXN0ZW0ARW51
+bQBTeXN0ZW0uQ29tcG9uZW50TW9kZWwuRGVzaWduAFNjcmlwdE1haW4AZ2V0X0FwcGxpY2F0aW9u
+AE15QXBwbGljYXRpb24AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lzdGVtLkdsb2JhbGl6YXRpb24A
+U3lzdGVtLlJlZmxlY3Rpb24AQ3VsdHVyZUluZm8AbV9BcHBPYmplY3RQcm92aWRlcgBtX1VzZXJP
+YmplY3RQcm92aWRlcgBtX0NvbXB1dGVyT2JqZWN0UHJvdmlkZXIAbV9NeVdlYlNlcnZpY2VzT2Jq
+ZWN0UHJvdmlkZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBDb25uZWN0aW9uTWFuYWdlcgBTeXN0ZW0u
+Q29kZURvbS5Db21waWxlcgBnZXRfVXNlcgBFbnRlcgBnZXRfQ29tcHV0ZXIATXlDb21wdXRlcgBf
+cmVzTWdyAERpcgBBY3RpdmF0b3IALmN0b3IALmNjdG9yAE1vbml0b3IAU3lzdGVtLkRpYWdub3N0
+aWNzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5EZXZpY2VzAGdldF9XZWJTZXJ2aWNlcwBNeVdlYlNl
+cnZpY2VzAE1pY3Jvc29mdC5WaXN1YWxCYXNpYy5BcHBsaWNhdGlvblNlcnZpY2VzAFN5c3RlbS5S
+dW50aW1lLkludGVyb3BTZXJ2aWNlcwBNaWNyb3NvZnQuVmlzdWFsQmFzaWMuQ29tcGlsZXJTZXJ2
+aWNlcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJjZXMAU1Rf
+NmYwYTE1MmIzMzI5NGVkODg5YmFkNjYyYTViNTQ2ZWMudmJwcm9qLk15LlJlc291cmNlcwBNeVJl
+c291cmNlcwBTVF82ZjBhMTUyYjMzMjk0ZWQ4ODliYWQ2NjJhNWI1NDZlYy52YnByb2ouUmVzb3Vy
+Y2VzLnJlc291cmNlcwBEZWJ1Z2dpbmdNb2RlcwBnZXRfVmFyaWFibGVzAE15U2V0dGluZ3MARXF1
+YWxzAGdldF9Db25uZWN0aW9ucwBSdW50aW1lSGVscGVycwBPcGVyYXRvcnMAU3VjY2VzcwBnZXRf
+RHRzAFNjcmlwdFJlc3VsdHMAQ29uY2F0AG1fU3luY09iamVjdABNeVByb2plY3QARXhpdABzZXRf
+VGFza1Jlc3VsdABtX0NvbnRleHQAU1RfNmYwYTE1MmIzMzI5NGVkODg5YmFkNjYyYTViNTQ2ZWMu
+dmJwcm9qLk15AGdldF9Bc3NlbWJseQAAMU0AeQAuAFIAZQBzAG8AdQByAGMAZQBzAC4ATQB5AFIA
+ZQBzAG8AdQByAGMAZQBzAAAbUwBBAFAARgBpAGwAZQBGAG8AbABkAGUAcgAAA1wAABdFAHgAdABy
+AGEAYwB0AEQAYQB0AGUAAC1fAFIAVgBfAEEATgBfAFMAMAAyAF8AVgBPAFUAQwBIAEUAUgAuAHQA
+eAB0AAABAA9TAEEAUABfAFMAMAAyAAAAs/gd/xIBYEe2TbVgLDgYQwAEIAEBCAMgAAEFIAEBEREE
+IAEBDgQgAQECBSACAQ4OBSABARFFByAEAQ4ODg4GFRIkARIMBhUSJAESCAYVEiQBEmUGFRIkARIg
+BCAAEwAHAAESbRGAmQUgABKAnQcgAgEOEoCdBAABHBwEAAEBHAMHAQ4FIAASgKkFIAASgK0GIAES
+gLEcAyAAHAMgAA4HAAQODg4ODgcAAg4OEYC9BgADCA4OAgUgABKAxQYgARKAyRwEIAECHAMgAAgE
+BwEeAAIeAAUQAQAeAAQKAR4ABAcBEwAGFRIkARMABwYVEnEBEwAGFRJxARMAAhMABAoBEwAFIAEB
+EwAIt3pcVhk04IkIsD9ffxHVCjoIiYRdzYCAzJEEAAAAAAQBAAAABwYVEiQBEgwHBhUSJAESCAcG
+FRIkARJlBwYVEiQBEiADBhJ5AwYSfQMGEhgCBhwCBggDBhEoAwAAAQQAABIMBAAAEggEAAASZQQA
+ABIgBAAAEnkEAAASfQUAAQESfQQAABIYBCAAEm0HEAEBHgAeAAcwAQEBEB4ABAgAEgwECAASCAQI
+ABJlBAgAEiAECAASeQQIABJ9BAgAEhgEKAATAAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2Vw
+dGlvblRocm93cwEIAQACAAAAAAAvAQAqU1RfNmYwYTE1MmIzMzI5NGVkODg5YmFkNjYyYTViNTQ2
+ZWMudmJwcm9qAAAFAQAAAAAOAQAJTWljcm9zb2Z0AAAfAQAaQ29weXJpZ2h0IEAgTWljcm9zb2Z0
+IDIwMTMAAAUBAAEAACkBACQzYzkxYTVhMy1lNmNlLTQ1MmQtODhiMi0yMTUyYjMwOGY4NGMAAAwB
+AAcxLjAuMC4wAABJAQAaLk5FVEZyYW1ld29yayxWZXJzaW9uPXY0LjUBAFQOFEZyYW1ld29ya0Rp
+c3BsYXlOYW1lEi5ORVQgRnJhbWV3b3JrIDQuNQgBAAEAAAAAABgBAApNeVRlbXBsYXRlCDExLjAu
+MC4wAABhAQA0U3lzdGVtLldlYi5TZXJ2aWNlcy5Qcm90b2NvbHMuU29hcEh0dHBDbGllbnRQcm90
+b2NvbBJDcmVhdGVfX0luc3RhbmNlX18TRGlzcG9zZV9fSW5zdGFuY2VfXwAAABABAAtNeS5Db21w
+dXRlcgAAEwEADk15LkFwcGxpY2F0aW9uAAAMAQAHTXkuVXNlcgAAEwEADk15LldlYlNlcnZpY2Vz
+AAAAtAAAAM7K774BAAAAkQAAAGxTeXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2Nv
+cmxpYiwgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3
+N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAA
+AAAAAABQQURQQURQtAAAANQ5AAAAAAAAAAAAAO45AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAADg
+OQAAAAAAAAAAAAAAAF9Db3JEbGxNYWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
+ABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAA
+WEAAAFAEAAAAAAAAAAAAAFAENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9
+BO/+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEA
+VgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAA
+AAAAsASwAwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAACMAwAAAQAwADAAMAAwADAA
+NABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAANAAKAAEAQwBvAG0AcABhAG4AeQBO
+AGEAbQBlAAAAAABNAGkAYwByAG8AcwBvAGYAdAAAAH4AKwABAEYAaQBsAGUARABlAHMAYwByAGkA
+cAB0AGkAbwBuAAAAAABTAFQAXwA2AGYAMABhADEANQAyAGIAMwAzADIAOQA0AGUAZAA4ADgAOQBi
+AGEAZAA2ADYAMgBhADUAYgA1ADQANgBlAGMALgB2AGIAcAByAG8AagAAAAAAMAAIAAEARgBpAGwA
+ZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAALgAwAAAAfgAvAAEASQBuAHQAZQByAG4AYQBs
+AE4AYQBtAGUAAABTAFQAXwA2AGYAMABhADEANQAyAGIAMwAzADIAOQA0AGUAZAA4ADgAOQBiAGEA
+ZAA2ADYAMgBhADUAYgA1ADQANgBlAGMALgB2AGIAcAByAG8AagAuAGQAbABsAAAAAABaABsAAQBM
+AGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABDAG8AcAB5AHIAaQBnAGgAdAAgAEAAIABNAGkA
+YwByAG8AcwBvAGYAdAAgADIAMAAxADMAAAAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBkAGUAbQBh
+AHIAawBzAAAAAAAAAAAAhgAvAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0AZQAAAFMA
+VABfADYAZgAwAGEAMQA1ADIAYgAzADMAMgA5ADQAZQBkADgAOAA5AGIAYQBkADYANgAyAGEANQBi
+ADUANAA2AGUAYwAuAHYAYgBwAHIAbwBqAC4AZABsAGwAAAAAAHYAKwABAFAAcgBvAGQAdQBjAHQA
+TgBhAG0AZQAAAAAAUwBUAF8ANgBmADAAYQAxADUAMgBiADMAMwAyADkANABlAGQAOAA4ADkAYgBh
+AGQANgA2ADIAYQA1AGIANQA0ADYAZQBjAC4AdgBiAHAAcgBvAGoAAAAAADQACAABAFAAcgBvAGQA
+dQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAwAC4AMAAuADAAAAA4AAgAAQBBAHMAcwBlAG0AYgBs
+AHkAIABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAAAOgAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</BinaryItem>
+        </ScriptProject>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete from T_REV_LAST_SAP_FILE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{CEEFE657-CF23-4B11-9B58-CCE6F9B7BD9D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete from T_REV_LAST_SAP_FILE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="delete from T_REV_LAST_SAP_FILE&#xA;where SAP_FILE = 'S02'" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop and Create T_REV_SAP_RV_AN_S02"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{66F8AD84-8031-4646-9F96-62C04131B4D7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop and Create T_REV_SAP_RV_AN_S02"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="/*** T_REV_SAP_RV_AN_S02 ***/&#xA;&#xA;IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[T_REV_SAP_RV_AN_S02]') AND type in (N'U'))&#xA;DROP TABLE [dbo].[T_REV_SAP_RV_AN_S02]&#xA;&#xA;CREATE TABLE [T_REV_SAP_RV_AN_S02] (&#xA;    [COD_PROD_SAP] varchar(50),&#xA;    [COD_PRODOTTO] varchar(50),&#xA;    [DES_PROD_SAP] varchar(255),&#xA;    [ORD_INTERNO] varchar(255),&#xA;    [CONTO_DARE] varchar(50),&#xA;    [CONTO_AVERE] varchar(50),&#xA;    [ELEMENTO_WBS] varchar(255),&#xA;    [FLG_PRORATA] varchar(50),&#xA;    [TIPO_RISCONTO] varchar(255),&#xA;    [NNMESI_RISCONTO] varchar(50),&#xA;    [NNGG_RISCONTO] varchar(50),&#xA;    [WAERS] varchar(255),&#xA;    [DMBTR] varchar(255),&#xA;    [XREF3] varchar(255),&#xA;    [DATA_FISSA_INIZIO] varchar(255),&#xA;    [DATA_FISSA_FINE] varchar(255),&#xA;    [STATUS] varchar(255),&#xA;    [KOSTL] varchar(255)&#xA;) ON [PRIMARY]&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{842DA360-B498-4622-A1F2-E9B42F39D0B9}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{1E418417-20A2-4B16-B60F-6CC0B1DEBF07}"
+        DTS:ObjectName="{1E418417-20A2-4B16-B60F-6CC0B1DEBF07}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="\\DEVRMWDBHYP01\StagingArea\RESREV\SAP" />
+            <FEFEProperty
+              FileSpec="*AN_S02*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="1" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Insert file name in T_REV_LAST_SAP_FILE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{A949C426-3C9D-4AE6-B00D-350EEEBFBFD8}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Insert file name in T_REV_LAST_SAP_FILE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+              SQLTask:SqlStatementSource="insert into T_REV_LAST_SAP_FILE&#xA;select 'S02', ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::ActualFile"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{C01977C0-0864-4F3D-B6F9-C0CD29046977}"
+          DTS:ObjectName="{C01977C0-0864-4F3D-B6F9-C0CD29046977}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::ActualFile" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Importa File"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{247C4D8C-51AC-4C20-B74A-A63CC358367F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Importa File"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v10; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          version="1">
+          <components>
+            <component
+              refId="Package\Importa File\SAP_S02"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1040"
+              name="SAP_S02"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Importa File\SAP_S02.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SAP_S02]"
+                  connectionManagerRefId="Package.ConnectionManagers[SAP_S02]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[COD_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[COD_PROD_SAP]"
+                      length="50"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[COD_PROD_SAP]"
+                      name="COD_PROD_SAP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[COD_PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[COD_PRODOTTO]"
+                      length="50"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[COD_PRODOTTO]"
+                      name="COD_PRODOTTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DES_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DES_PROD_SAP]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DES_PROD_SAP]"
+                      name="DES_PROD_SAP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[ORD_INTERNO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[ORD_INTERNO]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[ORD_INTERNO]"
+                      name="ORD_INTERNO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[CONTO_DARE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[CONTO_DARE]"
+                      length="50"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[CONTO_DARE]"
+                      name="CONTO_DARE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[CONTO_AVERE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[CONTO_AVERE]"
+                      length="50"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[CONTO_AVERE]"
+                      name="CONTO_AVERE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[ELEMENTO_WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[ELEMENTO_WBS]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[ELEMENTO_WBS]"
+                      name="ELEMENTO_WBS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[FLG_PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[FLG_PRORATA]"
+                      length="50"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[FLG_PRORATA]"
+                      name="FLG_PRORATA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[TIPO_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[TIPO_RISCONTO]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[TIPO_RISCONTO]"
+                      name="TIPO_RISCONTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[NNMESI_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[NNMESI_RISCONTO]"
+                      length="50"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[NNMESI_RISCONTO]"
+                      name="NNMESI_RISCONTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[NNGG_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[NNGG_RISCONTO]"
+                      length="50"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[NNGG_RISCONTO]"
+                      name="NNGG_RISCONTO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[WAERS]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[WAERS]"
+                      name="WAERS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DMBTR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DMBTR]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DMBTR]"
+                      name="DMBTR"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[XREF3]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[XREF3]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[XREF3]"
+                      name="XREF3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DATA_FISSA_INIZIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DATA_FISSA_INIZIO]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DATA_FISSA_INIZIO]"
+                      name="DATA_FISSA_INIZIO"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DATA_FISSA_FINE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DATA_FISSA_FINE]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DATA_FISSA_FINE]"
+                      name="DATA_FISSA_FINE"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[STATUS]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[STATUS]"
+                      name="STATUS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[KOSTL]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[KOSTL]"
+                      length="255"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[KOSTL]"
+                      name="KOSTL"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[COD_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROD_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[COD_PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PRODOTTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DES_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DES_PROD_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[ORD_INTERNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ORD_INTERNO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[CONTO_DARE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_DARE" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[CONTO_AVERE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_AVERE" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[ELEMENTO_WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ELEMENTO_WBS" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[FLG_PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLG_PRORATA" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[TIPO_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TIPO_RISCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[NNMESI_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NNMESI_RISCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[NNGG_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NNGG_RISCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="WAERS" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DMBTR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DMBTR" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[XREF3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="XREF3" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DATA_FISSA_INIZIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DATA_FISSA_INIZIO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[DATA_FISSA_FINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DATA_FISSA_FINE" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].ExternalColumns[KOSTL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="KOSTL" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Importa File\SAP_S02.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Importa File\T_REV_SAP_RV_AN_S02"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SqlServer v10; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="T_REV_SAP_RV_AN_S02"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_REV_SAP_RV_AN_S02]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[COD_PROD_SAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_PROD_SAP"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROD_SAP]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[COD_PROD_SAP]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[COD_PRODOTTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="COD_PRODOTTO"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[COD_PRODOTTO]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[COD_PRODOTTO]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[DES_PROD_SAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DES_PROD_SAP"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DES_PROD_SAP]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DES_PROD_SAP]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[ORD_INTERNO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="ORD_INTERNO"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[ORD_INTERNO]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[ORD_INTERNO]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[CONTO_DARE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_DARE"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_DARE]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[CONTO_DARE]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[CONTO_AVERE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CONTO_AVERE"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_AVERE]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[CONTO_AVERE]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[ELEMENTO_WBS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="ELEMENTO_WBS"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[ELEMENTO_WBS]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[ELEMENTO_WBS]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[FLG_PRORATA]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="FLG_PRORATA"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[FLG_PRORATA]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[FLG_PRORATA]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[TIPO_RISCONTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TIPO_RISCONTO"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_RISCONTO]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[TIPO_RISCONTO]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[NNMESI_RISCONTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NNMESI_RISCONTO"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[NNMESI_RISCONTO]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[NNMESI_RISCONTO]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[NNGG_RISCONTO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NNGG_RISCONTO"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[NNGG_RISCONTO]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[NNGG_RISCONTO]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[WAERS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="WAERS"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[WAERS]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[WAERS]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[DMBTR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DMBTR"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DMBTR]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DMBTR]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[XREF3]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="XREF3"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[XREF3]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[XREF3]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[DATA_FISSA_INIZIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DATA_FISSA_INIZIO"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FISSA_INIZIO]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DATA_FISSA_INIZIO]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[DATA_FISSA_FINE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DATA_FISSA_FINE"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FISSA_FINE]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[DATA_FISSA_FINE]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="STATUS"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[STATUS]" />
+                    <inputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].Columns[KOSTL]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="KOSTL"
+                      externalMetadataColumnId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[KOSTL]"
+                      lineageId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output].Columns[KOSTL]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[COD_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PROD_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[COD_PRODOTTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="COD_PRODOTTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DES_PROD_SAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DES_PROD_SAP" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[ORD_INTERNO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ORD_INTERNO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_DARE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_DARE" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[CONTO_AVERE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CONTO_AVERE" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[ELEMENTO_WBS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ELEMENTO_WBS" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[FLG_PRORATA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FLG_PRORATA" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[TIPO_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TIPO_RISCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[NNMESI_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NNMESI_RISCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[NNGG_RISCONTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NNGG_RISCONTO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[WAERS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="WAERS" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DMBTR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DMBTR" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[XREF3]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="XREF3" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FISSA_INIZIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DATA_FISSA_INIZIO" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[DATA_FISSA_FINE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DATA_FISSA_FINE" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input].ExternalColumns[KOSTL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="KOSTL" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Importa File\T_REV_SAP_RV_AN_S02.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Importa File\T_REV_SAP_RV_AN_S02.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Importa File\T_REV_SAP_RV_AN_S02.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Importa File.Paths[Flat File Source Output]"
+              endId="Package\Importa File\T_REV_SAP_RV_AN_S02.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Importa File\SAP_S02.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserisci data estrazione nella variabile"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ED0B8961-4988-49BB-817A-20A94C4EC637}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserisci data estrazione nella variabile"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="select &#xA;&#x9;EXTRACT_DATE&#xA;from T_REV_LAST_SAP_FILE&#xA;where SAP_FILE = 'S02'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="EXTRACT_DATE"
+            SQLTask:DtsVariableName="User::ExtractDate" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Tieni in T_REV_LAST_SAP_FILE solo il file piu aggiornato"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{271F0707-C0FD-43FA-A1EB-09319C92535D}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tieni in T_REV_LAST_SAP_FILE solo il file piu aggiornato"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="select &#xA;&#x9;SAP_FILE, max(left(EXTRACT_DATE, charindex('_RV_AN_S02', EXTRACT_DATE) - 1)) as EXTRACT_DATE&#xA;into #TEMP_LAST_FILE&#xA;from T_REV_LAST_SAP_FILE&#xA;where SAP_FILE = 'S02'&#xA;group by SAP_FILE&#xA;&#xA;delete from T_REV_LAST_SAP_FILE&#xA;where SAP_FILE = 'S02'&#xA;&#xA;insert into T_REV_LAST_SAP_FILE&#xA;select * from #TEMP_LAST_FILE&#xA;&#xA;drop table #TEMP_LAST_FILE" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{1426459A-6E62-47FE-BA7F-48FE7C161217}"
+      DTS:From="Package\Delete from T_REV_LAST_SAP_FILE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D95A3709-E67D-4AA2-9BE6-191FA5EA133C}"
+      DTS:From="Package\Foreach Loop Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Tieni in T_REV_LAST_SAP_FILE solo il file piu aggiornato" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{EAFD3A97-8DE5-44D9-B686-6ECA75768A74}"
+      DTS:From="Package\Tieni in T_REV_LAST_SAP_FILE solo il file piu aggiornato"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Inserisci data estrazione nella variabile" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{FEA653BB-C53B-4FB5-9245-6CB5C15CF2AB}"
+      DTS:From="Package\Inserisci data estrazione nella variabile"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Aggiorna stringa di connessione" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{FCD0301D-65CB-4AAE-A202-2A0D620742A8}"
+      DTS:From="Package\Aggiorna stringa di connessione"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Drop and Create T_REV_SAP_RV_AN_S02" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{F334475D-19DC-4D2E-997B-7D7B44FF51F8}"
+      DTS:From="Package\Drop and Create T_REV_SAP_RV_AN_S02"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Importa File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="211,44"
+          Id="Package\Aggiorna stringa di connessione"
+          TopLeft="62.4433962264151,394.669811320755" />
+        <NodeLayout
+          Size="211,44"
+          Id="Package\Delete from T_REV_LAST_SAP_FILE"
+          TopLeft="62.4433962264151,5.5" />
+        <NodeLayout
+          Size="211,44"
+          Id="Package\Drop and Create T_REV_SAP_RV_AN_S02"
+          TopLeft="62.4433962264151,468.783018867925" />
+        <NodeLayout
+          Size="226,44"
+          Id="Package\Foreach Loop Container\Insert file name in T_REV_LAST_SAP_FILE"
+          TopLeft="50.9433962264151,25.2264150943396" />
+        <ContainerLayout
+          HeaderHeight="43.924528301886795"
+          IsExpanded="True"
+          PanelSize="324,99"
+          Size="324,143"
+          Id="Package\Foreach Loop Container"
+          TopLeft="5.5,77.4622641509434" />
+        <NodeLayout
+          Size="211,44"
+          Id="Package\Importa File"
+          TopLeft="62.4433962264151,542.896226415094" />
+        <NodeLayout
+          Size="211,44"
+          Id="Package\Inserisci data estrazione nella variabile"
+          TopLeft="62.4433962264151,324.330188679245" />
+        <NodeLayout
+          Size="211,44"
+          Id="Package\Tieni in T_REV_LAST_SAP_FILE solo il file piu aggiornato"
+          TopLeft="62.4433962264151,250.216981132075" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="167.764150943396,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-0.0377358490566166,28.0377358490566"
+              Start="0,0"
+              End="-0.0377358490566166,20.5377358490566">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14" />
+                  <mssgle:LineSegment
+                    End="-0.0377358490566166,14" />
+                  <mssgle:LineSegment
+                    End="-0.0377358490566166,20.5377358490566" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="167.72641509434,220.254716981132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0.0377358490566166,29.9622641509434"
+              Start="0,0"
+              End="0.0377358490566166,22.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.9811320754717" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,14.9811320754717" />
+                  <mssgle:LineSegment
+                    End="0.0377358490566166,22.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="167.764150943396,294.141509433962">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,30.188679245283"
+              Start="0,0"
+              End="0,22.688679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.688679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="167.764150943396,368.254716981132">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,26.4150943396226"
+              Start="0,0"
+              End="0,18.9150943396226">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.9150943396226" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="167.764150943396,438.594339622642">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,30.188679245283"
+              Start="0,0"
+              End="0,22.688679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.688679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="167.764150943396,512.707547169811">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,30.188679245283"
+              Start="0,0"
+              End="0,22.688679245283">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.688679245283" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

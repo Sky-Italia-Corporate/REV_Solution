@@ -1,0 +1,367 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2012 5:57:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{74279221-BC1E-4B91-977C-A508F19DA79F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M01_SCONTI_F1_S6b_UPD_CESS_PARCO"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{32ACC4C8-1E7C-44F5-B073-2ED8679FB2F1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F1_S6b_UPD_CESS_PARCO-{D6E72349-60D8-4FCF-8CBA-47DCFC0B62AA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M01_SCONTI_F1_S6b_UPD_CESS_PARCO-{F33C4FB5-5EBC-4917-912B-F01928219B1A}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{0F8A865F-2A6C-4B9D-B332-2B236812A048}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Aggiorna promo HD SD - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8F386608-E3BE-44F3-8B65-E321A6161774}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiorna promo HD SD - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="/********************************************************/&#xA;-- Aggiorna i codici delle promo nel caso qualcuna di  --&#xA;-- queste in Hyperion sia stata divisa in promo HD / SD--&#xA;-- (aggiunta di 0000 o 6666 al termine del codice della--&#xA;-- promo&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   --&#xA;/********************************************************/&#xA;update cess&#xA;set cess.COD_PROMO_TEC = acc_hd_sd.COD_PROMO_TEC&#xA;from WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS cess&#xA;join (&#xA;&#x9;/********************************************************/&#xA;&#x9;-- Recupera tutte le cessazioni passate da CDW-BI che   --&#xA;&#x9;-- hanno una promo tecnica che in Hyperion è stata      --&#xA;&#x9;-- convertita come promo HD / SD (aggiungendo quindi    --&#xA;&#x9;-- lo 0000 o il 6666 al termine del codice della promo  --&#xA;&#x9;/********************************************************/&#xA;&#x9;select distinct&#xA;&#x9;&#x9;cess.ACCOUNT, storico.COD_PROMO_TEC&#xA;&#x9;from WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS cess&#xA;&#x9;join WT_REV_STORICO_ATTIVAZIONI storico&#xA;&#x9;&#x9;on  cess.ACCOUNT  = storico.ACCOUNT&#xA;&#x9;&#x9;&#x9;and cess.RC_PACCHETTO_REALE = storico.RC_PACCHETTO&#xA;&#x9;&#x9;&#x9;and cess.COD_PROMO_TEC = replace(replace(storico.COD_PROMO_TEC,'0000',''),'6666','')&#xA;&#x9;where (storico.COD_PROMO_TEC like '%0000%' or storico.COD_PROMO_TEC like '%6666%') and storico.COD_PROMO_TEC not in (select COD_PROMO_TEC from M_REV_PROMO_0000_6666)&#xA;) acc_hd_sd&#xA;&#x9;on  cess.ACCOUNT = acc_hd_sd.ACCOUNT" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Aggiorna Rate Code indipendenti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BAABBC56-97CD-4F35-BD53-13EA1133DD9B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Aggiorna Rate Code indipendenti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="/********************************************************/&#xA;-- Aggiorna i rate code delle promo che sono gestiti in--&#xA;-- maniera indipendente&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;   --&#xA;/********************************************************/&#xA;update cess&#xA;set cess.RC_COD = cess.RC_COD + '-' + cess.COD_PROMO_TEC&#xA;from WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS cess&#xA;join (&#xA;&#x9;/********************************************************/&#xA;&#x9;-- Recupera tutte le cessazioni passate da CDW-BI che   --&#xA;&#x9;-- hanno una promo tecnica associata ad un rate code che--&#xA;&#x9;-- su Hyperion è stato impostato come indipendente (    --&#xA;&#x9;-- ossia viene gestito come RC_COD-COD_PROMO_TEC)       --&#xA;&#x9;/********************************************************/&#xA;&#x9;select distinct&#xA;&#x9;&#x9;cess.ACCOUNT, storico.COD_PROMO_TEC, cess.RC_COD&#xA;&#x9;from WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS cess&#xA;&#x9;join WT_REV_STORICO_ATTIVAZIONI storico&#xA;&#x9;&#x9;on cess.ACCOUNT = storico.ACCOUNT&#xA;&#x9;&#x9;&#x9;and cess.RC_PACCHETTO_REALE = storico.RC_PACCHETTO&#xA;&#x9;&#x9;&#x9;and cess.COD_PROMO_TEC = storico.COD_PROMO_TEC&#xA;&#x9;&#x9;&#x9;and cess.RC_COD = left(storico.RC_COD,3)&#xA;&#x9;where storico.RC_COD like '%-%'&#xA;) acc_rc_indip&#xA;&#x9;on cess.ACCOUNT  = acc_rc_indip.ACCOUNT&#xA;&#x9;&#x9;and cess.COD_PROMO_TEC = acc_rc_indip.COD_PROMO_TEC&#xA;&#x9;&#x9;and cess.RC_COD = acc_rc_indip.RC_COD" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rimuove tutti i Rate Code che non sono parte delle categorie considerate dal motore sconti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{FA4305DD-0073-4350-A461-5CB7423E65F2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rimuove tutti i Rate Code che non sono parte delle categorie considerate dal motore sconti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="select&#xA;&#x9;cess.*&#xA;into #TEMP_TT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS&#xA;from WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS cess&#xA;join (&#xA;&#x9;select distinct&#xA;&#x9;&#x9;CATEGORIA_RC&#xA;&#x9;from M_REV_PROMO_MAP_UNICO &#xA;&#x9;where MAP is not null&#xA;) map&#xA;&#x9;on cess.CATEGORIA_RC = map.CATEGORIA_RC&#xA;&#x9;&#xA;truncate table WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS&#xA;&#xA;insert into WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS&#xA;select * from #TEMP_TT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS&#xA;&#xA;drop table #TEMP_TT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS&#xA;go" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Riporta rate code fittizi e voucher ed in generale rc mancanti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5E731A8B-4EAC-47C4-B90B-705AECBBE610}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Riporta rate code fittizi e voucher ed in generale rc mancanti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server 2008 R2; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{F33C4FB5-5EBC-4917-912B-F01928219B1A}"
+          SQLTask:SqlStatementSource="insert into WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS&#xA;select&#xA;&#x9;storico.DATARIFERIMENTO, 'Riportato da Storico' as CATEGORIA_RC, storico.ACCOUNT, 'RESIDENTIAL' as TIPO_ABB, storico.RC_COD,&#xA;&#x9;'Riportato da Storico' as RC_DESCR, storico.VALORE, NULL as KENAN_ID, storico.DATA_ATT, storico.DATA_CHURN, &#xA;&#x9;storico.COD_PROMO_TEC, storico.COD_PROMO_SKY, storico.RC_PACCHETTO_VISIONE, storico.COD_LISTINO, storico.RC_PACCHETTO,&#xA;&#x9;storico.VALORE_PACCHETTO, storico.CAUSALE_CESSAZIONE, storico.TECNOLOGIA, storico.CLUSTER_IPTV,&#xA;&#x9;storico.BB_CONTRACT_STATUS, storico.BB_PRD_ID, storico.BB_ORIGIN_CLUSTER, storico.BB_VOICE_FLG, storico.BUNDLE_FLG&#xA;from (&#xA;&#x9;select&#xA;&#x9;&#x9;cess.DATARIFERIMENTO, cess.DATA_CHURN, cess.COD_PROMO_SKY, cess.RC_PACCHETTO_VISIONE, cess.COD_LISTINO, cess.CAUSALE_CESSAZIONE,&#xA;&#x9;&#x9;storico.ATT_PER_ID, storico.ACCOUNT, storico.COD_PROMO_TEC,storico.RC_COD,storico.DATA_ATT,storico.DATA_ATT_RC,storico.RC_PACCHETTO,storico.VALORE_PACCHETTO,&#xA;&#x9;&#x9;storico.VALORE,storico.OFFSET_INIZIO_MESI,storico.OFFSET_INIZIO_GIORNI,storico.DURATA_MESI,storico.DURATA_GIORNI,storico.SCADENZA,storico.PRO_RATA,storico.TECNOLOGIA,storico.CLUSTER_IPTV,&#xA;&#x9;&#x9;storico.BB_CONTRACT_STATUS, storico.BB_PRD_ID, storico.BB_ORIGIN_CLUSTER, storico.BB_VOICE_FLG, storico.BUNDLE_FLG&#xA;&#x9;from WT_REV_STORICO_ATTIVAZIONI storico&#xA;&#x9;join (&#xA;&#x9;&#x9;select distinct&#x9;&#xA;&#x9;&#x9;&#x9;ACCOUNT, COD_PROMO_TEC, max(DATARIFERIMENTO) as DATARIFERIMENTO, max(DATA_CHURN) as DATA_CHURN,&#xA;&#x9;&#x9;&#x9;max(COD_PROMO_SKY) as COD_PROMO_SKY, max(RC_PACCHETTO_VISIONE) as RC_PACCHETTO_VISIONE, max(COD_LISTINO) as COD_LISTINO,&#xA;&#x9;&#x9;&#x9;max(CAUSALE_CESSAZIONE) as CAUSALE_CESSAZIONE&#xA;&#x9;&#x9;from WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS&#xA;&#x9;&#x9;group by ACCOUNT, COD_PROMO_TEC&#xA;&#x9;) cess&#xA;&#x9;&#x9;on storico.ACCOUNT =  CAST(cess.ACCOUNT AS VARCHAR(50))&#xA;&#x9;&#x9;&#x9;and storico.COD_PROMO_TEC = cess.COD_PROMO_TEC&#xA;) storico&#xA;left join WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS cess&#xA;&#x9;on storico.ACCOUNT =  cess.ACCOUNT&#xA;&#x9;&#x9;and storico.COD_PROMO_TEC = cess.COD_PROMO_TEC&#xA;&#x9;&#x9;and storico.RC_COD = cess.RC_COD&#xA;where cess.ACCOUNT is null &#xA;&#x9;or cess.COD_PROMO_TEC is null&#xA;&#x9;or cess.RC_COD is null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DCA836DB-E26A-4AAF-BFB4-1B818305933A}"
+      DTS:From="Package\Aggiorna promo HD SD - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Aggiorna Rate Code indipendenti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{84CD4CD9-3CB6-42D9-BEA4-976E2522CABD}"
+      DTS:From="Package\Aggiorna Rate Code indipendenti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Riporta rate code fittizi e voucher ed in generale rc mancanti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{7C72AFCA-A6D8-4576-B71D-411BB158F20F}"
+      DTS:From="Package\Rimuove tutti i Rate Code che non sono parte delle categorie considerate dal motore sconti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Aggiorna promo HD SD - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="440,44"
+          Id="Package\Aggiorna promo HD SD - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+          TopLeft="5.5,83.3867924528302" />
+        <NodeLayout
+          Size="440,44"
+          Id="Package\Aggiorna Rate Code indipendenti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+          TopLeft="4.5,161.27358490566" />
+        <NodeLayout
+          Size="440,44"
+          Id="Package\Rimuove tutti i Rate Code che non sono parte delle categorie considerate dal motore sconti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="440,44"
+          Id="Package\Riporta rate code fittizi e voucher ed in generale rc mancanti - WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+          TopLeft="5.5,239.160377358491" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="225,127.38679245283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.8867924528298"
+              Start="0,0"
+              End="0,26.3867924528298">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.3867924528298" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="225,205.27358490566">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.886792452831"
+              Start="0,0"
+              End="0,26.386792452831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.386792452831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="225.650943396226,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,33.9622641509434"
+              Start="0,0"
+              End="0,26.4622641509434">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.4622641509434" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,3193 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/13/2012 5:16:09 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="HYPSRV-SVIL01"
+  DTS:CreatorName="SKY\vennia"
+  DTS:DTSID="{C4CA09E6-467F-405C-95B2-CE51296AD4A1}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.113"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SKY_REV_M02_PREMIUM_F1_S2_CALCOLO_VOLUMI"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="0"
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{147EB5D4-F73E-46E7-9F0B-A89446A800F3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ICO_MONITOR]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1C636126-5806-4DF3-A79A-CA9EAF1637FA}"
+      DTS:ObjectName="ICO_MONITOR">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=ICO_MONITOR;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M02_PREMIUM_F1_S2_CALCOLO_VOLUMI-{1C636126-5806-4DF3-A79A-CA9EAF1637FA}ICO_MONITOR;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SKY_REV]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C5EFA886-50E3-45E4-A793-7F80269F2AA0}"
+      DTS:ObjectName="SKY_REV">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=SQL02;Initial Catalog=SKY_REV;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-SKY_REV_M02_PREMIUM_F1_S2_CALCOLO_VOLUMI-{C5EFA886-50E3-45E4-A793-7F80269F2AA0}SKY_REV;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="ICO_MONITOR"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{2D0E2511-095C-4D31-B753-293677D49131}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables />
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">6,7,OnError,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{2D0E2511-095C-4D31-B753-293677D49131}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Popola ST_REV_PREMIUM_VOLUMI"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5BFE6491-E407-45DC-AB9A-EE2C56EC6C29}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Popola ST_REV_PREMIUM_VOLUMI"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server v9; (C) 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          BLOBTempStoragePath=""
+          bufferTempStoragePath=""
+          engineThreads="5"
+          version="1">
+          <components>
+            <component
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates and groups values in a dataset."
+              localeId="1033"
+              name="Aggregate"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="SCE_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PCK_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[PRS_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRS_RC"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PRS_RC]"
+                      name="PRS_RC" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[MOP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MOP_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOP_ID]"
+                      name="MOP_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[IMP_RC_CANONE_SERV]"
+                      cachedDataType="numeric"
+                      cachedName="IMP_RC_CANONE_SERV"
+                      cachedPrecision="28"
+                      cachedScale="16"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[IMP_RC_CANONE_SERV]"
+                      name="IMP_RC_CANONE_SERV" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SUBS]"
+                      name="SUBS" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[MOD_ID]"
+                      cachedDataType="i4"
+                      cachedName="MOD_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOD_ID]"
+                      name="MOD_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[RPS_ID]"
+                      cachedDataType="i4"
+                      cachedName="RPS_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[RPS_ID]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[GIO_ID]"
+                      name="GIO_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[SCE_ID]"
+                      name="SCE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SCE_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[PCK_ID]"
+                      name="PCK_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PCK_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[PRS_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[PRS_RC]"
+                      name="PRS_RC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PRS_RC]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[MOP_ID]"
+                      name="MOP_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOP_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[TCN_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[TCN_ID]"
+                      name="TCN_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TCN_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[IMP_RC_CANONE_SERV]"
+                      dataType="numeric"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[IMP_RC_CANONE_SERV]"
+                      name="IMP_RC_CANONE_SERV"
+                      precision="28"
+                      scale="16">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[IMP_RC_CANONE_SERV]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[SUBS]"
+                      dataType="i8"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[SUBS]"
+                      name="SUBS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[MOD_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[MOD_ID]"
+                      name="MOD_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOD_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[CLU_IPTV]"
+                      name="CLU_IPTV">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[RPS_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[RPS_ID]"
+                      name="RPS_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[RPS_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">1</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Evaluates and directs rows in a dataset."
+              localeId="1033"
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Inputs[Conditional Split Input].Columns[MAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="MAP"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output].Columns[MAP]"
+                      name="MAP" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[SUB]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="SUB"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output].Columns[MAP]} == "SUB"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">MAP == "SUB"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[ADD]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="ADD"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Updates column values using expressions"
+              localeId="1033"
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Inputs[Derived Column Input].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      name="SUBS"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">-#{Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SUBS]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">-SUBS</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Looks up values in a reference dataset by using exact matching."
+              name="M_REV_MAPPING_STATO_PREMIUM_SEGNI"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[M_REV_MAPPING_STATO_PREMIUM_SEGNI]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[M_REV_MAPPING_STATO_PREMIUM_SEGNI]) [refTable]
+where [refTable].[STM_ID] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="STM_ID" dataType="DT_STR" length="3" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="MAP" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[STM_ID]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Inputs[Lookup Input].Columns[STM_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="STM_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[STM_ID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">STM_ID</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output].Columns[MAP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Copy Column"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output].Columns[MAP]"
+                      name="MAP"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">MAP</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              localeId="1033"
+              name="ST_REV_PREMIUM_VOLUMI"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[ST_REV_PREMIUM_VOLUMI]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destinaton. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">10000</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="SCE_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PCK_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[PRS_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRS_RC"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_RC]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[PRS_RC]"
+                      name="PRS_RC" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[MOP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MOP_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[MOP_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[MOP_ID]"
+                      name="MOP_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[IMP_RC_CANONE_SERV]"
+                      cachedDataType="numeric"
+                      cachedName="IMP_RC_CANONE_SERV"
+                      cachedPrecision="28"
+                      cachedScale="16"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[IMP_RC_CANONE_SERV]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[IMP_RC_CANONE_SERV]"
+                      name="IMP_RC_CANONE_SERV" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[SUBS]"
+                      cachedDataType="i8"
+                      cachedName="SUBS"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[SUBS]"
+                      name="SUBS" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[MOD_ID]"
+                      cachedDataType="i4"
+                      cachedName="MOD_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[MOD_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[MOD_ID]"
+                      name="MOD_ID" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[CLU_IPTV]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[RPS_ID]"
+                      cachedDataType="i4"
+                      cachedName="RPS_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[RPS_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[RPS_ID]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_CONTRACT_STATUS]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_VOICE_FLG]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_PRD_ID]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BB_ORIGIN_CLUSTER]" />
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1].Columns[BUNDLE_FLG]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[PRS_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRS_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[TCN_ID]"
+                      dataType="i4"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[IMP_RC_CANONE_SERV]"
+                      dataType="numeric"
+                      name="IMP_RC_CANONE_SERV"
+                      precision="18"
+                      scale="10" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[SUBS]"
+                      dataType="i8"
+                      name="SUBS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[MOD_ID]"
+                      dataType="i4"
+                      name="MOD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[RPS_ID]"
+                      dataType="i4"
+                      name="RPS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              localeId="1033"
+              name="T_SBP_PREMIUM"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[T_SBP_PREMIUM]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select	GIO_ID, SCE_ID, PCK_ID, STM_ID, SUBS, 
+		a.PRS_RC, a.MOD_ID, NEX_DES, MOP_ID, 
+		TCN_ID, CLU_IPTV, CNP_ID, TIPO_SERVIZIO, 
+		case 
+			when b.PRS2_DES in ('SKYGO','BOX SETS','SKYGO PLUS','SKY Q PLUS','UHD','MS') then IMP_RC_CANONE_SERV/(1+VAL_IVA)
+			else IMP_RC_CANONE_SERV
+		end as IMP_RC_CANONE_SERV,
+		isnull(RPS_ID,0) as RPS_ID, --'***-NO_RGR_PREMIUM'
+		BB_CONTRACT_STATUS,
+		BB_ORIGIN_CLUSTER,
+		BB_PRD_ID,
+		BB_VOICE_FLG,
+		BUNDLE_FLG
+from T_SBP_PREMIUM a
+left join S_REV_PRS_PREMIUM_SETTIMANALE b
+	on	a.PRS_RC=b.PRS_RC and 
+		a.MOD_ID=b.MOD_ID
+left join S_REV_RPS_RGR_PREMIUM s
+	on b.MOD_DES = s.RPS_DES
+cross join (select VAL_IVA from M_REV_VALORE_IVA where APPL_NAME='Premium') c
+where a.STM_ID = 'CLO'
+		and TIPO_SERVIZIO &lt;&gt; 'HDQ';</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SKY_REV]"
+                  connectionManagerRefId="Package.ConnectionManagers[SKY_REV]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      length="8"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      length="3"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      name="PCK_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[STM_ID]"
+                      length="3"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[STM_ID]"
+                      name="STM_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      name="SUBS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PRS_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[PRS_RC]"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PRS_RC]"
+                      name="PRS_RC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOD_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[MOD_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOD_ID]"
+                      name="MOD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[NEX_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[NEX_DES]"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[NEX_DES]"
+                      name="NEX_DES"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[MOP_ID]"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOP_ID]"
+                      name="MOP_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      name="TCN_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CNP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[CNP_ID]"
+                      length="10"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CNP_ID]"
+                      name="CNP_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TIPO_SERVIZIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[TIPO_SERVIZIO]"
+                      length="255"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TIPO_SERVIZIO]"
+                      name="TIPO_SERVIZIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[IMP_RC_CANONE_SERV]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[IMP_RC_CANONE_SERV]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[IMP_RC_CANONE_SERV]"
+                      name="IMP_RC_CANONE_SERV"
+                      precision="28"
+                      scale="16"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[RPS_ID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[RPS_ID]"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[RPS_ID]"
+                      name="RPS_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      length="4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="GIO_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="SCE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PCK_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="STM_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[SUBS]"
+                      dataType="i4"
+                      name="SUBS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[PRS_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PRS_RC" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[MOD_ID]"
+                      dataType="i4"
+                      name="MOD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[NEX_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="NEX_DES" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="MOP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[TCN_ID]"
+                      dataType="i4"
+                      name="TCN_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[CNP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CNP_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[TIPO_SERVIZIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TIPO_SERVIZIO" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[IMP_RC_CANONE_SERV]"
+                      dataType="numeric"
+                      name="IMP_RC_CANONE_SERV"
+                      precision="34"
+                      scale="20" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CLU_IPTV" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[RPS_ID]"
+                      dataType="i4"
+                      name="RPS_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BB_CONTRACT_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BB_PRD_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="BB_VOICE_FLG" />
+                    <externalMetadataColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].ExternalColumns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      name="BUNDLE_FLG" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[STM_ID]"
+                      name="STM_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[SUBS]"
+                      name="SUBS" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[PRS_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[PRS_RC]"
+                      name="PRS_RC" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[MOD_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[MOD_ID]"
+                      name="MOD_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[NEX_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[NEX_DES]"
+                      name="NEX_DES" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[MOP_ID]"
+                      name="MOP_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[CLU_IPTV]"
+                      name="CLU_IPTV" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[CNP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[CNP_ID]"
+                      name="CNP_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[TIPO_SERVIZIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[TIPO_SERVIZIO]"
+                      name="TIPO_SERVIZIO" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[IMP_RC_CANONE_SERV]"
+                      dataType="numeric"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[IMP_RC_CANONE_SERV]"
+                      name="IMP_RC_CANONE_SERV"
+                      precision="34"
+                      scale="20" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[RPS_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[RPS_ID]"
+                      name="RPS_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation;Microsoft SqlServer v9; (C) 2005 Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Merges multiple datasets."
+              localeId="1033"
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[GIO_ID]"
+                      name="GIO_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="SCE_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SCE_ID]"
+                      name="SCE_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SCE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PCK_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PCK_ID]"
+                      name="PCK_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PCK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[STM_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="STM_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[STM_ID]"
+                      name="STM_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[STM_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SUBS]"
+                      name="SUBS">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[PRS_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRS_RC"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PRS_RC]"
+                      name="PRS_RC">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PRS_RC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[MOD_ID]"
+                      cachedDataType="i4"
+                      cachedName="MOD_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOD_ID]"
+                      name="MOD_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[NEX_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NEX_DES"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[NEX_DES]"
+                      name="NEX_DES">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[NEX_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[MOP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MOP_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOP_ID]"
+                      name="MOP_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOP_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TCN_ID]"
+                      name="TCN_ID">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TCN_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[TIPO_SERVIZIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TIPO_SERVIZIO"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TIPO_SERVIZIO]"
+                      name="TIPO_SERVIZIO">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TIPO_SERVIZIO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[MAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="MAP"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output].Columns[MAP]"
+                      name="MAP">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MAP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[CNP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CNP_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CNP_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CNP_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[IMP_RC_CANONE_SERV]"
+                      cachedDataType="numeric"
+                      cachedName="IMP_RC_CANONE_SERV"
+                      cachedPrecision="28"
+                      cachedScale="16"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[IMP_RC_CANONE_SERV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[IMP_RC_CANONE_SERV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CLU_IPTV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[RPS_ID]"
+                      cachedDataType="i4"
+                      cachedName="RPS_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[RPS_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[RPS_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3]"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[GIO_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="GIO_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[GIO_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[SCE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="SCE_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SCE_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SCE_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[PCK_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PCK_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PCK_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PCK_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[STM_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="STM_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[STM_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[STM_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[SUBS]"
+                      cachedDataType="i4"
+                      cachedName="SUBS"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[SUBS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SUBS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[PRS_RC]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PRS_RC"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[PRS_RC]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PRS_RC]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[MOD_ID]"
+                      cachedDataType="i4"
+                      cachedName="MOD_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[NEX_DES]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NEX_DES"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[NEX_DES]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[NEX_DES]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[MOP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="MOP_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[MOP_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOP_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[TCN_ID]"
+                      cachedDataType="i4"
+                      cachedName="TCN_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TCN_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TCN_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[TIPO_SERVIZIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TIPO_SERVIZIO"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[TIPO_SERVIZIO]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TIPO_SERVIZIO]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[MAP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="MAP"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output].Columns[MAP]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MAP]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[CNP_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="CNP_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CNP_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CNP_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[IMP_RC_CANONE_SERV]"
+                      cachedDataType="numeric"
+                      cachedName="IMP_RC_CANONE_SERV"
+                      cachedPrecision="28"
+                      cachedScale="16"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[IMP_RC_CANONE_SERV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[IMP_RC_CANONE_SERV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[CLU_IPTV]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CLU_IPTV"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[CLU_IPTV]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[RPS_ID]"
+                      cachedDataType="i4"
+                      cachedName="RPS_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[RPS_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[RPS_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[BB_CONTRACT_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BB_CONTRACT_STATUS"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_CONTRACT_STATUS]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[BB_ORIGIN_CLUSTER]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_ORIGIN_CLUSTER"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_ORIGIN_CLUSTER]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[BB_PRD_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BB_PRD_ID"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_PRD_ID]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[BB_VOICE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="BB_VOICE_FLG"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BB_VOICE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3].Columns[BUNDLE_FLG]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="80"
+                      cachedName="BUNDLE_FLG"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output].Columns[BUNDLE_FLG]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 1]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[GIO_ID]"
+                      name="GIO_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SCE_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SCE_ID]"
+                      name="SCE_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PCK_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PCK_ID]"
+                      name="PCK_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[STM_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[STM_ID]"
+                      name="STM_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SUBS]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[SUBS]"
+                      name="SUBS" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PRS_RC]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[PRS_RC]"
+                      name="PRS_RC" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOD_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOD_ID]"
+                      name="MOD_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[NEX_DES]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[NEX_DES]"
+                      name="NEX_DES" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MOP_ID]"
+                      name="MOP_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TCN_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TCN_ID]"
+                      name="TCN_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TIPO_SERVIZIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[TIPO_SERVIZIO]"
+                      name="TIPO_SERVIZIO" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MAP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[MAP]"
+                      name="MAP" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CNP_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CNP_ID]"
+                      name="CNP_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[IMP_RC_CANONE_SERV]"
+                      dataType="numeric"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[IMP_RC_CANONE_SERV]"
+                      name="IMP_RC_CANONE_SERV"
+                      precision="28"
+                      scale="16" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[CLU_IPTV]"
+                      name="CLU_IPTV" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[RPS_ID]"
+                      dataType="i4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[RPS_ID]"
+                      name="RPS_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_CONTRACT_STATUS]"
+                      name="BB_CONTRACT_STATUS" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_ORIGIN_CLUSTER]"
+                      name="BB_ORIGIN_CLUSTER" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_PRD_ID]"
+                      name="BB_PRD_ID" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BB_VOICE_FLG]"
+                      name="BB_VOICE_FLG" />
+                    <outputColumn
+                      refId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]"
+                      codePage="1252"
+                      dataType="str"
+                      length="80"
+                      lineageId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1].Columns[BUNDLE_FLG]"
+                      name="BUNDLE_FLG" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[ADD]"
+              endId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 3]"
+              name="ADD"
+              startId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[ADD]" />
+            <path
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Aggregate Output 1]"
+              endId="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI.Inputs[OLE DB Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Derived Column Output]"
+              endId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Inputs[Union All Input 2]"
+              name="Derived Column Output"
+              startId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Lookup Output]"
+              endId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Inputs[Conditional Split Input]"
+              name="Lookup Output"
+              startId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[OLE DB Source Output]"
+              endId="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI.Inputs[Lookup Input]"
+              name="OLE DB Source Output"
+              startId="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[SUB]"
+              endId="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column.Inputs[Derived Column Input]"
+              name="SUB"
+              startId="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split.Outputs[SUB]" />
+            <path
+              refId="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Union All Output 1]"
+              endId="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate.Inputs[Aggregate Input 1]"
+              name="Union All Output 1"
+              startId="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\truncate ST_REV_PREMIUM_VOLUMI"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{82fbbbfe-d948-4caa-8c27-895aa272b678}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="truncate ST_REV_PREMIUM_VOLUMI"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; Microsoft SQL Server v9; © 2004 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C5EFA886-50E3-45E4-A793-7F80269F2AA0}"
+          SQLTask:SqlStatementSource="truncate table ST_REV_PREMIUM_VOLUMI" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{95AD5311-9BE9-4CD7-9FBB-9086DDE00C74}"
+      DTS:From="Package\truncate ST_REV_PREMIUM_VOLUMI"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Popola ST_REV_PREMIUM_VOLUMI" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,44"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI"
+          TopLeft="5.5,101.349056603774" />
+        <NodeLayout
+          Size="190,44"
+          Id="Package\truncate ST_REV_PREMIUM_VOLUMI"
+          TopLeft="5.5,5.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="100.367924528302,49.4245283018868">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.9245283018868"
+              Start="0,0"
+              End="0,44.4245283018868">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.4245283018868" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Popola ST_REV_PREMIUM_VOLUMI">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="212,42"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI"
+          TopLeft="114.5,617.5" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM"
+          TopLeft="140,5.5" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI\Derived Column"
+          TopLeft="5.50000000000003,311.5" />
+        <NodeLayout
+          Size="288,42"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI\M_REV_MAPPING_STATO_PREMIUM_SEGNI"
+          TopLeft="76.5,107.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI\Union All"
+          TopLeft="160,413.5" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI\Aggregate"
+          TopLeft="157,515.5" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI\Conditional Split"
+          TopLeft="143,209.5" />
+        <EdgeLayout
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Aggregate Output 1]"
+          TopLeft="220.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[ADD]"
+          TopLeft="242.166666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,162"
+              Start="0,0"
+              End="0,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-10.64927734375,72.61474609375,21.2985546875,9.2705078125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Union All Output 1]"
+          TopLeft="220.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[SUB]"
+          TopLeft="196,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-113.5,60"
+              Start="0,0"
+              End="-113.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.367816091954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.367816091954"
+                    Point2="0,24.367816091954"
+                    Point3="-4,24.367816091954" />
+                  <mssgle:LineSegment
+                    End="-109.5,24.367816091954" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-109.5,24.367816091954"
+                    Point2="-113.5,24.367816091954"
+                    Point3="-113.5,28.367816091954" />
+                  <mssgle:LineSegment
+                    End="-113.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-66.461484375,29.367816091954,19.42296875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[OLE DB Source Output]"
+          TopLeft="220.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Lookup Output]"
+          TopLeft="220.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Popola ST_REV_PREMIUM_VOLUMI.Paths[Derived Column Output]"
+          TopLeft="82.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119.166666666667,60"
+              Start="0,0"
+              End="119.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="115.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="115.166666666667,35.5301794453507"
+                    Point2="119.166666666667,35.5301794453507"
+                    Point3="119.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="119.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popola ST_REV_PREMIUM_VOLUMI\ST_REV_PREMIUM_VOLUMI">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Popola ST_REV_PREMIUM_VOLUMI\T_SBP_PREMIUM">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
