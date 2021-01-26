@@ -13,8 +13,8 @@
   DTS:ObjectName="SKY_REV_1_15_ANAGRAFICA_DURATA"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{A45F1499-DDED-47E9-8B69-633FCDACB78D}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{50F38830-71E8-442E-B192-717B6C2D9AE2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -494,25 +494,25 @@
         <NodeLayout
           Size="136,44"
           Id="Package\Data Flow Task"
-          TopLeft="19.4622641509434,70.3679245283019" />
+          TopLeft="19.4622641509434,94.3679245283019" />
         <NodeLayout
           Size="164,44"
           Id="Package\Truncate table"
           TopLeft="5.5,5.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="87.3490566037736,49.4245283018868">
+          TopLeft="87.4811320754717,49.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,20.9433962264151"
+              EndConnector="0,44.8679245283019"
               Start="0,0"
-              End="0,13.4433962264151">
+              End="0,37.3679245283019">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,13.4433962264151" />
+                    End="0,37.3679245283019" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
