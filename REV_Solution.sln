@@ -161,6 +161,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "REV_M12bis_3_ACT_FEE_PRS_PA
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "REV_M12bis_2_ACT_FEE_PRS_PARCO_DM", "REV_M12bis_2_ACT_FEE_PRS_PARCO_DM\REV_M12bis_2_ACT_FEE_PRS_PARCO_DM.dtproj", "{9D62936F-13FF-4D6E-B30D-612D7889D792}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "REV_M20_1_RETENTION_SA", "REV_M20_1_RETENTION_SA\REV_M20_1_RETENTION_SA.dtproj", "{254050A7-0A0C-4442-ACF7-C44E25A0DAAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -642,6 +644,12 @@ Global
 		{9D62936F-13FF-4D6E-B30D-612D7889D792}.Development|Any CPU.Build.0 = Development
 		{9D62936F-13FF-4D6E-B30D-612D7889D792}.Release|Any CPU.ActiveCfg = Development
 		{9D62936F-13FF-4D6E-B30D-612D7889D792}.Release|Any CPU.Build.0 = Development
+		{254050A7-0A0C-4442-ACF7-C44E25A0DAAB}.Debug|Any CPU.ActiveCfg = Development
+		{254050A7-0A0C-4442-ACF7-C44E25A0DAAB}.Debug|Any CPU.Build.0 = Development
+		{254050A7-0A0C-4442-ACF7-C44E25A0DAAB}.Development|Any CPU.ActiveCfg = Development
+		{254050A7-0A0C-4442-ACF7-C44E25A0DAAB}.Development|Any CPU.Build.0 = Development
+		{254050A7-0A0C-4442-ACF7-C44E25A0DAAB}.Release|Any CPU.ActiveCfg = Development
+		{254050A7-0A0C-4442-ACF7-C44E25A0DAAB}.Release|Any CPU.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

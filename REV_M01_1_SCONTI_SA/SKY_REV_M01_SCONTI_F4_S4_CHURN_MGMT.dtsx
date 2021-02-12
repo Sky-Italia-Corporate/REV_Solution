@@ -13,8 +13,8 @@
   DTS:ObjectName="SKY_REV_M01_SCONTI_F4_S4_CHURN_MGMT"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="237"
-  DTS:VersionGUID="{FECE43AB-A672-44F2-82DA-DBE74A2B975E}">
+  DTS:VersionBuild="239"
+  DTS:VersionGUID="{8C1EFD51-8127-44EA-B72B-B11C471C49C7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -9845,7 +9845,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="260,44"
           Id="Package\Dimezza volumi di ultima settimana e, se presente, prima settimana"
@@ -9861,7 +9861,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
         <NodeLayout
           Size="260,44"
           Id="Package\Prepara tabella inserimento in WT_REV_VOLUMI_CHURN_X_SF 1"
-          TopLeft="625.537735849057,465.764150943396" />
+          TopLeft="631.537735849057,482.764150943396" />
         <NodeLayout
           Size="384,42"
           Id="Package\Prepara tabella inserimento in WTT_REV_VOLUMI_CHURN_X_SF"
@@ -9895,7 +9895,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="211.462264150943,135.311320754717">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-74.377358490566,34.9811320754717"
               Start="0,0"
               End="-74.377358490566,27.4811320754717">
@@ -9921,7 +9921,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="137.084905660377,214.216981132075">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-0.830188679245282,46.0754716981132"
               Start="0,0"
               End="-0.830188679245282,38.5754716981132">
@@ -9947,7 +9947,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="79.311320754717,467.801886792453">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="124,71.056603773585"
               Start="0,0"
               End="124,63.556603773585">
@@ -9981,7 +9981,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="141.311320754717,394.896226415094">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-62,30.905660377359"
               Start="0,0"
               End="-62,23.405660377359">
@@ -10015,7 +10015,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="137.084905660377,49.4245283018868">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="74.377358490566,24.9811320754717"
               Start="0,0"
               End="74.377358490566,17.4811320754717">
@@ -10041,7 +10041,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="203.311320754717,580.858490566038">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="12.1698113207547,114.528301886792"
               Start="0,0"
               End="12.1698113207547,107.028301886792">
@@ -10075,7 +10075,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="136.254716981132,304.216981132075">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="4.83018867924528,46.6792452830188"
               Start="0,0"
               End="4.83018867924528,39.1792452830188">
@@ -10101,7 +10101,7 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           TopLeft="215.481132075472,737.38679245283">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="-71.188679245283,128.830188679245"
               Start="0,0"
               End="-71.188679245283,121.330188679245">
@@ -10151,108 +10151,52 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Recupera volumi e relative informazioni per effettuare il churn">
+    design-time-name="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="388,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Conta ACCOUNT con stessa configurazione che hanno fatto churn"
-          TopLeft="867.5,209.5" />
+          Size="233,42"
+          Id="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF\WT_REV_VOLUMI_CHURN_X_SF"
+          TopLeft="673.5,209.5" />
         <NodeLayout
-          Size="210,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\WTT_REV_VOLUMI_CHURN"
-          TopLeft="956.5,617.5" />
-        <NodeLayout
-          Size="121,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Union All"
-          TopLeft="1001,515.5" />
-        <NodeLayout
-          Size="506,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Unisce i flussi T_SBD_DELTA e TT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
-          TopLeft="808.5,107.5" />
-        <NodeLayout
-          Size="318,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Aggiunge a DATA_ATT_RC l'OFFSET_INIZIO_MESI"
-          TopLeft="1122.5,413.5" />
-        <NodeLayout
-          Size="632,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Recupera info di attivazioni per account che hanno fatto churn da T_SBD_DELTA e WT_REV_STORICO_ATTIVAZIONI"
+          Size="483,42"
+          Id="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF\WT_REV_VOLUMI_CHURN (Precedenti al rilascio di Ristrutturazione Gerarchia Promo)"
           TopLeft="5.5,5.5" />
         <NodeLayout
-          Size="331,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Aggiunge a DATA_ATT_RC l'OFFSET_INIZIO_GIORNI"
-          TopLeft="1501,413.5" />
+          Size="481,42"
+          Id="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF\WT_REV_VOLUMI_CHURN (Successivi al rilascio di Ristrutturazione Gerarchia Promo)"
+          TopLeft="549.5,5.49999999999989" />
         <NodeLayout
-          Size="726,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Recupera info di attivazioni per account, rc, promo che hanno fatto churn da WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
-          TopLeft="698.5,5.49999999999977" />
-        <NodeLayout
-          Size="544,42"
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Controlla se valorizzati OFFSET_INIZIO_MESI o OFFSET_INIZIO_GIORNI e sistema DATA_ATT_RC"
-          TopLeft="789.5,311.5" />
+          Size="121,42"
+          Id="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF\Union All"
+          TopLeft="729.5,107.5" />
         <EdgeLayout
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[NO_OFFSET]"
-          TopLeft="927.5,353.5">
+          Id="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF.Paths[OLE DB Source Output]"
+          TopLeft="247,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="105.75,162"
+              EndConnector="524.166666666667,59.9999999999999"
               Start="0,0"
-              End="105.75,154.5">
+              End="524.166666666667,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,74.9987734361311" />
+                    End="0,31.5301794453507" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,74.9987734361311"
-                    Point2="0,78.9987734361311"
-                    Point3="4,78.9987734361311" />
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
                   <mssgle:LineSegment
-                    End="101.75,78.9987734361311" />
+                    End="520.166666666667,35.5301794453507" />
                   <mssgle:CubicBezierSegment
-                    Point1="101.75,78.9987734361311"
-                    Point2="105.75,78.9987734361311"
-                    Point3="105.75,82.9987734361311" />
+                    Point1="520.166666666667,35.5301794453507"
+                    Point2="524.166666666667,35.5301794453507"
+                    Point3="524.166666666667,39.5301794453507" />
                   <mssgle:LineSegment
-                    End="105.75,154.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="25.3762890625,83.9987734361311,54.997421875,10.88671875"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[Derived Column Output1]"
-          TopLeft="1281.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-220,60.0000000000001"
-              Start="0,0"
-              End="-220,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.0000000000001"
-                    Point2="0,30.0000000000001"
-                    Point3="-4,30.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-216,30.0000000000001" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-216,30.0000000000001"
-                    Point2="-220,30.0000000000001"
-                    Point3="-220,34.0000000000001" />
-                  <mssgle:LineSegment
-                    End="-220,52.5000000000001" />
+                    End="524.166666666667,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10262,42 +10206,8 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[Derived Column Output]"
-          TopLeft="1666.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-576.75,60.0000000000001"
-              Start="0,0"
-              End="-576.75,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.1374663072777" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.1374663072777"
-                    Point2="0,39.1374663072777"
-                    Point3="-4,39.1374663072777" />
-                  <mssgle:LineSegment
-                    End="-572.75,39.1374663072777" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-572.75,39.1374663072777"
-                    Point2="-576.75,39.1374663072777"
-                    Point3="-576.75,43.1374663072777" />
-                  <mssgle:LineSegment
-                    End="-576.75,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[Aggregate Output 1]"
-          TopLeft="1061.5,251.5">
+          Id="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF.Paths[Union All Output 1]"
+          TopLeft="790,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -10317,6 +10227,84 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Prepara tabella per inserimento in WT_REV_VOLUMI_CHURN_X_SF.Paths[OLE DB Source Output1]"
+          TopLeft="790,47.4999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="18.8333333333334,60"
+              Start="0,0"
+              End="18.8333333333334,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="14.8333333333334,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8333333333334,35.5301794453507"
+                    Point2="18.8333333333334,35.5301794453507"
+                    Point3="18.8333333333334,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="18.8333333333334,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Recupera volumi e relative informazioni per effettuare il churn">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="506,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Unisce i flussi T_SBD_DELTA e TT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+          TopLeft="808.5,107.5" />
+        <NodeLayout
+          Size="388,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Conta ACCOUNT con stessa configurazione che hanno fatto churn"
+          TopLeft="867.5,209.5" />
+        <NodeLayout
+          Size="726,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Recupera info di attivazioni per account, rc, promo che hanno fatto churn da WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS"
+          TopLeft="698.5,5.49999999999977" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\WTT_REV_VOLUMI_CHURN"
+          TopLeft="956.5,617.5" />
+        <NodeLayout
+          Size="318,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Aggiunge a DATA_ATT_RC l'OFFSET_INIZIO_MESI"
+          TopLeft="1122.5,413.5" />
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Union All"
+          TopLeft="1001,515.5" />
+        <NodeLayout
+          Size="544,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Controlla se valorizzati OFFSET_INIZIO_MESI o OFFSET_INIZIO_GIORNI e sistema DATA_ATT_RC"
+          TopLeft="789.5,311.5" />
+        <NodeLayout
+          Size="331,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Aggiunge a DATA_ATT_RC l'OFFSET_INIZIO_GIORNI"
+          TopLeft="1501,413.5" />
+        <NodeLayout
+          Size="632,42"
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn\Recupera info di attivazioni per account che hanno fatto churn da T_SBD_DELTA e WT_REV_STORICO_ATTIVAZIONI"
+          TopLeft="5.5,5.5" />
         <EdgeLayout
           Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[Union All Output 11]"
           TopLeft="1061.5,149.5">
@@ -10501,9 +10489,143 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[NO_OFFSET]"
+          TopLeft="927.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="105.75,162"
+              Start="0,0"
+              End="105.75,154.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,74.9987734361311" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,74.9987734361311"
+                    Point2="0,78.9987734361311"
+                    Point3="4,78.9987734361311" />
+                  <mssgle:LineSegment
+                    End="101.75,78.9987734361311" />
+                  <mssgle:CubicBezierSegment
+                    Point1="101.75,78.9987734361311"
+                    Point2="105.75,78.9987734361311"
+                    Point3="105.75,82.9987734361311" />
+                  <mssgle:LineSegment
+                    End="105.75,154.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="25.3762890625,83.9987734361311,54.997421875,10.88671875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[Derived Column Output1]"
+          TopLeft="1281.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-220,60.0000000000001"
+              Start="0,0"
+              End="-220,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.0000000000001"
+                    Point2="0,30.0000000000001"
+                    Point3="-4,30.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-216,30.0000000000001" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-216,30.0000000000001"
+                    Point2="-220,30.0000000000001"
+                    Point3="-220,34.0000000000001" />
+                  <mssgle:LineSegment
+                    End="-220,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[Derived Column Output]"
+          TopLeft="1666.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-576.75,60.0000000000001"
+              Start="0,0"
+              End="-576.75,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.1374663072777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.1374663072777"
+                    Point2="0,39.1374663072777"
+                    Point3="-4,39.1374663072777" />
+                  <mssgle:LineSegment
+                    End="-572.75,39.1374663072777" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-572.75,39.1374663072777"
+                    Point2="-576.75,39.1374663072777"
+                    Point3="-576.75,43.1374663072777" />
+                  <mssgle:LineSegment
+                    End="-576.75,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Recupera volumi e relative informazioni per effettuare il churn.Paths[Aggregate Output 1]"
+          TopLeft="1061.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Recupera volumi e relative informazioni per effettuare il churn\Recupera info di attivazioni per account, rc, promo che hanno fatto churn da WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Recupera volumi e relative informazioni per effettuare il churn\WTT_REV_VOLUMI_CHURN">
     <Properties>
@@ -10525,19 +10647,15 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Recupera volumi e relative informazioni per effettuare il churn\Recupera info di attivazioni per account, rc, promo che hanno fatto churn da WT_REV_DT_CESSAZIONI_PROMO_PARCO_CDW_BI_CHRS">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\WTT TO WT">
     <LayoutInfo>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="210,42"
+          Id="Package\WTT TO WT\WTT_REV_VOLUMI_CHURN"
+          TopLeft="393.5,5.5" />
         <NodeLayout
           Size="155,42"
           Id="Package\WTT TO WT\Conditional Split"
@@ -10550,10 +10668,6 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           Size="108,42"
           Id="Package\WTT TO WT\UHDQ"
           TopLeft="5.5,311.5" />
-        <NodeLayout
-          Size="210,42"
-          Id="Package\WTT TO WT\WTT_REV_VOLUMI_CHURN"
-          TopLeft="393.5,5.5" />
         <NodeLayout
           Size="204,42"
           Id="Package\WTT TO WT\WT_REV_VOLUMI_CHURN"
@@ -10570,28 +10684,6 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
           Size="121,42"
           Id="Package\WTT TO WT\Union All"
           TopLeft="438,413.5" />
-        <EdgeLayout
-          Id="Package\WTT TO WT.Paths[Union All Output 1]"
-          TopLeft="498.5,455.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <EdgeLayout
           Id="Package\WTT TO WT.Paths[SQP]"
           TopLeft="474,149.5">
@@ -10882,6 +10974,28 @@ where ltrim(rtrim(promoCess.CAUSALE_CESSAZIONE)) in (	select distinct ltrim(rtri
                     Point3="262.7,37.0902461257976" />
                   <mssgle:LineSegment
                     End="262.7,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\WTT TO WT.Paths[Union All Output 1]"
+          TopLeft="498.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
